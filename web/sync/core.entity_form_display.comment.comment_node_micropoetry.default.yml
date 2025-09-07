@@ -1,0 +1,43 @@
+uuid: 1ef6e198-ec1a-433d-bb0f-7d8bfbd82f2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_micropoetry
+    - field.field.comment.comment_node_micropoetry.comment_body
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: comment.comment_node_micropoetry.default
+targetEntityType: comment
+bundle: comment_node_micropoetry
+mode: default
+content:
+  author:
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

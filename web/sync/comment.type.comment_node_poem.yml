@@ -1,0 +1,8 @@
+uuid: a28d8532-4a80-4c6d-8600-cddddc297391
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_poem
+label: 'Poem comment'
+target_entity_type_id: node
+description: null

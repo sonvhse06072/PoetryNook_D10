@@ -1,0 +1,8 @@
+uuid: ad41f220-3e64-4795-85ab-bd2c7fe4cb76
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_amazon_products
+label: 'Amazon Products comment'
+target_entity_type_id: node
+description: null

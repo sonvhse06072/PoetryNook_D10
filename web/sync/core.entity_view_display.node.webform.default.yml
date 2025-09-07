@@ -1,0 +1,72 @@
+uuid: 4e6fcf2c-db89-48b2-9ccb-66bd9e02d473
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.webform.body
+    - field.field.node.webform.comment_node_webform
+    - node.type.webform
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          cf1e6dbd-c738-4308-afff-9f18a368ca1c:
+            uuid: cf1e6dbd-c738-4308-afff-9f18a368ca1c
+            region: content
+            configuration:
+              id: 'extra_field_block:node:webform:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          2c09d5c5-697c-4d44-953e-88ca655b8f35:
+            uuid: 2c09d5c5-697c-4d44-953e-88ca655b8f35
+            region: content
+            configuration:
+              id: 'field_block:node:webform:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.webform.default
+targetEntityType: node
+bundle: webform
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_webform: true

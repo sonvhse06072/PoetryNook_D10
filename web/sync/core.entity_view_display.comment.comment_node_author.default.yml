@@ -1,0 +1,27 @@
+uuid: ebedc94f-c26a-48dc-9224-a035382e57a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_author
+    - field.field.comment.comment_node_author.comment_body
+  module:
+    - text
+id: comment.comment_node_author.default
+targetEntityType: comment
+bundle: comment_node_author
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,8 @@
+uuid: 3cb8aa65-005a-455b-ba8f-94c75e0e03c7
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_ebook_classic
+label: 'Ebook Classic comment'
+target_entity_type_id: node
+description: null

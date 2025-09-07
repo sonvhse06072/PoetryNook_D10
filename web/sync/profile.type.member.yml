@@ -1,0 +1,12 @@
+uuid: c8fb19de-c523-43ae-bb58-835799c3fcf1
+langcode: en
+status: true
+dependencies: {  }
+id: member
+label: 'Member profile'
+display_label: null
+multiple: false
+registration: false
+roles: {  }
+allow_revisions: false
+new_revision: false

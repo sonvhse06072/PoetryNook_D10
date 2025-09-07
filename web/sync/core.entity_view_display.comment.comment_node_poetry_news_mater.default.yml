@@ -1,0 +1,27 @@
+uuid: 196b5566-20fc-4bca-a575-e4e851c3b7ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_poetry_news_mater
+    - field.field.comment.comment_node_poetry_news_mater.comment_body
+  module:
+    - text
+id: comment.comment_node_poetry_news_mater.default
+targetEntityType: comment
+bundle: comment_node_poetry_news_mater
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

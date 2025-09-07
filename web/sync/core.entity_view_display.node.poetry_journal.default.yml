@@ -1,0 +1,72 @@
+uuid: e823c5b3-cdf0-4235-806a-a638c2ce471a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.poetry_journal.body
+    - field.field.node.poetry_journal.comment_node_poetry_journal
+    - node.type.poetry_journal
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          c7225f92-21a5-4cf6-97cc-eae5f547e8bd:
+            uuid: c7225f92-21a5-4cf6-97cc-eae5f547e8bd
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poetry_journal:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          af3dcae7-b06e-4b92-a789-65e851eb59ae:
+            uuid: af3dcae7-b06e-4b92-a789-65e851eb59ae
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_journal:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.poetry_journal.default
+targetEntityType: node
+bundle: poetry_journal
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_poetry_journal: true

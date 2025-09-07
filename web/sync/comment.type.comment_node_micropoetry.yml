@@ -1,0 +1,8 @@
+uuid: e2ec82bb-2934-4d5f-9d1a-b1cf20dcc753
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_micropoetry
+label: 'Micropoetry comment'
+target_entity_type_id: node
+description: null

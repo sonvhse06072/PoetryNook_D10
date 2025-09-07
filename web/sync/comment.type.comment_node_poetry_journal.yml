@@ -1,0 +1,8 @@
+uuid: 51ceabba-c442-4735-a1eb-8907f26580f4
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_poetry_journal
+label: 'Poetry journal comment'
+target_entity_type_id: node
+description: null

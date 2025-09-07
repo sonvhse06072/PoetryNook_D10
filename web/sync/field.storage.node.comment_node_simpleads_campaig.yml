@@ -1,0 +1,20 @@
+uuid: 97a5088d-bc93-4d31-b7b0-6d63ce4e1069
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+id: node.comment_node_simpleads_campaig
+field_name: comment_node_simpleads_campaig
+entity_type: node
+type: comment
+settings:
+  comment_type: comment_node_simpleads_campaig
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

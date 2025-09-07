@@ -1,0 +1,75 @@
+uuid: 9499f61d-ac08-413d-be04-fbd1e6752017
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.poetry_art.body
+    - field.field.node.poetry_art.comment_node_poetry_art
+    - node.type.poetry_art
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          9cda6039-28b6-4f28-a906-84f6efe98408:
+            uuid: 9cda6039-28b6-4f28-a906-84f6efe98408
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poetry_art:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          77b6b653-a5be-4ccd-945c-e3ddcab1526b:
+            uuid: 77b6b653-a5be-4ccd-945c-e3ddcab1526b
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.poetry_art.teaser
+targetEntityType: node
+bundle: poetry_art
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_poetry_art: true

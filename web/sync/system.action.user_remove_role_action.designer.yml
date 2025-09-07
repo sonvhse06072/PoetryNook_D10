@@ -1,0 +1,14 @@
+uuid: b73a6881-511d-4c40-97b5-2e43935705f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.designer
+  module:
+    - user
+id: user_remove_role_action.designer
+label: 'Remove the designer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: designer

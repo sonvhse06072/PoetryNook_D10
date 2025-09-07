@@ -1,0 +1,72 @@
+uuid: deb4dd1b-4c8e-4e8c-bf63-de8b9ce5b007
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.review.body
+    - field.field.node.review.comment_node_review
+    - node.type.review
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          7e581c84-8332-46dc-a226-60b0c87b39cf:
+            uuid: 7e581c84-8332-46dc-a226-60b0c87b39cf
+            region: content
+            configuration:
+              id: 'extra_field_block:node:review:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          d1cf2b59-e954-484b-9271-120f6dda7f14:
+            uuid: d1cf2b59-e954-484b-9271-120f6dda7f14
+            region: content
+            configuration:
+              id: 'field_block:node:review:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.review.default
+targetEntityType: node
+bundle: review
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_review: true

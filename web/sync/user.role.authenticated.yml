@@ -1,0 +1,31 @@
+uuid: 2bf9d190-223c-4259-9387-b5e53eb0713f
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - contact
+    - media
+    - node
+    - search
+    - system
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'cancel account'
+  - 'change own username'
+  - 'edit own comments'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use advanced search'
+  - 'view media'
+  - 'view own unpublished content'

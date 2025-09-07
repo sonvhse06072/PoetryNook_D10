@@ -1,0 +1,8 @@
+uuid: bcd8190c-2234-4c43-8828-5f61fab333a6
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_member_story
+label: 'Member Story comment'
+target_entity_type_id: node
+description: null

@@ -1,0 +1,15 @@
+uuid: fc2544e9-d02b-49be-aba8-74df51e47403
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_48
+label: 'Thumbnail (48x48)'
+effects:
+  34fac615-f6d5-475c-af79-b567e46f67d2:
+    uuid: 34fac615-f6d5-475c-af79-b567e46f67d2
+    id: image_scale_and_crop
+    weight: -10
+    data:
+      width: 48
+      height: 48
+      anchor: center-center

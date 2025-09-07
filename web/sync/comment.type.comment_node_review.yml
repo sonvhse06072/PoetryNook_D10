@@ -1,0 +1,8 @@
+uuid: a12e4060-792c-4530-8299-56ccb256c0eb
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_review
+label: 'Review comment'
+target_entity_type_id: node
+description: null

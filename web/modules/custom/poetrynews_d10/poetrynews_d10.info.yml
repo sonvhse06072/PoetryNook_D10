@@ -1,0 +1,5 @@
+name: 'Poetry News D10'
+type: module
+description: 'Drupal 10-compatible rewrite of Poetry News custom field, widget, formatter, and optional migration mapping.'
+core_version_requirement: '^10 || ^11'
+package: Custom

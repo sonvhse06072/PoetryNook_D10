@@ -1,0 +1,8 @@
+uuid: 4cf4be10-39ec-4372-81e0-d8e1d66f6681
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_poetry_news_exter
+label: 'Poetry Resources comment'
+target_entity_type_id: node
+description: null

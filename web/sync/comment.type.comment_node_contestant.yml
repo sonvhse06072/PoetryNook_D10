@@ -1,0 +1,8 @@
+uuid: 1a67b889-e01b-4200-9927-f927f049ce0c
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_contestant
+label: 'Contestant comment'
+target_entity_type_id: node
+description: null

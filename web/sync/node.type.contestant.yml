@@ -1,0 +1,18 @@
+uuid: a35078a9-e20c-4290-8659-36f3ba745254
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Contestant
+type: contestant
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

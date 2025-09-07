@@ -1,0 +1,5 @@
+name: 'Content Approval D10'
+type: module
+description: 'Drupal 10-compatible field type for Content Approval and migration mapping from D7.'
+core_version_requirement: '^10 || ^11'
+package: Custom

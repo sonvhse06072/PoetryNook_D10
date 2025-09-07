@@ -1,0 +1,8 @@
+uuid: c0cdf594-2979-40e6-abcf-aa263c328f05
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_simpleads
+label: 'Simple Ad comment'
+target_entity_type_id: node
+description: null

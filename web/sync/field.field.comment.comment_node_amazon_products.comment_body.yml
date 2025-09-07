@@ -1,0 +1,22 @@
+uuid: 472a1df2-e9b1-4cfc-b210-666db2bcfa10
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_amazon_products
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_amazon_products.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_amazon_products
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

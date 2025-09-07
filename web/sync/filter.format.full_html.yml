@@ -1,0 +1,23 @@
+uuid: f449171d-ee51-4f43-93e4-7259c7c6eddf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vpZysv3RHJjhYzq7O_q5q8mVlHdrSzKELmXyiX6RtV0
+name: 'Full HTML'
+format: full_html
+weight: -8
+filters:
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -35
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -45
+    settings:
+      filter_url_length: 72

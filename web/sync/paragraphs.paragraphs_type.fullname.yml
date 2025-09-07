@@ -1,0 +1,10 @@
+uuid: 8eda28f8-e1cb-404e-8cbc-b1dd4933b5ed
+langcode: en
+status: true
+dependencies: {  }
+id: fullname
+label: Fullname
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_fullname'
+behavior_plugins: {  }

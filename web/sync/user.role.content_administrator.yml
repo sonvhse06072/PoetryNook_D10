@@ -1,0 +1,26 @@
+uuid: d1e4251c-3d27-4576-821c-ff6dd7c04cd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - comment
+    - filter
+    - node
+    - system
+id: content_administrator
+label: 'Content Administrator'
+weight: 5
+is_admin: null
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access user profiles'
+  - 'administer comments'
+  - 'bypass node access'
+  - 'edit own comments'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use text format full_html'
+  - 'view own unpublished content'

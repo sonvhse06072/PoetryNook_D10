@@ -1,0 +1,20 @@
+uuid: a7e318fe-8e18-4129-afa6-cebc9346ff6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+id: node.comment_node_member_poem
+field_name: comment_node_member_poem
+entity_type: node
+type: comment
+settings:
+  comment_type: comment_node_member_poem
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

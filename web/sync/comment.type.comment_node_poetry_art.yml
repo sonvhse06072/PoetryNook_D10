@@ -1,0 +1,8 @@
+uuid: 4259fc76-a97a-42a7-9184-e457b581825f
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_poetry_art
+label: 'Poetry Art comment'
+target_entity_type_id: node
+description: null

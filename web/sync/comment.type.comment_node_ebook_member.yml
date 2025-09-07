@@ -1,0 +1,8 @@
+uuid: 71cc1430-6e96-439b-af0c-c1b1f3f8c2a5
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_ebook_member
+label: 'Ebook Member comment'
+target_entity_type_id: node
+description: null

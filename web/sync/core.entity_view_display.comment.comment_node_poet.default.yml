@@ -1,0 +1,27 @@
+uuid: a25b22de-6349-4762-92af-cd34b99f020b
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_poet
+    - field.field.comment.comment_node_poet.comment_body
+  module:
+    - text
+id: comment.comment_node_poet.default
+targetEntityType: comment
+bundle: comment_node_poet
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

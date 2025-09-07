@@ -1,0 +1,22 @@
+uuid: abcae8bc-0f00-4483-926d-b5087dc2a195
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: poetry_nook_system_main
+theme: olivero
+region: content
+weight: -73
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: ''
+  label_display: '0'
+  provider: system
+visibility: {  }

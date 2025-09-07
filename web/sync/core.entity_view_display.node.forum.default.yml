@@ -1,0 +1,72 @@
+uuid: ef1499fa-d442-4a26-99de-4fe2f51e5300
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.forum.body
+    - field.field.node.forum.comment_forum
+    - node.type.forum
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0dc27a9e-7f9c-46eb-a7fa-0963c5e8b402:
+            uuid: 0dc27a9e-7f9c-46eb-a7fa-0963c5e8b402
+            region: content
+            configuration:
+              id: 'extra_field_block:node:forum:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          0881cb9e-e649-48a0-a1d9-23b0ee534583:
+            uuid: 0881cb9e-e649-48a0-a1d9-23b0ee534583
+            region: content
+            configuration:
+              id: 'field_block:node:forum:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.forum.default
+targetEntityType: node
+bundle: forum
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_forum: true

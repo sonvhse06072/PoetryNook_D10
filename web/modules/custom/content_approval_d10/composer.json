@@ -1,0 +1,14 @@
+{
+  "name": "custom/content_approval_d10",
+  "type": "drupal-module",
+  "description": "Drupal 10-compatible field type for Content Approval and migration mapping from D7",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1"
+  },
+  "extra": {
+    "drupal": {
+      "core": "^10 || ^11"
+    }
+  }
+}

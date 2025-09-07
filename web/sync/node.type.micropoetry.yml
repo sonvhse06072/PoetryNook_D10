@@ -1,0 +1,18 @@
+uuid: 753482ec-c81e-454e-9937-9d9f6410e168
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Micropoetry
+type: micropoetry
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,22 @@
+uuid: a5445eb2-3261-44f0-a268-bf31e567db3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_simpleads_campaig
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_simpleads_campaig.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_simpleads_campaig
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

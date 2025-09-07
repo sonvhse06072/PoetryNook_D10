@@ -1,0 +1,10 @@
+uuid: dbdab6c1-1b37-4c68-8672-72f2ecf80135
+langcode: en
+status: true
+dependencies: {  }
+id: poetry_reading
+label: 'Poetry reading'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_poetry_reading'
+behavior_plugins: {  }

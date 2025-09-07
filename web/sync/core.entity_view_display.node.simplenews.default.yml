@@ -1,0 +1,72 @@
+uuid: b30d9cf4-c2ed-4a49-a92c-93c323245b80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.simplenews.body
+    - field.field.node.simplenews.comment_node_simplenews
+    - node.type.simplenews
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          21f4d40a-d2c3-4f45-b6eb-4e8780acf79e:
+            uuid: 21f4d40a-d2c3-4f45-b6eb-4e8780acf79e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:simplenews:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          d26eef8b-6ef7-46c7-81b7-19758daecff9:
+            uuid: d26eef8b-6ef7-46c7-81b7-19758daecff9
+            region: content
+            configuration:
+              id: 'field_block:node:simplenews:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.simplenews.default
+targetEntityType: node
+bundle: simplenews
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_simplenews: true

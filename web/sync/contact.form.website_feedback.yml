@@ -1,0 +1,13 @@
+uuid: 16a0987f-8599-42c2-bc77-aaae22699cad
+langcode: en
+status: true
+dependencies: {  }
+id: website_feedback
+label: 'Website feedback'
+recipients:
+  - followingtheblueflute@gmail.com
+  - admin@poetrynook.com
+reply: 'Thank you for your feedback! We will respond to you within the next 48 hours.'
+weight: 0
+message: null
+redirect: null

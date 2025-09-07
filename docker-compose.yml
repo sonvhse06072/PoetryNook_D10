@@ -1,0 +1,61 @@
+services:
+  mariadb:
+    image: wodby/mariadb:$MARIADB_TAG
+    container_name: "${PROJECT_NAME}_mariadb"
+    stop_grace_period: 30s
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+    volumes:
+      - ./data:/var/lib/mysql # Use bind mount
+      - ./mariadb-init:/docker-entrypoint-initdb.d
+
+  php:
+    image: wodby/drupal-php:$PHP_TAG
+    container_name: "${PROJECT_NAME}_php"
+    environment:
+      PHP_MAIL_MIXED_LF_AND_CRLF: 1
+      PHP_SENDMAIL_PATH: '/bin/busybox sendmail -t -i -S mailhog:25'
+    volumes:
+    - ./:/var/www/html:cached
+
+  crond:
+    init: true
+    image: wodby/drupal-php:$PHP_TAG
+    container_name: "${PROJECT_NAME}_crond"
+    environment:
+      CRONTAB: "0 * * * * drush -r /var/www/html/web cron"
+    command: crond -f -d 0
+    volumes:
+      - ./:/var/www/html:cached
+
+  nginx:
+    image: wodby/nginx:$NGINX_TAG
+    container_name: "${PROJECT_NAME}_nginx"
+    depends_on:
+      - php
+    environment:
+      NGINX_LOG_LEVEL: debug
+      NGINX_BACKEND_HOST: php
+      NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
+      NGINX_SERVER_ROOT: /var/www/html/web
+    volumes:
+      - ./:/var/www/html:cached
+    ports:
+      - "80:80"
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: "${PROJECT_NAME}_pma"
+    environment:
+      PMA_HOST: $DB_HOST
+      PMA_USER: $DB_USER
+      PMA_PASSWORD: $DB_PASSWORD
+      UPLOAD_LIMIT: 1G
+    ports:
+      - "8080:80"
+
+volumes:
+  files:

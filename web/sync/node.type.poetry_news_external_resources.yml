@@ -1,0 +1,18 @@
+uuid: 1e64dffd-ceba-4ac3-b560-b1bbed0650ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Poetry Resources'
+type: poetry_news_external_resources
+description: 'Used for display links to external resources, such as poetry reviews, interviews, other poetry sites.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

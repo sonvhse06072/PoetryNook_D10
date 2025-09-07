@@ -1,0 +1,14 @@
+uuid: 68329bd6-4928-4396-9288-5189bdec50e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.designer
+  module:
+    - user
+id: user_add_role_action.designer
+label: 'Add the designer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: designer

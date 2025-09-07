@@ -1,0 +1,10 @@
+uuid: d241f681-1326-4cb9-bf46-8cd78a2a4d01
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aXZ2sOR-jVF6_oScPSJTjXCo333arzczomYQMnsJ8wU
+id: vote
+label: Vote
+value_type: points
+description: 'Migrated from Drupal 7'

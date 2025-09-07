@@ -1,0 +1,43 @@
+uuid: cfb10059-b9a0-4a58-ba77-1ac7b3eaf293
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_member_poem
+    - field.field.comment.comment_node_member_poem.comment_body
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: comment.comment_node_member_poem.default
+targetEntityType: comment
+bundle: comment_node_member_poem
+mode: default
+content:
+  author:
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

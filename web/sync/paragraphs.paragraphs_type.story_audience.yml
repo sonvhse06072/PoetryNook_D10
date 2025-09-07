@@ -1,0 +1,10 @@
+uuid: 66a7a95a-ebef-41f9-b91b-063ed34360bc
+langcode: en
+status: true
+dependencies: {  }
+id: story_audience
+label: 'Story audience'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_story_audience'
+behavior_plugins: {  }

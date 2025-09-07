@@ -1,0 +1,14 @@
+uuid: 96525d20-05fe-499c-87f8-7a695cadbdd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.judge
+  module:
+    - user
+id: user_add_role_action.judge
+label: 'Add the Judge role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: judge

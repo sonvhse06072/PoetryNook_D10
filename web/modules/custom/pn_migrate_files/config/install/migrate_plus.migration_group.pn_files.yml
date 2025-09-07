@@ -1,0 +1,8 @@
+id: pn_files
+label: 'PN Files Migration'
+shared_configuration:
+  source:
+    key: migrate
+  migration_tags:
+    - 'Drupal 7'
+    - 'Files'

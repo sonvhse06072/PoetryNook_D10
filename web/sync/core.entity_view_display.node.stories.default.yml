@@ -1,0 +1,72 @@
+uuid: 1fda24ff-8980-4f5e-8120-f4f77279e9c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.stories.body
+    - field.field.node.stories.comment_node_stories
+    - node.type.stories
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          8bbaff82-9aca-4042-889b-d0c21a03772b:
+            uuid: 8bbaff82-9aca-4042-889b-d0c21a03772b
+            region: content
+            configuration:
+              id: 'extra_field_block:node:stories:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          150f7fa9-e389-4c70-8459-63a007b65b74:
+            uuid: 150f7fa9-e389-4c70-8459-63a007b65b74
+            region: content
+            configuration:
+              id: 'field_block:node:stories:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.stories.default
+targetEntityType: node
+bundle: stories
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_stories: true

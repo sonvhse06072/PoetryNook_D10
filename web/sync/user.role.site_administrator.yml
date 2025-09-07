@@ -1,0 +1,70 @@
+uuid: 51fd1818-0352-4d5b-8384-39c4d674a799
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.page
+  module:
+    - block
+    - comment
+    - contact
+    - contextual
+    - filter
+    - image
+    - node
+    - path
+    - search
+    - system
+    - taxonomy
+    - views_ui
+id: site_administrator
+label: 'Site Administrator'
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access site-wide contact form'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer actions'
+  - 'administer blocks'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer content types'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer nodes'
+  - 'administer search'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer views'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create page content'
+  - 'create url aliases'
+  - 'delete any page content'
+  - 'delete own page content'
+  - 'edit any page content'
+  - 'edit own comments'
+  - 'edit own page content'
+  - 'post comments'
+  - 'search content'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'use advanced search'
+  - 'use text format full_html'
+  - 'view own unpublished content'
+  - 'view the administration theme'

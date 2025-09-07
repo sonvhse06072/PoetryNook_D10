@@ -1,0 +1,16 @@
+uuid: 1cae7093-b280-4c5e-812b-a65157670c1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main:'
+name: 'Simple Ad'
+type: simpleads
+description: Advertisement
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

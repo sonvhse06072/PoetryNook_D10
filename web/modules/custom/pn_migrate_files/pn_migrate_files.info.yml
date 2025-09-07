@@ -1,0 +1,11 @@
+name: 'PN Migrate Files'
+type: module
+description: 'Custom migrations for migrating Drupal 7 files using migrate_plus.'
+core_version_requirement: '^10 || ^11'
+package: 'Migration'
+dependencies:
+  - drupal:file
+  - drupal:migrate
+  - drupal:migrate_drupal
+  - drupal:migrate_plus
+  - drupal:migrate_tools

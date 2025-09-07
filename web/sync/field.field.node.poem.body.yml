@@ -1,0 +1,24 @@
+uuid: e6b9bd29-abfa-47d8-ab46-fb46b634e618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.poem
+  module:
+    - text
+id: node.poem.body
+field_name: body
+entity_type: node
+bundle: poem
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

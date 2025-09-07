@@ -1,0 +1,18 @@
+uuid: a61f0904-c600-4026-a8d2-020c29b16c0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Member poem'
+type: member_poem
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

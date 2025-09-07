@@ -1,0 +1,8 @@
+uuid: dd7ae4e4-866b-4123-95f8-5834e21de7f9
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_simplenews
+label: 'Simplenews newsletter comment'
+target_entity_type_id: node
+description: null

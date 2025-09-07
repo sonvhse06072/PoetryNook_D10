@@ -1,0 +1,9 @@
+uuid: 8bd03c3d-e47f-42c5-9c69-5820720fe15f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Ad Groups'
+vid: ad_groups
+description: 'Ad Groups'
+weight: 0
+new_revision: false

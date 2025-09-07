@@ -1,0 +1,22 @@
+uuid: 72526311-e961-4f7c-9f99-f8f645f53e5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_ebook_classic
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_ebook_classic.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_ebook_classic
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

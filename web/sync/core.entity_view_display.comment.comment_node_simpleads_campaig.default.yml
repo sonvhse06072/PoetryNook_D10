@@ -1,0 +1,27 @@
+uuid: e87f51db-57ed-44bf-a2c8-6c2786eddc62
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_simpleads_campaig
+    - field.field.comment.comment_node_simpleads_campaig.comment_body
+  module:
+    - text
+id: comment.comment_node_simpleads_campaig.default
+targetEntityType: comment
+bundle: comment_node_simpleads_campaig
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

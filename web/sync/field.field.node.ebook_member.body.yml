@@ -1,0 +1,24 @@
+uuid: 223894da-4c25-46f0-8b8f-bcb0174d5f28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.ebook_member
+  module:
+    - text
+id: node.ebook_member.body
+field_name: body
+entity_type: node
+bundle: ebook_member
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

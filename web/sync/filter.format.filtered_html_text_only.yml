@@ -1,0 +1,23 @@
+uuid: 9e107b4a-fb35-4b05-96d4-d84d622ebff6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Filtered HTML (text only)'
+format: filtered_html_text_only
+weight: -5
+filters:
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd>'
+      filter_html_help: true
+      filter_html_nofollow: false

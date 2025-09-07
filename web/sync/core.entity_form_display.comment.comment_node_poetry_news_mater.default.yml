@@ -1,0 +1,43 @@
+uuid: 7dee5ae9-98a0-44df-aede-31798793de77
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_poetry_news_mater
+    - field.field.comment.comment_node_poetry_news_mater.comment_body
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: comment.comment_node_poetry_news_mater.default
+targetEntityType: comment
+bundle: comment_node_poetry_news_mater
+mode: default
+content:
+  author:
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

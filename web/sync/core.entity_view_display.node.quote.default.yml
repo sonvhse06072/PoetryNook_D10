@@ -1,0 +1,72 @@
+uuid: 3de8b0c7-da77-4e70-995a-f5d9be4313f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.quote.body
+    - field.field.node.quote.comment_node_quote
+    - node.type.quote
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0c7c1cbc-4a46-414c-ad68-7d241b541f0d:
+            uuid: 0c7c1cbc-4a46-414c-ad68-7d241b541f0d
+            region: content
+            configuration:
+              id: 'extra_field_block:node:quote:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          d7130dff-91b2-450c-9fa2-3a7d84d1126e:
+            uuid: d7130dff-91b2-450c-9fa2-3a7d84d1126e
+            region: content
+            configuration:
+              id: 'field_block:node:quote:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.quote.default
+targetEntityType: node
+bundle: quote
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_quote: true

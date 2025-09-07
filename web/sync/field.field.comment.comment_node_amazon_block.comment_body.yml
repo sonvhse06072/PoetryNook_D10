@@ -1,0 +1,22 @@
+uuid: da236f24-ac80-4572-967e-c3cb76261902
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_amazon_block
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_amazon_block.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_amazon_block
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

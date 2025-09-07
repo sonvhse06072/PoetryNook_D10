@@ -1,0 +1,9 @@
+poetrynews_d10.field_settings:
+  type: mapping
+  label: 'Poetry News field settings'
+  mapping: {}
+
+poetrynews_d10.field_instance_settings:
+  type: mapping
+  label: 'Poetry News field instance settings'
+  mapping: {}

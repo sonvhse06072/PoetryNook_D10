@@ -1,0 +1,27 @@
+uuid: 997fcc35-676d-4399-b64a-878da9d7c844
+langcode: en
+status: true
+dependencies: {  }
+name: 'Filtered Html (without line breaks)'
+format: filtered_html_cut
+weight: -7
+filters:
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -38
+    settings: {  }
+  filter_null:
+    id: filter_null
+    provider: filter
+    status: true
+    weight: -41
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -42
+    settings:
+      filter_url_length: 72

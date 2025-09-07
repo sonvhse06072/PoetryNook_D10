@@ -1,0 +1,11 @@
+uuid: 76b2354c-440d-4455-abec-603ca415f3d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.token
+label: Token
+description: ''
+targetEntityType: profile
+cache: true

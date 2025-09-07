@@ -1,0 +1,9 @@
+uuid: 5ba1b504-a370-4c90-99b1-938833a1b5c5
+langcode: en
+status: true
+dependencies: {  }
+name: Dictionary
+vid: dictionary
+description: null
+weight: 0
+new_revision: false

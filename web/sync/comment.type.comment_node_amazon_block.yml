@@ -1,0 +1,8 @@
+uuid: 4dd7e71b-84e3-4e89-934b-0f556b815e5f
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_amazon_block
+label: 'Amazon Block comment'
+target_entity_type_id: node
+description: null

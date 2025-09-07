@@ -1,0 +1,18 @@
+uuid: 6679d4c9-3b8f-41bf-9fc0-c03a83d78cfb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Simplenews newsletter'
+type: simplenews
+description: 'A newsletter issue to be sent to subscribed email addresses.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

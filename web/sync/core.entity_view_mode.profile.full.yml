@@ -1,0 +1,11 @@
+uuid: 6f903e2b-3dab-4a27-9890-29a82f484481
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.full
+label: Full
+description: ''
+targetEntityType: profile
+cache: true

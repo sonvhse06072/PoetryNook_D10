@@ -1,0 +1,22 @@
+uuid: 866eedd7-b1fa-477c-a292-a3cf9dd76ea2
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+    - search
+    - system
+id: member
+label: member
+weight: 2
+is_admin: null
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access user profiles'
+  - 'edit own comments'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'view own unpublished content'

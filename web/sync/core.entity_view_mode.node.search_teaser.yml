@@ -1,0 +1,11 @@
+uuid: 2d2d6b6c-b1fd-4d4e-93cb-db5ba7d91857
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.search_teaser
+label: search_teaser
+description: ''
+targetEntityType: node
+cache: true

@@ -1,0 +1,33 @@
+uuid: 13a28b29-fa2a-4afb-bbf8-a7a220f1a84e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.comment_node_ebook_member
+    - node.type.ebook_member
+  module:
+    - comment
+id: node.ebook_member.comment_node_ebook_member
+field_name: comment_node_ebook_member
+entity_type: node
+bundle: ebook_member
+label: Comments
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 1
+  per_page: 50
+  anonymous: 0
+  form_location: true
+  preview: 0
+field_type: comment

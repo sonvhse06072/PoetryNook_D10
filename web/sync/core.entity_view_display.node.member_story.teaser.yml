@@ -1,0 +1,75 @@
+uuid: cd1414b9-6fd2-4867-9928-c447e7d07bff
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.member_story.body
+    - field.field.node.member_story.comment_node_member_story
+    - node.type.member_story
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          b0987a3e-3cf0-4bc1-aa5e-016003f61735:
+            uuid: b0987a3e-3cf0-4bc1-aa5e-016003f61735
+            region: content
+            configuration:
+              id: 'extra_field_block:node:member_story:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          0510c76b-2b4e-4659-92f0-0665b99903ae:
+            uuid: 0510c76b-2b4e-4659-92f0-0665b99903ae
+            region: content
+            configuration:
+              id: 'field_block:node:member_story:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.member_story.teaser
+targetEntityType: node
+bundle: member_story
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_member_story: true

@@ -1,0 +1,8 @@
+uuid: d1a76236-b1a0-40b7-b03b-8fb2d4202c5d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Insert View'
+format: insert_view
+weight: -6
+filters: {  }

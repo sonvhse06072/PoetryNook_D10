@@ -1,0 +1,8 @@
+uuid: 969a3815-1fa2-42aa-91f4-527692be3105
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_poetry_news_mater
+label: 'Poetry News: Material comment'
+target_entity_type_id: node
+description: null

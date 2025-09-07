@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @file
+ * Minimal module file. The D7 business logic around permissions and
+ * form alters is not ported here; consider using Content Moderation
+ * in Drupal 10 for approval workflows, or port the behavior in a
+ * separate issue using modern events and entity hooks.
+ */

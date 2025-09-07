@@ -1,0 +1,18 @@
+uuid: daf6c3c2-f86d-407b-a5f2-9391df431d1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Poetry News: Material'
+type: poetry_news_material
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

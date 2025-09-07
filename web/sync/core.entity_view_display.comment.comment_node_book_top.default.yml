@@ -1,0 +1,27 @@
+uuid: 9708db0f-e4ec-4c47-bee2-1868c48911de
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_book_top
+    - field.field.comment.comment_node_book_top.comment_body
+  module:
+    - text
+id: comment.comment_node_book_top.default
+targetEntityType: comment
+bundle: comment_node_book_top
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

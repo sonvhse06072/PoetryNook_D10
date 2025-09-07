@@ -1,0 +1,72 @@
+uuid: 2cca1d29-da8d-4102-8436-a0088a41e383
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contest.body
+    - field.field.node.contest.comment_node_contest
+    - node.type.contest
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ac7cb498-e05e-430c-930c-c7a629f0411b:
+            uuid: ac7cb498-e05e-430c-930c-c7a629f0411b
+            region: content
+            configuration:
+              id: 'extra_field_block:node:contest:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          279264b6-eec3-4253-a04b-05321ecab2b8:
+            uuid: 279264b6-eec3-4253-a04b-05321ecab2b8
+            region: content
+            configuration:
+              id: 'field_block:node:contest:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.contest.default
+targetEntityType: node
+bundle: contest
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_contest: true

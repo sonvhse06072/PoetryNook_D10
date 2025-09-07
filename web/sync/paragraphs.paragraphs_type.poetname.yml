@@ -1,0 +1,10 @@
+uuid: 84dad6ca-d34e-4089-862c-32d2ef203835
+langcode: en
+status: true
+dependencies: {  }
+id: poetname
+label: Poetname
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_poetname'
+behavior_plugins: {  }

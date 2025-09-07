@@ -1,0 +1,75 @@
+uuid: 46039cd6-ebb6-4bd5-beba-d6d5f03322b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.poetry_journal.body
+    - field.field.node.poetry_journal.comment_node_poetry_journal
+    - node.type.poetry_journal
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          9b86683d-8111-45f7-a613-f3ecddf553a5:
+            uuid: 9b86683d-8111-45f7-a613-f3ecddf553a5
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poetry_journal:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          e85dfde3-ed2b-49a6-b60f-5543230cd928:
+            uuid: e85dfde3-ed2b-49a6-b60f-5543230cd928
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_journal:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.poetry_journal.teaser
+targetEntityType: node
+bundle: poetry_journal
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_poetry_journal: true

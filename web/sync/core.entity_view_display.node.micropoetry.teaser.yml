@@ -1,0 +1,75 @@
+uuid: 72bcfaa5-a48c-4d2a-98a8-7b0511f772a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.micropoetry.body
+    - field.field.node.micropoetry.comment_node_micropoetry
+    - node.type.micropoetry
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          2b12e841-e08b-4d79-b9b8-e8691e355875:
+            uuid: 2b12e841-e08b-4d79-b9b8-e8691e355875
+            region: content
+            configuration:
+              id: 'extra_field_block:node:micropoetry:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          a9258f26-f752-4518-a7a6-71e473ee22a8:
+            uuid: a9258f26-f752-4518-a7a6-71e473ee22a8
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.micropoetry.teaser
+targetEntityType: node
+bundle: micropoetry
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_micropoetry: true

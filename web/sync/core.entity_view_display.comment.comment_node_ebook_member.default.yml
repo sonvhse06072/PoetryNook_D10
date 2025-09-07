@@ -1,0 +1,27 @@
+uuid: 97caf383-423c-4c40-8bef-295227e010ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_ebook_member
+    - field.field.comment.comment_node_ebook_member.comment_body
+  module:
+    - text
+id: comment.comment_node_ebook_member.default
+targetEntityType: comment
+bundle: comment_node_ebook_member
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

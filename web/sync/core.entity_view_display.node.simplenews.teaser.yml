@@ -1,0 +1,75 @@
+uuid: 6976d740-45ed-47fa-b22d-a3ded53e68de
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.simplenews.body
+    - field.field.node.simplenews.comment_node_simplenews
+    - node.type.simplenews
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          a931a932-a6c2-4b78-9634-a6cac3c8e3e9:
+            uuid: a931a932-a6c2-4b78-9634-a6cac3c8e3e9
+            region: content
+            configuration:
+              id: 'extra_field_block:node:simplenews:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          8aaab9e4-0485-4a11-a4a5-dc4a87e280cd:
+            uuid: 8aaab9e4-0485-4a11-a4a5-dc4a87e280cd
+            region: content
+            configuration:
+              id: 'field_block:node:simplenews:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.simplenews.teaser
+targetEntityType: node
+bundle: simplenews
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_simplenews: true

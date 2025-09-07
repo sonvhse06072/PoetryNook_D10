@@ -1,0 +1,27 @@
+uuid: b0a36981-a660-4f4d-84b0-8a315a22e411
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_poetry_journal
+    - field.field.comment.comment_node_poetry_journal.comment_body
+  module:
+    - text
+id: comment.comment_node_poetry_journal.default
+targetEntityType: comment
+bundle: comment_node_poetry_journal
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

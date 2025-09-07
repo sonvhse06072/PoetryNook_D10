@@ -1,0 +1,27 @@
+uuid: 53aeeddb-37e7-492e-a4f9-78187e8dc6b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_micropoetry
+    - field.field.comment.comment_node_micropoetry.comment_body
+  module:
+    - text
+id: comment.comment_node_micropoetry.default
+targetEntityType: comment
+bundle: comment_node_micropoetry
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

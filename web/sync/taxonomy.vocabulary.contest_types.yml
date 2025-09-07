@@ -1,0 +1,9 @@
+uuid: e9581159-26b0-4e1c-99a6-add6b67757f1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Contest types'
+vid: contest_types
+description: null
+weight: 0
+new_revision: false

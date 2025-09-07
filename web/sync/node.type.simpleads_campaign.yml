@@ -1,0 +1,16 @@
+uuid: d2654837-5eb3-4c5e-9f52-8aa1dea7b032
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main:'
+name: 'Simple Ad Campaign'
+type: simpleads_campaign
+description: 'Advertisement Campaign'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

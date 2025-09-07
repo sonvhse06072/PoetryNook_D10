@@ -1,0 +1,75 @@
+uuid: 27c8c559-b214-48fa-a14a-c7e16a7c3e6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.poet.body
+    - field.field.node.poet.comment_node_poet
+    - node.type.poet
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          98c8f026-70c8-4322-986b-11af1429607e:
+            uuid: 98c8f026-70c8-4322-986b-11af1429607e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poet:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          45b60be7-8d20-401e-85c0-8d853989c9c2:
+            uuid: 45b60be7-8d20-401e-85c0-8d853989c9c2
+            region: content
+            configuration:
+              id: 'field_block:node:poet:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.poet.teaser
+targetEntityType: node
+bundle: poet
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_node_poet: true
