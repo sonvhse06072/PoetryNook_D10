@@ -1,0 +1,47 @@
+uuid: 20d3fdac-b4e3-40c7-b3c2-94b1283877e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_poetry_news_mater.default
+    - field.field.node.poetry_news_material.comment_node_poetry_news_mater
+    - field.field.node.poetry_news_material.field_resource0
+    - node.type.poetry_news_material
+  module:
+    - comment
+    - poetrynews_d10
+    - user
+id: node.poetry_news_material.default
+targetEntityType: node
+bundle: poetry_news_material
+mode: default
+content:
+  comment_node_poetry_news_mater:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_resource0:
+    type: poetrynews_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

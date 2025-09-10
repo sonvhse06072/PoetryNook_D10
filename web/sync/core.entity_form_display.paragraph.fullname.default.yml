@@ -1,0 +1,40 @@
+uuid: 27857e65-3d73-4541-b2e1-7bd686ccae10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fullname.field_first_name_author
+    - field.field.paragraph.fullname.field_last_name
+    - paragraphs.paragraphs_type.fullname
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.fullname.default
+targetEntityType: paragraph
+bundle: fullname
+mode: default
+content:
+  field_first_name_author:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

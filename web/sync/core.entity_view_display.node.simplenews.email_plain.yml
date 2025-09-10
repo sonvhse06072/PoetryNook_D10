@@ -1,0 +1,33 @@
+uuid: a0e1ca6e-ab9e-4871-85a6-3a86cdfcbfa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_plain
+    - field.field.node.simplenews.body
+    - field.field.node.simplenews.comment_node_simplenews
+    - field.field.node.simplenews.field_simplenews_term
+    - node.type.simplenews
+  module:
+    - user
+id: node.simplenews.email_plain
+targetEntityType: node
+bundle: simplenews
+mode: email_plain
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  body: true
+  comment_node_simplenews: true
+  field_simplenews_term: true
+  langcode: true
+  search_api_excerpt: true

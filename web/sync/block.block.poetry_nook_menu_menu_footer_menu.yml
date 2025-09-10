@@ -1,0 +1,25 @@
+uuid: 406005fa-f24d-4819-a128-126dd4174d0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-footer-menu
+  module:
+    - system
+  theme:
+    - olivero
+id: poetry_nook_menu_menu_footer_menu
+theme: olivero
+region: content
+weight: -70
+provider: null
+plugin: 'system_menu_block:menu-footer-menu'
+settings:
+  id: 'system_menu_block:menu-footer-menu'
+  label: ''
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

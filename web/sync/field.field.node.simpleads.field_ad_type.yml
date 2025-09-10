@@ -1,0 +1,23 @@
+uuid: 593c6a13-bb25-4078-9e1c-f0adb0b3211c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_type
+    - node.type.simpleads
+  module:
+    - options
+id: node.simpleads.field_ad_type
+field_name: field_ad_type
+entity_type: node
+bundle: simpleads
+label: 'Ad Type'
+description: 'Please select Ad type.'
+required: true
+translatable: false
+default_value:
+  -
+    value: graphic
+default_value_callback: ''
+settings: {  }
+field_type: list_string

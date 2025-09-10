@@ -1,0 +1,21 @@
+uuid: 54cea4ec-fa19-4f8a-8712-f8461aa7dac7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_content_type
+    - taxonomy.vocabulary.contest_types
+  module:
+    - options
+id: taxonomy_term.contest_types.field_content_type
+field_name: field_content_type
+entity_type: taxonomy_term
+bundle: contest_types
+label: 'Content type'
+description: 'Allowed content types for contests of selected type.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Drupal 10 port of Amazon Books blocks.
+ */
+
+use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\Core\Pager\PagerManagerInterface;
+use Drupal\Core\Pager\PagerParametersInterface;
+
+/**
+ * Nothing here; functionality provided via Block plugin and Controller.
+ */

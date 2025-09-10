@@ -1,0 +1,19 @@
+uuid: e24b2a0e-8fa3-48da-b917-9945b5afdb70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_machine_name
+    - taxonomy.vocabulary.contest_types
+id: taxonomy_term.contest_types.field_machine_name
+field_name: field_machine_name
+entity_type: taxonomy_term
+bundle: contest_types
+label: 'Machine name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

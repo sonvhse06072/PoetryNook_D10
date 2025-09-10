@@ -1,0 +1,23 @@
+uuid: f1292322-0ab7-4af2-adfb-e940b8ec1f31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_winner
+    - node.type.contestant
+id: node.contestant.field_winner
+field_name: field_winner
+entity_type: node
+bundle: contestant
+label: Winner
+description: 'Check this if contestant is the winner of the contest.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Winner
+  off_label: ''
+field_type: boolean

@@ -1,0 +1,24 @@
+uuid: 6a95ef1f-45a8-4695-aca5-6c7e50570a20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_story_video
+    - node.type.member_story
+  module:
+    - video_embed_field
+id: node.member_story.field_story_video
+field_name: field_story_video
+entity_type: node
+bundle: member_story
+label: 'Story Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+field_type: video_embed_field

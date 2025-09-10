@@ -1,0 +1,40 @@
+uuid: f54ab123-a32f-41b3-8a55-8db27a44f9df
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_amazon_block.default
+    - field.field.node.amazon_block.comment_node_amazon_block
+    - field.field.node.amazon_block.field_amazon_product_id
+    - node.type.amazon_block
+  module:
+    - comment
+    - user
+id: node.amazon_block.default
+targetEntityType: node
+bundle: amazon_block
+mode: default
+content:
+  comment_node_amazon_block:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  field_amazon_product_id: true
+  langcode: true
+  search_api_excerpt: true

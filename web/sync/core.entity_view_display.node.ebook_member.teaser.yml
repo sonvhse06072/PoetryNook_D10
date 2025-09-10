@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.ebook_member.body
     - field.field.node.ebook_member.comment_node_ebook_member
+    - field.field.node.ebook_member.field_ebook_cover
+    - field.field.node.ebook_member.field_ebook_file
+    - field.field.node.ebook_member.field_rating
     - node.type.ebook_member
   module:
     - field_layout
@@ -52,6 +55,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          e2d7aa47-b280-4750-90db-8767efdc9113:
+            uuid: e2d7aa47-b280-4750-90db-8767efdc9113
+            region: content
+            configuration:
+              id: 'extra_field_block:node:ebook_member:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.ebook_member.teaser
 targetEntityType: node
@@ -71,5 +84,15 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_ebook_member: true
+  field_ebook_cover: true
+  field_ebook_file: true
+  field_rating: true
+  langcode: true
+  search_api_excerpt: true

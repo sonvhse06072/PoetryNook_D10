@@ -1,0 +1,19 @@
+uuid: 273ff2c3-d805-4e37-aeec-a22dc1135d55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_start_date
+    - node.type.simpleads
+id: node.simpleads.field_ad_start_date
+field_name: field_ad_start_date
+entity_type: node
+bundle: simpleads
+label: 'Active Date'
+description: 'Allowed date formats: now, tomorrow, next week, 10 September 2011, +1 day, +1 week, +1 year, +1 week 2 days 4 hours 2 seconds, next Monday, last Friday, mm/dd/yyyy hh:mm am/pm'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

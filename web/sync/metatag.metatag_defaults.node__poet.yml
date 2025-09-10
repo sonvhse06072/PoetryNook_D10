@@ -1,0 +1,10 @@
+uuid: ee1ab4d8-1d2a-45c5-91ab-c2595012d1d5
+langcode: en
+status: true
+dependencies: {  }
+id: node__poet
+label: 'Node: Poet'
+tags:
+  abstract: 'All poems by [node:title] . Discover and discuss poems about [node:title] '
+  keywords: '[node:title], biography, resources, poet, books, comments, works, information,  author, poem, poet, poetry, literature, poems, poets'
+  title: '[node:title] : Read Poems by Poet [node:title]'

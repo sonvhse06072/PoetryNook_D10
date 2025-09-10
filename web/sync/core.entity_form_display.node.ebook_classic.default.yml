@@ -5,10 +5,18 @@ dependencies:
   config:
     - field.field.node.ebook_classic.body
     - field.field.node.ebook_classic.comment_node_ebook_classic
+    - field.field.node.ebook_classic.field_ebook_author
+    - field.field.node.ebook_classic.field_ebook_cover
+    - field.field.node.ebook_classic.field_ebook_file
+    - field.field.node.ebook_classic.field_rating
+    - image.style.thumbnail
     - node.type.ebook_classic
   module:
     - comment
     - field_layout
+    - file
+    - fivestar
+    - image
     - layout_discovery
     - path
     - text
@@ -43,6 +51,47 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_ebook_author:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ebook_cover:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_ebook_file:
+    type: file_generic
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_rating:
+    type: fivestar_stars
+    weight: 7
+    region: content
+    settings:
+      text_format: none
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -89,4 +138,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.node.poetry_journal.body
     - field.field.node.poetry_journal.comment_node_poetry_journal
+    - field.field.node.poetry_journal.field_amazon_product_id
     - node.type.poetry_journal
   module:
+    - asin
     - comment
     - field_layout
     - layout_discovery
@@ -43,6 +45,19 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_amazon_product_id:
+    type: asin_text
+    weight: 33
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -89,4 +104,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

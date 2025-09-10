@@ -1,0 +1,8 @@
+uuid: fdb7137f-bb02-428c-aba3-8093cb021992
+langcode: en
+status: true
+dependencies: {  }
+id: node_author_form
+label: 'Node Author Form'
+description: null
+spamicide_form_id: node_author_form

@@ -1,0 +1,21 @@
+uuid: 02f354b1-65d8-4d28-ac16-cb094783d6f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_poet
+label: 'Content - Poet'
+type: 'canonical_entities:node'
+pattern: 'poet/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      poet: poet
+selection_logic: and
+weight: 0
+relationships: {  }

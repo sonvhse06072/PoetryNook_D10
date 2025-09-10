@@ -1,0 +1,40 @@
+uuid: b0fa7cea-5d63-43bf-a477-046bba82148d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poetname
+    - node.type.poet
+    - paragraphs.paragraphs_type.poetname
+  module:
+    - entity_reference_revisions
+id: node.poet.field_poetname
+field_name: field_poetname
+entity_type: node
+bundle: poet
+label: Fullname
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      poetname: poetname
+    negate: 0
+    target_bundles_drag_drop:
+      fullname:
+        weight: 2
+        enabled: false
+      poetname:
+        weight: 1
+        enabled: true
+      poetry_reading:
+        weight: 3
+        enabled: false
+      story_audience:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

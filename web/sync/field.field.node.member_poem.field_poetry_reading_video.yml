@@ -1,0 +1,24 @@
+uuid: 071dd060-b422-4dfa-9131-89304a2915dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poetry_reading_video
+    - node.type.member_poem
+  module:
+    - video_embed_field
+id: node.member_poem.field_poetry_reading_video
+field_name: field_poetry_reading_video
+entity_type: node
+bundle: member_poem
+label: 'Poetry Reading (Video)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    - youtube
+    - vimeo
+field_type: video_embed_field

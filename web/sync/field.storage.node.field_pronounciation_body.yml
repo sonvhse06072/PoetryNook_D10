@@ -1,0 +1,19 @@
+uuid: f89e2ad2-9e23-4bf5-8bb2-23ccf1bc06e6
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_pronounciation_body
+field_name: field_pronounciation_body
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

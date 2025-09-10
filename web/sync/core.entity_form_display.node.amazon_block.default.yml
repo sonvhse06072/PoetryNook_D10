@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.amazon_block.comment_node_amazon_block
+    - field.field.node.amazon_block.field_amazon_product_id
     - node.type.amazon_block
   module:
+    - asin
     - comment
     - field_layout
     - layout_discovery
@@ -31,6 +33,19 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_amazon_product_id:
+    type: asin_text
+    weight: 32
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -77,4 +92,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

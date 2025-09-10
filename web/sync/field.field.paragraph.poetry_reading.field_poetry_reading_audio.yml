@@ -1,0 +1,27 @@
+uuid: 0ddb7429-9fd0-45f2-9bf6-dadb86e0a989
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poetry_reading_audio
+    - paragraphs.paragraphs_type.poetry_reading
+  module:
+    - file
+id: paragraph.poetry_reading.field_poetry_reading_audio
+field_name: field_poetry_reading_audio
+entity_type: paragraph
+bundle: poetry_reading
+label: 'Poetry Reading (Audio)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: mp3
+  max_filesize: '15 MB'
+  description_field: false
+field_type: file

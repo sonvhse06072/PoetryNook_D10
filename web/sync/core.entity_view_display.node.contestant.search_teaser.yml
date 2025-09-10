@@ -1,0 +1,47 @@
+uuid: 964a0cea-4543-4e8d-8757-b5496c266e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_teaser
+    - field.field.node.contestant.body
+    - field.field.node.contestant.comment_node_contestant
+    - field.field.node.contestant.field_competition_work
+    - field.field.node.contestant.field_contest
+    - field.field.node.contestant.field_honorable_mention
+    - field.field.node.contestant.field_image
+    - field.field.node.contestant.field_poetry_reading
+    - field.field.node.contestant.field_poetry_reading_video
+    - field.field.node.contestant.field_rating
+    - field.field.node.contestant.field_winner
+    - node.type.contestant
+  module:
+    - user
+id: node.contestant.search_teaser
+targetEntityType: node
+bundle: contestant
+mode: search_teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  body: true
+  comment_node_contestant: true
+  field_competition_work: true
+  field_contest: true
+  field_honorable_mention: true
+  field_image: true
+  field_poetry_reading: true
+  field_poetry_reading_video: true
+  field_rating: true
+  field_winner: true
+  langcode: true
+  search_api_excerpt: true

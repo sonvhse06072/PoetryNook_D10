@@ -1,0 +1,39 @@
+uuid: 7926a12c-c789-4091-97b6-b532b3836bd3
+langcode: und
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_content_type
+field_name: field_content_type
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: member_poem
+      label: member_poem
+    -
+      value: translation
+      label: translation
+    -
+      value: micropoetry
+      label: micropoetry
+    -
+      value: poetry_art
+      label: poetry_art
+    -
+      value: poetry_reading
+      label: poetry_reading
+    -
+      value: review
+      label: review
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

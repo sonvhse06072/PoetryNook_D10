@@ -1,0 +1,31 @@
+uuid: f096e79d-aa8c-4461-89df-facdb64a8bc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.poetname.field_first_name
+    - field.field.paragraph.poetname.field_lastname
+    - paragraphs.paragraphs_type.poetname
+id: paragraph.poetname.default
+targetEntityType: paragraph
+bundle: poetname
+mode: default
+content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_lastname:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 1bbf54f9-bf66-4df6-985f-a4c2eb74576d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - olivero
+id: poetry_nook_forum_active
+theme: olivero
+region: content
+weight: -61
+provider: null
+plugin: forum_active_block
+settings:
+  id: broken
+  label: ''
+  label_display: '0'
+  provider: core
+  block_count: '5'
+visibility: {  }

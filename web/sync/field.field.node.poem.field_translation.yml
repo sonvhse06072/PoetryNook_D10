@@ -1,0 +1,23 @@
+uuid: cd70aec3-5e40-4683-9c71-33df1641f1f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation
+    - node.type.poem
+id: node.poem.field_translation
+field_name: field_translation
+entity_type: node
+bundle: poem
+label: Translation
+description: 'Check this if poem is translation'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

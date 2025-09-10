@@ -3,15 +3,32 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_member_poem.default
     - field.field.node.member_poem.body
     - field.field.node.member_poem.comment_node_member_poem
+    - field.field.node.member_poem.field_author_of_original
+    - field.field.node.member_poem.field_image
+    - field.field.node.member_poem.field_poetry_reading
+    - field.field.node.member_poem.field_poetry_reading_video
+    - field.field.node.member_poem.field_rating
+    - field.field.node.member_poem.field_tags
+    - field.field.node.member_poem.field_translation
+    - field.field.node.member_poem.field_translation_for
+    - field.field.node.member_poem.field_year
+    - field.field.node.member_poem.taxonomy_forums
     - node.type.member_poem
   module:
+    - comment
+    - datetime
+    - entity_reference_revisions
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
+    - options
     - text
     - user
+    - video_embed_field
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -50,6 +67,708 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          79811165-aa4a-46f9-96fe-15a3c8d6052c:
+            uuid: 79811165-aa4a-46f9-96fe-15a3c8d6052c
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          8cc0a2b0-184c-4ae1-b64c-832e1f20323e:
+            uuid: 8cc0a2b0-184c-4ae1-b64c-832e1f20323e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          d9fcb67f-3638-47ea-9e0f-3ead6eb37386:
+            uuid: d9fcb67f-3638-47ea-9e0f-3ead6eb37386
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_year'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          a7520b32-2b1f-48ec-b5c0-255cb5b2c0a6:
+            uuid: a7520b32-2b1f-48ec-b5c0-255cb5b2c0a6
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_author_of_original'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          93fd4a25-bcf0-4c61-b1c5-88f48ff21e11:
+            uuid: 93fd4a25-bcf0-4c61-b1c5-88f48ff21e11
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_translation'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          08abf41f-fce8-408d-aa1e-adf0769d05fc:
+            uuid: 08abf41f-fce8-408d-aa1e-adf0769d05fc
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: full
+                  link: ''
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          8965b48d-5f1d-4cf8-af4a-cbeb1387216c:
+            uuid: 8965b48d-5f1d-4cf8-af4a-cbeb1387216c
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: video_embed_field_video
+                label: hidden
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          220fc3a2-60eb-45fc-8f36-c4e4e0bd8a65:
+            uuid: 220fc3a2-60eb-45fc-8f36-c4e4e0bd8a65
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          dd8d39ac-5eff-4a77-8259-42848898ab82:
+            uuid: dd8d39ac-5eff-4a77-8259-42848898ab82
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          1a785c9d-89ac-4cbf-9d0e-37bb2d6dc00e:
+            uuid: 1a785c9d-89ac-4cbf-9d0e-37bb2d6dc00e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          34641523-eeef-4eb1-9b9c-e28e0054ca1e:
+            uuid: 34641523-eeef-4eb1-9b9c-e28e0054ca1e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_year'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          6548d6c3-017b-41e5-ab4d-6bf04dd9ed67:
+            uuid: 6548d6c3-017b-41e5-ab4d-6bf04dd9ed67
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_author_of_original'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          7a93c5e4-e2ac-472f-9250-fe692fb0a114:
+            uuid: 7a93c5e4-e2ac-472f-9250-fe692fb0a114
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_translation'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
+          8978490a-937d-4360-872b-af3c52d637d9:
+            uuid: 8978490a-937d-4360-872b-af3c52d637d9
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: full
+                  link: ''
+                third_party_settings: {  }
+            weight: 15
+            additional: {  }
+          f8bff171-d0df-49b8-9911-219441a78d16:
+            uuid: f8bff171-d0df-49b8-9911-219441a78d16
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: video_embed_field_video
+                label: hidden
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings: {  }
+            weight: 16
+            additional: {  }
+          1e4c4849-a413-41fd-a213-b58523e0c720:
+            uuid: 1e4c4849-a413-41fd-a213-b58523e0c720
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 17
+            additional: {  }
+          3639fb40-5ebc-4baf-8855-21a75f610c6e:
+            uuid: 3639fb40-5ebc-4baf-8855-21a75f610c6e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 18
+            additional: {  }
+          05472546-5e9d-4324-9ef3-cfbd285d2fa0:
+            uuid: 05472546-5e9d-4324-9ef3-cfbd285d2fa0
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 19
+            additional: {  }
+          138284d1-17e7-4100-b811-d5ac85d1c887:
+            uuid: 138284d1-17e7-4100-b811-d5ac85d1c887
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_year'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 20
+            additional: {  }
+          cdc32ade-079f-43ad-b531-255be238382f:
+            uuid: cdc32ade-079f-43ad-b531-255be238382f
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_author_of_original'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 21
+            additional: {  }
+          d01d53a3-6dc2-4a43-8e54-6a8920f9d68e:
+            uuid: d01d53a3-6dc2-4a43-8e54-6a8920f9d68e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_translation'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 22
+            additional: {  }
+          078cad92-c78e-40f2-8be6-ae8219e20dd2:
+            uuid: 078cad92-c78e-40f2-8be6-ae8219e20dd2
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: full
+                  link: ''
+                third_party_settings: {  }
+            weight: 23
+            additional: {  }
+          9d9bc150-6621-42cb-a477-db6451de9730:
+            uuid: 9d9bc150-6621-42cb-a477-db6451de9730
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: video_embed_field_video
+                label: hidden
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings: {  }
+            weight: 24
+            additional: {  }
+          df33025a-619e-4ee7-a209-039d0360983d:
+            uuid: df33025a-619e-4ee7-a209-039d0360983d
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 25
+            additional: {  }
+          0abab8e1-0ac3-4ecf-b326-1c0549e6cfcf:
+            uuid: 0abab8e1-0ac3-4ecf-b326-1c0549e6cfcf
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 26
+            additional: {  }
+          6feee306-9b98-49b2-b6cd-e85f120ef448:
+            uuid: 6feee306-9b98-49b2-b6cd-e85f120ef448
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 27
+            additional: {  }
+          903a8b95-d0e3-46b9-a24f-04845fe03d56:
+            uuid: 903a8b95-d0e3-46b9-a24f-04845fe03d56
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_year'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 28
+            additional: {  }
+          b03655e3-6f83-436c-91f3-78402b2143f3:
+            uuid: b03655e3-6f83-436c-91f3-78402b2143f3
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_author_of_original'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 29
+            additional: {  }
+          50a89c9e-92ba-485a-bf7d-97ceeecca585:
+            uuid: 50a89c9e-92ba-485a-bf7d-97ceeecca585
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_translation'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 30
+            additional: {  }
+          92244fb1-9f5a-4b24-aee6-0f2964bbb176:
+            uuid: 92244fb1-9f5a-4b24-aee6-0f2964bbb176
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: full
+                  link: ''
+                third_party_settings: {  }
+            weight: 31
+            additional: {  }
+          0fe2dca1-7e92-4833-a67e-21bc550dc23c:
+            uuid: 0fe2dca1-7e92-4833-a67e-21bc550dc23c
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: video_embed_field_video
+                label: hidden
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings: {  }
+            weight: 32
+            additional: {  }
+          e9376d68-94d9-4bbd-a350-f44b940e12c7:
+            uuid: e9376d68-94d9-4bbd-a350-f44b940e12c7
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 33
+            additional: {  }
+          315ebe2a-4aad-4650-bc49-ff3b17e44c8e:
+            uuid: 315ebe2a-4aad-4650-bc49-ff3b17e44c8e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 34
+            additional: {  }
+          56ca21ec-f9e1-47cb-b993-723ef94854dd:
+            uuid: 56ca21ec-f9e1-47cb-b993-723ef94854dd
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 35
+            additional: {  }
+          fc2ed107-0d44-496d-823a-a1891bdcb16d:
+            uuid: fc2ed107-0d44-496d-823a-a1891bdcb16d
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_year'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 36
+            additional: {  }
+          4dc1cfe5-c3e1-4f72-9cfe-4feb7949a016:
+            uuid: 4dc1cfe5-c3e1-4f72-9cfe-4feb7949a016
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_author_of_original'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 37
+            additional: {  }
+          4b88b46c-c343-4897-b964-6ec62ccbbda8:
+            uuid: 4b88b46c-c343-4897-b964-6ec62ccbbda8
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_translation'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 38
+            additional: {  }
+          0fd33624-ea59-4fe8-97b6-97ab167afa98:
+            uuid: 0fd33624-ea59-4fe8-97b6-97ab167afa98
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: full
+                  link: ''
+                third_party_settings: {  }
+            weight: 39
+            additional: {  }
+          50475c3b-c96f-45e8-886f-1129e105303e:
+            uuid: 50475c3b-c96f-45e8-886f-1129e105303e
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:field_poetry_reading_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: video_embed_field_video
+                label: hidden
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings: {  }
+            weight: 40
+            additional: {  }
+          e0f8af3d-d64d-408e-9dd7-0ff0f7c9dc46:
+            uuid: e0f8af3d-d64d-408e-9dd7-0ff0f7c9dc46
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 41
+            additional: {  }
+          0710c5a1-980f-400e-b12b-2472058cb40b:
+            uuid: 0710c5a1-980f-400e-b12b-2472058cb40b
+            region: content
+            configuration:
+              id: 'extra_field_block:node:member_poem:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 42
+            additional: {  }
+          afcb6ad9-7533-4bad-b06d-fdc641a2f7f1:
+            uuid: afcb6ad9-7533-4bad-b06d-fdc641a2f7f1
+            region: content
+            configuration:
+              id: 'field_block:node:member_poem:comment_node_member_poem'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 43
+            additional: {  }
         third_party_settings: {  }
 id: node.member_poem.default
 targetEntityType: node
@@ -63,10 +782,98 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_member_poem:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_author_of_original:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_poetry_reading:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_poetry_reading_video:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_translation:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_year:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 2
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  taxonomy_forums:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
 hidden:
-  comment_node_member_poem: true
+  field_rating: true
+  field_translation_for: true
+  langcode: true
+  search_api_excerpt: true

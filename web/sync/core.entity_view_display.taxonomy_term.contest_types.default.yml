@@ -1,0 +1,41 @@
+uuid: c18c8ce4-6aba-4f86-913c-b7c7663c49fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.contest_types.field_content_type
+    - field.field.taxonomy_term.contest_types.field_machine_name
+    - taxonomy.vocabulary.contest_types
+  module:
+    - options
+    - text
+id: taxonomy_term.contest_types.default
+targetEntityType: taxonomy_term
+bundle: contest_types
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_content_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_machine_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

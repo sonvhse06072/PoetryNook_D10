@@ -3,11 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_author.default
     - field.field.node.author.body
     - field.field.node.author.comment_node_author
+    - field.field.node.author.field_birth_town_author
+    - field.field.node.author.field_country_author
+    - field.field.node.author.field_date_of_birth
+    - field.field.node.author.field_death_date_author
+    - field.field.node.author.field_fullname
+    - field.field.node.author.field_picture
+    - image.style.medium
     - node.type.author
   module:
+    - comment
+    - datetime
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
     - text
@@ -50,6 +61,458 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          6bb85789-d761-4bf3-b58f-6d77f2bcc756:
+            uuid: 6bb85789-d761-4bf3-b58f-6d77f2bcc756
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_birth_town_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          39e4e976-f07a-412c-bb5b-5bdb0ab3cc53:
+            uuid: 39e4e976-f07a-412c-bb5b-5bdb0ab3cc53
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_country_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          2b999b9d-7641-4e6a-9b71-8360d8a4af11:
+            uuid: 2b999b9d-7641-4e6a-9b71-8360d8a4af11
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_date_of_birth'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          1133988d-1bf4-4bd8-945e-9aec5aa86d70:
+            uuid: 1133988d-1bf4-4bd8-945e-9aec5aa86d70
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_death_date_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          f524cd1e-a6fe-4b33-a5b3-c25c891bcfb5:
+            uuid: f524cd1e-a6fe-4b33-a5b3-c25c891bcfb5
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          9cc292bf-5e4f-46ed-8d9d-6e936877c004:
+            uuid: 9cc292bf-5e4f-46ed-8d9d-6e936877c004
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_birth_town_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          c6425631-7fd3-4d72-80fe-94d9cdd5a15f:
+            uuid: c6425631-7fd3-4d72-80fe-94d9cdd5a15f
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_country_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          1f7fb91c-7597-4f2e-826b-9d01945b85a6:
+            uuid: 1f7fb91c-7597-4f2e-826b-9d01945b85a6
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_date_of_birth'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          c2250aeb-aa42-4739-b7bc-d01bb101254b:
+            uuid: c2250aeb-aa42-4739-b7bc-d01bb101254b
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_death_date_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          f9082ff4-4b4f-45bd-bcb3-ce9a9521f5d6:
+            uuid: f9082ff4-4b4f-45bd-bcb3-ce9a9521f5d6
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          4a0ec658-2781-4fff-9aba-d4e7f6343f5c:
+            uuid: 4a0ec658-2781-4fff-9aba-d4e7f6343f5c
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_birth_town_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          97421943-6a5a-41cb-b1b9-22d58f2e5a65:
+            uuid: 97421943-6a5a-41cb-b1b9-22d58f2e5a65
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_country_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          e506cb7e-0548-4c42-8173-ba9d23167b8e:
+            uuid: e506cb7e-0548-4c42-8173-ba9d23167b8e
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_date_of_birth'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
+          cc7a9e95-c65d-4012-b82f-1cd9236fd4c8:
+            uuid: cc7a9e95-c65d-4012-b82f-1cd9236fd4c8
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_death_date_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 15
+            additional: {  }
+          9551c2d8-e47e-47ac-8a5f-9139129962c2:
+            uuid: 9551c2d8-e47e-47ac-8a5f-9139129962c2
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 16
+            additional: {  }
+          f31e8cef-a6e8-46ab-aede-f4d279d105e8:
+            uuid: f31e8cef-a6e8-46ab-aede-f4d279d105e8
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_birth_town_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 17
+            additional: {  }
+          c38d411d-3149-4655-aa60-97852be27f9c:
+            uuid: c38d411d-3149-4655-aa60-97852be27f9c
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_country_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 18
+            additional: {  }
+          f0f7698e-7043-4805-9e61-1bc3ebd055f5:
+            uuid: f0f7698e-7043-4805-9e61-1bc3ebd055f5
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_date_of_birth'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 19
+            additional: {  }
+          2afe130a-f61a-4c11-8c71-11f9313a8d62:
+            uuid: 2afe130a-f61a-4c11-8c71-11f9313a8d62
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_death_date_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 20
+            additional: {  }
+          25a71054-58e8-484b-a21b-684c78cc00af:
+            uuid: 25a71054-58e8-484b-a21b-684c78cc00af
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 21
+            additional: {  }
+          49441c6a-1c97-4730-99e1-047f64567ce8:
+            uuid: 49441c6a-1c97-4730-99e1-047f64567ce8
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_birth_town_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 22
+            additional: {  }
+          16341591-eb58-4ad1-9554-23f6a7ddcd0c:
+            uuid: 16341591-eb58-4ad1-9554-23f6a7ddcd0c
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_country_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 23
+            additional: {  }
+          12b2d797-e4ec-4712-8073-011d6409415f:
+            uuid: 12b2d797-e4ec-4712-8073-011d6409415f
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_date_of_birth'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 24
+            additional: {  }
+          fbfe7a8b-0c6e-4952-b3c9-4db40c0d65fd:
+            uuid: fbfe7a8b-0c6e-4952-b3c9-4db40c0d65fd
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_death_date_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 25
+            additional: {  }
+          7a867589-f5e2-4633-9749-440f86d2ae43:
+            uuid: 7a867589-f5e2-4633-9749-440f86d2ae43
+            region: content
+            configuration:
+              id: 'field_block:node:author:field_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 26
+            additional: {  }
+          4d653b15-e2a3-4122-ae25-e8a9c4f2336d:
+            uuid: 4d653b15-e2a3-4122-ae25-e8a9c4f2336d
+            region: content
+            configuration:
+              id: 'extra_field_block:node:author:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 27
+            additional: {  }
+          fad9fb9b-4bb8-4267-8ac3-68e4ad7a93db:
+            uuid: fad9fb9b-4bb8-4267-8ac3-68e4ad7a93db
+            region: content
+            configuration:
+              id: 'field_block:node:author:comment_node_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 28
+            additional: {  }
         third_party_settings: {  }
 id: node.author.default
 targetEntityType: node
@@ -63,10 +526,71 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_author:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_birth_town_author:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_country_author:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_date_of_birth:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_death_date_author:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_author: true
+  field_fullname: true
+  langcode: true
+  search_api_excerpt: true

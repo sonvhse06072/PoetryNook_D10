@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.quote.body
     - field.field.node.quote.comment_node_quote
+    - field.field.node.quote.field_author
+    - field.field.node.quote.field_tags
     - node.type.quote
   module:
     - field_layout
@@ -52,6 +54,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          122a9259-fcbe-4853-8504-08b03686dd4b:
+            uuid: 122a9259-fcbe-4853-8504-08b03686dd4b
+            region: content
+            configuration:
+              id: 'extra_field_block:node:quote:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.quote.teaser
 targetEntityType: node
@@ -71,5 +83,14 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_quote: true
+  field_author: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

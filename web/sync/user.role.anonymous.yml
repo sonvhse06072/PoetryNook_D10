@@ -2,10 +2,18 @@ uuid: b3f1cec5-0950-4d3f-94e1-b2e1e9225bd5
 langcode: en
 status: true
 dependencies:
+  config:
+    - rest.resource.simpleads_click
+    - rest.resource.simpleads_group
+    - rest.resource.simpleads_impression
+    - rest.resource.simpleads_reference
+    - rest.resource.simpleads_views
   module:
     - comment
     - media
+    - rest
     - search
+    - simpleads
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
@@ -17,5 +25,12 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access user profiles'
+  - 'count simpleads clicks'
+  - 'count simpleads impressions'
+  - 'restful get simpleads_group'
+  - 'restful get simpleads_reference'
+  - 'restful get simpleads_views'
+  - 'restful post simpleads_click'
+  - 'restful post simpleads_impression'
   - 'search content'
   - 'view media'

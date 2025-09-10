@@ -1,0 +1,7 @@
+name: 'Amazon Books D10'
+type: module
+description: 'Provides blocks with links to books on Amazon (Drupal 10 port).'
+package: 'Poetry Nook'
+core_version_requirement: '^10 || ^11'
+dependencies:
+  - drupal:block

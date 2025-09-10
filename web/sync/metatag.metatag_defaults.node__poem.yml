@@ -1,0 +1,8 @@
+uuid: 66df7af1-9a3e-4f2d-a55f-907291521039
+langcode: en
+status: true
+dependencies: {  }
+id: node__poem
+label: 'Node: Poem'
+tags:
+  title: 'Poem: [node:title] by [node:field-author:title]'

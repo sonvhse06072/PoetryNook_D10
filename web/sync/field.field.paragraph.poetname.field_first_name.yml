@@ -1,0 +1,19 @@
+uuid: 6ca9dd25-8ea4-4a12-888c-8cb1ccf167d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_first_name
+    - paragraphs.paragraphs_type.poetname
+id: paragraph.poetname.field_first_name
+field_name: field_first_name
+entity_type: paragraph
+bundle: poetname
+label: 'First name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

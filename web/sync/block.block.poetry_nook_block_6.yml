@@ -1,0 +1,25 @@
+uuid: a3a5698a-d165-4088-a712-77fbd4a5a62e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:24f2610b-0dd1-418a-b56d-5baa63c2142e'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: poetry_nook_block_6
+theme: olivero
+region: content
+weight: -70
+provider: null
+plugin: 'block_content:24f2610b-0dd1-418a-b56d-5baa63c2142e'
+settings:
+  id: 'block_content:24f2610b-0dd1-418a-b56d-5baa63c2142e'
+  label: ''
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

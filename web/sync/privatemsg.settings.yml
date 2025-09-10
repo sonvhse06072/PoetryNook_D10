@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: 4xmWys-VV6IHcJNTLVm0qSYQ1ZawnrCPAkPpNFaSnLE
+remove_after: '30'
+allowed_roles:
+  - content_editor
+  - member
+  - administrator
+  - designer
+  - content_administrator
+  - site_administrator
+  - judge
+moderator_role: ''
+unblockable_roles: {  }

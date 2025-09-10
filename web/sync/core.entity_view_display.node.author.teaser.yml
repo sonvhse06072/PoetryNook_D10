@@ -6,6 +6,12 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.author.body
     - field.field.node.author.comment_node_author
+    - field.field.node.author.field_birth_town_author
+    - field.field.node.author.field_country_author
+    - field.field.node.author.field_date_of_birth
+    - field.field.node.author.field_death_date_author
+    - field.field.node.author.field_fullname
+    - field.field.node.author.field_picture
     - node.type.author
   module:
     - field_layout
@@ -52,6 +58,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          3cd8abaa-8999-4a96-b13c-196a241fee4a:
+            uuid: 3cd8abaa-8999-4a96-b13c-196a241fee4a
+            region: content
+            configuration:
+              id: 'extra_field_block:node:author:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.author.teaser
 targetEntityType: node
@@ -71,5 +87,18 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_author: true
+  field_birth_town_author: true
+  field_country_author: true
+  field_date_of_birth: true
+  field_death_date_author: true
+  field_fullname: true
+  field_picture: true
+  langcode: true
+  search_api_excerpt: true

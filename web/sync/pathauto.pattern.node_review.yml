@@ -1,0 +1,21 @@
+uuid: b4ea8320-2a7a-4d06-9e9d-6d0d0731f479
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_review
+label: 'Content - Review'
+type: 'canonical_entities:node'
+pattern: 'review/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      review: review
+selection_logic: and
+weight: 0
+relationships: {  }

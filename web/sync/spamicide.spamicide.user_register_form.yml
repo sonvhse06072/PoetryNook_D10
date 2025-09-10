@@ -1,0 +1,8 @@
+uuid: c1cacf74-aeea-49fa-9a23-33981eea91c0
+langcode: en
+status: true
+dependencies: {  }
+id: user_register_form
+label: 'User Register Form'
+description: null
+spamicide_form_id: user_register_form

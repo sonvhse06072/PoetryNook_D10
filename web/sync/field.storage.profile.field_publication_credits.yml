@@ -1,0 +1,19 @@
+uuid: f734afa3-de1b-4769-80cb-811ae6aa0fc1
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - profile
+id: profile.field_publication_credits
+field_name: field_publication_credits
+entity_type: profile
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

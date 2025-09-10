@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.simplenews.body
     - field.field.node.simplenews.comment_node_simplenews
+    - field.field.node.simplenews.field_simplenews_term
     - node.type.simplenews
   module:
     - comment
@@ -43,6 +44,19 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_simplenews_term:
+    type: options_buttons
+    weight: 32
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -89,4 +103,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

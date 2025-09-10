@@ -1,0 +1,30 @@
+uuid: 60b053e9-16e8-4d93-83e2-8bcdff9fcec5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_for
+    - node.type.member_poem
+    - node.type.poem
+id: node.member_poem.field_translation_for
+field_name: field_translation_for
+entity_type: node
+bundle: member_poem
+label: 'Translation for'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      poem: poem
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

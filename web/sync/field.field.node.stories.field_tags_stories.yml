@@ -1,0 +1,26 @@
+uuid: 15aebf1b-423f-4ab4-87f7-0ae355f74d22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags_stories
+    - node.type.stories
+    - taxonomy.vocabulary.tags
+id: node.stories.field_tags_stories
+field_name: field_tags_stories
+entity_type: node
+bundle: stories
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+field_type: entity_reference

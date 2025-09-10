@@ -1,0 +1,23 @@
+uuid: d43c8f9a-565b-4345-a25b-bfbc05c1f62b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_publication_credits
+    - profile.type.member
+  module:
+    - link
+id: profile.member.field_publication_credits
+field_name: field_publication_credits
+entity_type: profile
+bundle: member
+label: 'Publication Credits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,19 @@
+uuid: de213920-7313-4e93-a171-c1a3d8e8c97e
+langcode: und
+status: true
+dependencies:
+  module:
+    - asin
+    - node
+id: node.field_amazon_product_id
+field_name: field_amazon_product_id
+entity_type: node
+type: asin
+settings: {  }
+module: asin
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

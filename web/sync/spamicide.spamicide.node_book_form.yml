@@ -1,0 +1,8 @@
+uuid: 9a888071-b4d1-48c7-8d46-11d0b840c89f
+langcode: en
+status: true
+dependencies: {  }
+id: node_book_form
+label: 'Node Book Form'
+description: null
+spamicide_form_id: node_book_form

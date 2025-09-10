@@ -1,0 +1,25 @@
+{#
+  Default theme implementation for Amazon Books block list (D10 port).
+  Variables:
+    - items: array of Amazon items (expected keys: title, url, author, image)
+    - author: boolean flag like legacy module
+#}
+<div class="amazon-books">
+  {% if items is not empty %}
+    <ul>
+      {% for item in items %}
+        <li>
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.title }}" />
+          {% endif %}
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          {% if item.author %}
+            <div class="author">{{ item.author|join(', ') }}</div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="empty">No Amazon items available.</div>
+  {% endif %}
+</div>

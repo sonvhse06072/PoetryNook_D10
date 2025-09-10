@@ -1,0 +1,21 @@
+uuid: 0c5011c0-7a12-4797-befa-346b445b860b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_poem
+label: 'Content - Poem'
+type: 'canonical_entities:node'
+pattern: 'poem/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      poem: poem
+selection_logic: and
+weight: 0
+relationships: {  }

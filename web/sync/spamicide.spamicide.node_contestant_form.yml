@@ -1,0 +1,8 @@
+uuid: 1e413a26-2e55-43d2-a335-4f9e6d805e89
+langcode: en
+status: true
+dependencies: {  }
+id: node_contestant_form
+label: 'Node Contestant Form'
+description: null
+spamicide_form_id: node_contestant_form

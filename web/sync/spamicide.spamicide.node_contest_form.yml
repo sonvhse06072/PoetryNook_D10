@@ -1,0 +1,8 @@
+uuid: 1c609f42-6664-4d64-b74b-dbaa805678ed
+langcode: en
+status: true
+dependencies: {  }
+id: node_contest_form
+label: 'Node Contest Form'
+description: null
+spamicide_form_id: node_contest_form

@@ -5,11 +5,26 @@ dependencies:
   config:
     - field.field.node.poet.body
     - field.field.node.poet.comment_node_poet
+    - field.field.node.poet.field_birth_date_text
+    - field.field.node.poet.field_birth_town
+    - field.field.node.poet.field_birth_year
+    - field.field.node.poet.field_country
+    - field.field.node.poet.field_death_date_text
+    - field.field.node.poet.field_death_year
+    - field.field.node.poet.field_image
+    - field.field.node.poet.field_interviews
+    - field.field.node.poet.field_magazines
+    - field.field.node.poet.field_poetname
+    - field.field.node.poet.field_website
+    - image.style.thumbnail
     - node.type.poet
   module:
     - comment
     - field_layout
+    - image
     - layout_discovery
+    - link
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -43,6 +58,103 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_birth_date_text:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_birth_town:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_birth_year:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_country:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_death_date_text:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_death_year:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_interviews:
+    type: link_default
+    weight: 13
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_magazines:
+    type: link_default
+    weight: 12
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_poetname:
+    type: entity_reference_paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 11
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -89,4 +201,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

@@ -1,0 +1,23 @@
+uuid: 474e2f84-8fcb-4292-b7d3-69f884033268
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adcamp_impression
+    - node.type.simpleads_campaign
+id: node.simpleads_campaign.field_adcamp_impression
+field_name: field_adcamp_impression
+entity_type: node
+bundle: simpleads_campaign
+label: Impressions
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Impressions
+  off_label: Impressions
+field_type: boolean

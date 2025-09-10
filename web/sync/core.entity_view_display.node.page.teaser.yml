@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.comment_node_page
+    - field.field.node.page.field_metatag
     - node.type.page
   module:
     - field_layout
@@ -52,6 +53,16 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+          519122ec-9b41-4b70-b65b-eecb987af3f4:
+            uuid: 519122ec-9b41-4b70-b65b-eecb987af3f4
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
@@ -73,5 +84,13 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_page: true
+  field_metatag: true
+  langcode: true
+  search_api_excerpt: true

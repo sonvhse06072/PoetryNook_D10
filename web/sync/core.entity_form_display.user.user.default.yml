@@ -50,4 +50,5 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  langcode: true
   member_profiles: true

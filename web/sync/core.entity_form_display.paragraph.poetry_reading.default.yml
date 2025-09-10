@@ -1,0 +1,33 @@
+uuid: d6761e09-a80b-4e56-a168-614888939aa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.poetry_reading.field_poetry_reading_audio
+    - field.field.paragraph.poetry_reading.field_reader_name
+    - paragraphs.paragraphs_type.poetry_reading
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.poetry_reading.default
+targetEntityType: paragraph
+bundle: poetry_reading
+mode: default
+content:
+  field_reader_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_poetry_reading_audio: true
+  status: true

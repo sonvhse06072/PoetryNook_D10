@@ -3,10 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_poetry_journal.default
     - field.field.node.poetry_journal.body
     - field.field.node.poetry_journal.comment_node_poetry_journal
+    - field.field.node.poetry_journal.field_amazon_product_id
     - node.type.poetry_journal
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +53,33 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          8c581cc5-7456-410f-a083-476f50b98fb2:
+            uuid: 8c581cc5-7456-410f-a083-476f50b98fb2
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poetry_journal:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          97361747-fb99-4f59-89d6-f218a4de04e7:
+            uuid: 97361747-fb99-4f59-89d6-f218a4de04e7
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_journal:comment_node_poetry_journal'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.poetry_journal.default
 targetEntityType: node
@@ -63,10 +93,26 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_poetry_journal:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_poetry_journal: true
+  field_amazon_product_id: true
+  langcode: true
+  search_api_excerpt: true

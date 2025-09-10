@@ -1,0 +1,21 @@
+uuid: d4e8a629-4030-426f-a950-846dfbc5b1f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_quote
+label: 'Content - Quote'
+type: 'canonical_entities:node'
+pattern: 'tools/quote/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      quote: quote
+selection_logic: and
+weight: 0
+relationships: {  }

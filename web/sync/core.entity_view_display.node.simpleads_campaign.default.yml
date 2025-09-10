@@ -1,0 +1,99 @@
+uuid: 136ac404-6b6a-4a17-b4e8-4ee0bb743b8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_simpleads_campaig.default
+    - field.field.node.simpleads_campaign.comment_node_simpleads_campaig
+    - field.field.node.simpleads_campaign.field_adcamp_click
+    - field.field.node.simpleads_campaign.field_adcamp_clicks
+    - field.field.node.simpleads_campaign.field_adcamp_day
+    - field.field.node.simpleads_campaign.field_adcamp_days
+    - field.field.node.simpleads_campaign.field_adcamp_impression
+    - field.field.node.simpleads_campaign.field_adcamp_impressions
+    - field.field.node.simpleads_campaign.field_adcamp_start
+    - node.type.simpleads_campaign
+  module:
+    - comment
+    - options
+    - user
+id: node.simpleads_campaign.default
+targetEntityType: node
+bundle: simpleads_campaign
+mode: default
+content:
+  comment_node_simpleads_campaig:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_adcamp_click:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_adcamp_clicks:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_adcamp_day:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_adcamp_days:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_adcamp_impression:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_adcamp_impressions:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_adcamp_start:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

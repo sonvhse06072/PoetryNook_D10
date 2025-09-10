@@ -1,0 +1,30 @@
+uuid: ea6e56b6-b8fc-4585-afff-41a08d2a107a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contestants
+    - node.type.contest
+    - node.type.contestant
+id: node.contest.field_contestants
+field_name: field_contestants
+entity_type: node
+bundle: contest
+label: Contestants
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contestant: contestant
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

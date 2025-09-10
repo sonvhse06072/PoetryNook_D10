@@ -1,0 +1,13 @@
+uuid: 99b7be3c-b56a-47ec-ac37-5ea5824d9f19
+langcode: en
+status: true
+dependencies:
+  module:
+    - simpleads
+_core:
+  default_config_hash: u4nwMGxNJ1_WbzyNV6dI1Ox0IvHKqwIKhzgNYY57Abg
+id: simpleads.statistics
+label: Statistics
+description: ''
+targetEntityType: simpleads
+cache: true

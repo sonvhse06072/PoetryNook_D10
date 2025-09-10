@@ -1,0 +1,58 @@
+uuid: 9cb6c481-5e30-4c96-bad2-f041769c289e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.poetry_reading.field_poetry_reading_audio
+    - field.field.paragraph.poetry_reading.field_reader_name
+    - paragraphs.paragraphs_type.poetry_reading
+  module:
+    - audiofield
+id: paragraph.poetry_reading.default
+targetEntityType: paragraph
+bundle: poetry_reading
+mode: default
+content:
+  field_poetry_reading_audio:
+    type: audiofield_audioplayer
+    label: hidden
+    settings:
+      audio_player: default_mp3_player
+      audio_player_jplayer_theme: none
+      audio_player_wavesurfer_combine_files: false
+      audio_player_wavesurfer_audiorate: 1
+      audio_player_wavesurfer_autocenter: true
+      audio_player_wavesurfer_bargap: 0
+      audio_player_wavesurfer_barheight: 1
+      audio_player_wavesurfer_barwidth: null
+      audio_player_wavesurfer_cursorcolor: '#333'
+      audio_player_wavesurfer_cursorwidth: 1
+      audio_player_wavesurfer_forcedecode: false
+      audio_player_wavesurfer_normalize: false
+      audio_player_wavesurfer_playnexttrack: true
+      audio_player_wavesurfer_progresscolor: '#555'
+      audio_player_wavesurfer_responsive: false
+      audio_player_wavesurfer_use_peakfile: false
+      audio_player_wavesurfer_wavecolor: '#999'
+      audio_player_wordpress_combine_files: false
+      audio_player_wordpress_animation: true
+      audio_player_soundmanager_theme: default
+      audio_player_initial_volume: 8
+      audio_player_autoplay: false
+      audio_player_lazyload: false
+      download_button: false
+      download_link: false
+      audio_player_wavesurfer_backend: WebAudio
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_reader_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

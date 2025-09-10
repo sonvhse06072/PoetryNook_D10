@@ -1,0 +1,19 @@
+uuid: c009ac7f-8f45-4eb1-8595-0f1dce138aa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adcamp_days
+    - node.type.simpleads_campaign
+id: node.simpleads_campaign.field_adcamp_days
+field_name: field_adcamp_days
+entity_type: node
+bundle: simpleads_campaign
+label: 'Number of days'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

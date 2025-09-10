@@ -1,0 +1,27 @@
+uuid: 5bd9273d-45cb-4ae0-8b59-df096211e4f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_story_audio_
+    - paragraphs.paragraphs_type.story_audience
+  module:
+    - file
+id: paragraph.story_audience.field_story_audio_
+field_name: field_story_audio_
+entity_type: paragraph
+bundle: story_audience
+label: 'Story (Audio)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: mp3
+  max_filesize: '15 MB'
+  description_field: false
+field_type: file

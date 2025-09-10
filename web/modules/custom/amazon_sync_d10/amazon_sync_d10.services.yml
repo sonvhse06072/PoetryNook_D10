@@ -1,0 +1,4 @@
+services:
+  amazon_sync_d10.sync:
+    class: 'Drupal\amazon_sync_d10\Service\AmazonSyncService'
+    arguments: ['@database', '@config.factory', '@messenger', '@string_translation']

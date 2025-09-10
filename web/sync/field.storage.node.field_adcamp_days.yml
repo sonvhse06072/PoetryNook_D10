@@ -1,0 +1,21 @@
+uuid: 9ac7c41b-226f-4739-a0fa-b777a3167121
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_adcamp_days
+field_name: field_adcamp_days
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

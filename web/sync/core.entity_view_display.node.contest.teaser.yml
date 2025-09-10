@@ -6,6 +6,10 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.contest.body
     - field.field.node.contest.comment_node_contest
+    - field.field.node.contest.field_contest_type
+    - field.field.node.contest.field_contestants
+    - field.field.node.contest.field_status
+    - field.field.node.contest.field_time
     - node.type.contest
   module:
     - field_layout
@@ -52,6 +56,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          e5667ca7-d91e-48cc-b084-ad73494959cb:
+            uuid: e5667ca7-d91e-48cc-b084-ad73494959cb
+            region: content
+            configuration:
+              id: 'extra_field_block:node:contest:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.contest.teaser
 targetEntityType: node
@@ -71,5 +85,16 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_contest: true
+  field_contest_type: true
+  field_contestants: true
+  field_status: true
+  field_time: true
+  langcode: true
+  search_api_excerpt: true

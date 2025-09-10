@@ -91,6 +91,16 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 3
             additional: {  }
+          da1b769c-69c0-4e89-9e2e-dd351e4d63df:
+            uuid: da1b769c-69c0-4e89-9e2e-dd351e4d63df
+            region: content
+            configuration:
+              id: 'extra_field_block:node:article:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: O8PxzfG8DOHHRu6M23kwR6TDPq_MNfYQ10Mp367ICUQ
@@ -131,5 +141,12 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment: true
+  langcode: true
+  search_api_excerpt: true

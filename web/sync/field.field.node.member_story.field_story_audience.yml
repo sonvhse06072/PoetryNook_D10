@@ -1,0 +1,40 @@
+uuid: e2ff8f98-f061-4b67-840d-20361f56cb07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_story_audience
+    - node.type.member_story
+    - paragraphs.paragraphs_type.story_audience
+  module:
+    - entity_reference_revisions
+id: node.member_story.field_story_audience
+field_name: field_story_audience
+entity_type: node
+bundle: member_story
+label: 'Story Audio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      story_audience: story_audience
+    negate: 0
+    target_bundles_drag_drop:
+      fullname:
+        weight: 2
+        enabled: false
+      poetname:
+        weight: 3
+        enabled: false
+      poetry_reading:
+        weight: 4
+        enabled: false
+      story_audience:
+        weight: 1
+        enabled: true
+field_type: entity_reference_revisions

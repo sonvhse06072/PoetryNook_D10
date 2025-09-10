@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.review.body
     - field.field.node.review.comment_node_review
+    - field.field.node.review.field_poem
+    - field.field.node.review.field_rating
+    - field.field.node.review.taxonomy_forums
     - node.type.review
   module:
     - field_layout
@@ -52,6 +55,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          6854603a-df14-4e3d-ab02-4e4ea33968e9:
+            uuid: 6854603a-df14-4e3d-ab02-4e4ea33968e9
+            region: content
+            configuration:
+              id: 'extra_field_block:node:review:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.review.teaser
 targetEntityType: node
@@ -71,5 +84,15 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_review: true
+  field_poem: true
+  field_rating: true
+  langcode: true
+  search_api_excerpt: true
+  taxonomy_forums: true

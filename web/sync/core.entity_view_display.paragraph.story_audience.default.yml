@@ -1,0 +1,33 @@
+uuid: 909342e8-2880-49ab-808a-882e3f30e1db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.story_audience.field_audio_name
+    - field.field.paragraph.story_audience.field_story_audio_
+    - paragraphs.paragraphs_type.story_audience
+  module:
+    - file
+id: paragraph.story_audience.default
+targetEntityType: paragraph
+bundle: story_audience
+mode: default
+content:
+  field_audio_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_story_audio_:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

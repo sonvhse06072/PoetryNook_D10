@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the amazon_sync_d10 module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function amazon_sync_d10_schema() {
+  $schema['amazon_sync'] = [
+    'description' => 'Maps author node IDs (nid) to Amazon ASINs.',
+    'fields' => [
+      'asin' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'description' => 'Amazon ASIN.',
+      ],
+      'nid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Node ID of the author.',
+      ],
+    ],
+    'indexes' => [
+      'nid' => ['nid'],
+      'asin' => ['asin'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function amazon_sync_d10_uninstall() {
+  // Remove configuration values.
+  \Drupal::configFactory()->getEditable('amazon_sync_d10.settings')->delete();
+}

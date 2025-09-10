@@ -1,0 +1,19 @@
+uuid: b5ddbc44-d158-4d15-8498-a637598eef97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_traditional_title
+    - node.type.poem
+id: node.poem.field_traditional_title
+field_name: field_traditional_title
+entity_type: node
+bundle: poem
+label: 'Traditional title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

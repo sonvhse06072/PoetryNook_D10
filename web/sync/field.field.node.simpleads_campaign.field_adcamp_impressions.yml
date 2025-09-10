@@ -1,0 +1,19 @@
+uuid: db8aa67f-6473-40f1-a57c-9b3ac36c89bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adcamp_impressions
+    - node.type.simpleads_campaign
+id: node.simpleads_campaign.field_adcamp_impressions
+field_name: field_adcamp_impressions
+entity_type: node
+bundle: simpleads_campaign
+label: 'Number of impressions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

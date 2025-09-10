@@ -1,0 +1,8 @@
+uuid: fb764eaf-56d6-4d1f-98fd-a27f4bcb7023
+langcode: en
+status: true
+dependencies: {  }
+id: user_login_form
+label: 'User Login Form'
+description: null
+spamicide_form_id: user_login_form

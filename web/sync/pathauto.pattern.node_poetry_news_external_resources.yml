@@ -1,0 +1,21 @@
+uuid: a14a037f-8d2d-4c04-8731-bc19371b0e77
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_poetry_news_external_resources
+label: 'Content - Poetry Resources'
+type: 'canonical_entities:node'
+pattern: 'poetry-news/resource/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      poetry_news_external_resources: poetry_news_external_resources
+selection_logic: and
+weight: 0
+relationships: {  }

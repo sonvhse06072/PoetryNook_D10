@@ -1,0 +1,19 @@
+uuid: 4dc8145d-8cb1-49dc-87a2-f82aa24c64fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.poet
+id: node.poet.field_country
+field_name: field_country
+entity_type: node
+bundle: poet
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

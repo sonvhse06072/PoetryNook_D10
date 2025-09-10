@@ -1,0 +1,19 @@
+uuid: 4d4b6966-03f6-4d98-90f7-80719573356c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.poem
+id: node.poem.field_source
+field_name: field_source
+entity_type: node
+bundle: poem
+label: Source
+description: 'Source of the poem'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

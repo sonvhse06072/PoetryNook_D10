@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.forum.body
     - field.field.node.forum.comment_forum
+    - field.field.node.forum.taxonomy_forums
     - node.type.forum
   module:
     - field_layout
@@ -52,6 +53,96 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          77654d14-51ec-415c-9d3e-ca0547e69926:
+            uuid: 77654d14-51ec-415c-9d3e-ca0547e69926
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          670a669f-34c7-458e-85bd-4fc75e1c624b:
+            uuid: 670a669f-34c7-458e-85bd-4fc75e1c624b
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          7c0ec5d3-9b35-4957-8583-02fc130a7bb7:
+            uuid: 7c0ec5d3-9b35-4957-8583-02fc130a7bb7
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          4fec1156-ac69-4d39-9982-fe4633a8b843:
+            uuid: 4fec1156-ac69-4d39-9982-fe4633a8b843
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          ea9b516f-8f80-4083-bf1f-140b5fd885f4:
+            uuid: ea9b516f-8f80-4083-bf1f-140b5fd885f4
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          7b08d1c4-555e-44f3-b011-0a1dffb9342a:
+            uuid: 7b08d1c4-555e-44f3-b011-0a1dffb9342a
+            region: content
+            configuration:
+              id: 'extra_field_block:node:forum:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
 id: node.forum.teaser
 targetEntityType: node
@@ -71,5 +162,20 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  taxonomy_forums:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_forum: true
+  langcode: true
+  search_api_excerpt: true

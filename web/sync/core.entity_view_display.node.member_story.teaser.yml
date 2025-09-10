@@ -6,6 +6,14 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.member_story.body
     - field.field.node.member_story.comment_node_member_story
+    - field.field.node.member_story.field_content_approval
+    - field.field.node.member_story.field_forums
+    - field.field.node.member_story.field_member_image
+    - field.field.node.member_story.field_member_tags
+    - field.field.node.member_story.field_member_year
+    - field.field.node.member_story.field_rate_this_poem_stories
+    - field.field.node.member_story.field_story_audience
+    - field.field.node.member_story.field_story_video
     - node.type.member_story
   module:
     - field_layout
@@ -52,6 +60,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          1124b0ea-77d5-4b11-9a7c-b086b2428248:
+            uuid: 1124b0ea-77d5-4b11-9a7c-b086b2428248
+            region: content
+            configuration:
+              id: 'extra_field_block:node:member_story:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.member_story.teaser
 targetEntityType: node
@@ -71,5 +89,20 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_member_story: true
+  field_content_approval: true
+  field_forums: true
+  field_member_image: true
+  field_member_tags: true
+  field_member_year: true
+  field_rate_this_poem_stories: true
+  field_story_audience: true
+  field_story_video: true
+  langcode: true
+  search_api_excerpt: true

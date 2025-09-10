@@ -1,0 +1,21 @@
+uuid: 3bf76c7b-baa6-437e-bc6a-2972b6543276
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_ebook_classic
+label: 'Content - Ebook Classic'
+type: 'canonical_entities:node'
+pattern: 'ebook/c/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      ebook_classic: ebook_classic
+selection_logic: and
+weight: 0
+relationships: {  }

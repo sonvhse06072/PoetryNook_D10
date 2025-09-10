@@ -1,0 +1,43 @@
+uuid: 6468d86c-51f9-45dc-a0c4-36163527a0fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.simpleads_campaign.comment_node_simpleads_campaig
+    - field.field.node.simpleads_campaign.field_adcamp_click
+    - field.field.node.simpleads_campaign.field_adcamp_clicks
+    - field.field.node.simpleads_campaign.field_adcamp_day
+    - field.field.node.simpleads_campaign.field_adcamp_days
+    - field.field.node.simpleads_campaign.field_adcamp_impression
+    - field.field.node.simpleads_campaign.field_adcamp_impressions
+    - field.field.node.simpleads_campaign.field_adcamp_start
+    - node.type.simpleads_campaign
+  module:
+    - user
+id: node.simpleads_campaign.teaser
+targetEntityType: node
+bundle: simpleads_campaign
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  comment_node_simpleads_campaig: true
+  field_adcamp_click: true
+  field_adcamp_clicks: true
+  field_adcamp_day: true
+  field_adcamp_days: true
+  field_adcamp_impression: true
+  field_adcamp_impressions: true
+  field_adcamp_start: true
+  langcode: true
+  search_api_excerpt: true

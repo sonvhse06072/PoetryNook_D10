@@ -1,0 +1,8 @@
+uuid: 27b803a2-d011-44d1-b93c-c9d26c777980
+langcode: en
+status: true
+dependencies: {  }
+id: contact_message_feedback_form
+label: 'Contact Message Feedback Form'
+description: null
+spamicide_form_id: contact_message_feedback_form

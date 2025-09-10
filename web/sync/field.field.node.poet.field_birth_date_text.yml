@@ -1,0 +1,19 @@
+uuid: 386be739-4f7b-4559-9c1a-5fe7b84e3e30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_date_text
+    - node.type.poet
+id: node.poet.field_birth_date_text
+field_name: field_birth_date_text
+entity_type: node
+bundle: poet
+label: 'Birth date'
+description: 'Feel free to use whatever format you want.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

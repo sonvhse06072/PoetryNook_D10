@@ -1,0 +1,21 @@
+uuid: 58068e50-7f98-4240-9a73-1748b17067ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource0
+    - node.type.poetry_news_material
+  module:
+    - poetrynews_d10
+id: node.poetry_news_material.field_resource0
+field_name: field_resource0
+entity_type: node
+bundle: poetry_news_material
+label: Resource
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: poetrynews_resource

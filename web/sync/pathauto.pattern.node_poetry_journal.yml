@@ -1,0 +1,21 @@
+uuid: 64a0f8b4-a298-4f78-9c6e-a4b59d0a1799
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_poetry_journal
+label: 'Content - Poetry journal'
+type: 'canonical_entities:node'
+pattern: 'mag/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      poetry_journal: poetry_journal
+selection_logic: and
+weight: 0
+relationships: {  }

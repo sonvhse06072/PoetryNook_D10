@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_quote.default
     - field.field.node.quote.body
     - field.field.node.quote.comment_node_quote
+    - field.field.node.quote.field_author
+    - field.field.node.quote.field_tags
     - node.type.quote
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +54,193 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          0ebb6f06-391a-4aab-8563-ba8c9f6f69ab:
+            uuid: 0ebb6f06-391a-4aab-8563-ba8c9f6f69ab
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          5e7492cc-559c-45f2-87cf-eeaba509e211:
+            uuid: 5e7492cc-559c-45f2-87cf-eeaba509e211
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          5b890ba7-a40f-4bf0-bb1d-d53ec5576752:
+            uuid: 5b890ba7-a40f-4bf0-bb1d-d53ec5576752
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          f86531f7-d9de-435f-b76c-e5da91285baa:
+            uuid: f86531f7-d9de-435f-b76c-e5da91285baa
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          642c58a7-a4ba-4baf-b9f9-09f70c938ad9:
+            uuid: 642c58a7-a4ba-4baf-b9f9-09f70c938ad9
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          b1d1b87b-dc58-4b74-a48f-fd23f070435c:
+            uuid: b1d1b87b-dc58-4b74-a48f-fd23f070435c
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          c1a7c152-134d-4d93-a268-0ebdfd22c433:
+            uuid: c1a7c152-134d-4d93-a268-0ebdfd22c433
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          be800e3a-a754-4bc5-ab12-7a74e11df339:
+            uuid: be800e3a-a754-4bc5-ab12-7a74e11df339
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          33edfa84-e3ef-47db-8742-05d53d4661f4:
+            uuid: 33edfa84-e3ef-47db-8742-05d53d4661f4
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          dbfe3d35-07f9-41a5-897b-dbd222beec1e:
+            uuid: dbfe3d35-07f9-41a5-897b-dbd222beec1e
+            region: content
+            configuration:
+              id: 'field_block:node:quote:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          dead2795-c54e-4394-86c9-0cf89d60c9f5:
+            uuid: dead2795-c54e-4394-86c9-0cf89d60c9f5
+            region: content
+            configuration:
+              id: 'extra_field_block:node:quote:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 12
+            additional: {  }
+          f031ec12-c0dd-4760-b242-3ada7a11b840:
+            uuid: f031ec12-c0dd-4760-b242-3ada7a11b840
+            region: content
+            configuration:
+              id: 'field_block:node:quote:comment_node_quote'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
         third_party_settings: {  }
 id: node.quote.default
 targetEntityType: node
@@ -63,10 +254,41 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_quote:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_author:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_quote: true
+  langcode: true
+  search_api_excerpt: true

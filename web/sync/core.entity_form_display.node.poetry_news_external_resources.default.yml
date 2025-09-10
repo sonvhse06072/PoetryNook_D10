@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.poetry_news_external_resources.comment_node_poetry_news_exter
+    - field.field.node.poetry_news_external_resources.field_resource
     - node.type.poetry_news_external_resources
   module:
     - comment
     - field_layout
     - layout_discovery
+    - link
     - path
 third_party_settings:
   field_layout:
@@ -31,6 +33,21 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_resource:
+    type: link_default
+    weight: 31
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -77,4 +94,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

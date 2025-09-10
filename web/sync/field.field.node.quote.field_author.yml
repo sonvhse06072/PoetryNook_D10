@@ -1,0 +1,30 @@
+uuid: 11c6763f-da58-44c9-bb52-18c6da710eed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.poet
+    - node.type.quote
+id: node.quote.field_author
+field_name: field_author
+entity_type: node
+bundle: quote
+label: Author
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      poet: poet
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

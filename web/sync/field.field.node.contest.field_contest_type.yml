@@ -1,0 +1,28 @@
+uuid: edcb4d73-4db2-44fc-ade4-734a7cac707d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contest_type
+    - node.type.contest
+    - taxonomy.vocabulary.contest_types
+id: node.contest.field_contest_type
+field_name: field_contest_type
+entity_type: node
+bundle: contest
+label: 'Contest type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    tid: 264
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      contest_types: contest_types
+    sort:
+      field: _none
+field_type: entity_reference

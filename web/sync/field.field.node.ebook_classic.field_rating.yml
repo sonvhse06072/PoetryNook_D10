@@ -1,0 +1,29 @@
+uuid: 8492a7be-5859-4b22-a796-319065fd5195
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating
+    - node.type.ebook_classic
+  module:
+    - fivestar
+id: node.ebook_classic.field_rating
+field_name: field_rating
+entity_type: node
+bundle: ebook_classic
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: viewing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

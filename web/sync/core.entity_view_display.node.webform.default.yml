@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_webform.default
     - field.field.node.webform.body
     - field.field.node.webform.comment_node_webform
     - node.type.webform
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +52,33 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          3b423068-8495-4003-8bcd-c9f2d38ed6ea:
+            uuid: 3b423068-8495-4003-8bcd-c9f2d38ed6ea
+            region: content
+            configuration:
+              id: 'extra_field_block:node:webform:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          d83438a8-f347-4514-9ad8-530d0b00387c:
+            uuid: d83438a8-f347-4514-9ad8-530d0b00387c
+            region: content
+            configuration:
+              id: 'field_block:node:webform:comment_node_webform'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.webform.default
 targetEntityType: node
@@ -63,10 +92,25 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_webform:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_webform: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: be2daff3-8be0-4193-98ef-5c97346d8ee9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_birth
+    - node.type.author
+  module:
+    - datetime
+id: node.author.field_date_of_birth
+field_name: field_date_of_birth
+entity_type: node
+bundle: author
+label: 'Date of Birth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

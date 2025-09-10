@@ -1,0 +1,8 @@
+uuid: 86a02b05-b371-434d-af31-72cbbef77321
+langcode: en
+status: true
+dependencies: {  }
+id: node_forum_form
+label: 'Node Forum Form'
+description: null
+spamicide_form_id: node_forum_form

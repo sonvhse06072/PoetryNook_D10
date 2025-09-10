@@ -1,0 +1,21 @@
+uuid: 583de876-2d3a-4ea2-93a3-1b17b3f0a513
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_micropoetry
+label: 'Content - Micropoetry'
+type: 'canonical_entities:node'
+pattern: 'poem/micro/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      micropoetry: micropoetry
+selection_logic: and
+weight: 0
+relationships: {  }

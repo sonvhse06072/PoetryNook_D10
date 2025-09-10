@@ -1,0 +1,30 @@
+uuid: ae8e1628-cee7-4a10-b523-b68a0f472d8b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:da0c7f02-c370-4294-8046-70e2439dc211'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: poetry_nook_block_5
+theme: olivero
+region: content
+weight: -69
+provider: null
+plugin: 'block_content:da0c7f02-c370-4294-8046-70e2439dc211'
+settings:
+  id: 'block_content:da0c7f02-c370-4294-8046-70e2439dc211'
+  label: ''
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/add/member-poem

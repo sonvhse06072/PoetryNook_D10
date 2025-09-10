@@ -1,0 +1,12 @@
+uuid: 5d46e069-a5be-44ef-a7d8-25776f1fedc5
+langcode: en
+status: true
+dependencies: {  }
+id: global__404
+label: 'Global: 404'
+tags:
+  canonical_url: '[site:url]'
+  robots: noindex
+  shortlink: '[site:url]'
+  twitter_cards_page_url: '[site:url]'
+  twitter_cards_title: '[site:name]'

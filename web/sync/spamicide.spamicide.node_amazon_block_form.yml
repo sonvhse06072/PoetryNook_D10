@@ -1,0 +1,8 @@
+uuid: 4a14172b-9fd4-444a-b614-f31529201475
+langcode: en
+status: true
+dependencies: {  }
+id: node_amazon_block_form
+label: 'Node Amazon Block Form'
+description: null
+spamicide_form_id: node_amazon_block_form

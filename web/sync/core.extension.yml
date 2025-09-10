@@ -1,22 +1,36 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  auto_entitylabel: -100
+  acl: 0
   action: 0
+  actions_permissions: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  adsense: 0
+  aggregator: 0
+  amazon_books_d10: 0
+  amazon_pa: 0
+  amazon_pa_filter: 0
+  amazon_sync_d10: 0
   announcements_feed: 0
+  asin: 0
+  audiofield: 0
   automated_cron: 0
   better_exposed_filters: 0
   big_pipe: 0
   block: 0
   block_content: 0
   breakpoint: 0
+  cer: 0
   ckeditor5: 0
   comment: 0
+  conditional_fields: 0
   config: 0
   contact: 0
   content_approval_d10: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
@@ -24,60 +38,110 @@ module:
   editor: 0
   entity: 0
   entity_reference_revisions: 0
+  exclude_node_title: 0
+  feeds: 0
   field: 0
   field_group: 0
   field_group_migrate: 0
   field_layout: 0
+  field_permissions: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  filecache: 0
   filter: 0
   fivestar: 0
+  follow: 0
   help: 0
   history: 0
   image: 0
+  imagemagick: 0
+  insert_view: 0
+  job_scheduler: 0
   jquery_ui: 0
+  jquery_ui_autocomplete: 0
   jquery_ui_datepicker: 0
+  jquery_ui_draggable: 0
+  jquery_ui_droppable: 0
+  jquery_ui_menu: 0
+  js_cookie: 0
+  language: 0
   layout_builder: 0
   layout_discovery: 0
+  libraries: 0
   link: 0
+  mailsystem: 0
+  masquerade: 0
   media: 0
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
+  metatag_twitter_cards: 0
   migrate: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_plus: 0
   migrate_tools: 0
+  module_filter: 0
+  module_missing_message_fixer: 0
   mysql: 0
   navigation: 0
   node: 0
   options: 0
   page_cache: 0
+  page_manager: 0
+  panels: 0
+  panels_ipe: 0
   path: 0
   path_alias: 0
   phpass: 0
   pn_migrate_files: 0
   poetrynews_d10: 0
+  privatemsg: 0
   profile: 0
+  purge_users: 0
+  quicktabs: 0
+  quote: 0
+  radioactivity: 0
+  rdf: 0
+  redirect: 0
+  rest: 0
+  rules: 0
+  scheduler: 0
   search: 0
+  search_api: 0
+  search_api_solr: 0
+  serialization: 0
+  sharethis: 0
   shortcut: 0
+  simpleads: 0
+  sophron: 0
+  spamicide: 0
+  statistics: 0
+  statistics_counter: 0
+  subpathauto: 0
   system: 0
+  tagclouds: 0
   taxonomy: 0
   text: 0
   token: 0
   toolbar: 0
   twig_tweak: 0
+  typed_data: 0
   update: 0
   user: 0
   vem_migrate_oembed: 0
   video_embed_field: 0
   video_embed_media: 0
+  views_bulk_operations: 0
   views_ui: 0
   votingapi: 0
   votingapi_widgets: 0
   workflows: 0
+  forum: 1
   pathauto: 1
+  forum_access: 2
   views: 10
   paragraphs: 11
   standard: 1000

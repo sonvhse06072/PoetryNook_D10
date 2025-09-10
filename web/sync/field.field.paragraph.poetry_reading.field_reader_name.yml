@@ -1,0 +1,19 @@
+uuid: 9fcf1436-2f6c-4f63-81be-baa2a14cdb5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reader_name
+    - paragraphs.paragraphs_type.poetry_reading
+id: paragraph.poetry_reading.field_reader_name
+field_name: field_reader_name
+entity_type: paragraph
+bundle: poetry_reading
+label: 'Reader name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

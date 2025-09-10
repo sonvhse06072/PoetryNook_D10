@@ -1,0 +1,22 @@
+uuid: b52529d9-15fa-4d87-a2b5-a0e4d8f635d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_traditional_text
+    - node.type.poem
+  module:
+    - text
+id: node.poem.field_traditional_text
+field_name: field_traditional_text
+entity_type: node
+bundle: poem
+label: 'Traditional text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_review.default
     - field.field.node.review.body
     - field.field.node.review.comment_node_review
+    - field.field.node.review.field_poem
+    - field.field.node.review.field_rating
+    - field.field.node.review.taxonomy_forums
     - node.type.review
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +55,113 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          e520cd04-b9e9-495d-aa77-b7cfa8481347:
+            uuid: e520cd04-b9e9-495d-aa77-b7cfa8481347
+            region: content
+            configuration:
+              id: 'field_block:node:review:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          a95102cb-8a98-4f32-83f9-d35f50938023:
+            uuid: a95102cb-8a98-4f32-83f9-d35f50938023
+            region: content
+            configuration:
+              id: 'field_block:node:review:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          7ae6536c-9101-4c12-8207-5ce333852215:
+            uuid: 7ae6536c-9101-4c12-8207-5ce333852215
+            region: content
+            configuration:
+              id: 'field_block:node:review:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          e997929d-a365-4e7a-97ad-284769faf402:
+            uuid: e997929d-a365-4e7a-97ad-284769faf402
+            region: content
+            configuration:
+              id: 'field_block:node:review:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          cbec81f8-f261-416f-9628-befcd97e6f45:
+            uuid: cbec81f8-f261-416f-9628-befcd97e6f45
+            region: content
+            configuration:
+              id: 'field_block:node:review:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          312588d3-37e3-4324-9070-bf1db026508a:
+            uuid: 312588d3-37e3-4324-9070-bf1db026508a
+            region: content
+            configuration:
+              id: 'extra_field_block:node:review:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
+            additional: {  }
+          f0c12656-7356-4b0d-af9b-ebc1c29d6b21:
+            uuid: f0c12656-7356-4b0d-af9b-ebc1c29d6b21
+            region: content
+            configuration:
+              id: 'field_block:node:review:comment_node_review'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.review.default
 targetEntityType: node
@@ -63,10 +175,35 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_review:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  taxonomy_forums:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
-  comment_node_review: true
+  field_poem: true
+  field_rating: true
+  langcode: true
+  search_api_excerpt: true

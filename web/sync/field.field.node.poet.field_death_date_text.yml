@@ -1,0 +1,19 @@
+uuid: 3a44ea7b-841f-40d6-91fe-15290517931b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_death_date_text
+    - node.type.poet
+id: node.poet.field_death_date_text
+field_name: field_death_date_text
+entity_type: node
+bundle: poet
+label: 'Death date'
+description: 'Feel free to use whatever format you want.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

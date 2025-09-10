@@ -1,0 +1,23 @@
+uuid: b7ddac0c-8d22-40c5-acb5-02b2f7794a03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_death_year
+    - node.type.poet
+id: node.poet.field_death_year
+field_name: field_death_year
+entity_type: node
+bundle: poet
+label: 'Death year'
+description: 'Used for search and sorting. Use "-" symbol before value to set BCE date.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

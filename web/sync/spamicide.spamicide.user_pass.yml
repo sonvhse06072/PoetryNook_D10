@@ -1,0 +1,8 @@
+uuid: 1e526b53-50af-42c4-88c4-6f5380f40387
+langcode: en
+status: true
+dependencies: {  }
+id: user_pass
+label: 'User Pass'
+description: null
+spamicide_form_id: user_pass

@@ -1,0 +1,26 @@
+uuid: 8e3a7242-ec22-4695-b397-c9e6da4164f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_category
+    - node.type.simpleads
+    - taxonomy.vocabulary.ad_groups
+id: node.simpleads.field_ad_category
+field_name: field_ad_category
+entity_type: node
+bundle: simpleads
+label: 'Ad Group'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ad_groups: ad_groups
+    sort:
+      field: _none
+field_type: entity_reference

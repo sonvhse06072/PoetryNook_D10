@@ -1,0 +1,28 @@
+uuid: cdb8f946-fea1-42fb-bb61-face70fe7cea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.taxonomy_forums
+    - node.type.member_poem
+    - taxonomy.vocabulary.forums
+id: node.member_poem.taxonomy_forums
+field_name: taxonomy_forums
+entity_type: node
+bundle: member_poem
+label: Forums
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    tid: '11'
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      forums: forums
+    sort:
+      field: _none
+field_type: entity_reference

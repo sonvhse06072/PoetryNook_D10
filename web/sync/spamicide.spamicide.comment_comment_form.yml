@@ -1,0 +1,8 @@
+uuid: 1326a8bd-7cea-4798-b441-7e567fc5c5b9
+langcode: en
+status: true
+dependencies: {  }
+id: comment_comment_form
+label: 'Comment Comment Form'
+description: null
+spamicide_form_id: comment_comment_form

@@ -1,0 +1,23 @@
+uuid: a93aee5f-da23-4112-92de-3fe80de61b4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_year
+    - node.type.poet
+id: node.poet.field_birth_year
+field_name: field_birth_year
+entity_type: node
+bundle: poet
+label: 'Birth year'
+description: 'Used for search and sorting. Use "-" symbol before value to set BCE date.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

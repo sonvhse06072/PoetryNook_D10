@@ -3,11 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_ebook_member.default
     - field.field.node.ebook_member.body
     - field.field.node.ebook_member.comment_node_ebook_member
+    - field.field.node.ebook_member.field_ebook_cover
+    - field.field.node.ebook_member.field_ebook_file
+    - field.field.node.ebook_member.field_rating
+    - image.style.medium
     - node.type.ebook_member
   module:
+    - comment
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
     - text
@@ -50,6 +57,128 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          62a574f7-ac29-49b5-a927-6917dc8f9636:
+            uuid: 62a574f7-ac29-49b5-a927-6917dc8f9636
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_member:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          4ea61152-3267-4c4c-a81c-c0999506ad54:
+            uuid: 4ea61152-3267-4c4c-a81c-c0999506ad54
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_member:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          bd33ebd3-24e0-4ac0-94ce-dbb5d12d614e:
+            uuid: bd33ebd3-24e0-4ac0-94ce-dbb5d12d614e
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_member:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          a78f8ed2-4548-4dda-9714-d36af68f5a61:
+            uuid: a78f8ed2-4548-4dda-9714-d36af68f5a61
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_member:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          2d49bfdf-0bbd-4854-a5d1-41c5cb7ea2e1:
+            uuid: 2d49bfdf-0bbd-4854-a5d1-41c5cb7ea2e1
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_member:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          d093632f-076f-4711-8051-a8e0fe8554ce:
+            uuid: d093632f-076f-4711-8051-a8e0fe8554ce
+            region: content
+            configuration:
+              id: 'extra_field_block:node:ebook_member:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
+            additional: {  }
+          8b7d7397-ee03-466c-be51-585e8e5a71d0:
+            uuid: 8b7d7397-ee03-466c-be51-585e8e5a71d0
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_member:comment_node_ebook_member'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.ebook_member.default
 targetEntityType: node
@@ -63,10 +192,38 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_ebook_member:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_ebook_cover:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_ebook_member: true
+  field_ebook_file: true
+  field_rating: true
+  langcode: true
+  search_api_excerpt: true

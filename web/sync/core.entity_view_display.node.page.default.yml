@@ -3,10 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_page.default
     - field.field.node.page.body
     - field.field.node.page.comment_node_page
+    - field.field.node.page.field_metatag
     - node.type.page
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +53,33 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+          975cd167-4365-452d-998d-349c1b0c7053:
+            uuid: 975cd167-4365-452d-998d-349c1b0c7053
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          9065586a-b23d-4f85-be30-a7d7d73d0960:
+            uuid: 9065586a-b23d-4f85-be30-a7d7d73d0960
+            region: content
+            configuration:
+              id: 'field_block:node:page:comment_node_page'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
@@ -65,10 +95,26 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  comment_node_page:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 101
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_page: true
+  field_metatag: true
+  langcode: true
+  search_api_excerpt: true

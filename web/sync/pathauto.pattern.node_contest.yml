@@ -1,0 +1,21 @@
+uuid: 037b9df0-5daf-4f93-8a1f-a49cea5b68a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_contest
+label: 'Content - Contest'
+type: 'canonical_entities:node'
+pattern: 'contest/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      contest: contest
+selection_logic: and
+weight: 0
+relationships: {  }

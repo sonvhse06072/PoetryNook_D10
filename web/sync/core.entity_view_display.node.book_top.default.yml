@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_book_top.default
     - field.field.node.book_top.body
     - field.field.node.book_top.comment_node_book_top
+    - field.field.node.book_top.field_author
+    - field.field.node.book_top.field_language
     - node.type.book_top
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +54,33 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          1634a3ce-023f-43d5-b990-8af2a4ef4c4a:
+            uuid: 1634a3ce-023f-43d5-b990-8af2a4ef4c4a
+            region: content
+            configuration:
+              id: 'extra_field_block:node:book_top:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          e6991b37-b642-475d-816d-731d890f326b:
+            uuid: e6991b37-b642-475d-816d-731d890f326b
+            region: content
+            configuration:
+              id: 'field_block:node:book_top:comment_node_book_top'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.book_top.default
 targetEntityType: node
@@ -63,10 +94,27 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_book_top:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_book_top: true
+  field_author: true
+  field_language: true
+  langcode: true
+  search_api_excerpt: true

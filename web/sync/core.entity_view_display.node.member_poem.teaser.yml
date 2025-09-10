@@ -6,6 +6,16 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.member_poem.body
     - field.field.node.member_poem.comment_node_member_poem
+    - field.field.node.member_poem.field_author_of_original
+    - field.field.node.member_poem.field_image
+    - field.field.node.member_poem.field_poetry_reading
+    - field.field.node.member_poem.field_poetry_reading_video
+    - field.field.node.member_poem.field_rating
+    - field.field.node.member_poem.field_tags
+    - field.field.node.member_poem.field_translation
+    - field.field.node.member_poem.field_translation_for
+    - field.field.node.member_poem.field_year
+    - field.field.node.member_poem.taxonomy_forums
     - node.type.member_poem
   module:
     - field_layout
@@ -52,6 +62,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          982aa908-08d6-4956-936f-29f15ad89dd6:
+            uuid: 982aa908-08d6-4956-936f-29f15ad89dd6
+            region: content
+            configuration:
+              id: 'extra_field_block:node:member_poem:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.member_poem.teaser
 targetEntityType: node
@@ -71,5 +91,22 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_member_poem: true
+  field_author_of_original: true
+  field_image: true
+  field_poetry_reading: true
+  field_poetry_reading_video: true
+  field_rating: true
+  field_tags: true
+  field_translation: true
+  field_translation_for: true
+  field_year: true
+  langcode: true
+  search_api_excerpt: true
+  taxonomy_forums: true

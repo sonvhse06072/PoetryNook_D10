@@ -1,0 +1,27 @@
+uuid: 9d6b6993-5a3c-411e-bbb9-a20b9c38b909
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ebook_file
+    - node.type.ebook_classic
+  module:
+    - file
+id: node.ebook_classic.field_ebook_file
+field_name: field_ebook_file
+entity_type: node
+bundle: ebook_classic
+label: File
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: '15 MB'
+  description_field: false
+field_type: file

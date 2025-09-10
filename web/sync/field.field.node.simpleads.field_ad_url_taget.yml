@@ -1,0 +1,23 @@
+uuid: 6416ab2c-8908-4df8-81db-a6ded03340b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_url_taget
+    - node.type.simpleads
+id: node.simpleads.field_ad_url_taget
+field_name: field_ad_url_taget
+entity_type: node
+bundle: simpleads
+label: 'Link Target'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Open destination URL in a new window'
+  off_label: 'Open destination URL in the same window'
+field_type: boolean

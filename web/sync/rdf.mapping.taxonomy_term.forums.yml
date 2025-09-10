@@ -1,0 +1,35 @@
+uuid: d4c9b9ca-d7f4-4c4b-9674-40b634e71b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.forums
+  module:
+    - taxonomy
+  enforced:
+    module:
+      - forum
+_core:
+  default_config_hash: 5dy_driyg8S-AwFJu0InPZR6vV3PB5ivI_Pl8-_3lG0
+id: taxonomy_term.forums
+targetEntityType: taxonomy_term
+bundle: forums
+types:
+  - 'sioc:Container'
+  - 'sioc:Forum'
+fieldMappings:
+  name:
+    properties:
+      - 'rdfs:label'
+      - 'skos:prefLabel'
+  description:
+    properties:
+      - 'skos:definition'
+  vid:
+    properties:
+      - 'skos:inScheme'
+    mapping_type: rel
+  parent:
+    properties:
+      - 'skos:broader'
+    mapping_type: rel

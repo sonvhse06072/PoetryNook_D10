@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Amazon Sync D10 module. Admin scaffolding for D10 port.
+ */
+
+use Drupal\Core\Database\Query\AlterableInterface;
+
+/**
+ * Implements hook_help().
+ */
+function amazon_sync_d10_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'amazon_sync_d10.settings':
+      return \Drupal::translation()->translate('Configure Amazon Sync D10 settings.');
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_query_TAG_alter() for 'amazon_sync_topbooks'.
+ * Mirrors D7: amazon_sync_query_amazon_sync_topbooks_alter().
+ */
+function amazon_sync_d10_query_amazon_sync_topbooks_alter(AlterableInterface $query) {
+  $top100items = \Drupal::config('amazon_sync_d10.settings')->get('amazon_top_100_books') ?? [];
+  $query->condition('amazon_item.asin', $top100items, 'IN');
+}
+
+/**
+ * Implements hook_query_TAG_alter() for 'top_books'.
+ * Mirrors D7: amazon_sync_query_top_books_alter().
+ */
+function amazon_sync_d10_query_top_books_alter(AlterableInterface $query) {
+  $top100 = \Drupal::config('amazon_sync_d10.settings')->get('amazon_top_100_books') ?? [];
+  $query->condition('amazon_item.asin', $top100, 'IN');
+}

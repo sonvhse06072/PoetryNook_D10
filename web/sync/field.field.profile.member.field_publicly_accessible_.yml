@@ -1,0 +1,21 @@
+uuid: ff9e8d39-2b17-463b-af47-a6069c063bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_publicly_accessible_
+    - profile.type.member
+  module:
+    - options
+id: profile.member.field_publicly_accessible_
+field_name: field_publicly_accessible_
+entity_type: profile
+bundle: member
+label: 'Publicly accessible?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,74 @@
+uuid: c9b4490e-584c-4d0b-b6a8-c1a667bedf79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.member.field_bio
+    - field.field.profile.member.field_full_name
+    - field.field.profile.member.field_interviews
+    - field.field.profile.member.field_publication_credits
+    - field.field.profile.member.field_publicly_accessible_
+    - field.field.profile.member.field_website
+    - profile.type.member
+  module:
+    - link
+    - text
+id: profile.member.default
+targetEntityType: profile
+bundle: member
+mode: default
+content:
+  field_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_full_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_interviews:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_publication_credits:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_website:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_publicly_accessible_: true
+  search_api_excerpt: true

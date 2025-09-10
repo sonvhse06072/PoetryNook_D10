@@ -52,6 +52,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          8003a0e8-20ab-4eaa-b073-bf77760b7889:
+            uuid: 8003a0e8-20ab-4eaa-b073-bf77760b7889
+            region: content
+            configuration:
+              id: 'extra_field_block:node:webform:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.webform.teaser
 targetEntityType: node
@@ -71,5 +81,12 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_webform: true
+  langcode: true
+  search_api_excerpt: true

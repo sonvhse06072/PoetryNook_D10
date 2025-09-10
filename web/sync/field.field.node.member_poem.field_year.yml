@@ -1,0 +1,21 @@
+uuid: 60d1f490-7aa8-40ac-bae1-d8b8042fd8c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year
+    - node.type.member_poem
+  module:
+    - datetime
+id: node.member_poem.field_year
+field_name: field_year
+entity_type: node
+bundle: member_poem
+label: Year
+description: 'The year poem was written.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

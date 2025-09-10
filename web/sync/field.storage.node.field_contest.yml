@@ -1,0 +1,19 @@
+uuid: df66bf6a-0833-4471-a5af-8c01608614c7
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_contest
+field_name: field_contest
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

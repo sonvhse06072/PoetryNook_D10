@@ -1,0 +1,21 @@
+uuid: fed9ae4b-2c6e-4136-855f-0146cdefbf07
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_poetry_news_material
+label: 'Content - Poetry News: Material'
+type: 'canonical_entities:node'
+pattern: 'poetry-news/[current-date:date]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      poetry_news_material: poetry_news_material
+selection_logic: and
+weight: 0
+relationships: {  }

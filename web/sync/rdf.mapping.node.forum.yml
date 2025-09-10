@@ -1,0 +1,60 @@
+uuid: f8f2deca-a371-409a-a37c-63ee2d63a613
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.forum
+  module:
+    - node
+  enforced:
+    module:
+      - forum
+_core:
+  default_config_hash: Dv6hFWWoJFeRADtEJB3iuQuTQP-t1OuE0U7OZ69guEg
+id: node.forum
+targetEntityType: node
+bundle: forum
+types:
+  - 'sioc:Post'
+  - 'sioct:BoardPost'
+fieldMappings:
+  taxonomy_forums:
+    properties:
+      - 'sioc:has_container'
+    mapping_type: rel
+  title:
+    properties:
+      - 'dc:title'
+  created:
+    properties:
+      - 'dc:date'
+      - 'dc:created'
+    datatype: 'xsd:dateTime'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'dc:modified'
+    datatype: 'xsd:dateTime'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  body:
+    properties:
+      - 'content:encoded'
+  uid:
+    properties:
+      - 'sioc:has_creator'
+    mapping_type: rel
+  name:
+    properties:
+      - 'foaf:name'
+  comment_count:
+    properties:
+      - 'sioc:num_replies'
+    datatype: 'xsd:integer'
+  last_activity:
+    properties:
+      - 'sioc:last_activity_date'
+    datatype: 'xsd:dateTime'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'

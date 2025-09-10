@@ -1,0 +1,22 @@
+uuid: 37538000-9d1a-4666-96a7-60a5cc6cff88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_bio
+    - profile.type.member
+  module:
+    - text
+id: profile.member.field_bio
+field_name: field_bio
+entity_type: profile
+bundle: member
+label: Bio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

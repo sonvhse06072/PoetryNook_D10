@@ -1,0 +1,30 @@
+uuid: 0b3accbc-4c25-4d09-a8ca-a39f8f7e8fd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.book_top
+    - node.type.poet
+id: node.book_top.field_author
+field_name: field_author
+entity_type: node
+bundle: book_top
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      poet: poet
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

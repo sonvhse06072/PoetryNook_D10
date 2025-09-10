@@ -1,0 +1,21 @@
+uuid: d8d30941-e2d7-44da-8c71-cbccc13d3722
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_poetry_art
+label: 'Content - Poetry Art'
+type: 'canonical_entities:node'
+pattern: 'art/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      poetry_art: poetry_art
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_micropoetry.default
     - field.field.node.micropoetry.body
     - field.field.node.micropoetry.comment_node_micropoetry
+    - field.field.node.micropoetry.field_rating
+    - field.field.node.micropoetry.field_tags
     - node.type.micropoetry
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +54,113 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          e7227e13-26d1-4f7a-bddf-82bf5e5669a2:
+            uuid: e7227e13-26d1-4f7a-bddf-82bf5e5669a2
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          145c5097-7206-428a-ab62-3dfd5aa51e61:
+            uuid: 145c5097-7206-428a-ab62-3dfd5aa51e61
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          a452285a-70ea-42b9-949c-de10cafafa2b:
+            uuid: a452285a-70ea-42b9-949c-de10cafafa2b
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          57c58e43-0e6d-43a9-aa83-7996951324dd:
+            uuid: 57c58e43-0e6d-43a9-aa83-7996951324dd
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          2566da53-e5cc-4381-be5e-c19cc7ad1851:
+            uuid: 2566da53-e5cc-4381-be5e-c19cc7ad1851
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          cdbb31a3-b4f4-41c7-b941-ff5dde3227da:
+            uuid: cdbb31a3-b4f4-41c7-b941-ff5dde3227da
+            region: content
+            configuration:
+              id: 'extra_field_block:node:micropoetry:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
+            additional: {  }
+          a5aff57c-dcf0-4fc2-8be9-37b8a2748789:
+            uuid: a5aff57c-dcf0-4fc2-8be9-37b8a2748789
+            region: content
+            configuration:
+              id: 'field_block:node:micropoetry:comment_node_micropoetry'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.micropoetry.default
 targetEntityType: node
@@ -63,10 +174,34 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_micropoetry:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_micropoetry: true
+  field_rating: true
+  langcode: true
+  search_api_excerpt: true

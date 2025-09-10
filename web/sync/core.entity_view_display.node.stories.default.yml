@@ -3,10 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_stories.default
     - field.field.node.stories.body
     - field.field.node.stories.comment_node_stories
+    - field.field.node.stories.field_author_stories
+    - field.field.node.stories.field_rate_this_poem_stories
+    - field.field.node.stories.field_tags_stories
+    - field.field.node.stories.field_year_stories
     - node.type.stories
   module:
+    - comment
+    - datetime
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +57,278 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          0ecce336-2f26-4893-9163-2d1e09a639f8:
+            uuid: 0ecce336-2f26-4893-9163-2d1e09a639f8
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_author_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          16c6feff-18fa-4b1b-b655-b433d980c3a4:
+            uuid: 16c6feff-18fa-4b1b-b655-b433d980c3a4
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_tags_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          1dea8e23-70b7-44dd-96b2-2b1566581f8d:
+            uuid: 1dea8e23-70b7-44dd-96b2-2b1566581f8d
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_year_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          96014134-b12a-43c0-9870-8b30e2324531:
+            uuid: 96014134-b12a-43c0-9870-8b30e2324531
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_author_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          882b0542-5b7d-49f1-a6ac-cec16c728716:
+            uuid: 882b0542-5b7d-49f1-a6ac-cec16c728716
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_tags_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          2189c27e-9fb8-4917-bdc1-d8c974ad5af9:
+            uuid: 2189c27e-9fb8-4917-bdc1-d8c974ad5af9
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_year_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          ebdc3ebb-1480-43c1-a360-754251ddc81e:
+            uuid: ebdc3ebb-1480-43c1-a360-754251ddc81e
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_author_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          d445d698-1002-4e56-ad24-fd5f0217e46c:
+            uuid: d445d698-1002-4e56-ad24-fd5f0217e46c
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_tags_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          b05a80d3-d3bb-46e5-b120-962030ec1f3f:
+            uuid: b05a80d3-d3bb-46e5-b120-962030ec1f3f
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_year_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          81900fd2-a897-489e-a0f3-2cb481416cd0:
+            uuid: 81900fd2-a897-489e-a0f3-2cb481416cd0
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_author_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          691ed13a-3b5d-452a-90e8-6d7092e0546d:
+            uuid: 691ed13a-3b5d-452a-90e8-6d7092e0546d
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_tags_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          8c3954ae-8f6c-468b-8636-786c7b0b18c5:
+            uuid: 8c3954ae-8f6c-468b-8636-786c7b0b18c5
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_year_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          e47aa623-8049-48ae-95cd-95a21973f660:
+            uuid: e47aa623-8049-48ae-95cd-95a21973f660
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_author_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
+          6e493de6-03a8-463f-9da4-dc46f939050f:
+            uuid: 6e493de6-03a8-463f-9da4-dc46f939050f
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_tags_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 15
+            additional: {  }
+          eab0b0c9-bbc7-49bb-a23c-65d37729b50f:
+            uuid: eab0b0c9-bbc7-49bb-a23c-65d37729b50f
+            region: content
+            configuration:
+              id: 'field_block:node:stories:field_year_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 16
+            additional: {  }
+          faa99565-8aa9-411a-ae31-3a517d8e57e6:
+            uuid: faa99565-8aa9-411a-ae31-3a517d8e57e6
+            region: content
+            configuration:
+              id: 'extra_field_block:node:stories:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 17
+            additional: {  }
+          c6bd60fe-5cc8-42a3-beeb-f85ca3b216ef:
+            uuid: c6bd60fe-5cc8-42a3-beeb-f85ca3b216ef
+            region: content
+            configuration:
+              id: 'field_block:node:stories:comment_node_stories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 18
+            additional: {  }
         third_party_settings: {  }
 id: node.stories.default
 targetEntityType: node
@@ -63,10 +342,51 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_stories:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_author_stories:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tags_stories:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_year_stories:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_stories: true
+  field_rate_this_poem_stories: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,31 @@
+_core:
+  default_config_hash: aD33PmzwEBSmwqmUJQs51dVm8gl8f_i2rxnMAxfwAFs
+amazon_aws_access_key:
+amazon_aws_secret_access_key:
+amazon_default_locale: US
+details:
+  amazon_core_data:
+    images: images
+    creators: '0'
+  amazon_invalid_asin_alt: ''
+  amazon_refresh_schedule: 7200
+  amazon_refresh_cron_limit: 50
+debug:
+  amazon_request_delay: 0
+  amazon_request_amount: 0
+  amazon_token_request_delay: 0
+  amazon_request_amount_checkbox: false
+  amazon_only_nodes: false
+  amazon_request_enabled: true
+  amazon_update_on_node_edit: false
+  amazon_update_on_node_view: false
+  amazon_update_on_node_hook_save: false
+amazon_locale_DE_associate_id: ''
+amazon_locale_US_associate_id: follthebluefl-20
+amazon_locale_UK_associate_id: ''
+amazon_locale_JP_associate_id: ''
+amazon_locale_FR_associate_id: ''
+amazon_locale_CA_associate_id: ''
+amazon_locale_IT_associate_id: ''
+amazon_locale_CN_associate_id: null
+amazon_locale_ES_associate_id: ''

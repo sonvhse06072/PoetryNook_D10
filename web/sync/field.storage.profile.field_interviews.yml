@@ -1,0 +1,19 @@
+uuid: a9b49e9e-0cab-40f4-a20f-eab05805d061
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - profile
+id: profile.field_interviews
+field_name: field_interviews
+entity_type: profile
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

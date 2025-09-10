@@ -1,0 +1,19 @@
+uuid: 2dd64269-80cb-41f0-bbbe-c78d1604d409
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author_of_original
+    - node.type.member_poem
+id: node.member_poem.field_author_of_original
+field_name: field_author_of_original
+entity_type: node
+bundle: member_poem
+label: 'Author of original'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,27 @@
+uuid: 1f6b1905-1288-422c-84ae-18c93b6c1466
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_flash
+    - node.type.simpleads
+  module:
+    - file
+id: node.simpleads.field_ad_flash
+field_name: field_ad_flash
+entity_type: node
+bundle: simpleads
+label: 'Ad Flash'
+description: 'Upload Flash file for this Ad.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: field/flash
+  file_extensions: swf
+  max_filesize: ''
+  description_field: false
+field_type: file

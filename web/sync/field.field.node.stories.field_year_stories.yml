@@ -1,0 +1,21 @@
+uuid: bb5486b1-855c-4af9-96de-91cff386575f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_stories
+    - node.type.stories
+  module:
+    - datetime
+id: node.stories.field_year_stories
+field_name: field_year_stories
+entity_type: node
+bundle: stories
+label: 'Year '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

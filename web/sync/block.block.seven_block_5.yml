@@ -1,0 +1,30 @@
+uuid: ff8e2c12-61e8-4f7a-a294-678b4e14f837
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:da0c7f02-c370-4294-8046-70e2439dc211'
+  module:
+    - block_content
+    - system
+  theme:
+    - claro
+id: seven_block_5
+theme: claro
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:da0c7f02-c370-4294-8046-70e2439dc211'
+settings:
+  id: 'block_content:da0c7f02-c370-4294-8046-70e2439dc211'
+  label: ''
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/add/member-poem

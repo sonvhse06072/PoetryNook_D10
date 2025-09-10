@@ -3,10 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_book.default
     - field.field.node.book.body
     - field.field.node.book.comment_node_book
+    - field.field.node.book.field_author
     - node.type.book
   module:
+    - comment
     - field_layout
     - layout_builder
     - layout_discovery
@@ -50,6 +53,33 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          3bc4ef39-506d-4b6a-948c-6edfb1dd9d99:
+            uuid: 3bc4ef39-506d-4b6a-948c-6edfb1dd9d99
+            region: content
+            configuration:
+              id: 'extra_field_block:node:book:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          0bf7efe7-578e-4be9-952f-d51cc11edd5b:
+            uuid: 0bf7efe7-578e-4be9-952f-d51cc11edd5b
+            region: content
+            configuration:
+              id: 'field_block:node:book:comment_node_book'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.book.default
 targetEntityType: node
@@ -63,10 +93,26 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_book:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_book: true
+  field_author: true
+  langcode: true
+  search_api_excerpt: true

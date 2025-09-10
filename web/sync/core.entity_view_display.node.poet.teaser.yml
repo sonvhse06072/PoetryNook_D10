@@ -6,9 +6,22 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.poet.body
     - field.field.node.poet.comment_node_poet
+    - field.field.node.poet.field_birth_date_text
+    - field.field.node.poet.field_birth_town
+    - field.field.node.poet.field_birth_year
+    - field.field.node.poet.field_country
+    - field.field.node.poet.field_death_date_text
+    - field.field.node.poet.field_death_year
+    - field.field.node.poet.field_image
+    - field.field.node.poet.field_interviews
+    - field.field.node.poet.field_magazines
+    - field.field.node.poet.field_poetname
+    - field.field.node.poet.field_website
+    - image.style.thumbnail_48
     - node.type.poet
   module:
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
     - text
@@ -52,6 +65,111 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          5a4019b7-2a98-4eec-9445-42853327bf4b:
+            uuid: 5a4019b7-2a98-4eec-9445-42853327bf4b
+            region: content
+            configuration:
+              id: 'field_block:node:poet:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail_48
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          16aebbf5-7c69-4926-b139-684e0d80aee5:
+            uuid: 16aebbf5-7c69-4926-b139-684e0d80aee5
+            region: content
+            configuration:
+              id: 'field_block:node:poet:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail_48
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          f3d565e1-1e82-4d42-8514-9ad1c847d92c:
+            uuid: f3d565e1-1e82-4d42-8514-9ad1c847d92c
+            region: content
+            configuration:
+              id: 'field_block:node:poet:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail_48
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          ec03805b-8d76-4c67-b946-7416ee7c53d7:
+            uuid: ec03805b-8d76-4c67-b946-7416ee7c53d7
+            region: content
+            configuration:
+              id: 'field_block:node:poet:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail_48
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          5103c2e6-835d-425d-bffb-8101849b9d61:
+            uuid: 5103c2e6-835d-425d-bffb-8101849b9d61
+            region: content
+            configuration:
+              id: 'field_block:node:poet:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail_48
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          3e440c16-7a5d-471b-8cd8-b915d4da7685:
+            uuid: 3e440c16-7a5d-471b-8cd8-b915d4da7685
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poet:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
 id: node.poet.teaser
 targetEntityType: node
@@ -66,10 +184,38 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail_48
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_poet: true
+  field_birth_date_text: true
+  field_birth_town: true
+  field_birth_year: true
+  field_country: true
+  field_death_date_text: true
+  field_death_year: true
+  field_interviews: true
+  field_magazines: true
+  field_poetname: true
+  field_website: true
+  langcode: true
+  search_api_excerpt: true

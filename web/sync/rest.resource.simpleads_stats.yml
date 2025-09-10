@@ -1,0 +1,20 @@
+uuid: 8963a546-9c5b-4037-973d-d947b8e78e6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - simpleads
+    - user
+_core:
+  default_config_hash: DFWGz-r61dPyri3cpN9LPUWZ7WAkVlzemYMEPAL_Chs
+id: simpleads_stats
+plugin_id: simpleads_stats
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

@@ -1,0 +1,31 @@
+uuid: 68d38c8b-9f15-4934-9558-b6651f1097f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.amazon_block.comment_node_amazon_block
+    - field.field.node.amazon_block.field_amazon_product_id
+    - node.type.amazon_block
+  module:
+    - user
+id: node.amazon_block.teaser
+targetEntityType: node
+bundle: amazon_block
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  comment_node_amazon_block: true
+  field_amazon_product_id: true
+  langcode: true
+  search_api_excerpt: true

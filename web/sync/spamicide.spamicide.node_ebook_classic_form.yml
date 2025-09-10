@@ -1,0 +1,8 @@
+uuid: 38b04a23-63ad-4120-b216-2c27a98cd0b1
+langcode: en
+status: true
+dependencies: {  }
+id: node_ebook_classic_form
+label: 'Node Ebook Classic Form'
+description: null
+spamicide_form_id: node_ebook_classic_form

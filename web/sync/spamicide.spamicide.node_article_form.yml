@@ -1,0 +1,8 @@
+uuid: 65f2690c-5af2-4c53-880a-1081bf556ac6
+langcode: en
+status: true
+dependencies: {  }
+id: node_article_form
+label: 'Node Article Form'
+description: null
+spamicide_form_id: node_article_form

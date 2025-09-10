@@ -1,0 +1,33 @@
+uuid: 5a64abd3-f181-4562-815a-c35a918a450a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.story_audience.field_audio_name
+    - field.field.paragraph.story_audience.field_story_audio_
+    - paragraphs.paragraphs_type.story_audience
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.story_audience.default
+targetEntityType: paragraph
+bundle: story_audience
+mode: default
+content:
+  field_audio_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_story_audio_: true
+  status: true

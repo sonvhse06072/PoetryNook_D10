@@ -1,0 +1,19 @@
+uuid: dba050ec-61f1-46c6-85d5-c5943ffa7bb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pronounciation_title
+    - node.type.poem
+id: node.poem.field_pronounciation_title
+field_name: field_pronounciation_title
+entity_type: node
+bundle: poem
+label: 'Pronunciation title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_poetry_art.default
     - field.field.node.poetry_art.body
     - field.field.node.poetry_art.comment_node_poetry_art
+    - field.field.node.poetry_art.field_image
     - node.type.poetry_art
   module:
+    - comment
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
     - text
@@ -50,6 +54,128 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          7f58f335-9124-4212-8914-65ca0737190e:
+            uuid: 7f58f335-9124-4212-8914-65ca0737190e
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          4d1bd7b0-1697-43c0-a202-6bf6962d24b4:
+            uuid: 4d1bd7b0-1697-43c0-a202-6bf6962d24b4
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          5be24532-b4f1-4e27-bada-069ebd511c3a:
+            uuid: 5be24532-b4f1-4e27-bada-069ebd511c3a
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          37d867c5-611d-4b50-95bc-e5fd8c22c9b1:
+            uuid: 37d867c5-611d-4b50-95bc-e5fd8c22c9b1
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          a8ead8c3-7047-4402-9abf-7222b777c849:
+            uuid: a8ead8c3-7047-4402-9abf-7222b777c849
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          005cc99b-b895-4cd2-ae7a-46961bae4c7c:
+            uuid: 005cc99b-b895-4cd2-ae7a-46961bae4c7c
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poetry_art:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
+            additional: {  }
+          d4bec9a0-0163-482a-8aa2-f5127bf64a6a:
+            uuid: d4bec9a0-0163-482a-8aa2-f5127bf64a6a
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_art:comment_node_poetry_art'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.poetry_art.default
 targetEntityType: node
@@ -63,10 +189,36 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_poetry_art:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_poetry_art: true
+  langcode: true
+  search_api_excerpt: true

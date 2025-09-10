@@ -1,0 +1,21 @@
+uuid: 835d21a3-578a-45dc-a91d-4083277f791f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_member_poem
+label: 'Content - Member poem'
+type: 'canonical_entities:node'
+pattern: 'poem/member/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      member_poem: member_poem
+selection_logic: and
+weight: 0
+relationships: {  }

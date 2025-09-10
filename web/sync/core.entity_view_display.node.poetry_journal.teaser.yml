@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.poetry_journal.body
     - field.field.node.poetry_journal.comment_node_poetry_journal
+    - field.field.node.poetry_journal.field_amazon_product_id
     - node.type.poetry_journal
   module:
     - field_layout
@@ -52,6 +53,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          1969d83e-af89-42c2-b7ae-baa438ef580a:
+            uuid: 1969d83e-af89-42c2-b7ae-baa438ef580a
+            region: content
+            configuration:
+              id: 'extra_field_block:node:poetry_journal:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.poetry_journal.teaser
 targetEntityType: node
@@ -71,5 +82,13 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   comment_node_poetry_journal: true
+  field_amazon_product_id: true
+  langcode: true
+  search_api_excerpt: true

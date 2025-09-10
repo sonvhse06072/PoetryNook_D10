@@ -1,0 +1,21 @@
+uuid: 7477e78b-843b-42e5-acf4-6d11731c2d50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_year
+    - node.type.member_story
+  module:
+    - datetime
+id: node.member_story.field_member_year
+field_name: field_member_year
+entity_type: node
+bundle: member_story
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function amazon_books_d10_theme($existing, $type, $theme, $path) {
+  return [
+    'amazon_books_d10_list' => [
+      'variables' => [
+        'items' => NULL,
+        'author' => NULL,
+      ],
+      'template' => 'amazon-books-d10',
+    ],
+    'amazon_literature_books_d10' => [
+      'variables' => [
+        'items' => NULL,
+      ],
+      'template' => 'literature-books-d10',
+    ],
+  ];
+}

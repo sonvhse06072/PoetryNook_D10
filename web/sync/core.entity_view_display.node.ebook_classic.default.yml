@@ -3,11 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_ebook_classic.default
     - field.field.node.ebook_classic.body
     - field.field.node.ebook_classic.comment_node_ebook_classic
+    - field.field.node.ebook_classic.field_ebook_author
+    - field.field.node.ebook_classic.field_ebook_cover
+    - field.field.node.ebook_classic.field_ebook_file
+    - field.field.node.ebook_classic.field_rating
+    - image.style.medium
     - node.type.ebook_classic
   module:
+    - comment
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
     - text
@@ -50,6 +58,208 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          73089350-bde4-4708-98e0-004398b09fe9:
+            uuid: 73089350-bde4-4708-98e0-004398b09fe9
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          e4864bc3-98d6-4c58-af31-ff34d6d85a2e:
+            uuid: e4864bc3-98d6-4c58-af31-ff34d6d85a2e
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          8f845374-cc00-4303-91c5-da41aad990c1:
+            uuid: 8f845374-cc00-4303-91c5-da41aad990c1
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          6dc0f954-ef0a-491b-b02c-9946885d74af:
+            uuid: 6dc0f954-ef0a-491b-b02c-9946885d74af
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          b1115bb4-2312-4de1-9389-7c947a398124:
+            uuid: b1115bb4-2312-4de1-9389-7c947a398124
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          cd5ba3b4-08e7-47f0-85e2-28eaa4045eca:
+            uuid: cd5ba3b4-08e7-47f0-85e2-28eaa4045eca
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          a78b55e4-3215-4a50-8cc5-f883b4a4ab89:
+            uuid: a78b55e4-3215-4a50-8cc5-f883b4a4ab89
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          bbc2e7c2-9b64-414f-a99f-4d0ed38f6730:
+            uuid: bbc2e7c2-9b64-414f-a99f-4d0ed38f6730
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          65aa20f0-e8ed-43d7-8e69-47b9f6cf6ae1:
+            uuid: 65aa20f0-e8ed-43d7-8e69-47b9f6cf6ae1
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          d8c7c3b5-4904-490b-8ebd-226ad3224d30:
+            uuid: d8c7c3b5-4904-490b-8ebd-226ad3224d30
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:field_ebook_cover'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          0d4a60cc-0da5-4bee-8ca4-b4a4f3377342:
+            uuid: 0d4a60cc-0da5-4bee-8ca4-b4a4f3377342
+            region: content
+            configuration:
+              id: 'extra_field_block:node:ebook_classic:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 12
+            additional: {  }
+          eb6f6c21-36fb-4541-8954-9273181b554e:
+            uuid: eb6f6c21-36fb-4541-8954-9273181b554e
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:comment_node_ebook_classic'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
         third_party_settings: {  }
 id: node.ebook_classic.default
 targetEntityType: node
@@ -63,10 +273,46 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  comment_node_ebook_classic:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_ebook_author:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ebook_cover:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
-  comment_node_ebook_classic: true
+  field_ebook_file: true
+  field_rating: true
+  langcode: true
+  search_api_excerpt: true

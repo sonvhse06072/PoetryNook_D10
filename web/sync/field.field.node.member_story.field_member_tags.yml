@@ -1,0 +1,26 @@
+uuid: f745ab2f-2214-4ec6-9c60-d1f4d76b2755
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_tags
+    - node.type.member_story
+    - taxonomy.vocabulary.tags
+id: node.member_story.field_member_tags
+field_name: field_member_tags
+entity_type: node
+bundle: member_story
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+field_type: entity_reference

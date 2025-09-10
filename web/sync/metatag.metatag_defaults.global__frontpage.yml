@@ -1,0 +1,11 @@
+uuid: 190bb8a5-5376-4a70-8f6d-8d38471e9f02
+langcode: en
+status: true
+dependencies: {  }
+id: global__frontpage
+label: 'Global: Frontpage'
+tags:
+  canonical_url: '[site:url]'
+  description: 'Includes a broad array of poets, from famous poets to spoken poets. Poetry search engine, database, forum, and poetry contests for the lyrical mind.'
+  shortlink: '[site:url]'
+  title: 'PoetryNook.Com: Poem Search Engine, database, & forum for poets'

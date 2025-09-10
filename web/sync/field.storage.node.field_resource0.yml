@@ -1,0 +1,19 @@
+uuid: 54bd4bc3-71db-431f-bcdf-db40184dff6d
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - poetrynews_d10
+id: node.field_resource0
+field_name: field_resource0
+entity_type: node
+type: poetrynews_resource
+settings: {  }
+module: poetrynews_d10
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

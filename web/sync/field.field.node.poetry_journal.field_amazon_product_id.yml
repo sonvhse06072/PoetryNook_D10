@@ -1,0 +1,22 @@
+uuid: c344d4db-3f84-4853-8d3f-377094e705db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amazon_product_id
+    - node.type.poetry_journal
+  module:
+    - asin
+id: node.poetry_journal.field_amazon_product_id
+field_name: field_amazon_product_id
+entity_type: node
+bundle: poetry_journal
+label: 'Amazon Product ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  locale: US
+field_type: asin

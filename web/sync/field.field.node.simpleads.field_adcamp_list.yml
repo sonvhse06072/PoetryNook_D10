@@ -1,0 +1,19 @@
+uuid: 5361205c-c9bd-4144-bdb5-ba3c24aa7441
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adcamp_list
+    - node.type.simpleads
+id: node.simpleads.field_adcamp_list
+field_name: field_adcamp_list
+entity_type: node
+bundle: simpleads
+label: Campaign
+description: 'Please select campaign for this ad (if applicable).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

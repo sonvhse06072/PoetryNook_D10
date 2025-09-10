@@ -5,10 +5,13 @@ dependencies:
   config:
     - field.field.node.poetry_art.body
     - field.field.node.poetry_art.comment_node_poetry_art
+    - field.field.node.poetry_art.field_image
+    - image.style.thumbnail
     - node.type.poetry_art
   module:
     - comment
     - field_layout
+    - image
     - layout_discovery
     - path
     - text
@@ -43,6 +46,21 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 33
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -89,4 +107,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

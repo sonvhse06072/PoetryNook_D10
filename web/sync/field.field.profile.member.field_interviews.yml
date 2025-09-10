@@ -1,0 +1,23 @@
+uuid: 85ea443c-590d-4257-ab96-ae8dd2d794bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_interviews
+    - profile.type.member
+  module:
+    - link
+id: profile.member.field_interviews
+field_name: field_interviews
+entity_type: profile
+bundle: member
+label: Interviews
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

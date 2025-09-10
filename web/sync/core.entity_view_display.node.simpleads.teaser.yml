@@ -1,0 +1,85 @@
+uuid: a64445d1-dcf8-4dd0-abcf-8935a859e2e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.simpleads.comment_node_simpleads
+    - field.field.node.simpleads.field_ad_category
+    - field.field.node.simpleads.field_ad_end_date
+    - field.field.node.simpleads.field_ad_flash
+    - field.field.node.simpleads.field_ad_image
+    - field.field.node.simpleads.field_ad_start_date
+    - field.field.node.simpleads.field_ad_status
+    - field.field.node.simpleads.field_ad_text
+    - field.field.node.simpleads.field_ad_type
+    - field.field.node.simpleads.field_ad_url
+    - field.field.node.simpleads.field_ad_url_taget
+    - field.field.node.simpleads.field_adcamp_list
+    - image.style.medium
+    - node.type.simpleads
+  module:
+    - file
+    - image
+    - options
+    - text
+    - user
+id: node.simpleads.teaser
+targetEntityType: node
+bundle: simpleads
+mode: teaser
+content:
+  field_ad_flash:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_ad_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_ad_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_ad_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  comment_node_simpleads: true
+  field_ad_category: true
+  field_ad_end_date: true
+  field_ad_start_date: true
+  field_ad_status: true
+  field_ad_url: true
+  field_ad_url_taget: true
+  field_adcamp_list: true
+  langcode: true
+  search_api_excerpt: true

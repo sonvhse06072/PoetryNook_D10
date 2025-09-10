@@ -1,0 +1,8 @@
+uuid: 9dbf110b-03fa-45db-916a-17d45ab51798
+langcode: en
+status: true
+dependencies: {  }
+id: node_amazon_products_form
+label: 'Node Amazon Products Form'
+description: null
+spamicide_form_id: node_amazon_products_form

@@ -4,11 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.amazon_products.comment_node_amazon_products
+    - field.field.node.amazon_products.field_price
+    - field.field.node.amazon_products.field_product_link
+    - field.field.node.amazon_products.field_thumbail
+    - image.style.thumbnail
     - node.type.amazon_products
   module:
     - comment
     - field_layout
+    - image
     - layout_discovery
+    - link
     - path
 third_party_settings:
   field_layout:
@@ -31,6 +37,36 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_price:
+    type: number
+    weight: 42
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_link:
+    type: link_default
+    weight: 44
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_thumbail:
+    type: image_image
+    weight: 43
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -77,4 +113,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

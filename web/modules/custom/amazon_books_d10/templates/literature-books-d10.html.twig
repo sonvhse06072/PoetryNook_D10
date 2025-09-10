@@ -1,0 +1,15 @@
+{# Twig template for Literature books listing with pager (D10). #}
+<div class="amazon-literature-books">
+  {% if items is not empty %}
+    <ul class="literature-books">
+      {% for item in items %}
+        <li>
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="empty">No literature books available.</div>
+  {% endif %}
+  {{ pager }}
+</div>

@@ -1,0 +1,22 @@
+uuid: 8ce8be0e-0b4c-4526-89ea-56bb7e9f2b91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amazon_product_id
+    - node.type.amazon_block
+  module:
+    - asin
+id: node.amazon_block.field_amazon_product_id
+field_name: field_amazon_product_id
+entity_type: node
+bundle: amazon_block
+label: 'Amazon Product ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  locale: US
+field_type: asin
