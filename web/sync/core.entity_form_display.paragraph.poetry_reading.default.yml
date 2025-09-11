@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.poetry_reading
   module:
     - field_layout
+    - file
     - layout_discovery
 third_party_settings:
   field_layout:
@@ -19,9 +20,16 @@ targetEntityType: paragraph
 bundle: poetry_reading
 mode: default
 content:
+  field_poetry_reading_audio:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
   field_reader_name:
     type: string_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
@@ -29,5 +37,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_poetry_reading_audio: true
   status: true

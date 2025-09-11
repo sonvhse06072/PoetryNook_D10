@@ -1,0 +1,22 @@
+uuid: 62196e58-c20a-42a7-a58b-df53fa97860c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: mQfMFgDELw3db8DhK_ur9rsHa9qAAjG4YOOOZ8N9YoA
+id: poetry_d10_secondary_local_tasks
+theme: poetry_d10
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

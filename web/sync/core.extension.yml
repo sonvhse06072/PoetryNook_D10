@@ -52,6 +52,7 @@ module:
   filter: 0
   fivestar: 0
   follow: 0
+  gin_toolbar: 0
   help: 0
   history: 0
   image: 0
@@ -83,14 +84,13 @@ module:
   migrate_drupal_ui: 0
   migrate_plus: 0
   migrate_tools: 0
-  module_filter: 0
   module_missing_message_fixer: 0
   mysql: 0
-  navigation: 0
   node: 0
   options: 0
   page_cache: 0
   page_manager: 0
+  page_manager_ui: 0
   panels: 0
   panels_ipe: 0
   path: 0
@@ -148,4 +148,9 @@ module:
 theme:
   olivero: 0
   claro: 0
+  bootstrap: 0
+  bootstrap_subtheme: 0
+  bootstrap_sass: 0
+  poetry_d10: 0
+  gin: 0
 profile: standard

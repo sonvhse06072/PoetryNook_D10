@@ -1,0 +1,27 @@
+uuid: 7eff9d41-3359-4e1b-876d-fd61311dab42
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: '-tfzkfrAyTBkk0uYtRaoRY8Vb9rCg0TXh7QejMSnhWM'
+id: poetry_d10_main_menu
+theme: poetry_d10
+region: primary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

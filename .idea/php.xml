@@ -114,6 +114,7 @@
       <path value="$PROJECT_DIR$/vendor/solarium/solarium" />
       <path value="$PROJECT_DIR$/vendor/halaxa/json-machine" />
       <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

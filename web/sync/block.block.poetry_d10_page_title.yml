@@ -1,0 +1,20 @@
+uuid: 5e11b4c1-778b-4160-813c-c16915d5c81d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: iCT6aytGDx2dgYgUwuiJ9J9OKj1t1isY4MvT0yuyQDE
+id: poetry_d10_page_title
+theme: poetry_d10
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

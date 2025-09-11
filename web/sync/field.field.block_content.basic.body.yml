@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.basic
+    - filter.format.full_html
     - field.storage.block_content.body
   module:
     - text

@@ -1,0 +1,20 @@
+uuid: 899245c6-4096-4eb5-93eb-2fafe124e883
+langcode: en
+status: true
+dependencies:
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: oAugQOST1T0CA9i6NIHYJ__CLiWYvpxve1DCJNjADjw
+id: poetry_d10_primary_admin_actions
+theme: poetry_d10
+region: content
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

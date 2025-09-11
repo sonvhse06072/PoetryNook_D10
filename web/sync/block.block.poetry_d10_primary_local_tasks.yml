@@ -1,0 +1,22 @@
+uuid: f52921b6-1ff9-4335-ab36-6b80774b825a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: 9szZDVBQhARFAExUcLqQgWbBasTe9s4Z1ZnWuxqLRpY
+id: poetry_d10_primary_local_tasks
+theme: poetry_d10
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

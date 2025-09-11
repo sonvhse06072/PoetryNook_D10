@@ -1,0 +1,22 @@
+uuid: ff5d8b91-0f33-4ee4-beb1-87121cf2b150
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: awWi-OoKXhr2FCOIqWybflXDpW-wPl0E4L1e3NbDGlM
+id: poetry_d10_help
+theme: poetry_d10
+region: highlighted
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -18,6 +18,7 @@ services:
     environment:
       PHP_MAIL_MIXED_LF_AND_CRLF: 1
       PHP_SENDMAIL_PATH: '/bin/busybox sendmail -t -i -S mailhog:25'
+      PHP_MAX_INPUT_VARS: 20000
     volumes:
     - ./:/var/www/html:cached
 

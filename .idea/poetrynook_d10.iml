@@ -32,7 +32,6 @@
       <sourceFolder url="file://$MODULE_DIR$/web/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/composer-plugin-implements-scaffold-events/src" isTestSource="false" packagePrefix="Drupal\Tests\fixture\Composer\Plugin\" />
       <sourceFolder url="file://$MODULE_DIR$/web/modules/contrib/advagg/advagg_js_minify" isTestSource="false" packagePrefix="Patchwork" />
       <sourceFolder url="file://$MODULE_DIR$/web/modules/contrib/feeds/tests/src/Unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/web/themes/contrib/bootstrap/src" isTestSource="false" packagePrefix="Drupal\bootstrap\" />
       <sourceFolder url="file://$MODULE_DIR$/web/themes/contrib/bootstrap5/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/chi-teck/drupal-code-generator" />
@@ -136,6 +135,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tubalmartin/cssmin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webflo/drupal-finder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

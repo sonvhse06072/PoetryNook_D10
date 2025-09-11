@@ -1,0 +1,22 @@
+uuid: c451392f-42c0-4416-8d54-ac397799022a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: nbNcuSI5Lk-Xjt5ZlWfMD87ZJXNknaDF-lXDHXdhLcE
+id: poetry_d10_messages
+theme: poetry_d10
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

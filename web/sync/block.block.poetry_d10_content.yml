@@ -1,0 +1,22 @@
+uuid: f49dc8dd-ab0b-49a4-b043-99dfa0d3b879
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - poetry_d10
+_core:
+  default_config_hash: LSdEmtB68RwK-e-ZudvsONMVaaYgxA6NsS4GrHW_E1w
+id: poetry_d10_content
+theme: poetry_d10
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }
