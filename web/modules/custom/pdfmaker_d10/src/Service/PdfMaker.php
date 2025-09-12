@@ -136,6 +136,10 @@ class PdfMaker {
         $lib = $legacy;
       }
     }
+    if (!file_exists($lib)) {
+      $this->logger->error('pdfmaker_d10: Missing pdf-php library (Creport.php). Checked @path.', ['@path' => $lib]);
+      return NULL;
+    }
     require_once $lib;
 
     $pdf = new \Creport('a4', 'portrait', 'none', NULL);
@@ -176,6 +180,7 @@ class PdfMaker {
     if (!$filename) {
       $filename = 'Poetry Nook Collection';
     }
+    $filename = $this->sanitizeFilename($filename);
 
     $folder = $options['folder'] ?? '';
     $folder_inner = $options['folder_inner'] ?? '';
@@ -231,16 +236,21 @@ class PdfMaker {
     $modulePath = dirname(__DIR__, 2);
     $mainFont = $modulePath . '/lib/fonts/Times-Roman.afm';
     $codeFont = $modulePath . '/lib/fonts/Courier.afm';
-    if (!file_exists($mainFont) || !file_exists($codeFont)) {
+    $hasMain = file_exists($mainFont);
+    $hasCode = file_exists($codeFont);
+    if (!$hasMain || !$hasCode) {
       // Fallback to legacy module fonts if available.
       $legacyBase = (defined('DRUPAL_ROOT') ? DRUPAL_ROOT : dirname(__DIR__, 5)) . '/sites/all/modules/custom/pdfmaker/lib/fonts';
       $legacyMain = $legacyBase . '/Times-Roman.afm';
       $legacyCode = $legacyBase . '/Courier.afm';
-      if (file_exists($legacyMain) && file_exists($legacyCode)) {
-        $mainFont = $legacyMain;
-        $codeFont = $legacyCode;
-      }
+      if (file_exists($legacyMain)) { $mainFont = $legacyMain; $hasMain = TRUE; }
+      if (file_exists($legacyCode)) { $codeFont = $legacyCode; $hasCode = TRUE; }
     }
+    if (!$hasMain) { $mainFont = 'Times-Roman'; }
+    if (!$hasCode) { $codeFont = 'Courier'; }
+
+    // Ensure a default font is selected.
+    $pdf->selectFont($mainFont);
 
     $size = 12;
     $textOptions = ['justification' => 'centre'];
@@ -272,12 +282,13 @@ class PdfMaker {
             $size = 12;
             break;
           case '#X':
+            // Start legacy code block collection (ignored for security).
             $collecting = TRUE;
+            $code = '';
             break;
           case '#x':
-            $pdf->saveState();
-            eval($code);
-            $pdf->restoreState();
+            // SECURITY: do not execute arbitrary code blocks. Log and ignore.
+            $this->logger->warning('pdfmaker_d10: Ignored legacy #X/#x code block in PDF content.');
             $pdf->selectFont($mainFont);
             $code = '';
             $collecting = FALSE;
@@ -285,7 +296,8 @@ class PdfMaker {
         }
       }
       elseif ($collecting) {
-        $code .= $line;
+        // Ignore collected code lines.
+        continue;
       }
       elseif ((strlen($line) > 1 && $line[1] === '<') && $line[strlen($line) - 1] === '>') {
         switch ($line[0]) {
@@ -326,6 +338,22 @@ class PdfMaker {
       $this->logger->error('Failed to save PDF: @m', ['@m' => $e->getMessage()]);
       return NULL;
     }
+  }
+
+  protected function sanitizeFilename(string $name): string {
+    $name = Html::decodeEntities($name);
+    // Replace forbidden/problematic characters.
+    $name = preg_replace('/[^\w\s\-\.,\(\)&]/u', '_', $name);
+    // Collapse spaces and trim.
+    $name = trim(preg_replace('/\s+/', ' ', (string) $name));
+    // Limit length.
+    if (function_exists('mb_substr')) {
+      $name = mb_substr($name, 0, 150);
+    }
+    else {
+      $name = substr($name, 0, 150);
+    }
+    return $name === '' ? 'Poetry Nook Collection' : $name;
   }
 
 }

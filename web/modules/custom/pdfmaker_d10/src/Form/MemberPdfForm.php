@@ -155,7 +155,11 @@ class MemberPdfForm extends FormBase {
         'folder_inner' => (string) $author_id,
       ];
       $year = ', ' . date('Y');
-      $this->pdfMaker->makePdf($data, $title . $year, $options);
+      $rel = $this->pdfMaker->makePdf($data, $title . $year, $options);
+      if (!$rel) {
+        $this->messenger()->addError($this->t('PDF generation failed. Please contact the site administrator.'));
+        return;
+      }
       $this->messenger()->addStatus($this->t('PDF has been generated.'));
     }
   }

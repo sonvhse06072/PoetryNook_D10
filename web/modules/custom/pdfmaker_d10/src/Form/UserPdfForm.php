@@ -106,6 +106,10 @@ class UserPdfForm extends FormBase {
       ];
       $year = ', ' . date('Y');
       $rel = $this->pdfMaker->makePdf($data, $title . $year, $options);
+      if (!$rel) {
+        $this->messenger()->addError($this->t('PDF generation failed. Please contact the site administrator.'));
+        return;
+      }
 
       // Try to create a node similar to D7 behavior if possible.
       try {

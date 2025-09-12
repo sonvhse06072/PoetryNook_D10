@@ -162,7 +162,11 @@ class ClassicPdfForm extends FormBase {
       'folder' => 'classic',
       'folder_inner' => (string) $author_id,
     ];
-    $this->pdfMaker->makePdf($data, $book_title, $options);
+    $rel = $this->pdfMaker->makePdf($data, $book_title, $options);
+    if (!$rel) {
+      $this->messenger()->addError($this->t('PDF generation failed. Please contact the site administrator.'));
+      return;
+    }
     $this->messenger()->addStatus($this->t('PDF has been generated.'));
   }
 
