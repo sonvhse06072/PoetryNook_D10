@@ -1,0 +1,23 @@
+create own pdf:
+  title: 'Create PDF file of own poetry'
+  description: 'Allows a user to create PDF file of their own poetry.'
+
+delete own pdf:
+  title: 'Delete own PDF files'
+  description: 'Allows a user to delete their own generated PDF files.'
+
+create member pdf:
+  title: 'Create PDF file of any member poetry'
+  description: 'Allows creating PDF files for any member.'
+
+delete member pdf:
+  title: 'Delete any member PDF files'
+  description: 'Allows deleting PDF files for any member.'
+
+create classic pdf:
+  title: 'Create PDF file of classic poetry'
+  description: 'Allows creating PDF files for classic poets.'
+
+delete classic pdf:
+  title: 'Delete classic PDF files'
+  description: 'Allows deleting classic PDF files.'

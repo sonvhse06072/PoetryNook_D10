@@ -1,0 +1,4 @@
+services:
+  pdfmaker_d10.pdf_maker:
+    class: 'Drupal\pdfmaker_d10\Service\PdfMaker'
+    arguments: ['@file_system', '@logger.channel.pdfmaker_d10', '@entity_type.manager', '@file.repository']

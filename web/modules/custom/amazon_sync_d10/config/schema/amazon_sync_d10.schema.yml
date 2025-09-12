@@ -7,12 +7,7 @@ amazon_sync_d10.settings:
       label: 'Poets limit'
     last_poet_id:
       type: integer
-      label: 'Last processed poet nid'
-    books_limit:
+      label: 'Last processed poet NID'
+    books_limit_per_author:
       type: integer
       label: 'Books limit per author'
-    amazon_top_100_books:
-      type: sequence
-      label: 'Top 100 ASINs'
-      sequence:
-        type: string

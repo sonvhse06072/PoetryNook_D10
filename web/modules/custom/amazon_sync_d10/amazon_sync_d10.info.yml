@@ -1,8 +1,8 @@
-name: 'Amazon Sync (D10)'
+name: 'Amazon Sync D10'
 type: module
-description: 'Sync Amazon Store books with custom poetry table. Drupal 10 port.'
-core_version_requirement: ^10 || ^11
-package: 'Poetry Nook Tools'
-version: '10.x-1.0-dev'
+core_version_requirement: '^10 || ^11'
+description: 'Provides configuration and a sync form for Amazon syncing (Drupal 10 version).'
+package: 'Custom'
 dependencies:
-  - drupal:views
+  - drupal:system
+  - drupal:amazon_pa

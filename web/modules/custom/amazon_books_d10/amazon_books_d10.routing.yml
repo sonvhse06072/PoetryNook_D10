@@ -1,7 +1,0 @@
-amazon_books_d10.literature_books:
-  path: '/amazon/literature-books'
-  defaults:
-    _controller: '\Drupal\amazon_books_d10\Controller\AmazonBooksController::literatureBooks'
-    _title: 'Literature books on Amazon'
-  requirements:
-    _permission: 'access content'

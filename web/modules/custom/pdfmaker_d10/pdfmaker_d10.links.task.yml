@@ -1,0 +1,5 @@
+pdfmaker_d10.user_pdf_tab:
+  route_name: pdfmaker_d10.user_pdf
+  base_route: entity.user.canonical
+  title: 'Make PDF'
+  weight: 100

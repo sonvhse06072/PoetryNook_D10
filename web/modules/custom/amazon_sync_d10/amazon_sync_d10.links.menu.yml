@@ -1,20 +1,13 @@
-amazon_sync_d10.settings:
-  title: 'Amazon Sync D10'
-  description: 'Configure Amazon Sync D10.'
-  route_name: amazon_sync_d10.settings
-  parent: system.admin_config_content
+amazon_sync_d10.config_menu:
+  title: 'Amazon Sync (D10) settings'
+  description: 'Configure Amazon Sync D10 settings.'
+  route_name: amazon_sync_d10.config_form
+  parent: system.admin_config_system
   weight: 0
 
-amazon_sync_d10.page:
-  title: 'Amazon Sync D10'
-  description: 'Run Amazon Sync D10 operations.'
-  route_name: amazon_sync_d10.page
+amazon_sync_d10.sync_menu:
+  title: 'Amazon Sync (D10)'
+  description: 'Run Amazon search and sync bestsellers.'
+  route_name: amazon_sync_d10.sync_form
   parent: system.admin_content
   weight: 0
-
-amazon_sync_d10.search:
-  title: 'Amazon Sync D10: Run search'
-  description: 'Start batch to search Amazon by poets.'
-  route_name: amazon_sync_d10.search
-  parent: system.admin_content
-  weight: 1

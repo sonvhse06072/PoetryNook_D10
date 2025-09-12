@@ -1,0 +1,5 @@
+name: 'PDF Maker (Drupal 10)'
+description: 'Allows to collect poetry into single PDFs (Drupal 10 port of pdfmaker).'
+package: 'Poetry Nook'
+core_version_requirement: '^10 || ^11'
+type: module

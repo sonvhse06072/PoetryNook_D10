@@ -1,23 +1,15 @@
-amazon_sync_d10.settings:
-  path: '/admin/config/content/amazon-sync-d10'
+amazon_sync_d10.config_form:
+  path: '/admin/config/system/amazon-sync-d10'
   defaults:
-    _form: '\Drupal\amazon_sync_d10\Form\SettingsForm'
-    _title: 'Amazon Sync D10 settings'
+    _form: '\Drupal\amazon_sync_d10\Form\AmazonSyncConfigForm'
+    _title: 'Amazon Sync (D10) settings'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'administer amazon sync d10'
 
-amazon_sync_d10.page:
+amazon_sync_d10.sync_form:
   path: '/admin/content/amazon-sync-d10'
   defaults:
-    _controller: '\Drupal\amazon_sync_d10\Controller\AmazonSyncController::page'
-    _title: 'Amazon Sync D10'
+    _form: '\Drupal\amazon_sync_d10\Form\AmazonSyncForm'
+    _title: 'Amazon Sync (D10)'
   requirements:
-    _permission: 'administer site configuration'
-
-amazon_sync_d10.search:
-  path: '/admin/content/amazon-sync-d10/search'
-  defaults:
-    _controller: '\Drupal\amazon_sync_d10\Controller\AmazonSyncController::runSearch'
-    _title: 'Amazon Sync D10: Run search'
-  requirements:
-    _permission: 'administer site configuration'
+    _permission: 'run amazon sync d10'

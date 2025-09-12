@@ -4,17 +4,17 @@
 $primary-shade: #0678be;
 $primary-light: tint-color($primary-shade, 37%);
 $primary-dark: shade-color($primary-shade, 12%);
-$accent-shade: #064771;
+$accent-shade: #2e609d;
 $accent-light: tint-color($accent-shade, 37%);
 $accent-dark: shade-color($accent-shade, 12%);
 // Reassign color vars to semantic color scheme
 $red: #dc3545;
 $yellow: #ffc107;
 $green: #28a745;
-$cyan: #17a2b8;
+$cyan: #129ABC;
 $white: #fff;
 $gray-100: #f8f9fa;
-$gray-800: #343a40;
+$gray-800: #5e5e5e;
 // scss-docs-start theme-color-variables
 $primary: $accent-shade;
 $secondary: $primary-shade;

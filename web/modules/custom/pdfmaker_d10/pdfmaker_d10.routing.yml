@@ -1,0 +1,24 @@
+pdfmaker_d10.user_pdf:
+  path: '/user/{user}/pdfmaker'
+  defaults:
+    _title: 'Make PDF'
+    _form: '\Drupal\pdfmaker_d10\Form\UserPdfForm'
+  requirements:
+    _permission: 'create own pdf'
+    user: '\d+'
+
+pdfmaker_d10.member:
+  path: '/pdfmaker/member'
+  defaults:
+    _title: 'Make member poetry PDF'
+    _form: '\Drupal\pdfmaker_d10\Form\MemberPdfForm'
+  requirements:
+    _permission: 'create member pdf'
+
+pdfmaker_d10.classic:
+  path: '/pdfmaker/classic'
+  defaults:
+    _title: 'Make classic poetry PDF'
+    _form: '\Drupal\pdfmaker_d10\Form\ClassicPdfForm'
+  requirements:
+    _permission: 'create classic pdf'

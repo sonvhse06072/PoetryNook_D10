@@ -1,3 +1,7 @@
 administer amazon sync d10:
   title: 'Administer Amazon Sync D10'
-  description: 'Configure and run Amazon Sync D10 operations.'
+  description: 'Manage settings for Amazon Sync D10 module.'
+
+run amazon sync d10:
+  title: 'Run Amazon Sync D10'
+  description: 'Access the Amazon Sync (D10) form and run actions.'

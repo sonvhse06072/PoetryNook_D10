@@ -2,29 +2,32 @@
 
 /**
  * @file
- * Install, update, and uninstall functions for the amazon_sync_d10 module.
+ * Install, update and uninstall functions for the Amazon Sync D10 module.
  */
+
+use Drupal\Core\Database\SchemaObjectExistsException;
 
 /**
  * Implements hook_schema().
  */
 function amazon_sync_d10_schema() {
   $schema['amazon_sync'] = [
-    'description' => 'Maps author node IDs (nid) to Amazon ASINs.',
+    'description' => 'Stores mapping between site poet node IDs and Amazon item ASINs.',
     'fields' => [
-      'asin' => [
-        'type' => 'varchar',
-        'length' => 64,
-        'not null' => FALSE,
-        'description' => 'Amazon ASIN.',
-      ],
       'nid' => [
+        'description' => 'Poet node ID.',
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
-        'description' => 'Node ID of the author.',
+      ],
+      'asin' => [
+        'description' => 'Amazon Standard Identification Number.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
       ],
     ],
+    'primary key' => ['nid', 'asin'],
     'indexes' => [
       'nid' => ['nid'],
       'asin' => ['asin'],
@@ -38,6 +41,25 @@ function amazon_sync_d10_schema() {
  * Implements hook_uninstall().
  */
 function amazon_sync_d10_uninstall() {
-  // Remove configuration values.
-  \Drupal::configFactory()->getEditable('amazon_sync_d10.settings')->delete();
+  // Clean up the custom table on uninstall.
+  $connection = \Drupal::database();
+  try {
+    $connection->schema()->dropTable('amazon_sync');
+  }
+  catch (SchemaObjectExistsException $e) {
+    // Table might not exist; ignore.
+  }
+}
+
+/**
+ * Update hook to create the amazon_sync table on existing installs.
+ */
+function amazon_sync_d10_update_9001() {
+  $connection = \Drupal::database();
+  $schema = $connection->schema();
+  if (!$schema->tableExists('amazon_sync')) {
+    $spec_all = amazon_sync_d10_schema();
+    $spec = $spec_all['amazon_sync'];
+    $schema->createTable('amazon_sync', $spec);
+  }
 }
