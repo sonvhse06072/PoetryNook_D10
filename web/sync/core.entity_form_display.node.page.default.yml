@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.comment_node_page
     - field.field.node.page.field_metatag
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - comment
@@ -114,5 +115,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  layout_builder__layout: true
   publish_on: true
   unpublish_on: true

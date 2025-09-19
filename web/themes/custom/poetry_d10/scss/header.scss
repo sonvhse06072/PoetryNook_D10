@@ -1,0 +1,133 @@
+header.header {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 -10px;
+  .navbar {
+    background: url(../images/main_menu_pattern.png);
+    height: 49px;
+    position: relative;
+    padding-left: 40px;
+    &:after {
+      top: 10px;
+      right: -27px;
+      position: absolute;
+      background: url(../images/ribbon-right-detail.png);
+      display: block;
+      content: "";
+      width: 37px;
+      height: 59px;
+      z-index: -1;
+    }
+    &:before {
+      background: url(../images/ribbon-left-detail.png);
+      display: block;
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -27px;
+      width: 37px;
+      height: 59px;
+      z-index: -1;
+    }
+    .nav-item {
+      .nav-link {
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: none;
+          background: url(../images/menu_link_underline_short.png) no-repeat bottom center;
+        }
+      }
+    }
+    #search-block-form {
+      padding: 2px 4px;
+      margin-right: 24px;
+      background: #ffffff;
+      border-radius: 2px;
+      box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+      .form-item-keys {
+        margin: 0 !important;
+      }
+      input.form-search {
+        width: 284px;
+        height: 21px;
+        margin: 0 0 0 2px;
+        padding: 2px 6px;
+        border: none;
+        background: #ffffff;
+        box-shadow: none;
+        outline: none;
+      }
+      .form-actions {
+        margin: 0 !important;
+        .form-submit {
+          line-height: 1;
+          text-align: center;
+          padding: 0;
+          width: 26px;
+          height: 21px;
+          margin-top: 1px;
+          font-family: 'web_symbolsregular';
+          font-size: 13px;
+          border: none;
+          outline: none;
+          background: linear-gradient(to bottom, #f0f9ff 0%, #55b3d1 0%, #2696bf 100%);
+          border-radius: 3px;
+          box-shadow: inset 0 1px 1px 0px rgba(255, 255, 255, 0.7);
+          color: #396075;
+          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+}
+
+#navbar-top {
+  padding: 0 25px;
+  background: url(../images/phrase_on_header.png), url(../images/background_2.png);
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 0 0 4px 4px;
+}
+
+.site-name-slogan {
+  font-size: 32px;
+  font-weight: normal;
+  color: #d04559;
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.8);
+  &:before, &:after {
+    content: "7";
+    font-family: 'entyporegular';
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 2px rgba(255, 255, 255, 0.8);
+  }
+}
+
+#block-poetry-d10-account-menu {
+  .nav-item {
+    display: flex;
+    &:not(:last-child):after {
+      content: "";
+      border-left: 1px dotted #93918c;
+      height: 23px;
+      margin: 4px 6px;
+    }
+    .nav-link {
+      padding: 5px 8px;
+      background: #bc2f46;
+      color: #fff !important;
+      border-radius: 3px;
+      border: 2px solid #a51c2d;
+      width: 100px;
+      height: 30px;
+      font-size: 15px;
+      text-align: center;
+    }
+    &:last-child {
+      .nav-link {
+        background: #2e609d;
+        border: 2px solid #14437d;
+      }
+    }
+  }
+}

@@ -4,11 +4,11 @@ langcode: en
 uuid: 0ee2b161-2965-4c9f-8bc3-532cbfcd99ca
 name: PoetryNook
 mail: admin@poetrynook.com
-slogan: ''
+slogan: 'Poetry For Every Occasion'
 page:
   403: ''
   404: ''
-  front: /node
+  front: /home
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

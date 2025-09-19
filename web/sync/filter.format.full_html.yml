@@ -1,13 +1,30 @@
 uuid: f449171d-ee51-4f43-93e4-7259c7c6eddf
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - adsense
 _core:
   default_config_hash: vpZysv3RHJjhYzq7O_q5q8mVlHdrSzKELmXyiX6RtV0
 name: 'Full HTML'
 format: full_html
 weight: -8
 filters:
+  filter_adsense:
+    id: filter_adsense
+    provider: adsense
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: ''
+      filter_html_help: true
+      filter_html_nofollow: false
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter

@@ -38,21 +38,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          1006be29-d8a0-4b52-8f9a-058208ecff94:
-            uuid: 1006be29-d8a0-4b52-8f9a-058208ecff94
-            region: content
-            configuration:
-              id: 'field_block:block_content:basic:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: hBNNDTFwakREOTa6GGMqN899Iyrii0hInwSJtQ7Kj30

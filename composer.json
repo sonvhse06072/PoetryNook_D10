@@ -28,6 +28,7 @@
         "drupal/backup_migrate": "^5.0",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/bootstrap": "^5.0",
+        "drupal/bootstrap_layout_builder": "^2.2",
         "drupal/cer": "^5.0@beta",
         "drupal/ckeditor5_template": "^1.0",
         "drupal/coder": "^8.3",
@@ -37,6 +38,7 @@
         "drupal/core-recommended": "10.4.7",
         "drupal/dev_mode": "^2.6",
         "drupal/devel": "^5.0",
+        "drupal/edit_plus": "^1.1",
         "drupal/entity_reference_revisions": "^1.11",
         "drupal/exclude_node_title": "^2.0",
         "drupal/feeds": "^3.0",
@@ -51,6 +53,7 @@
         "drupal/imagemagick": "^4.0",
         "drupal/insert_view": "^3.0",
         "drupal/job_scheduler": "^4.0",
+        "drupal/lb_plus": "^3.3",
         "drupal/libraries": "^4.1",
         "drupal/mailsystem": "^4.5",
         "drupal/masquerade": "^2.0",
@@ -115,6 +118,9 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/core": {
+                "change search button": "patches/core/change_search_button.patch"
+            }
         },
         "drupal-scaffold": {
             "locations": {

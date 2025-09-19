@@ -9,7 +9,6 @@ module:
   admin_toolbar_tools: 0
   adsense: 0
   aggregator: 0
-  amazon_books_d10: 0
   amazon_pa: 0
   amazon_pa_filter: 0
   amazon_sync_d10: 0
@@ -21,6 +20,8 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  bootstrap_layout_builder: 0
+  bootstrap_styles: 0
   breakpoint: 0
   cer: 0
   ckeditor5: 0
@@ -35,6 +36,8 @@ module:
   datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
+  edit_plus: 0
+  edit_plus_lb: 0
   editor: 0
   entity: 0
   entity_reference_revisions: 0
@@ -45,6 +48,7 @@ module:
   field_group_migrate: 0
   field_layout: 0
   field_permissions: 0
+  field_sample_value: 0
   field_ui: 0
   file: 0
   file_mdm: 0
@@ -75,6 +79,7 @@ module:
   masquerade: 0
   media: 0
   media_library: 0
+  media_library_form_element: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -86,15 +91,15 @@ module:
   migrate_tools: 0
   module_missing_message_fixer: 0
   mysql: 0
+  navigation: 0
+  navigation_plus: 0
   node: 0
   options: 0
   page_cache: 0
-  page_manager: 0
-  page_manager_ui: 0
   panels: 0
-  panels_ipe: 0
   path: 0
   path_alias: 0
+  pdfmaker_d10: 0
   phpass: 0
   pn_migrate_files: 0
   poetrynews_d10: 0
@@ -127,6 +132,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  twig_events: 0
   twig_tweak: 0
   typed_data: 0
   update: 0

@@ -1,0 +1,13 @@
+diff --git a/modules/search/src/Form/SearchBlockForm.php b/modules/search/src/Form/SearchBlockForm.php
+index 1ded36f..887df52 100644
+--- a/modules/search/src/Form/SearchBlockForm.php
++++ b/modules/search/src/Form/SearchBlockForm.php
+@@ -111,7 +111,7 @@ class SearchBlockForm extends FormBase implements WorkspaceSafeFormInterface {
+     $form['actions'] = ['#type' => 'actions'];
+     $form['actions']['submit'] = [
+       '#type' => 'submit',
+-      '#value' => $this->t('Search'),
++      '#value' => $this->t('L'),
+       // Prevent op from showing up in the query string.
+       '#name' => '',
+     ];

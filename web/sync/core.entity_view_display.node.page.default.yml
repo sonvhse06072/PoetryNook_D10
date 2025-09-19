@@ -1,50 +1,38 @@
-uuid: d97d65bc-cdd8-494e-ab7d-8881b7d2b507
+uuid: 9b2d4ef8-cb63-4902-b0a8-25926768674f
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_page.default
     - field.field.node.page.body
     - field.field.node.page.comment_node_page
     - field.field.node.page.field_metatag
     - node.type.page
   module:
-    - comment
-    - field_layout
     - layout_builder
     - layout_discovery
-    - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: true
+    allow_custom: true
     sections:
       -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          28562312-ce4c-4e66-a94e-1091ef187360:
-            uuid: 28562312-ce4c-4e66-a94e-1091ef187360
+          7c1a38d3-b53b-4494-8fb1-2bbf41d21976:
+            uuid: 7c1a38d3-b53b-4494-8fb1-2bbf41d21976
             region: content
             configuration:
-              id: 'field_block:node:page:body'
+              id: 'extra_field_block:node:page:sharethis'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
             weight: 0
             additional: {  }
-          acc9ffa9-1b79-464b-9bed-fc858550891d:
-            uuid: acc9ffa9-1b79-464b-9bed-fc858550891d
+          7b1f347f-11d1-445f-8691-e3248e71991d:
+            uuid: 7b1f347f-11d1-445f-8691-e3248e71991d
             region: content
             configuration:
               id: 'extra_field_block:node:page:links'
@@ -53,61 +41,16 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
-          975cd167-4365-452d-998d-349c1b0c7053:
-            uuid: 975cd167-4365-452d-998d-349c1b0c7053
-            region: content
-            configuration:
-              id: 'extra_field_block:node:page:sharethis'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 2
-            additional: {  }
-          9065586a-b23d-4f85-be30-a7d7d73d0960:
-            uuid: 9065586a-b23d-4f85-be30-a7d7d73d0960
-            region: content
-            configuration:
-              id: 'field_block:node:page:comment_node_page'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: hidden
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
         third_party_settings: {  }
-_core:
-  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
 targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
-  comment_node_page:
-    type: comment_default
-    label: hidden
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 20
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 100
     region: content
   sharethis:
     settings: {  }
@@ -115,6 +58,8 @@ content:
     weight: 10
     region: content
 hidden:
+  body: true
+  comment_node_page: true
   field_metatag: true
   langcode: true
   search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: 217b3cd0-5183-4342-b414-5806cd472258
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - poetry_d10
+id: poetry_d10_searchform
+theme: poetry_d10
+region: header_form
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }
