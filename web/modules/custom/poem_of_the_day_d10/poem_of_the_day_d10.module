@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function poem_of_the_day_d10_theme($existing, $type, $theme, $path) {
+  // Debug: Log the path being used
+
+  return [
+    'poem_of_the_day' => [
+      'variables' => [
+        'poem' => NULL,
+      ],
+      'template' => 'poem-of-the-day',
+    ],
+  ];
+}

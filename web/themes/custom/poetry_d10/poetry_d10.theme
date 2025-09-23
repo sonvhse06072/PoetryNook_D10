@@ -30,12 +30,3 @@ function poetry_d10_form_system_theme_settings_alter(&$form, FormStateInterface 
     'bg-transparent' => t('Transparent'),
   );
 }
-
-/**
- * Implements hook_preprocess_input() for adding classes to inputs.
- */
-function poetry_d10_preprocess_input(&$variables) {
-//  if ($variables['element']['#type'] == 'submit') {
-//    $variables['safe_value_label'] = ''
-//  }
-}

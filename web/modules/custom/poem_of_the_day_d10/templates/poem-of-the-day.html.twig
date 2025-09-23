@@ -1,0 +1,26 @@
+{#
+  Variables:
+  - poem: {
+      title,
+      poem_id,
+      author: { name, poet_id },
+      content_type,
+      text (render array),
+      link_more (bool)
+    }
+#}
+{% if poem %}
+  <div class="poem_of_the_day_title"><a href="{{ path('entity.node.canonical', {'node': poem.poem_id}) }}">{{ poem.title }}</a></div>
+  <div class="poem_of_the_day_author_wrapper">
+    {{ 'by'|t }}
+    {% if poem.content_type == 'member_poem' %}
+      <a class="poem_of_the_day_author" href="{{ path('entity.user.canonical', {'user': poem.author.poet_id}) }}">{{ poem.author.name }}</a>
+    {% else %}
+      <a class="poem_of_the_day_author" href="{{ path('entity.node.canonical', {'node': poem.author.poet_id}) }}">{{ poem.author.name }}</a>
+    {% endif %}
+  </div>
+  <p>{{ poem.text }}</p>
+  {% if poem.link_more %}
+    <p><a href="{{ path('entity.node.canonical', {'node': poem.poem_id}) }}">{{ 'Read full poem'|t }}</a></p>
+  {% endif %}
+{% endif %}

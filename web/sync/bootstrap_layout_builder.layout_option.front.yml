@@ -1,0 +1,15 @@
+uuid: b2089ada-04df-4c16-a1cb-aae1583d8256
+langcode: en
+status: true
+dependencies: {  }
+id: front
+layout_id: blb_col_3
+label: Front
+structure: '5 3.5 3.5'
+breakpoints:
+  desktop: desktop
+  tablet: '0'
+  mobile: '0'
+default_breakpoints:
+  desktop: '0'
+weight: 0

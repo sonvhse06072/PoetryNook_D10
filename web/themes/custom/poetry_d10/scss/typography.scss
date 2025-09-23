@@ -70,7 +70,7 @@ sans-serif;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif:      'ArnoPro-Regular', serif;
+$font-family-sans-serif:      sans-serif;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-size-root:              null;
 $font-size-base:              1rem; // Assumes the browser default, typically `16px`
@@ -86,7 +86,7 @@ $font-weight-bolder:          bolder;
 
 $font-weight-base:            $font-weight-normal;
 
-$line-height-base:            1.5;
+$line-height-base:            1.25;
 $line-height-sm:              1.25;
 $line-height-lg:              2;
 

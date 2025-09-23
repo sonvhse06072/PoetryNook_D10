@@ -1,0 +1,11 @@
+name: 'Poem of the Day (D10)'
+type: module
+description: 'Provides Poem of the Day blocks (classic and member) for Drupal 10.'
+package: 'Custom'
+core_version_requirement: '^10'
+version: 1.0.0
+dependencies:
+  - node
+  - user
+  - text
+  - filter

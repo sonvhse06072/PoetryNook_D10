@@ -148,17 +148,16 @@
         {% endblock %}
       {% endif %}
       {% block content %}
-        <div id="main">
-          <div class="row g-3">
-            <div class="col">
-              {% if page.main_ads %}
-                <div class="main-ads">
-                  {{ page.main_ads }}
-                </div>
-              {% endif %}
+      <div id="main">
+        <h1 class="front-title">Collection of classic poems, famous poems, love poems, &amp; more</h1>
+        {% if page.main_ads %}
+          {{ page.main_ads }}
+        {% endif %}
+        <div class="row g-3">
+          <div class="col">
               <div class="row row-offcanvas row-offcanvas-left clearfix">
                 <main{{ content_attributes }}>
-                  <section class="section main-section">
+                  <section class="section">
                     <a href="#main-content" id="main-content" tabindex="-1"></a>
                     {{ page.content }}
                   </section>
@@ -174,26 +173,26 @@
             </div>
             {% if sidebar_second_exists %}
               <div class="col-auto d-none d-lg-block">
-                  <div class="sidebar-second">
-                    <aside class="section" role="complementary">
-                      {{ page.sidebar_second }}
-                    </aside>
-                  </div>
+                <div class="sidebar-second front">
+                  <aside class="section" role="complementary">
+                    {{ page.sidebar_second }}
+                  </aside>
+                </div>
               </div>
             {% endif %}
           </div>
         </div>
-      {% endblock %}
-    </div>
-    {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
-      <div class="featured-bottom">
-        {{ page.featured_bottom_first }}
-        {{ page.featured_bottom_second }}
-        {{ page.featured_bottom_third }}
+        {% endblock %}
       </div>
-    {% endif %}
+      {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
+        <div class="featured-bottom">
+          {{ page.featured_bottom_first }}
+          {{ page.featured_bottom_second }}
+          {{ page.featured_bottom_third }}
+        </div>
+      {% endif %}
+    </div>
   </div>
-</div>
 <footer class="site-footer">
   {% block footer %}
     <div class="{{ container }}">

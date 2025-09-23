@@ -1,0 +1,54 @@
+.block-views, .block-inline-blockbasic {
+  &:not(.block-views-blockplums-amazon-product-block-1) {
+    border-radius: 5px;
+    border: 1px solid #e0dcd3;
+    background: #fbfbfb;
+    padding: 10px 10px 15px;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #2e609d;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2e609d;
+    margin: 5px 0 16px 0;
+    font-family: 'ArnoPro-Regular', serif;
+  }
+  .pane-title {
+    margin: 0;
+    a {
+      color: #2E609D;
+      font-family: 'ArnoPro-Regular', serif;
+      font-size: 15px;
+      font-weight: lighter;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+  }
+}
+
+.view-latest-contest-winner {
+  .views-field-title-1 {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-bottom: 12px;
+    a {
+      font-size: 16px;
+    }
+  }
+  .username {
+    color: #747474;
+    font-style: normal;
+  }
+}
+
+.view-popular-poems {
+  .views-field-field-author {
+    a {
+      color: #747474;
+      font-style: normal;
+    }
+  }
+}

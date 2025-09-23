@@ -1,0 +1,4 @@
+services:
+  poem_of_the_day_d10.potd_service:
+    class: 'Drupal\poem_of_the_day_d10\Service\PoemOfTheDayService'
+    arguments: ['@database', '@entity_type.manager', '@logger.channel.default']

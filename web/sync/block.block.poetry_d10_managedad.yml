@@ -1,0 +1,28 @@
+uuid: 9021f553-e157-4315-a27b-e8425131d55c
+langcode: en
+status: true
+dependencies:
+  module:
+    - adsense
+  theme:
+    - poetry_d10
+id: poetry_d10_managedad
+theme: poetry_d10
+region: main_ads
+weight: 0
+provider: null
+plugin: adsense_managed_ad_block
+settings:
+  id: adsense_managed_ad_block
+  label: 'Managed ad'
+  label_display: '0'
+  provider: adsense
+  ad_slot: '3749727319'
+  ad_format: responsive
+  ad_width: null
+  ad_height: null
+  ad_shape:
+    auto: auto
+  ad_align: center
+  ad_layout_key: ''
+visibility: {  }

@@ -8,7 +8,7 @@ slogan: 'Poetry For Every Occasion'
 page:
   403: ''
   404: ''
-  front: /home
+  front: /node/729691
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

@@ -32,6 +32,7 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
+  main_ads: 'Main ads'
   none: None
 
 # Information added by Drupal.org packaging script on 2025-06-10

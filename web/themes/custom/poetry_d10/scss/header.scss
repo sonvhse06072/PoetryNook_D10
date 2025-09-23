@@ -31,6 +31,8 @@ header.header {
     .nav-item {
       .nav-link {
         text-transform: uppercase;
+        font-style: normal;
+        font-family: 'ArnoPro-Regular', serif;
 
         &:hover {
           text-decoration: none;
@@ -94,6 +96,7 @@ header.header {
   font-weight: normal;
   color: #d04559;
   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.8);
+  font-family: 'ArnoPro-Regular', serif;
   &:before, &:after {
     content: "7";
     font-family: 'entyporegular';
@@ -122,6 +125,7 @@ header.header {
       height: 30px;
       font-size: 15px;
       text-align: center;
+      font-family: 'ArnoPro-Regular', serif;
     }
     &:last-child {
       .nav-link {

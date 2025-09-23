@@ -1,0 +1,29 @@
+uuid: 27949407-7d16-4aa2-9b22-8733bd2da684
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.plums_amazon_product
+  module:
+    - system
+    - views
+  theme:
+    - poetry_d10
+id: poetry_d10_views_block__plums_amazon_product_block_1
+theme: poetry_d10
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'views_block:plums_amazon_product-block_1'
+settings:
+  id: 'views_block:plums_amazon_product-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/store\r\n/amazon-store\r\n/new/*\r\n/resources\r\n/poetry"

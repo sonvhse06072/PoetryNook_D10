@@ -18,7 +18,10 @@ body {
 --------------------------------------------------*/
 
 a {
-    color: $accent-shade;
+    color: $cyan;
+    font-style: italic;
+    font-size: 13px;
+    font-family: sans-serif;
 }
 
 .bg-inverse {
@@ -51,10 +54,6 @@ a {
     margin: 0 15px;
 }
 
-.container {
-    background: url(../images/background_2.png);
-}
-
 body {
   background: url(../images/background_1.png);
 }
@@ -64,4 +63,98 @@ body {
   max-width: 1230px;
   margin: 0 auto;
   padding: 6px 40px 0;
+}
+
+.block-block-content, .block-poem-of-the-day-d10 {
+  background: #f9f9f9;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0dcd3;
+  padding: 10px 15px 15px 15px;
+  margin-bottom: .5rem;
+  h2 {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #2e609d;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2e609d;
+    margin: 5px 0 16px 0;
+    font-family: 'ArnoPro-Regular', serif;
+  }
+}
+
+.node__content {
+  font-size: 13px;
+}
+
+.block-page-title-block {
+  .content {
+    position: relative;
+    border-bottom: 1px solid #2e609d;
+    padding-bottom: 5px;
+    h1.title {
+      font-size: 15px;
+      font-weight: lighter;
+      color: #2e609d;
+      padding-bottom: 6px;
+      margin: 5px 0 0 0;
+      text-transform: uppercase;
+      font-family: 'ArnoPro-Regular', serif;
+    }
+  }
+}
+
+.layout-main-wrapper {
+  padding: 12px;
+  border-radius: 0 0 4px 4px;
+  background: url(../images/background_2.png);
+  .featured-top, .main-ads, .main-section {
+    border-radius: 5px;
+    border: 1px solid #e0dcd3;
+    padding: 10px 15px 15px 15px;
+    margin-bottom: 10px;
+    background: #fdfdfd;
+  }
+}
+
+.sidebar-second {
+  width: 132px;
+  .block-views-blockplums-amazon-product-block-1 {
+    border-radius: 2px;
+    border: 1px solid #e0dcd3;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #fdfdfd;
+    text-align: center;
+  }
+}
+
+.front-title {
+  font-size: 17px;
+  font-weight: lighter;
+  color: #2e609d;
+  padding-bottom: 6px;
+  margin: 5px 0 0 0;
+  font-family: 'ArnoPro-Regular', serif;
+}
+
+.view-id-poems_top_100 {
+  .views-field-counter {
+    flex: 0 15px;
+  }
+  .views-field-title {
+    .username {
+      color: #747474;
+    }
+  }
+}
+
+.column-count-wrap {
+  column-count: 2;
+  column-gap: 1rem;
+  .block-inline-blockbasic {
+    break-before: column;
+  }
 }

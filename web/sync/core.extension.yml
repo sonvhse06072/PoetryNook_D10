@@ -36,8 +36,6 @@ module:
   datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
-  edit_plus: 0
-  edit_plus_lb: 0
   editor: 0
   entity: 0
   entity_reference_revisions: 0
@@ -92,7 +90,6 @@ module:
   module_missing_message_fixer: 0
   mysql: 0
   navigation: 0
-  navigation_plus: 0
   node: 0
   options: 0
   page_cache: 0
@@ -102,6 +99,7 @@ module:
   pdfmaker_d10: 0
   phpass: 0
   pn_migrate_files: 0
+  poem_of_the_day_d10: 0
   poetrynews_d10: 0
   privatemsg: 0
   profile: 0
@@ -113,7 +111,6 @@ module:
   redirect: 0
   rest: 0
   rules: 0
-  scheduler: 0
   search: 0
   search_api: 0
   search_api_solr: 0

@@ -1,0 +1,33 @@
+uuid: 7823fe10-79d8-4e30-aeeb-d8e79743e1da
+langcode: en
+status: true
+dependencies:
+  module:
+    - adsense
+    - system
+  theme:
+    - poetry_d10
+id: poetry_d10_managedad_2
+theme: poetry_d10
+region: sidebar_second
+weight: -6
+provider: null
+plugin: adsense_managed_ad_block
+settings:
+  id: adsense_managed_ad_block
+  label: 'Managed ad'
+  label_display: '0'
+  provider: adsense
+  ad_slot: '3749727319'
+  ad_format: responsive
+  ad_width: null
+  ad_height: null
+  ad_shape:
+    auto: auto
+  ad_align: center
+  ad_layout_key: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/news/*\r\n/poetry\r\n<front>"
