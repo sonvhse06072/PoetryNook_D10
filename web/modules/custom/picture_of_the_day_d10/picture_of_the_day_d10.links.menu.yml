@@ -1,0 +1,5 @@
+picture_of_the_day_d10.settings:
+  title: 'Picture of the day'
+  description: 'Configure Picture of the day settings.'
+  route_name: picture_of_the_day_d10.settings
+  parent: system.admin_config_content

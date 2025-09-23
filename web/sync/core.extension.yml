@@ -98,6 +98,7 @@ module:
   path_alias: 0
   pdfmaker_d10: 0
   phpass: 0
+  picture_of_the_day_d10: 0
   pn_migrate_files: 0
   poem_of_the_day_d10: 0
   poetrynews_d10: 0

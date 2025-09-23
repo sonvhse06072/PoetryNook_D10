@@ -1,0 +1,12 @@
+potd:
+  version: 1.x
+  js:
+    js/potd.js: {}
+  css:
+    component:
+      css/potd.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax
+    - core/jquery
+    - core/once

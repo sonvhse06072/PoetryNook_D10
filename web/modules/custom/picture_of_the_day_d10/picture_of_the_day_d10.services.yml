@@ -1,0 +1,7 @@
+services:
+  picture_of_the_day_d10.service:
+    class: 'Drupal\picture_of_the_day_d10\Service\PictureOfTheDayService'
+    arguments: ['@http_client', '@logger.channel.picture_of_the_day_d10', '@config.factory']
+  logger.channel.picture_of_the_day_d10:
+    parent: 'logger.channel_base'
+    arguments: ['picture_of_the_day_d10']

@@ -1,0 +1,12 @@
+<div class="tab-pane fade {{ class }}" id="{{ tab_id }}" role="tabpanel" aria-labelledby="tab-{{ tab_id }}">
+  <div class="mb-2">{{ image }}</div>
+  <div class="potd-meta">
+    <div class="text-black fw-bold">{{ title }}</div>
+    {% if author %}<div class="potd-author">{{ author }}</div>{% endif %}
+    {% if description %}<div class="my-2">{{ description }}</div>{% endif %}
+    {% if reload_url %}
+      <div class="text-end"><a class="fst-normal fw-bold potd-reload" href="{{ reload_url }}"><span class="reload_icon">V</span>Show another image</a></div>
+    {% endif %}
+  </div>
+</div>
+

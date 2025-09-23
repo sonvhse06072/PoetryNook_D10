@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Drupal 10 port of picture_of_the_day module.
+ */
+
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements hook_theme().
+ */
+function picture_of_the_day_d10_theme() {
+  return [
+    'picture_of_the_day_d10' => [
+      'render element' => 'elements',
+      'template' => 'picture-of-the-day',
+    ],
+    'picture_of_the_day_d10_item' => [
+      'variables' => [
+        'tab_id' => NULL,
+        'reload_url' => NULL,
+        'image' => NULL,
+        'title' => NULL,
+        'description' => NULL,
+        'author' => NULL,
+        'url' => NULL,
+        'class' => NULL,
+      ],
+      'template' => 'picture-of-the-day-item',
+    ],
+  ];
+}

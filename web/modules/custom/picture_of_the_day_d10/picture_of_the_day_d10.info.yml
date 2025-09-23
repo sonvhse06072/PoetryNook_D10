@@ -1,0 +1,6 @@
+name: 'Picture of the day (D10)'
+type: module
+description: 'Shows a block with random pictures from WikiArt, Wikimedia, and Google. Drupal 10 port of picture_of_the_day.'
+core_version_requirement: ^10 || ^11
+package: 'Custom'
+version: 1.0.0

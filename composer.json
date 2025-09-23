@@ -98,7 +98,9 @@
         "drupal/webform": "^6.2",
         "drupal/xmlsitemap": "^1.2",
         "drupal/yoast_seo": "^2.1",
-        "drush/drush": "^12"
+        "drush/drush": "^12",
+        "ext-dom": "*",
+        "ext-libxml": "*"
     },
     "conflict": {
         "drupal/drupal": "*"
