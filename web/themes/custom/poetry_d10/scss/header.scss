@@ -1,11 +1,13 @@
 header.header {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
   margin: 0 -10px;
+  @media (max-width: 575px) {
+    margin: 0;
+  }
   .navbar {
     background: url(../images/main_menu_pattern.png);
     height: 49px;
     position: relative;
-    padding-left: 40px;
     &:after {
       top: 10px;
       right: -27px;
@@ -16,6 +18,9 @@ header.header {
       width: 37px;
       height: 59px;
       z-index: -1;
+      @media (max-width: 575px) {
+        display: none;
+      }
     }
     &:before {
       background: url(../images/ribbon-left-detail.png);
@@ -27,6 +32,9 @@ header.header {
       width: 37px;
       height: 59px;
       z-index: -1;
+      @media (max-width: 575px) {
+        display: none;
+      }
     }
     .nav-item {
       .nav-link {
@@ -37,6 +45,9 @@ header.header {
         &:hover {
           text-decoration: none;
           background: url(../images/menu_link_underline_short.png) no-repeat bottom center;
+        }
+        @media (max-width: 991px) {
+          color: #2e609d;
         }
       }
     }
@@ -79,16 +90,38 @@ header.header {
           text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
         }
       }
+      @media (max-width: 991px) {
+        flex-flow: row;
+      }
+    }
+    .navbar-brand {
+      @media (max-width: 1199px) {
+        width: 160px;
+      }
+    }
+    #CollapsingNavbar {
+      padding-left: 40px;
+      @media (max-width: 991px) {
+        background: url(../images/background_2.png);
+        padding: 0;
+      }
+    }
+    .navbar-toggler {
+      padding: 0 10px;
+      border: 0;
     }
   }
 }
 
 #navbar-top {
-  padding: 0 25px;
+  padding: 6px 25px;
   background: url(../images/phrase_on_header.png), url(../images/background_2.png);
-  height: 64px;
   margin-bottom: 12px;
   border-radius: 0 0 4px 4px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 .site-name-slogan {
@@ -103,6 +136,9 @@ header.header {
     font-size: 26px;
     color: rgba(0, 0, 0, 0.3);
     text-shadow: 0 2px 2px rgba(255, 255, 255, 0.8);
+  }
+  @media (max-width: 1199px) {
+    font-size: 22px;
   }
 }
 
@@ -126,6 +162,7 @@ header.header {
       font-size: 15px;
       text-align: center;
       font-family: 'ArnoPro-Regular', serif;
+      font-style: normal;
     }
     &:last-child {
       .nav-link {

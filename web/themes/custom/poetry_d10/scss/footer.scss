@@ -1,0 +1,54 @@
+.site-footer {
+  background: url(../images/background_5_footer.png) repeat-x, url(../images/phrase_on_footer.png) no-repeat, url(../images/background_4_footer.png);
+  margin-top: 25px;
+  color: $white;
+  padding-bottom: 0;
+  padding-top: 20px;
+  .block-content-basic {
+    font-family: arial;
+    font-size: 11px;
+    margin-bottom: 0;
+    a {
+      color: $white;
+      font-style: normal;
+      font-family: arial;
+      font-size: 11px;
+    }
+  }
+  .menu--footer {
+    .nav {
+      .nav-item {
+        &.menu-item--expanded {
+          width: 100px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          &>.nav-link {
+            font-family: 'ArnoPro-Regular', serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #b2e7fe;
+            padding: 0;
+            font-style: normal;
+          }
+          .flex-column {
+            padding: 0;
+            margin-top: 7px;
+            .nav-item {
+              list-style-type: none;
+              &:not(:last-child) {
+                border-bottom: 1px dotted #6296b0;
+              }
+              .nav-link {
+                font-size: 11px;
+                font-family: arial;
+                color: $white;
+                padding: 7px 0;
+                font-style: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

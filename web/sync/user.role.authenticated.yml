@@ -11,6 +11,7 @@ dependencies:
   module:
     - comment
     - contact
+    - follow
     - media
     - node
     - rest
@@ -42,5 +43,6 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use advanced search'
+  - 'view follow links'
   - 'view media'
   - 'view own unpublished content'

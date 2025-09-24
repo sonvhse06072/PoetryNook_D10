@@ -1,17 +1,7 @@
 _core:
   default_config_hash: g7hXMWel-4Gcmm1x_Gloj3SNuLtMm2AKkgX7KdshuhM
 links:
-  bliptv: bliptv
-  delicious: delicious
   facebook: facebook
   feed: feed
-  flickr: flickr
-  lastfm: lastfm
-  linkedin: linkedin
-  tumblr: tumblr
   twitter: twitter
-  viadeo: viadeo
-  vimeo: vimeo
-  xing: xing
-  youtube: youtube
 hide_labels: false

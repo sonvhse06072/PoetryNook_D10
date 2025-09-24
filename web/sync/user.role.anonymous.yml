@@ -10,6 +10,7 @@ dependencies:
     - rest.resource.simpleads_views
   module:
     - comment
+    - follow
     - media
     - rest
     - search
@@ -33,4 +34,5 @@ permissions:
   - 'restful post simpleads_click'
   - 'restful post simpleads_impression'
   - 'search content'
+  - 'view follow links'
   - 'view media'

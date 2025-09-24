@@ -1,0 +1,25 @@
+uuid: 375c2e6f-2e82-4aef-9dab-f6369dd227a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - poetry_d10
+id: poetry_d10_footer
+theme: poetry_d10
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

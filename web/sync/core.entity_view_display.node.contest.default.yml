@@ -13,10 +13,9 @@ dependencies:
     - node.type.contest
   module:
     - comment
-    - datetime
+    - datetime_range
     - field_layout
     - layout_builder
-    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -25,231 +24,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          ac7cb498-e05e-430c-930c-c7a629f0411b:
-            uuid: ac7cb498-e05e-430c-930c-c7a629f0411b
-            region: content
-            configuration:
-              id: 'extra_field_block:node:contest:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          279264b6-eec3-4253-a04b-05321ecab2b8:
-            uuid: 279264b6-eec3-4253-a04b-05321ecab2b8
-            region: content
-            configuration:
-              id: 'field_block:node:contest:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          ee988fb4-9ec8-40e0-952f-1c75df4438e9:
-            uuid: ee988fb4-9ec8-40e0-952f-1c75df4438e9
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_contest_type'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          4de3632b-db4a-4408-a1c3-7e34c0413147:
-            uuid: 4de3632b-db4a-4408-a1c3-7e34c0413147
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: long
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          b1375d15-6766-42b5-a491-8543b7e42c61:
-            uuid: b1375d15-6766-42b5-a491-8543b7e42c61
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_contest_type'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          6cb44087-a526-4259-9469-1686a7c3371b:
-            uuid: 6cb44087-a526-4259-9469-1686a7c3371b
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: long
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          a72c1998-3d4d-4b4a-b94b-652d72815848:
-            uuid: a72c1998-3d4d-4b4a-b94b-652d72815848
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_contest_type'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          4e8f4746-05d6-4cab-9fd7-786950863990:
-            uuid: 4e8f4746-05d6-4cab-9fd7-786950863990
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: long
-                third_party_settings: {  }
-            weight: 7
-            additional: {  }
-          b9401e86-1924-4688-8ee9-4c42c90baa5e:
-            uuid: b9401e86-1924-4688-8ee9-4c42c90baa5e
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_contest_type'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 8
-            additional: {  }
-          25d347bc-884f-4e20-acee-3cef91bb78be:
-            uuid: 25d347bc-884f-4e20-acee-3cef91bb78be
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: long
-                third_party_settings: {  }
-            weight: 9
-            additional: {  }
-          52e2932f-0cd9-4bb9-be45-31c38c5b4efd:
-            uuid: 52e2932f-0cd9-4bb9-be45-31c38c5b4efd
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_contest_type'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 10
-            additional: {  }
-          6aae0a13-f627-473b-89d1-0a9910ee32ed:
-            uuid: 6aae0a13-f627-473b-89d1-0a9910ee32ed
-            region: content
-            configuration:
-              id: 'field_block:node:contest:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: long
-                third_party_settings: {  }
-            weight: 11
-            additional: {  }
-          36e3d306-00e4-43a1-9879-5e5685c5888d:
-            uuid: 36e3d306-00e4-43a1-9879-5e5685c5888d
-            region: content
-            configuration:
-              id: 'extra_field_block:node:contest:sharethis'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 12
-            additional: {  }
-          f0c7daa7-b9ef-4a60-8e9e-d9c91efdaff4:
-            uuid: f0c7daa7-b9ef-4a60-8e9e-d9c91efdaff4
-            region: content
-            configuration:
-              id: 'field_block:node:contest:comment_node_contest'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: hidden
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 13
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 id: node.contest.default
 targetEntityType: node
 bundle: contest
@@ -260,7 +36,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   comment_node_contest:
     type: comment_default
@@ -269,7 +45,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 4
     region: content
   field_contest_type:
     type: entity_reference_label
@@ -277,26 +53,28 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_time:
-    type: datetime_default
+    type: daterange_custom
     label: hidden
     settings:
       timezone_override: ''
-      format_type: long
+      date_format: 'l, F j, o'
+      from_to: both
+      separator: '-'
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 5
     region: content
   sharethis:
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 0
     region: content
 hidden:
   field_contestants: true

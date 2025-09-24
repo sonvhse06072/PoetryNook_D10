@@ -21,7 +21,6 @@ dependencies:
     - field_layout
     - image
     - layout_builder
-    - layout_discovery
     - text
     - user
     - video_embed_field
@@ -31,439 +30,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          934f2839-5da0-4ccf-98b7-484a5f9ee7e2:
-            uuid: 934f2839-5da0-4ccf-98b7-484a5f9ee7e2
-            region: content
-            configuration:
-              id: 'extra_field_block:node:contestant:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          956323da-e9dd-4e49-bdfe-f9f42c6039e2:
-            uuid: 956323da-e9dd-4e49-bdfe-f9f42c6039e2
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          d01ea763-32a1-44f0-88c9-745eea783509:
-            uuid: d01ea763-32a1-44f0-88c9-745eea783509
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_rating'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: fivestar_stars
-                label: above
-                settings:
-                  text_format: average
-                  display_format: average
-                  fivestar_widget: basic
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          245f8b8e-cce3-4c3a-8796-e9a86f59b499:
-            uuid: 245f8b8e-cce3-4c3a-8796-e9a86f59b499
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_contest'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          51ee400c-6626-4d5e-8219-c413b8f19287:
-            uuid: 51ee400c-6626-4d5e-8219-c413b8f19287
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          c92a5e05-f089-4955-9561-e4aefe13be91:
-            uuid: c92a5e05-f089-4955-9561-e4aefe13be91
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: full
-                  link: ''
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          70557032-1c49-418d-9566-aa7d8d71d4a3:
-            uuid: 70557032-1c49-418d-9566-aa7d8d71d4a3
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading_video'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: video_embed_field_video
-                label: hidden
-                settings:
-                  autoplay: true
-                  responsive: true
-                  width: 854
-                  height: 480
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          83ff9fd4-0af0-45c2-8262-d9cac5dc7a1d:
-            uuid: 83ff9fd4-0af0-45c2-8262-d9cac5dc7a1d
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_contest'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 7
-            additional: {  }
-          5180b8c6-ee0a-4648-a6bc-11dd69ee1375:
-            uuid: 5180b8c6-ee0a-4648-a6bc-11dd69ee1375
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 8
-            additional: {  }
-          bfc344e7-b134-4e09-9948-ebe348bdf38a:
-            uuid: bfc344e7-b134-4e09-9948-ebe348bdf38a
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: full
-                  link: ''
-                third_party_settings: {  }
-            weight: 9
-            additional: {  }
-          702f03e8-c7b4-4f9d-92da-7a4c7684ca85:
-            uuid: 702f03e8-c7b4-4f9d-92da-7a4c7684ca85
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading_video'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: video_embed_field_video
-                label: hidden
-                settings:
-                  autoplay: true
-                  responsive: true
-                  width: 854
-                  height: 480
-                third_party_settings: {  }
-            weight: 10
-            additional: {  }
-          5b19510b-d89d-4e81-9295-7dbeea9a0998:
-            uuid: 5b19510b-d89d-4e81-9295-7dbeea9a0998
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_contest'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 11
-            additional: {  }
-          36884a2c-ac2c-48eb-8ea4-bedddf0473cd:
-            uuid: 36884a2c-ac2c-48eb-8ea4-bedddf0473cd
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 12
-            additional: {  }
-          47c27f33-177d-486f-8207-28d412677fc7:
-            uuid: 47c27f33-177d-486f-8207-28d412677fc7
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: full
-                  link: ''
-                third_party_settings: {  }
-            weight: 13
-            additional: {  }
-          1666f648-45d9-4d55-9815-e47ed44068a8:
-            uuid: 1666f648-45d9-4d55-9815-e47ed44068a8
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading_video'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: video_embed_field_video
-                label: hidden
-                settings:
-                  autoplay: true
-                  responsive: true
-                  width: 854
-                  height: 480
-                third_party_settings: {  }
-            weight: 14
-            additional: {  }
-          16057eea-ee58-4e44-80bc-a612b0baca90:
-            uuid: 16057eea-ee58-4e44-80bc-a612b0baca90
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_contest'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 15
-            additional: {  }
-          0568f76f-cb35-465e-8f9f-beea284ff762:
-            uuid: 0568f76f-cb35-465e-8f9f-beea284ff762
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 16
-            additional: {  }
-          3a83f330-9436-4471-a297-fe712f31c61c:
-            uuid: 3a83f330-9436-4471-a297-fe712f31c61c
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: full
-                  link: ''
-                third_party_settings: {  }
-            weight: 17
-            additional: {  }
-          a9aee804-44aa-4d50-ade9-ad71e3efdca1:
-            uuid: a9aee804-44aa-4d50-ade9-ad71e3efdca1
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading_video'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: video_embed_field_video
-                label: hidden
-                settings:
-                  autoplay: true
-                  responsive: true
-                  width: 854
-                  height: 480
-                third_party_settings: {  }
-            weight: 18
-            additional: {  }
-          128e50f8-8df2-404f-92d2-7f9b4b130a01:
-            uuid: 128e50f8-8df2-404f-92d2-7f9b4b130a01
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_contest'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 19
-            additional: {  }
-          597df46f-ca5c-41a7-8744-0a1fc36730ac:
-            uuid: 597df46f-ca5c-41a7-8744-0a1fc36730ac
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 20
-            additional: {  }
-          9a0126f2-9bbb-407a-b38e-09fee1424539:
-            uuid: 9a0126f2-9bbb-407a-b38e-09fee1424539
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: full
-                  link: ''
-                third_party_settings: {  }
-            weight: 21
-            additional: {  }
-          882e8238-8b6f-48b2-9191-9e4b204a0266:
-            uuid: 882e8238-8b6f-48b2-9191-9e4b204a0266
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:field_poetry_reading_video'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: video_embed_field_video
-                label: hidden
-                settings:
-                  autoplay: true
-                  responsive: true
-                  width: 854
-                  height: 480
-                third_party_settings: {  }
-            weight: 22
-            additional: {  }
-          c5b5ee14-f925-4dd9-bab1-34c5276ea07b:
-            uuid: c5b5ee14-f925-4dd9-bab1-34c5276ea07b
-            region: content
-            configuration:
-              id: 'extra_field_block:node:contestant:sharethis'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 23
-            additional: {  }
-          e3e06439-9613-4f9f-a12d-047fe7abfb02:
-            uuid: e3e06439-9613-4f9f-a12d-047fe7abfb02
-            region: content
-            configuration:
-              id: 'field_block:node:contestant:comment_node_contestant'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: hidden
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 24
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 id: node.contestant.default
 targetEntityType: node
 bundle: contestant
@@ -474,7 +42,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   comment_node_contestant:
     type: comment_default
@@ -483,7 +51,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 6
     region: content
   field_contest:
     type: entity_reference_label
@@ -491,7 +59,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 5
     region: content
   field_image:
     type: image
@@ -502,7 +70,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_poetry_reading:
     type: entity_reference_revisions_entity_view
@@ -527,12 +95,12 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 7
     region: content
   sharethis:
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 1
     region: content
 hidden:
   field_competition_work: true

@@ -1,0 +1,25 @@
+uuid: 9bb2bb2b-b992-4948-816e-a16e1275b68a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7627cdab-7300-47ae-aaa0-640c5a9e4c4f'
+  module:
+    - block_content
+  theme:
+    - poetry_d10
+id: poetry_d10_copyrightandfairuse
+theme: poetry_d10
+region: footer_fifth
+weight: 0
+provider: null
+plugin: 'block_content:7627cdab-7300-47ae-aaa0-640c5a9e4c4f'
+settings:
+  id: 'block_content:7627cdab-7300-47ae-aaa0-640c5a9e4c4f'
+  label: 'Copyright and Fair Use'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

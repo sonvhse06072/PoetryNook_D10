@@ -28,10 +28,6 @@ a {
     background: $primary-shade !important;
 }
 
-.site-footer {
-    background: $primary-shade !important;
-}
-
 .site-name-slogan a {
     text-decoration: none;
 }
@@ -63,30 +59,24 @@ body {
   max-width: 1230px;
   margin: 0 auto;
   padding: 6px 40px 0;
+  position: relative;
+  @media (max-width: 575px) {
+    padding: 0;
+  }
 }
 
-.block-block-content, .block-poem-of-the-day-d10 {
-  background: #f9f9f9;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #e0dcd3;
-  padding: 10px 15px 15px 15px;
-  margin-bottom: .5rem;
-  h2 {
-    font-size: 15px;
-    font-weight: lighter;
-    color: #2e609d;
-    text-transform: uppercase;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #2e609d;
-    margin: 5px 0 16px 0;
-    font-family: 'ArnoPro-Regular', serif;
+.footer-container {
+  max-width: 1230px;
+  padding: 0 40px;
+  margin: 0 auto;
+  @media (max-width: 575px) {
+    padding: 0 12px;
   }
 }
 
 .node__content {
   font-size: 13px;
+  margin-top: 0;
 }
 
 .block-page-title-block {
@@ -157,4 +147,14 @@ body {
   .block-inline-blockbasic {
     break-before: column;
   }
+  @media (max-width: 575px) {
+    column-count: 1;
+    .block-inline-blockbasic {
+      break-before: unset;
+    }
+  }
+}
+
+.col {
+  min-width: 0;
 }

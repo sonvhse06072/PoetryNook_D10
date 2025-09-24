@@ -73,63 +73,7 @@
 
 <div id="page-wrapper">
   <div id="page">
-    {% block head %}
-      {% if page.secondary_menu or page.top_header or page.top_header_form %}
-        <nav{{ navbar_top_attributes }}>
-          {% if container_navbar %}
-          <div class="container">
-            {% endif %}
-            <div class="d-flex align-items-center">
-              {{ page.header }}
-            </div>
-            {{ page.secondary_menu }}
-            {{ page.top_header }}
-            {% if page.top_header_form %}
-              <div class="form-inline navbar-form ms-auto">
-                {{ page.top_header_form }}
-              </div>
-            {% endif %}
-            {% if container_navbar %}
-          </div>
-          {% endif %}
-        </nav>
-      {% endif %}
-      {% if page.header or page.primary_menu or page.header_form %}
-        <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
-          <nav{{ navbar_attributes }}>
-            {% if container_navbar %}
-            <div class="container">
-              {% endif %}
-              {% if page.primary_menu or page.header_form %}
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
-                  {% if navbar_offcanvas %}
-                  <div class="offcanvas-header">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body">
-                    {% endif %}
-                    {{ page.primary_menu }}
-                    {% if page.header_form %}
-                      <div class="form-inline navbar-form d-flex align-items-center ms-auto">
-                        {{ page.header_form }}
-                      </div>
-                    {% endif %}
-                    {% if navbar_offcanvas %}
-                  </div>
-                  {% endif %}
-                </div>
-              {% endif %}
-              {% if sidebar_collapse %}
-                <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
-              {% endif %}
-              {% if container_navbar %}
-            </div>
-            {% endif %}
-          </nav>
-        </header>
-      {% endif %}
-    {% endblock %}
+    {% include '@poetry_d10/components/header.html.twig' %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix mb-3">
       {% if page.highlighted %}
         <div class="highlighted">
@@ -185,7 +129,7 @@
         {% endblock %}
       </div>
       {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
-        <div class="featured-bottom">
+        <div class="featured-bottom container-fluid">
           {{ page.featured_bottom_first }}
           {{ page.featured_bottom_second }}
           {{ page.featured_bottom_third }}
@@ -193,22 +137,4 @@
       {% endif %}
     </div>
   </div>
-<footer class="site-footer mt-3">
-  {% block footer %}
-    <div class="{{ container }}">
-      {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-        <div class="site-footer__top clearfix">
-          {{ page.footer_first }}
-          {{ page.footer_second }}
-          {{ page.footer_third }}
-          {{ page.footer_fourth }}
-        </div>
-      {% endif %}
-      {% if page.footer_fifth %}
-        <div class="site-footer__bottom">
-          {{ page.footer_fifth }}
-        </div>
-      {% endif %}
-    </div>
-  {% endblock %}
-</footer>
+{% include '@poetry_d10/components/footer.html.twig' %}

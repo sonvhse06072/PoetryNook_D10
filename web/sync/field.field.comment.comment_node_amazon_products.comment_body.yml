@@ -5,6 +5,7 @@ dependencies:
   config:
     - comment.type.comment_node_amazon_products
     - field.storage.comment.comment_body
+    - filter.format.full_html
   module:
     - text
 id: comment.comment_node_amazon_products.comment_body
@@ -18,5 +19,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - full_html
 field_type: text_long
