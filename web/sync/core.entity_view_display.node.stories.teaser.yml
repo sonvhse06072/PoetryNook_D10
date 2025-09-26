@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.stories.body
-    - field.field.node.stories.comment_node_stories
+    - field.field.node.stories.comment_forum
     - field.field.node.stories.field_author_stories
     - field.field.node.stories.field_rate_this_poem_stories
     - field.field.node.stories.field_tags_stories
@@ -91,7 +91,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_stories: true
+  comment_forum: true
   field_author_stories: true
   field_rate_this_poem_stories: true
   field_tags_stories: true

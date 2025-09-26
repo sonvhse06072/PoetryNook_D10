@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.micropoetry.body
-    - field.field.node.micropoetry.comment_node_micropoetry
+    - field.field.node.micropoetry.comment_forum
     - field.field.node.micropoetry.field_rating
     - field.field.node.micropoetry.field_tags
     - node.type.micropoetry
@@ -89,7 +89,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_micropoetry: true
+  comment_forum: true
   field_rating: true
   field_tags: true
   langcode: true

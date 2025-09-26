@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_book.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.book.body
-    - field.field.node.book.comment_node_book
+    - field.field.node.book.comment_forum
     - field.field.node.book.field_author
     - node.type.book
   module:
@@ -63,11 +63,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 2
             additional: {  }
-          0bf7efe7-578e-4be9-952f-d51cc11edd5b:
-            uuid: 0bf7efe7-578e-4be9-952f-d51cc11edd5b
+          fde274f2-ee1f-4dc2-b674-80a5baf122a0:
+            uuid: fde274f2-ee1f-4dc2-b674-80a5baf122a0
             region: content
             configuration:
-              id: 'field_block:node:book:comment_node_book'
+              id: 'field_block:node:book:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -78,7 +78,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional: {  }
         third_party_settings: {  }
 id: node.book.default
@@ -93,14 +93,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_book:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   links:
     settings: {  }

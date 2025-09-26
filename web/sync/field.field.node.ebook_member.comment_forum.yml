@@ -1,0 +1,33 @@
+uuid: 25e676dc-6372-4cdf-9e12-0b2b30db1613
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.comment_forum
+    - node.type.ebook_member
+  module:
+    - comment
+id: node.ebook_member.comment_forum
+field_name: comment_forum
+entity_type: node
+bundle: ebook_member
+label: Comments
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 1
+  per_page: 50
+  anonymous: 0
+  form_location: true
+  preview: 0
+field_type: comment

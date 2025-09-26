@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.simpleads_campaign.comment_forum
     - field.field.node.simpleads_campaign.comment_node_simpleads_campaig
     - field.field.node.simpleads_campaign.field_adcamp_click
     - field.field.node.simpleads_campaign.field_adcamp_clicks
@@ -27,6 +28,12 @@ targetEntityType: node
 bundle: simpleads_campaign
 mode: default
 content:
+  comment_forum:
+    type: comment_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   comment_node_simpleads_campaig:
     type: comment_default
     weight: 20

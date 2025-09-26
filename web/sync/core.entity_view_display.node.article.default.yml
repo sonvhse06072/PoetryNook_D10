@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.article.body
-    - field.field.node.article.comment
+    - field.field.node.article.comment_forum
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.wide
@@ -91,11 +91,21 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 3
             additional: {  }
-          1fd3146f-b741-4833-a3bb-7f0cbf60d4c0:
-            uuid: 1fd3146f-b741-4833-a3bb-7f0cbf60d4c0
+          23ce3d95-2937-4db9-a91e-fb0dac8261e9:
+            uuid: 23ce3d95-2937-4db9-a91e-fb0dac8261e9
             region: content
             configuration:
-              id: 'field_block:node:article:comment'
+              id: 'extra_field_block:node:article:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 5
+            additional: {  }
+          5af9a7ef-7ead-4005-80e5-198b7f480b54:
+            uuid: 5af9a7ef-7ead-4005-80e5-198b7f480b54
+            region: content
+            configuration:
+              id: 'field_block:node:article:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -106,17 +116,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          23ce3d95-2937-4db9-a91e-fb0dac8261e9:
-            uuid: 23ce3d95-2937-4db9-a91e-fb0dac8261e9
-            region: content
-            configuration:
-              id: 'extra_field_block:node:article:sharethis'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 5
+            weight: 6
             additional: {  }
         third_party_settings: {  }
 _core:
@@ -133,14 +133,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  comment:
+  comment_forum:
     type: comment_default
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 110
+    weight: 101
     region: content
   field_image:
     type: image

@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_amazon_products.default
-    - field.field.node.amazon_products.comment_node_amazon_products
+    - core.entity_view_display.comment.comment_forum.default
+    - field.field.node.amazon_products.comment_forum
     - field.field.node.amazon_products.field_price
     - field.field.node.amazon_products.field_product_link
     - field.field.node.amazon_products.field_thumbail
@@ -19,7 +19,7 @@ targetEntityType: node
 bundle: amazon_products
 mode: default
 content:
-  comment_node_amazon_products:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.micropoetry.body
-    - field.field.node.micropoetry.comment_node_micropoetry
+    - field.field.node.micropoetry.comment_forum
     - field.field.node.micropoetry.field_rating
     - field.field.node.micropoetry.field_tags
     - node.type.micropoetry
@@ -35,7 +35,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_micropoetry:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

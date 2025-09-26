@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.simpleads.comment_node_simpleads
+    - field.field.node.simpleads.comment_forum
     - field.field.node.simpleads.field_ad_category
     - field.field.node.simpleads.field_ad_end_date
     - field.field.node.simpleads.field_ad_flash
@@ -73,7 +73,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_simpleads: true
+  comment_forum: true
   field_ad_category: true
   field_ad_end_date: true
   field_ad_start_date: true

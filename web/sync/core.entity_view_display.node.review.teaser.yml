@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.review.body
-    - field.field.node.review.comment_node_review
+    - field.field.node.review.comment_forum
     - field.field.node.review.field_poem
     - field.field.node.review.field_rating
     - field.field.node.review.taxonomy_forums
@@ -90,7 +90,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_review: true
+  comment_forum: true
   field_poem: true
   field_rating: true
   langcode: true

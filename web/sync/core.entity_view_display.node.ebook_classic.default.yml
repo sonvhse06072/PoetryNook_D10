@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_display.comment.comment_node_ebook_classic.default
     - field.field.node.ebook_classic.body
+    - field.field.node.ebook_classic.comment_forum
     - field.field.node.ebook_classic.comment_node_ebook_classic
     - field.field.node.ebook_classic.field_ebook_author
     - field.field.node.ebook_classic.field_ebook_cover
@@ -260,6 +261,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 13
             additional: {  }
+          12a83dee-3d40-46db-a639-4b475466f936:
+            uuid: 12a83dee-3d40-46db-a639-4b475466f936
+            region: content
+            configuration:
+              id: 'field_block:node:ebook_classic:comment_forum'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
         third_party_settings: {  }
 id: node.ebook_classic.default
 targetEntityType: node
@@ -272,6 +290,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  comment_forum:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 100
     region: content
   comment_node_ebook_classic:
     type: comment_default

@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -29,4 +30,43 @@ function poetry_d10_form_system_theme_settings_alter(&$form, FormStateInterface 
     'bg-white' => t('White'),
     'bg-transparent' => t('Transparent'),
   );
+}
+
+function poetry_d10_preprocess_forum_list(&$variables) {
+  $forums = [];
+  foreach ($variables['forums'] as $id => $forum) {
+    if ($forum->is_container == TRUE) {
+      $forums[$id]['container'] = $variables['forums'][$id];
+    }
+    else {
+      $parent_id = $forum->parent->get(0)->getValue()['target_id'];
+      $forums[$parent_id]['items'][$id]['forum'] = $variables['forums'][$id];
+      try {
+        $nids = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+          ->condition('status', 1)
+          ->condition('taxonomy_forums.target_id', $id)
+          ->sort('created', 'DESC')
+          ->range(0, 1)
+          ->accessCheck(FALSE)
+          ->execute();
+
+        if (!empty($nids)) {
+          $node = \Drupal::entityTypeManager()->getStorage('node')->load(reset($nids));
+          if ($node) {
+            $label = $node->label();
+            $phrase_array = explode(' ',$label);
+            $phrase = NULL;
+            if (count($phrase_array) > 3) {
+              $phrase = implode(' ',array_slice($phrase_array, 0, 3)).'...';
+            }
+            $forums[$parent_id]['items'][$id]['latest_topic'] = Link::fromTextAndUrl($phrase ?: $label, $node->toUrl())->toString();
+          }
+        }
+      }
+      catch (\Exception $e) {
+        // Fail silently to avoid breaking the page if something goes wrong.
+      }
+    }
+  }
+  $variables['forums'] = $forums;
 }

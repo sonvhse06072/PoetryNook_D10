@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.poetry_journal.body
+    - field.field.node.poetry_journal.comment_forum
     - field.field.node.poetry_journal.comment_node_poetry_journal
     - field.field.node.poetry_journal.field_amazon_product_id
     - node.type.poetry_journal
@@ -88,6 +89,7 @@ content:
     weight: 10
     region: content
 hidden:
+  comment_forum: true
   comment_node_poetry_journal: true
   field_amazon_product_id: true
   langcode: true

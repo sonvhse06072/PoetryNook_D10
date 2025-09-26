@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_quote.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.quote.body
-    - field.field.node.quote.comment_node_quote
+    - field.field.node.quote.comment_forum
     - field.field.node.quote.field_author
     - field.field.node.quote.field_tags
     - node.type.quote
@@ -224,11 +224,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 12
             additional: {  }
-          f031ec12-c0dd-4760-b242-3ada7a11b840:
-            uuid: f031ec12-c0dd-4760-b242-3ada7a11b840
+          9aba0ca4-d7bf-4649-aaf1-c6e4b536100d:
+            uuid: 9aba0ca4-d7bf-4649-aaf1-c6e4b536100d
             region: content
             configuration:
-              id: 'field_block:node:quote:comment_node_quote'
+              id: 'field_block:node:quote:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -239,7 +239,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 13
+            weight: 14
             additional: {  }
         third_party_settings: {  }
 id: node.quote.default
@@ -254,14 +254,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_quote:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   field_author:
     type: entity_reference_label

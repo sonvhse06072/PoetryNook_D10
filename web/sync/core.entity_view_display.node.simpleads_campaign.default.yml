@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment_node_simpleads_campaig.default
+    - field.field.node.simpleads_campaign.comment_forum
     - field.field.node.simpleads_campaign.comment_node_simpleads_campaig
     - field.field.node.simpleads_campaign.field_adcamp_click
     - field.field.node.simpleads_campaign.field_adcamp_clicks
@@ -22,6 +23,15 @@ targetEntityType: node
 bundle: simpleads_campaign
 mode: default
 content:
+  comment_forum:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 100
+    region: content
   comment_node_simpleads_campaig:
     type: comment_default
     label: hidden

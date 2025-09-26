@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.quote.body
-    - field.field.node.quote.comment_node_quote
+    - field.field.node.quote.comment_forum
     - field.field.node.quote.field_author
     - field.field.node.quote.field_tags
     - node.type.quote
@@ -89,7 +89,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_quote: true
+  comment_forum: true
   field_author: true
   field_tags: true
   langcode: true

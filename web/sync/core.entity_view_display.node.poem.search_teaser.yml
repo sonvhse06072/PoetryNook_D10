@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_teaser
     - field.field.node.poem.body
-    - field.field.node.poem.comment_node_poem
+    - field.field.node.poem.comment_forum
     - field.field.node.poem.field_author
     - field.field.node.poem.field_author_of_original
     - field.field.node.poem.field_image
@@ -39,7 +39,7 @@ content:
     region: content
 hidden:
   body: true
-  comment_node_poem: true
+  comment_forum: true
   field_author: true
   field_author_of_original: true
   field_image: true

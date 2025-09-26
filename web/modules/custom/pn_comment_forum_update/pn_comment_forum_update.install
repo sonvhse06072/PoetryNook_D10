@@ -9,7 +9,7 @@ use Drupal\node\Entity\NodeType;
 /**
  * Change the comment field machine name on all node bundles to comment_forum.
  */
-function pn_comment_forum_update_update_9001(&$sandbox) {
+function pn_comment_forum_update_update_10001(&$sandbox) {
   $messenger = \Drupal::messenger();
   $database = \Drupal::database();
   $schema = $database->schema();
@@ -271,6 +271,113 @@ function pn_comment_forum_update_update_9001(&$sandbox) {
     }
   }
 
+  // Migrate/aggregate comment_entity_statistics to use field_name = 'comment_forum'.
+  if ($schema->tableExists('comment_entity_statistics')) {
+    try {
+      // Build IN() placeholders for legacy field names (exclude the target field).
+      $legacy_fields = array_values(array_filter($old_field_names, fn($n) => $n !== 'comment_forum'));
+      if (!empty($legacy_fields)) {
+        $placeholders = [];
+        $args = [];
+        foreach ($legacy_fields as $idx => $fname) {
+          $ph = ":f$idx";
+          $placeholders[] = $ph;
+          $args[$ph] = $fname;
+        }
+        $in = implode(', ', $placeholders);
+
+        // 1) Delete existing forum stats for affected entity_ids to keep operation idempotent.
+        $sql_delete_existing = "DELETE cs FROM {comment_entity_statistics} cs
+          INNER JOIN (
+            SELECT DISTINCT entity_id FROM {comment_entity_statistics}
+            WHERE entity_type = :etype AND field_name IN ($in)
+          ) t ON cs.entity_id = t.entity_id
+          WHERE cs.entity_type = :etype2 AND cs.field_name = :fnew";
+        $args_delete = $args + [
+          ':etype' => 'node',
+          ':etype2' => 'node',
+          ':fnew' => 'comment_forum',
+        ];
+        $database->query($sql_delete_existing, $args_delete);
+
+        // 2) Insert aggregated forum stats rows per entity_id.
+        $sql_insert = "INSERT INTO {comment_entity_statistics}
+          (entity_id, entity_type, field_name, cid, last_comment_timestamp, last_comment_name, last_comment_uid, comment_count)
+          SELECT s.entity_id, :etype3 AS entity_type, :fnew2 AS field_name,
+                 l.cid, l.last_comment_timestamp, l.last_comment_name, l.last_comment_uid,
+                 s.comment_count
+          FROM (
+            SELECT entity_id, SUM(comment_count) AS comment_count
+            FROM {comment_entity_statistics}
+            WHERE entity_type = :etype4 AND field_name IN ($in)
+            GROUP BY entity_id
+          ) s
+          LEFT JOIN (
+            SELECT a.entity_id, a.cid, a.last_comment_timestamp, a.last_comment_name, a.last_comment_uid
+            FROM {comment_entity_statistics} a
+            INNER JOIN (
+              SELECT entity_id, MAX(COALESCE(last_comment_timestamp, 0)) AS max_ts
+              FROM {comment_entity_statistics}
+              WHERE entity_type = :etype5 AND field_name IN ($in)
+              GROUP BY entity_id
+            ) b ON a.entity_id = b.entity_id AND COALESCE(a.last_comment_timestamp, 0) = b.max_ts
+            WHERE a.entity_type = :etype6 AND a.field_name IN ($in)
+          ) l ON s.entity_id = l.entity_id";
+        $args_insert = $args + [
+          ':etype3' => 'node',
+          ':fnew2' => 'comment_forum',
+          ':etype4' => 'node',
+          ':etype5' => 'node',
+          ':etype6' => 'node',
+        ];
+        $database->query($sql_insert, $args_insert);
+
+        // 3) Remove legacy rows now that forum stats exist.
+        $sql_delete_old = "DELETE FROM {comment_entity_statistics}
+          WHERE entity_type = :etype7 AND field_name IN ($in)";
+        $args_delete_old = $args + [':etype7' => 'node'];
+        $database->query($sql_delete_old, $args_delete_old);
+      }
+    }
+    catch (\Exception $e) {
+      $messenger->addWarning(t('Statistics migration encountered an issue: @msg', ['@msg' => $e->getMessage()]));
+    }
+  }
+
+  // Also update existing comment entities to use the unified comment type.
+  try {
+    $legacy_types = array_values(array_filter($old_field_names, fn($n) => $n !== 'comment_forum'));
+
+    if (!empty($legacy_types)) {
+      // Update base comment table.
+      if ($schema->tableExists('comment') && $schema->fieldExists('comment', 'comment_type')) {
+        $database->update('comment')
+          ->fields(['comment_type' => 'comment_forum'])
+          ->condition('comment_type', $legacy_types, 'IN')
+          ->execute();
+      }
+
+      // Update comment_field_data table.
+      if ($schema->tableExists('comment_field_data') && $schema->fieldExists('comment_field_data', 'comment_type')) {
+        $database->update('comment_field_data')
+          ->fields(['comment_type' => 'comment_forum'])
+          ->condition('comment_type', $legacy_types, 'IN')
+          ->execute();
+      }
+
+      // Update the comment body field bundle to the new type.
+      if ($schema->tableExists('comment__comment_body') && $schema->fieldExists('comment__comment_body', 'bundle')) {
+        $database->update('comment__comment_body')
+          ->fields(['bundle' => 'comment_forum'])
+          ->condition('bundle', $legacy_types, 'IN')
+          ->execute();
+      }
+    }
+  }
+  catch (\Exception $e) {
+    $messenger->addWarning(t('Failed to update comment entities to the comment_forum type: @msg', ['@msg' => $e->getMessage()]));
+  }
+
   // If old storages have no bundles attached anymore, delete them.
   foreach ($old_field_names as $old_name) {
     if ($old_name === 'comment_forum') {
@@ -293,5 +400,5 @@ function pn_comment_forum_update_update_9001(&$sandbox) {
     }
   }
 
-  return t('All specified node bundles now reuse the comment_forum field.');
+  return t('All specified node bundles now reuse the comment_forum field and statistics have been updated.');
 }

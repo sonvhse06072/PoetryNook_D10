@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_review.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.review.body
-    - field.field.node.review.comment_node_review
+    - field.field.node.review.comment_forum
     - field.field.node.review.field_poem
     - field.field.node.review.field_rating
     - field.field.node.review.taxonomy_forums
@@ -145,11 +145,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 7
             additional: {  }
-          f0c12656-7356-4b0d-af9b-ebc1c29d6b21:
-            uuid: f0c12656-7356-4b0d-af9b-ebc1c29d6b21
+          ba1a4ff7-b381-4646-afa2-c23bc2daf7ea:
+            uuid: ba1a4ff7-b381-4646-afa2-c23bc2daf7ea
             region: content
             configuration:
-              id: 'field_block:node:review:comment_node_review'
+              id: 'field_block:node:review:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -160,7 +160,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 8
+            weight: 9
             additional: {  }
         third_party_settings: {  }
 id: node.review.default
@@ -175,14 +175,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_review:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   links:
     settings: {  }

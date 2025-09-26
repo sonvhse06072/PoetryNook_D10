@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.member_poem.body
-    - field.field.node.member_poem.comment_node_member_poem
+    - field.field.node.member_poem.comment_forum
     - field.field.node.member_poem.field_author_of_original
     - field.field.node.member_poem.field_image
     - field.field.node.member_poem.field_poetry_reading
@@ -48,7 +48,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_member_poem:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

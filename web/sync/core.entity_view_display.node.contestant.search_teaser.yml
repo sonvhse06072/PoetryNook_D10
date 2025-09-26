@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_teaser
     - field.field.node.contestant.body
-    - field.field.node.contestant.comment_node_contestant
+    - field.field.node.contestant.comment_forum
     - field.field.node.contestant.field_competition_work
     - field.field.node.contestant.field_contest
     - field.field.node.contestant.field_honorable_mention
@@ -34,7 +34,7 @@ content:
     region: content
 hidden:
   body: true
-  comment_node_contestant: true
+  comment_forum: true
   field_competition_work: true
   field_contest: true
   field_honorable_mention: true

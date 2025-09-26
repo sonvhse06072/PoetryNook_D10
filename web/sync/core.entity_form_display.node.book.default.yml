@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
-    - field.field.node.book.comment_node_book
+    - field.field.node.book.comment_forum
     - field.field.node.book.field_author
     - node.type.book
   module:
@@ -33,7 +33,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_book:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

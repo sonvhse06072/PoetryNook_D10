@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.contest.body
-    - field.field.node.contest.comment_node_contest
+    - field.field.node.contest.comment_forum
     - field.field.node.contest.field_contest_type
     - field.field.node.contest.field_contestants
     - field.field.node.contest.field_status
@@ -91,7 +91,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_contest: true
+  comment_forum: true
   field_contest_type: true
   field_contestants: true
   field_status: true

@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.poetry_art.body
-    - field.field.node.poetry_art.comment_node_poetry_art
+    - field.field.node.poetry_art.comment_forum
     - field.field.node.poetry_art.field_image
     - node.type.poetry_art
   module:
@@ -88,7 +88,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_poetry_art: true
+  comment_forum: true
   field_image: true
   langcode: true
   search_api_excerpt: true

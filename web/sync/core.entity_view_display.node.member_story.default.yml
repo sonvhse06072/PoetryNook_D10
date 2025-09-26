@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_member_story.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.member_story.body
-    - field.field.node.member_story.comment_node_member_story
+    - field.field.node.member_story.comment_forum
     - field.field.node.member_story.field_content_approval
     - field.field.node.member_story.field_forums
     - field.field.node.member_story.field_member_image
@@ -617,11 +617,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 33
             additional: {  }
-          a72eeb22-1a99-41d6-ba94-2901ce5b8beb:
-            uuid: a72eeb22-1a99-41d6-ba94-2901ce5b8beb
+          5cddbd38-02d5-4283-9c93-41b4c7054b37:
+            uuid: 5cddbd38-02d5-4283-9c93-41b4c7054b37
             region: content
             configuration:
-              id: 'field_block:node:member_story:comment_node_member_story'
+              id: 'field_block:node:member_story:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -632,7 +632,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 34
+            weight: 35
             additional: {  }
         third_party_settings: {  }
 id: node.member_story.default
@@ -647,14 +647,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_member_story:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   field_forums:
     type: entity_reference_entity_view

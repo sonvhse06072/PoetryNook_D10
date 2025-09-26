@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.email_plain
     - field.field.node.simplenews.body
-    - field.field.node.simplenews.comment_node_simplenews
+    - field.field.node.simplenews.comment_forum
     - field.field.node.simplenews.field_simplenews_term
     - node.type.simplenews
   module:
@@ -27,7 +27,7 @@ content:
     region: content
 hidden:
   body: true
-  comment_node_simplenews: true
+  comment_forum: true
   field_simplenews_term: true
   langcode: true
   search_api_excerpt: true

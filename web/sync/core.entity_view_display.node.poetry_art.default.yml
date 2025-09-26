@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_poetry_art.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.poetry_art.body
-    - field.field.node.poetry_art.comment_node_poetry_art
+    - field.field.node.poetry_art.comment_forum
     - field.field.node.poetry_art.field_image
     - node.type.poetry_art
   module:
@@ -159,11 +159,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 7
             additional: {  }
-          d4bec9a0-0163-482a-8aa2-f5127bf64a6a:
-            uuid: d4bec9a0-0163-482a-8aa2-f5127bf64a6a
+          6853366a-595c-45d0-b325-d0526fa864fe:
+            uuid: 6853366a-595c-45d0-b325-d0526fa864fe
             region: content
             configuration:
-              id: 'field_block:node:poetry_art:comment_node_poetry_art'
+              id: 'field_block:node:poetry_art:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -174,7 +174,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 8
+            weight: 9
             additional: {  }
         third_party_settings: {  }
 id: node.poetry_art.default
@@ -189,14 +189,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_poetry_art:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   field_image:
     type: image

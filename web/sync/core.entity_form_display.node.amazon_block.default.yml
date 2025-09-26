@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.amazon_block.comment_node_amazon_block
+    - field.field.node.amazon_block.comment_forum
     - field.field.node.amazon_block.field_amazon_product_id
     - node.type.amazon_block
   module:
@@ -22,7 +22,7 @@ targetEntityType: node
 bundle: amazon_block
 mode: default
 content:
-  comment_node_amazon_block:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

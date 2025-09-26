@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.comment_node_page
+    - field.field.node.page.comment_forum
     - field.field.node.page.field_metatag
     - field.field.node.page.layout_builder__layout
     - node.type.page
@@ -37,7 +37,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_page:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_poetry_news_exter.default
-    - field.field.node.poetry_news_external_resources.comment_node_poetry_news_exter
+    - core.entity_view_display.comment.comment_forum.default
+    - field.field.node.poetry_news_external_resources.comment_forum
     - field.field.node.poetry_news_external_resources.field_resource
     - node.type.poetry_news_external_resources
   module:
@@ -16,7 +16,7 @@ targetEntityType: node
 bundle: poetry_news_external_resources
 mode: default
 content:
-  comment_node_poetry_news_exter:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:

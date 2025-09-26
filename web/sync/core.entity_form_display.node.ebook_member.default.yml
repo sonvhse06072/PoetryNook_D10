@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.ebook_member.body
-    - field.field.node.ebook_member.comment_node_ebook_member
+    - field.field.node.ebook_member.comment_forum
     - field.field.node.ebook_member.field_ebook_cover
     - field.field.node.ebook_member.field_ebook_file
     - field.field.node.ebook_member.field_rating
@@ -39,7 +39,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_ebook_member:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

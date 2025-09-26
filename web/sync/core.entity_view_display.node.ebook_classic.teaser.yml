@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.ebook_classic.body
+    - field.field.node.ebook_classic.comment_forum
     - field.field.node.ebook_classic.comment_node_ebook_classic
     - field.field.node.ebook_classic.field_ebook_author
     - field.field.node.ebook_classic.field_ebook_cover
@@ -91,6 +92,7 @@ content:
     weight: 10
     region: content
 hidden:
+  comment_forum: true
   comment_node_ebook_classic: true
   field_ebook_author: true
   field_ebook_cover: true

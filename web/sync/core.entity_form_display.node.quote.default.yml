@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.quote.body
-    - field.field.node.quote.comment_node_quote
+    - field.field.node.quote.comment_forum
     - field.field.node.quote.field_author
     - field.field.node.quote.field_tags
     - node.type.quote
@@ -34,7 +34,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_quote:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

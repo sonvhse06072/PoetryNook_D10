@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.book_top.body
-    - field.field.node.book_top.comment_node_book_top
+    - field.field.node.book_top.comment_forum
     - field.field.node.book_top.field_author
     - field.field.node.book_top.field_language
     - node.type.book_top
@@ -89,7 +89,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_book_top: true
+  comment_forum: true
   field_author: true
   field_language: true
   langcode: true

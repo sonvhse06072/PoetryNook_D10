@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.comment
+    - field.field.node.article.comment_forum
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
@@ -38,7 +38,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

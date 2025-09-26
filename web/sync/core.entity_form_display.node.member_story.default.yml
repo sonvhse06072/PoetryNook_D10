@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.member_story.body
-    - field.field.node.member_story.comment_node_member_story
+    - field.field.node.member_story.comment_forum
     - field.field.node.member_story.field_content_approval
     - field.field.node.member_story.field_forums
     - field.field.node.member_story.field_member_image
@@ -46,7 +46,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_member_story:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

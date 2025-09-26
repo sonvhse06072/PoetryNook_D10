@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_book_top.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.book_top.body
-    - field.field.node.book_top.comment_node_book_top
+    - field.field.node.book_top.comment_forum
     - field.field.node.book_top.field_author
     - field.field.node.book_top.field_language
     - node.type.book_top
@@ -64,11 +64,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 2
             additional: {  }
-          e6991b37-b642-475d-816d-731d890f326b:
-            uuid: e6991b37-b642-475d-816d-731d890f326b
+          21f6aed2-f372-419f-82ce-9cc87a28069c:
+            uuid: 21f6aed2-f372-419f-82ce-9cc87a28069c
             region: content
             configuration:
-              id: 'field_block:node:book_top:comment_node_book_top'
+              id: 'field_block:node:book_top:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -79,7 +79,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional: {  }
         third_party_settings: {  }
 id: node.book_top.default
@@ -94,14 +94,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_book_top:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   links:
     settings: {  }

@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_stories.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.stories.body
-    - field.field.node.stories.comment_node_stories
+    - field.field.node.stories.comment_forum
     - field.field.node.stories.field_author_stories
     - field.field.node.stories.field_rate_this_poem_stories
     - field.field.node.stories.field_tags_stories
@@ -39,7 +39,7 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  comment_node_stories:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:

@@ -12,7 +12,6 @@ dependencies:
     - comment
     - field_layout
     - layout_builder
-    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -21,146 +20,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          0dc27a9e-7f9c-46eb-a7fa-0963c5e8b402:
-            uuid: 0dc27a9e-7f9c-46eb-a7fa-0963c5e8b402
-            region: content
-            configuration:
-              id: 'extra_field_block:node:forum:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          0881cb9e-e649-48a0-a1d9-23b0ee534583:
-            uuid: 0881cb9e-e649-48a0-a1d9-23b0ee534583
-            region: content
-            configuration:
-              id: 'field_block:node:forum:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          c5952a79-4d3e-4642-b4ad-8619047cb677:
-            uuid: c5952a79-4d3e-4642-b4ad-8619047cb677
-            region: content
-            configuration:
-              id: 'field_block:node:forum:taxonomy_forums'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          20fa861e-b6db-4966-b726-5d264eb2ec53:
-            uuid: 20fa861e-b6db-4966-b726-5d264eb2ec53
-            region: content
-            configuration:
-              id: 'field_block:node:forum:taxonomy_forums'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          7fc22f57-73e1-4127-9de2-dce4e0bee81c:
-            uuid: 7fc22f57-73e1-4127-9de2-dce4e0bee81c
-            region: content
-            configuration:
-              id: 'field_block:node:forum:taxonomy_forums'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          906f73a6-3dcb-47e4-80da-b1eee37fe709:
-            uuid: 906f73a6-3dcb-47e4-80da-b1eee37fe709
-            region: content
-            configuration:
-              id: 'field_block:node:forum:taxonomy_forums'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          f12ee50e-4ae6-49ef-8a9d-0c00f3946912:
-            uuid: f12ee50e-4ae6-49ef-8a9d-0c00f3946912
-            region: content
-            configuration:
-              id: 'field_block:node:forum:taxonomy_forums'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          2e36cc20-69f4-4eac-af9f-a14e4b69c4f9:
-            uuid: 2e36cc20-69f4-4eac-af9f-a14e4b69c4f9
-            region: content
-            configuration:
-              id: 'extra_field_block:node:forum:sharethis'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 7
-            additional: {  }
-          da104e63-f545-4b59-baf2-be4405b08fce:
-            uuid: da104e63-f545-4b59-baf2-be4405b08fce
-            region: content
-            configuration:
-              id: 'field_block:node:forum:comment_forum'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: hidden
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 8
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 id: node.forum.default
 targetEntityType: node
 bundle: forum
@@ -171,7 +32,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   comment_forum:
     type: comment_default
@@ -180,26 +41,15 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
-    region: content
-  sharethis:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  taxonomy_forums:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
+    weight: 1
     region: content
 hidden:
   langcode: true
   search_api_excerpt: true
+  sharethis: true
+  taxonomy_forums: true

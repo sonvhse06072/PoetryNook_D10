@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_display.comment.comment_node_poetry_journal.default
     - field.field.node.poetry_journal.body
+    - field.field.node.poetry_journal.comment_forum
     - field.field.node.poetry_journal.comment_node_poetry_journal
     - field.field.node.poetry_journal.field_amazon_product_id
     - node.type.poetry_journal
@@ -80,6 +81,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
+          0749bfd1-31bd-4542-9b9f-ea4044ecaba1:
+            uuid: 0749bfd1-31bd-4542-9b9f-ea4044ecaba1
+            region: content
+            configuration:
+              id: 'field_block:node:poetry_journal:comment_forum'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 id: node.poetry_journal.default
 targetEntityType: node
@@ -92,6 +110,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  comment_forum:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 100
     region: content
   comment_node_poetry_journal:
     type: comment_default

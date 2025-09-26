@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.review.body
-    - field.field.node.review.comment_node_review
+    - field.field.node.review.comment_forum
     - field.field.node.review.field_poem
     - field.field.node.review.field_rating
     - field.field.node.review.taxonomy_forums
@@ -36,7 +36,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_review:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

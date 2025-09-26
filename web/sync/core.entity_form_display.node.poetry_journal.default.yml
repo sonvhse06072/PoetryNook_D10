@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.poetry_journal.body
+    - field.field.node.poetry_journal.comment_forum
     - field.field.node.poetry_journal.comment_node_poetry_journal
     - field.field.node.poetry_journal.field_amazon_product_id
     - node.type.poetry_journal
@@ -33,6 +34,12 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  comment_forum:
+    type: comment_default
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   comment_node_poetry_journal:
     type: comment_default

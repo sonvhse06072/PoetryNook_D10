@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.author.body
-    - field.field.node.author.comment_node_author
+    - field.field.node.author.comment_forum
     - field.field.node.author.field_birth_town_author
     - field.field.node.author.field_country_author
     - field.field.node.author.field_date_of_birth
@@ -93,7 +93,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_author: true
+  comment_forum: true
   field_birth_town_author: true
   field_country_author: true
   field_date_of_birth: true

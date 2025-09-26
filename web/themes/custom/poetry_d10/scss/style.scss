@@ -107,7 +107,7 @@ body {
     margin-bottom: 10px;
     background: #fdfdfd;
   }
-  &:not(.poetry-page) {
+  &:not(.poetry-page, .forum-page) {
     .main-ads, .main-section {
       border-radius: 5px;
       border: 1px solid #e0dcd3;
@@ -202,5 +202,16 @@ body {
     padding-bottom: 6px;
     border-bottom: 1px solid #2e609d;
     margin: 5px 0 16px 0;
+  }
+}
+
+.node .field--type-image {
+  float: none !important;
+}
+
+table {
+  font-size: 13px;
+  td {
+    vertical-align: middle;
   }
 }

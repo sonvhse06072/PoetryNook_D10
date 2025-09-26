@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.poetry_art.body
-    - field.field.node.poetry_art.comment_node_poetry_art
+    - field.field.node.poetry_art.comment_forum
     - field.field.node.poetry_art.field_image
     - image.style.thumbnail
     - node.type.poetry_art
@@ -35,7 +35,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_poetry_art:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

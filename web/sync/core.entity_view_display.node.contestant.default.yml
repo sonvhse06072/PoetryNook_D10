@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_contestant.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.contestant.body
-    - field.field.node.contestant.comment_node_contestant
+    - field.field.node.contestant.comment_forum
     - field.field.node.contestant.field_competition_work
     - field.field.node.contestant.field_contest
     - field.field.node.contestant.field_honorable_mention
@@ -44,7 +44,7 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  comment_node_contestant:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:

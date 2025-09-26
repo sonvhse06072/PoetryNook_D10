@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_simplenews.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.simplenews.body
-    - field.field.node.simplenews.comment_node_simplenews
+    - field.field.node.simplenews.comment_forum
     - field.field.node.simplenews.field_simplenews_term
     - node.type.simplenews
   module:
@@ -143,11 +143,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 7
             additional: {  }
-          01ad6fd7-277b-4413-b50c-67fa6896a05e:
-            uuid: 01ad6fd7-277b-4413-b50c-67fa6896a05e
+          691ed0c0-c6b7-4012-9e76-325e64f983ee:
+            uuid: 691ed0c0-c6b7-4012-9e76-325e64f983ee
             region: content
             configuration:
-              id: 'field_block:node:simplenews:comment_node_simplenews'
+              id: 'field_block:node:simplenews:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -158,7 +158,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 8
+            weight: 9
             additional: {  }
         third_party_settings: {  }
 id: node.simplenews.default
@@ -173,14 +173,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_simplenews:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   field_simplenews_term:
     type: entity_reference_label

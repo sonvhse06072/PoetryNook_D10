@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.panel.comment_forum
     - field.field.node.panel.comment_node_panel
     - node.type.panel
   module:
@@ -20,6 +21,12 @@ targetEntityType: node
 bundle: panel
 mode: default
 content:
+  comment_forum:
+    type: comment_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   comment_node_panel:
     type: comment_default
     weight: 20

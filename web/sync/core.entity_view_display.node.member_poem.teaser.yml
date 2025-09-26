@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.member_poem.body
-    - field.field.node.member_poem.comment_node_member_poem
+    - field.field.node.member_poem.comment_forum
     - field.field.node.member_poem.field_author_of_original
     - field.field.node.member_poem.field_image
     - field.field.node.member_poem.field_poetry_reading
@@ -97,7 +97,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_member_poem: true
+  comment_forum: true
   field_author_of_original: true
   field_image: true
   field_poetry_reading: true

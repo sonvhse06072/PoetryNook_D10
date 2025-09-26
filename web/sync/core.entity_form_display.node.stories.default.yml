@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.stories.body
-    - field.field.node.stories.comment_node_stories
+    - field.field.node.stories.comment_forum
     - field.field.node.stories.field_author_stories
     - field.field.node.stories.field_rate_this_poem_stories
     - field.field.node.stories.field_tags_stories
@@ -38,7 +38,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_stories:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

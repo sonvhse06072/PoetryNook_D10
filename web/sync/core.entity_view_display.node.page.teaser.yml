@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
-    - field.field.node.page.comment_node_page
+    - field.field.node.page.comment_forum
     - field.field.node.page.field_metatag
     - field.field.node.page.layout_builder__layout
     - node.type.page
@@ -91,7 +91,7 @@ content:
     weight: 10
     region: content
 hidden:
-  comment_node_page: true
+  comment_forum: true
   field_metatag: true
   langcode: true
   layout_builder__layout: true

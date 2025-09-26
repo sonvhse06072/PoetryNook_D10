@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.amazon_products.comment_node_amazon_products
+    - field.field.node.amazon_products.comment_forum
     - field.field.node.amazon_products.field_price
     - field.field.node.amazon_products.field_product_link
     - field.field.node.amazon_products.field_thumbail
@@ -26,7 +26,7 @@ targetEntityType: node
 bundle: amazon_products
 mode: default
 content:
-  comment_node_amazon_products:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

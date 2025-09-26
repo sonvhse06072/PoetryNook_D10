@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_webform.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.webform.body
-    - field.field.node.webform.comment_node_webform
+    - field.field.node.webform.comment_forum
     - node.type.webform
   module:
     - comment
@@ -62,11 +62,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 2
             additional: {  }
-          d83438a8-f347-4514-9ad8-530d0b00387c:
-            uuid: d83438a8-f347-4514-9ad8-530d0b00387c
+          e95c91c6-996e-471a-86c2-f21221d5424f:
+            uuid: e95c91c6-996e-471a-86c2-f21221d5424f
             region: content
             configuration:
-              id: 'field_block:node:webform:comment_node_webform'
+              id: 'field_block:node:webform:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -77,7 +77,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional: {  }
         third_party_settings: {  }
 id: node.webform.default
@@ -92,14 +92,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_webform:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   links:
     settings: {  }

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.webform.body
-    - field.field.node.webform.comment_node_webform
+    - field.field.node.webform.comment_forum
     - node.type.webform
   module:
     - comment
@@ -32,7 +32,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_webform:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

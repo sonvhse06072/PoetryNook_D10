@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_poem.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.poem.body
-    - field.field.node.poem.comment_node_poem
+    - field.field.node.poem.comment_forum
     - field.field.node.poem.field_author
     - field.field.node.poem.field_author_of_original
     - field.field.node.poem.field_image
@@ -48,7 +48,7 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  comment_node_poem:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.contestant.body
-    - field.field.node.contestant.comment_node_contestant
+    - field.field.node.contestant.comment_forum
     - field.field.node.contestant.field_competition_work
     - field.field.node.contestant.field_contest
     - field.field.node.contestant.field_honorable_mention
@@ -45,7 +45,7 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment_node_contestant:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content

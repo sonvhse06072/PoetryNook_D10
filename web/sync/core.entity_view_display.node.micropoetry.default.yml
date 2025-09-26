@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_micropoetry.default
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.micropoetry.body
-    - field.field.node.micropoetry.comment_node_micropoetry
+    - field.field.node.micropoetry.comment_forum
     - field.field.node.micropoetry.field_rating
     - field.field.node.micropoetry.field_tags
     - node.type.micropoetry
@@ -144,11 +144,11 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 7
             additional: {  }
-          a5aff57c-dcf0-4fc2-8be9-37b8a2748789:
-            uuid: a5aff57c-dcf0-4fc2-8be9-37b8a2748789
+          db96a81e-d2d8-4005-86ef-a6a264c48463:
+            uuid: db96a81e-d2d8-4005-86ef-a6a264c48463
             region: content
             configuration:
-              id: 'field_block:node:micropoetry:comment_node_micropoetry'
+              id: 'field_block:node:micropoetry:comment_forum'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -159,7 +159,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 8
+            weight: 9
             additional: {  }
         third_party_settings: {  }
 id: node.micropoetry.default
@@ -174,14 +174,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  comment_node_micropoetry:
+  comment_forum:
     type: comment_default
     label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 102
     region: content
   field_tags:
     type: entity_reference_label

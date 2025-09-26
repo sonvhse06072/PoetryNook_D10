@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.simpleads.comment_node_simpleads
+    - field.field.node.simpleads.comment_forum
     - field.field.node.simpleads.field_ad_category
     - field.field.node.simpleads.field_ad_end_date
     - field.field.node.simpleads.field_ad_flash
@@ -35,7 +35,7 @@ targetEntityType: node
 bundle: simpleads
 mode: default
 content:
-  comment_node_simpleads:
+  comment_forum:
     type: comment_default
     weight: 20
     region: content
