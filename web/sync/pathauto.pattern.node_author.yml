@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       author: author
 selection_logic: and
-weight: 0
+weight: -11
 relationships: {  }

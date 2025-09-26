@@ -1,0 +1,8 @@
+name: 'PN Comment Forum Update'
+type: module
+description: 'Provides an update hook to switch all node bundles comment field from "comment" to "comment_forum" and migrate data.'
+core_version_requirement: ^10 || ^11
+package: 'PoetryNook'
+dependencies:
+  - drupal:comment
+  - drupal:forum

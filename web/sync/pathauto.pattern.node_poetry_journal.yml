@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       poetry_journal: poetry_journal
 selection_logic: and
-weight: 0
+weight: 1
 relationships: {  }

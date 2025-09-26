@@ -1,0 +1,5 @@
+name: Random Poem (Drupal 10)
+description: "Provides random poem redirects, ported for Drupal 10."
+package: Custom
+type: module
+core_version_requirement: ^10 || ^11

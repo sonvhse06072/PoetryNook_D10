@@ -1,0 +1,39 @@
+random_poem_d10.random:
+  path: '/poem/random/english'
+  defaults:
+    _title: 'Browse poems'
+    _controller: '\Drupal\random_poem_d10\Controller\RandomPoemController::random'
+  requirements:
+    _permission: 'access content'
+
+random_poem_d10.random_chinese:
+  path: '/poem/random/chinese'
+  defaults:
+    _title: 'Browse poems'
+    _controller: '\Drupal\random_poem_d10\Controller\RandomPoemController::randomChinese'
+  requirements:
+    _permission: 'access content'
+
+random_poem_d10.random_other:
+  path: '/poem/random'
+  defaults:
+    _title: 'Browse poems'
+    _controller: '\Drupal\random_poem_d10\Controller\RandomPoemController::randomOther'
+  requirements:
+    _permission: 'access content'
+
+random_poem_d10.random_chinese_four_lines:
+  path: '/poem/random/chinese-four-lines'
+  defaults:
+    _title: 'Browse poems'
+    _controller: '\Drupal\random_poem_d10\Controller\RandomPoemController::randomChineseFourLines'
+  requirements:
+    _permission: 'access content'
+
+random_poem_d10.random_japanese:
+  path: '/poem/random/japanese'
+  defaults:
+    _title: 'Browse poems'
+    _controller: '\Drupal\random_poem_d10\Controller\RandomPoemController::randomJapanese'
+  requirements:
+    _permission: 'access content'

@@ -21,28 +21,21 @@ class ReloadController extends ControllerBase {
     );
   }
 
-  public function reload(string $source): Response {
-    $item = $this->service->reload($source);
+  public function reload(): Response {
+    $item = $this->service->wikipaintings();
     if ($item === FALSE) {
       return new Response('');
     }
     $render = [
       '#theme' => 'picture_of_the_day_d10_item',
-      '#tab_id' => $item['tab_id'] ?? '',
       '#reload_url' => $item['reload_url'] ?? '',
       '#image' => ['#markup' => $item['image'] ?? ''],
       '#title' => ['#markup' => $item['title'] ?? ''],
       '#description' => ['#markup' => $item['description'] ?? ''],
       '#author' => ['#markup' => $item['author'] ?? ''],
       '#url' => $item['url'] ?? '',
-      '#class' => 'show active',
     ];
     $html = \Drupal::service('renderer')->renderPlain($render);
     return new Response($html);
-  }
-
-  public function test(string $type): Response {
-    // For parity with legacy test1 path: return a reload of given type.
-    return $this->reload($type);
   }
 }

@@ -7,14 +7,14 @@
         e.preventDefault();
         var $link = $(this);
         var url = $link.attr('href');
-        var $container = $link.closest('.tab-pane');
+        var $container = $link.closest('.content');
         if (!url || !$container.length) return;
         $container.addClass('is-loading');
         $.ajax({ url: url, method: 'GET' })
           .done(function (html) {
             // Replace the item HTML.
-            var $html = $('<div>').html(html);
-            $container.replaceWith($html.find('.tab-pane'));
+            var $html = $('<div class="content">').html(html);
+            $container.replaceWith($html);
           })
           .always(function () { $container.removeClass('is-loading'); });
       });

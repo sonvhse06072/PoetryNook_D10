@@ -39,48 +39,18 @@ class PictureOfTheDayBlock extends BlockBase implements ContainerFactoryPluginIn
   }
 
   public function build() {
-    $values = $this->service->getAll();
-    $items_markup = '';
-    foreach ($values as $value) {
-      if (!$value) { continue; }
-      $item_build = [
-        '#theme' => 'picture_of_the_day_d10_item',
-        '#tab_id' => $value['tab_id'] ?? '',
-        '#reload_url' => $value['reload_url'] ?? '',
-        '#image' => ['#markup' => $value['image'] ?? ''],
-        '#title' => ['#markup' => $value['title'] ?? ''],
-        '#description' => ['#markup' => $value['description'] ?? ''],
-        '#author' => ['#markup' => $value['author'] ?? ''],
-        '#url' => $value['url'] ?? '',
-        '#class' => $value['class'] ?? '',
-      ];
-      $items_markup .= \Drupal::service('renderer')->renderPlain($item_build);
-    }
+    $value = $this->service->wikipaintings();
     return [
-      '#theme' => 'picture_of_the_day_d10',
+      '#theme' => 'picture_of_the_day_d10_item',
       '#attached' => [
         'library' => ['picture_of_the_day_d10/potd'],
       ],
-      '#items' => [
-        '#markup' => $items_markup,
-      ],
-      '#tabs' => [
-        'wikipaintings' => [
-          'id' => 'wikipaintings',
-          'title' => 'WikiPaintings',
-          'class' => 'active',
-        ],
-        'wikimedia' => [
-          'id' => 'wikimedia',
-          'title' => 'WikiMedia',
-          'class' => '',
-        ],
-        'google' => [
-          'id' => 'google',
-          'title' => 'Google',
-          'class' => '',
-        ],
-      ],
+      '#reload_url' => $value['reload_url'] ?? '',
+      '#image' => ['#markup' => $value['image'] ?? ''],
+      '#title' => ['#markup' => $value['title'] ?? ''],
+      '#description' => ['#markup' => $value['description'] ?? ''],
+      '#author' => ['#markup' => $value['author'] ?? ''],
+      '#url' => $value['url'] ?? '',
     ];
   }
 }

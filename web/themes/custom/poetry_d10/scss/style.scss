@@ -100,12 +100,21 @@ body {
   padding: 12px;
   border-radius: 0 0 4px 4px;
   background: url(../images/background_2.png);
-  .featured-top, .main-ads, .main-section {
+  .featured-top {
     border-radius: 5px;
     border: 1px solid #e0dcd3;
     padding: 10px 15px 15px 15px;
     margin-bottom: 10px;
     background: #fdfdfd;
+  }
+  &:not(.poetry-page) {
+    .main-ads, .main-section {
+      border-radius: 5px;
+      border: 1px solid #e0dcd3;
+      padding: 10px 15px 15px 15px;
+      margin-bottom: 10px;
+      background: #fdfdfd;
+    }
   }
 }
 
@@ -157,4 +166,41 @@ body {
 
 .col {
   min-width: 0;
+}
+
+.more-link {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  a {
+    display: block;
+    position: relative;
+    font-size: 11px;
+    font-weight: bold;
+    color: #129ABC;
+    font-style: normal;
+    padding-left: 15px;
+    background: url(../images/arrow_see_more.png) left center no-repeat;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 75px;
+      width: 183px;
+      border-bottom: 1px dotted #d1d1d1;
+      top: 7px;
+    }
+  }
+}
+
+.node--type-author {
+  h5 {
+    font-size: 15px;
+    font-family: 'ArnoPro-Regular', serif;
+    font-weight: lighter;
+    color: #2e609d;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2e609d;
+    margin: 5px 0 16px 0;
+  }
 }

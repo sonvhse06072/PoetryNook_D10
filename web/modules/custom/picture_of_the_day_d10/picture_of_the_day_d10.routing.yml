@@ -1,23 +1,7 @@
-picture_of_the_day_d10.settings:
-  path: '/admin/config/content/picture-of-the-day'
-  defaults:
-    _form: '\Drupal\picture_of_the_day_d10\Form\PictureOfTheDaySettingsForm'
-    _title: 'Picture of the day'
-  requirements:
-    _permission: 'administer site configuration'
-
 picture_of_the_day_d10.reload:
-  path: '/picture-of-the-day/reload/{source}'
+  path: '/picture-of-the-day/reload'
   defaults:
     _controller: '\Drupal\picture_of_the_day_d10\Controller\ReloadController::reload'
   requirements:
     _permission: 'access content'
     source: '.+'
-
-picture_of_the_day_d10.test:
-  path: '/picture-of-the-day/test/{type}'
-  defaults:
-    _controller: '\Drupal\picture_of_the_day_d10\Controller\ReloadController::test'
-  requirements:
-    _permission: 'access content'
-    type: '.+'

@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       ebook_member: ebook_member
 selection_logic: and
-weight: 0
+weight: -7
 relationships: {  }

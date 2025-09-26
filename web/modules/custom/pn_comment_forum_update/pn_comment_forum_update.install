@@ -1,0 +1,297 @@
+<?php
+
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Change the comment field machine name on all node bundles to comment_forum.
+ */
+function pn_comment_forum_update_update_9001(&$sandbox) {
+  $messenger = \Drupal::messenger();
+  $database = \Drupal::database();
+  $schema = $database->schema();
+
+  // Legacy comment field machine names to migrate to comment_forum.
+  $old_field_names = [
+    'comment',
+    // Legacy per-bundle fields provided in issue description.
+    'comment_node_amazon_block',
+    'comment_node_amazon_products',
+    'comment_node_author',
+    'comment_node_book',
+    'comment_node_book_top',
+    'comment_node_contest',
+    'comment_node_contestant',
+    'comment_node_ebook_member',
+    'comment_node_member_poem',
+    'comment_node_member_story',
+    'comment_node_micropoetry',
+    'comment_node_page',
+    'comment_node_poem',
+    'comment_node_poet',
+    'comment_node_poetry_art',
+    'comment_node_poetry_news_exter',
+    'comment_node_poetry_news_mater',
+    'comment_node_quote',
+    'comment_node_review',
+    'comment_node_simpleads',
+    'comment_node_simplenews',
+    'comment_node_stories',
+    'comment_node_webform',
+  ];
+
+  // Load the existing comment_forum field storage. Do not recreate.
+  $comment_forum_storage = FieldStorageConfig::loadByName('node', 'comment_forum');
+  if (!$comment_forum_storage) {
+    // The site is expected to already have comment_forum. Abort safely.
+    $messenger->addWarning(t('The comment_forum field storage was not found. This update expects it to already exist and will not recreate it. Please ensure the forum module and comment_forum field storage are present, then rerun updates.'));
+    return t('Aborted: comment_forum field storage missing.');
+  }
+
+  // Loop through all node bundles.
+  $bundles = NodeType::loadMultiple();
+  // Track if we have already deleted target rows for a bundle during a run.
+  $target_rows_cleared = [];
+  $target_rev_rows_cleared = [];
+
+  foreach ($bundles as $bundle_id => $bundle) {
+    // Collect all legacy comment fields present on this bundle.
+    $present_old_fields = [];
+    foreach ($old_field_names as $old_name) {
+      if (FieldConfig::loadByName('node', $bundle_id, $old_name)) {
+        $present_old_fields[] = $old_name;
+      }
+    }
+
+    $has_new = (bool) FieldConfig::loadByName('node', $bundle_id, 'comment_forum');
+
+    if (empty($present_old_fields) && $has_new) {
+      // Already switched for this bundle, nothing to do.
+      continue;
+    }
+
+    // Ensure the new field is attached to the bundle, copying settings from the
+    // first found old field if available.
+    if (!$has_new) {
+      $label = 'Comments';
+      $description = '';
+      $required = FALSE;
+      $settings = ['default_mode' => 1, 'comment_type' => 'comment_forum'];
+
+      if (!empty($present_old_fields)) {
+        $old = FieldConfig::loadByName('node', $bundle_id, $present_old_fields[0]);
+        if ($old) {
+          $label = $old->label();
+          $description = (string) $old->getDescription();
+          $required = (bool) $old->isRequired();
+          $settings = $old->getSettings();
+          $settings['comment_type'] = 'comment_forum';
+        }
+      }
+
+      $new_field = FieldConfig::create([
+        'field_storage' => $comment_forum_storage,
+        'bundle' => $bundle_id,
+        'label' => $label,
+        'description' => $description,
+        'required' => $required,
+        'settings' => $settings,
+      ]);
+      $new_field->save();
+
+      // Update form display: move component settings from old field to comment_forum.
+      $form_display = EntityFormDisplay::load("node.$bundle_id.default");
+      if ($form_display) {
+        $moved = FALSE;
+        foreach ($present_old_fields as $old_name) {
+          if ($form_display->getComponent($old_name)) {
+            $component = $form_display->getComponent($old_name);
+            $form_display->removeComponent($old_name);
+            $form_display->setComponent('comment_forum', $component);
+            $moved = TRUE;
+            break;
+          }
+        }
+        if (!$moved) {
+          // Ensure comment_forum is visible by default if not configured.
+          $form_display->setComponent('comment_forum', [
+            'type' => 'comment_default',
+            'weight' => 100,
+            'region' => 'content',
+          ]);
+        }
+        $form_display->save();
+      }
+
+      // Update view display similarly.
+      $view_display = EntityViewDisplay::load("node.$bundle_id.default");
+      if ($view_display) {
+        $moved = FALSE;
+        foreach ($present_old_fields as $old_name) {
+          if ($view_display->getComponent($old_name)) {
+            $component = $view_display->getComponent($old_name);
+            $view_display->removeComponent($old_name);
+            $view_display->setComponent('comment_forum', $component);
+            $moved = TRUE;
+            break;
+          }
+        }
+        if (!$moved) {
+          $view_display->setComponent('comment_forum', [
+            'type' => 'comment_default',
+            'weight' => 100,
+            'region' => 'content',
+            'label' => 'hidden',
+          ]);
+        }
+        $view_display->save();
+      }
+    }
+
+    // Data migration: copy existing data from any legacy fields on this bundle.
+    foreach ($present_old_fields as $old_name) {
+      // Main data table migration.
+      $old_table = 'node__' . $old_name;
+      $target_table = 'node__comment_forum';
+      if ($schema->tableExists($old_table) && $schema->tableExists($target_table)) {
+        try {
+          if (empty($target_rows_cleared[$bundle_id])) {
+            // Delete any pre-existing rows for this bundle to make operation idempotent.
+            $database->delete($target_table)->condition('bundle', $bundle_id)->execute();
+            $target_rows_cleared[$bundle_id] = TRUE;
+          }
+          $base_fields = ['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta'];
+          $select = $database->select($old_table, 'c')
+            ->fields('c', $base_fields)
+            ->condition('bundle', $bundle_id);
+
+          // Build dynamic column list based on what exists in the target table.
+          $insert_fields = $base_fields;
+          $mapping = [
+            $old_name . '_status' => 'comment_forum_status',
+            $old_name . '_count' => 'comment_forum_count',
+            'last_comment_name' => 'comment_forum_last_comment_name',
+            'last_comment_timestamp' => 'comment_forum_last_comment_timestamp',
+            'last_comment_uid' => 'comment_forum_last_comment_uid',
+          ];
+          foreach ($mapping as $old_col => $new_col) {
+            if ($schema->fieldExists($target_table, $new_col)) {
+              if ($schema->fieldExists($old_table, $old_col)) {
+                $select->addField('c', $old_col, $new_col);
+              }
+              else {
+                // Provide sensible defaults if the source column does not exist.
+                $default = in_array($new_col, ['comment_forum_status', 'comment_forum_count'], TRUE) ? '0' : 'NULL';
+                $select->addExpression($default, $new_col);
+              }
+              $insert_fields[] = $new_col;
+            }
+          }
+
+          $database->insert($target_table)
+            ->fields($insert_fields)
+            ->from($select)
+            ->execute();
+        }
+        catch (\Exception $e) {
+          $messenger->addWarning(t('Failed to migrate node comment data (%old) for %bundle: @msg', ['%bundle' => $bundle_id, '%old' => $old_name, '@msg' => $e->getMessage()]));
+        }
+      }
+
+      // Revision data table migration.
+      $old_rev_table = 'node_revision__' . $old_name;
+      $target_rev_table = 'node_revision__comment_forum';
+      if ($schema->tableExists($old_rev_table) && $schema->tableExists($target_rev_table)) {
+        try {
+          if (empty($target_rev_rows_cleared[$bundle_id])) {
+            $database->delete($target_rev_table)->condition('bundle', $bundle_id)->execute();
+            $target_rev_rows_cleared[$bundle_id] = TRUE;
+          }
+          $base_fields = ['bundle', 'deleted', 'entity_id', 'revision_id', 'langcode', 'delta'];
+          $select = $database->select($old_rev_table, 'c')
+            ->fields('c', $base_fields)
+            ->condition('bundle', $bundle_id);
+
+          $insert_fields = $base_fields;
+          $mapping = [
+            $old_name . '_status' => 'comment_forum_status',
+            $old_name . '_count' => 'comment_forum_count',
+            'last_comment_name' => 'comment_forum_last_comment_name',
+            'last_comment_timestamp' => 'comment_forum_last_comment_timestamp',
+            'last_comment_uid' => 'comment_forum_last_comment_uid',
+          ];
+          foreach ($mapping as $old_col => $new_col) {
+            if ($schema->fieldExists($target_rev_table, $new_col)) {
+              if ($schema->fieldExists($old_rev_table, $old_col)) {
+                $select->addField('c', $old_col, $new_col);
+              }
+              else {
+                $default = in_array($new_col, ['comment_forum_status', 'comment_forum_count'], TRUE) ? '0' : 'NULL';
+                $select->addExpression($default, $new_col);
+              }
+              $insert_fields[] = $new_col;
+            }
+          }
+
+          $database->insert($target_rev_table)
+            ->fields($insert_fields)
+            ->from($select)
+            ->execute();
+        }
+        catch (\Exception $e) {
+          $messenger->addWarning(t('Failed to migrate node revision comment data (%old) for %bundle: @msg', ['%bundle' => $bundle_id, '%old' => $old_name, '@msg' => $e->getMessage()]));
+        }
+      }
+
+      // Update displays to remove leftover old components if new already present.
+      $form_display = EntityFormDisplay::load("node.$bundle_id.default");
+      if ($form_display && $form_display->getComponent($old_name)) {
+        $form_display->removeComponent($old_name);
+        $form_display->save();
+      }
+      $view_display = EntityViewDisplay::load("node.$bundle_id.default");
+      if ($view_display && $view_display->getComponent($old_name)) {
+        $view_display->removeComponent($old_name);
+        $view_display->save();
+      }
+
+      // Remove the old field config on the bundle to complete the switch.
+      try {
+        $old_cfg = FieldConfig::loadByName('node', $bundle_id, $old_name);
+        if ($old_cfg) {
+          $old_cfg->delete();
+        }
+      }
+      catch (\Exception $e) {
+        $messenger->addWarning(t('Failed to remove old comment field %old on %bundle: @msg', ['%bundle' => $bundle_id, '%old' => $old_name, '@msg' => $e->getMessage()]));
+      }
+    }
+  }
+
+  // If old storages have no bundles attached anymore, delete them.
+  foreach ($old_field_names as $old_name) {
+    if ($old_name === 'comment_forum') {
+      continue;
+    }
+    $old_storage = FieldStorageConfig::loadByName('node', $old_name);
+    if ($old_storage) {
+      $instances = \Drupal::entityTypeManager()->getStorage('field_config')->loadByProperties([
+        'entity_type' => 'node',
+        'field_name' => $old_name,
+      ]);
+      if (empty($instances)) {
+        try {
+          $old_storage->delete();
+        }
+        catch (\Exception $e) {
+          // Non-fatal.
+        }
+      }
+    }
+  }
+
+  return t('All specified node bundles now reuse the comment_forum field.');
+}

@@ -108,6 +108,7 @@ module:
   quicktabs: 0
   quote: 0
   radioactivity: 0
+  random_poem_d10: 0
   rdf: 0
   redirect: 0
   rest: 0
@@ -145,7 +146,6 @@ module:
   workflows: 0
   forum: 1
   pathauto: 1
-  forum_access: 2
   views: 10
   paragraphs: 11
   standard: 1000

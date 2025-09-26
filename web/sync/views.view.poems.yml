@@ -1,0 +1,2213 @@
+uuid: fa8d8fb3-b208-4e8b-90c4-d4b3f427b26c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - field.storage.node.field_rating
+    - node.type.member_poem
+    - node.type.micropoetry
+    - node.type.poem
+    - taxonomy.vocabulary.languages
+  content:
+    - 'taxonomy_term:languages:2a61b0b3-ef45-43a2-a498-4f9284d4c6af'
+    - 'taxonomy_term:languages:37057855-8d14-40a7-a04e-4fa0db92a7ac'
+    - 'taxonomy_term:languages:3f31c64d-47d0-4786-9fee-ceeec915d67d'
+    - 'taxonomy_term:languages:4c24bef3-83c4-45f6-a1e6-ceadb6f4624c'
+    - 'taxonomy_term:languages:653f7afe-6977-411d-aa1c-57682754d701'
+    - 'taxonomy_term:languages:70ec8c87-2518-4ecb-ba14-1f5c26badde5'
+    - 'taxonomy_term:languages:7e7fbacf-f797-4f4e-bd5e-00b98bbb0671'
+    - 'taxonomy_term:languages:87728b6b-7828-4400-956a-bc23bc516ac6'
+    - 'taxonomy_term:languages:96c106a9-21bd-4c16-8b2d-9c609ad708c6'
+    - 'taxonomy_term:languages:9d19ffe8-2def-49cd-b9b1-8c62838fb0fd'
+    - 'taxonomy_term:languages:a1ba302e-3d6e-4b6a-9bcf-f84302bf3ff6'
+    - 'taxonomy_term:languages:a2162945-6ccf-4876-91d5-8e2f6a856d9a'
+    - 'taxonomy_term:languages:c4fa16bf-93d8-474b-97ab-112390be4a36'
+    - 'taxonomy_term:languages:d3b061a1-9d28-48c4-8792-daca74e2bd98'
+    - 'taxonomy_term:languages:debd8a86-6592-4c52-8978-2781c8d30d82'
+    - 'taxonomy_term:languages:e2dbb082-9805-41eb-8a36-338b39e133f6'
+  module:
+    - better_exposed_filters
+    - fivestar
+    - node
+    - statistics
+    - taxonomy
+id: poems
+label: Poems
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Poems
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: Title
+          exclude: false
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_author:
+          id: field_author
+          table: node__field_author
+          field: field_author
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Poet
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: field
+          label: Posted
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: olivero_medium
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
+              description: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_rating:
+          id: field_rating
+          table: node__field_rating
+          field: field_rating
+          plugin_id: field
+        totalcount:
+          id: totalcount
+          table: node_counter
+          field: totalcount
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: statistics_numeric
+          label: 'Page views'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
+      pager:
+        type: mini
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 20
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: null
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            sort:
+              plugin_id: default
+            filter:
+              type:
+                plugin_id: default
+              title:
+                plugin_id: default
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: time
+        options:
+          results_lifespan: 21600
+          results_lifespan_custom: 0
+          output_lifespan: 518400
+          output_lifespan_custom: 0
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'There is nothing. Try to search again.'
+          tokenize: false
+      sorts:
+        totalcount:
+          id: totalcount
+          table: node_counter
+          field: totalcount
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_poem: member_poem
+            micropoetry: micropoetry
+            poem: poem
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: bundle
+            optional: false
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: '2'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              2:
+                title: Classic
+                operator: in
+                value:
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  member_poem: '0'
+                  micropoetry: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              3:
+                title: Member
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poem: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            1703: 1703
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: languages
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      style:
+        type: table
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      use_ajax: true
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: "<div class=\"d-flex justify-content-between\">\r\n<div class='poem-tabs'>\r\n<span class='btn btn-primary primary'><a href='/poems'>English</a></span>\r\n<span class='btn btn-primary'><a href='/poems/chinese'>Chinese</a></span>\r\n<span class='btn btn-primary'><a href='/poems/japanese'>Japanese</a></span>\r\n<span class='btn btn-primary'><a href='/poems/other'>Other</a></span>\r\n<div class=\"my-3\">Displaying @start - @end of @total</div>\r\n</div>\r\n<div class=\"random-poem-button\">\r\n<a href=\"/poem/random/english\">Random English Poem</a> <br/>\r\n<a href=\"/poem/random/chinese\">Random Chinese Poem</a> <br/>\r\n<a href=\"/poem/random/chinese-four-lines\">Random Chinese Quatrain</a> <br/>\r\n<a href=\"/poem/random/japanese\">Random Japanese Poem</a> <br/>\r\n<a href=\"/poem/random\">Random Poem</a>\r\n</div>\r\n</div>"
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_author'
+        - 'config:field.storage.node.field_rating'
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 2
+    display_options:
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_poem: member_poem
+            micropoetry: micropoetry
+            poem: poem
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: bundle
+            optional: false
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: '2'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              2:
+                title: Classic
+                operator: in
+                value:
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  member_poem: '0'
+                  micropoetry: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              3:
+                title: Member
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poem: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            363: 363
+            303: 303
+            304: 304
+            307: 307
+            308: 308
+            309: 309
+            310: 310
+            311: 311
+            312: 312
+            313: 313
+            314: 314
+            315: 315
+            316: 316
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: languages
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      exposed_block: false
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_author'
+        - 'config:field.storage.node.field_rating'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: filtered_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              type:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+              title:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_poem: member_poem
+            micropoetry: micropoetry
+            poem: poem
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: bundle
+            optional: false
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: '2'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              2:
+                title: Classic
+                operator: in
+                value:
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  member_poem: '0'
+                  micropoetry: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              3:
+                title: Member
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poem: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            363: 363
+            303: 303
+            304: 304
+            307: 307
+            308: 308
+            309: 309
+            310: 310
+            311: 311
+            312: 312
+            313: 313
+            314: 314
+            315: 315
+            316: 316
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: languages
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        exposed_form: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: poems
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_author'
+        - 'config:field.storage.node.field_rating'
+  page_2:
+    id: page_2
+    display_title: 'Poems: Chinese'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Poems: Chinese'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_poem: member_poem
+            micropoetry: micropoetry
+            poem: poem
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: bundle
+            optional: false
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: '2'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              2:
+                title: Classic
+                operator: in
+                value:
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  member_poem: '0'
+                  micropoetry: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              3:
+                title: Member
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poem: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            363: 363
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: languages
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: poems/chinese
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_author'
+        - 'config:field.storage.node.field_rating'
+  page_3:
+    id: page_3
+    display_title: 'Poems: Japanese'
+    display_plugin: page
+    position: 4
+    display_options:
+      title: 'Poems: Japanese'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_poem: member_poem
+            micropoetry: micropoetry
+            poem: poem
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: bundle
+            optional: false
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: '2'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              2:
+                title: Classic
+                operator: in
+                value:
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  member_poem: '0'
+                  micropoetry: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              3:
+                title: Member
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poem: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            1703: 1703
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: languages
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: poems/japanese
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_author'
+        - 'config:field.storage.node.field_rating'
+  page_4:
+    id: page_4
+    display_title: 'Poems: Other'
+    display_plugin: page
+    position: 5
+    display_options:
+      title: 'Poems: Other'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_poem: member_poem
+            micropoetry: micropoetry
+            poem: poem
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: bundle
+            optional: false
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: '2'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: All
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              2:
+                title: Classic
+                operator: in
+                value:
+                  poem: poem
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  member_poem: '0'
+                  micropoetry: '0'
+                  panel: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+              3:
+                title: Member
+                operator: in
+                value:
+                  member_poem: member_poem
+                  micropoetry: micropoetry
+                  all: '0'
+                  amazon_block: '0'
+                  amazon_products: '0'
+                  article: '0'
+                  author: '0'
+                  page: '0'
+                  book_top: '0'
+                  book: '0'
+                  contest: '0'
+                  contestant: '0'
+                  ebook_classic: '0'
+                  ebook_member: '0'
+                  forum: '0'
+                  member_story: '0'
+                  panel: '0'
+                  poem: '0'
+                  poet: '0'
+                  poetry_art: '0'
+                  poetry_news_material: '0'
+                  poetry_news_external_resources: '0'
+                  poetry_journal: '0'
+                  quote: '0'
+                  review: '0'
+                  simpleads: '0'
+                  simpleads_campaign: '0'
+                  simplenews: '0'
+                  stories: '0'
+                  webform: '0'
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              member: '0'
+              administrator: '0'
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            363: 363
+            305: 305
+            306: 306
+            1703: 1703
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: languages
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: poems/other
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_author'
+        - 'config:field.storage.node.field_rating'

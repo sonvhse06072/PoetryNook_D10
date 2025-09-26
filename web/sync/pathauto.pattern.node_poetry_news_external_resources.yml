@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       poetry_news_external_resources: poetry_news_external_resources
 selection_logic: and
-weight: 0
+weight: 3
 relationships: {  }
