@@ -6,9 +6,10 @@ adsense_disable: false
 adsense_placeholder: true
 adsense_placeholder_text: 'Google AdSense'
 adsense_secret_language: ''
-adsense_managed_page_level_ads_enabled: false
+adsense_managed_page_level_ads_enabled: true
 adsense_access_pages:
-  pages: ''
+  id: request_path
+  pages: '/*'
   negate: '0'
 adsense_basic_id: pub-3631330104660617
 adsense_id_module: adsense_basic
