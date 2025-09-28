@@ -8,6 +8,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   adsense: 0
+  adsense_adstxt: 0
   aggregator: 0
   amazon_pa: 0
   amazon_pa_filter: 0
