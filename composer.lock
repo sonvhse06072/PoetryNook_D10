@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2fd789b0f2d1dcba6413a06b82003d0",
+    "content-hash": "58fdc9e653182f9a30cb4b12a9f8c3dc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1976,6 +1976,58 @@
             "homepage": "https://www.drupal.org/project/amazon_pa",
             "support": {
                 "source": "https://git.drupalcode.org/project/amazon_pa"
+            }
+        },
+        {
+            "name": "drupal/antibot",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/antibot.git",
+                "reference": "2.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/antibot-2.0.4.zip",
+                "reference": "2.0.4",
+                "shasum": "58b215291b250ea410194693cbac2da6f54a8530"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.4",
+                    "datestamp": "1723819813",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "danrod",
+                    "homepage": "https://www.drupal.org/user/19150"
+                },
+                {
+                    "name": "gaurav.kapoor",
+                    "homepage": "https://www.drupal.org/user/3495331"
+                },
+                {
+                    "name": "mstef",
+                    "homepage": "https://www.drupal.org/user/107190"
+                }
+            ],
+            "description": "Prevent forms from being submitted without JavaScript enabled.",
+            "homepage": "https://www.drupal.org/project/antibot",
+            "support": {
+                "source": "https://git.drupalcode.org/project/antibot"
             }
         },
         {
@@ -7926,6 +7978,70 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/spamicide",
                 "issues": "https://www.drupal.org/project/issues/spamicide"
+            }
+        },
+        {
+            "name": "drupal/spamspan",
+            "version": "3.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/spamspan.git",
+                "reference": "3.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/spamspan-3.2.2.zip",
+                "reference": "3.2.2",
+                "shasum": "275b53a05d90940fa47be6cf54af95c57954bd26"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.2.2",
+                    "datestamp": "1754294358",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
+                },
+                {
+                    "name": "peterx",
+                    "homepage": "https://www.drupal.org/user/23516"
+                },
+                {
+                    "name": "thomas.frobieter",
+                    "homepage": "https://www.drupal.org/user/409335"
+                },
+                {
+                    "name": "vitalie",
+                    "homepage": "https://www.drupal.org/user/175134"
+                }
+            ],
+            "description": "The SpamSpan module obfuscates email addresses to help prevent spambots from collecting them. It implements the technique at http://www.spamspan.com.",
+            "homepage": "http://drupal.org/project/spamspan",
+            "support": {
+                "source": "https://git.drupalcode.org/project/spamspan"
             }
         },
         {

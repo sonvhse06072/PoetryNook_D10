@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_forums
     - node.type.member_story
     - taxonomy.vocabulary.forums
+  content:
+    - 'taxonomy_term:forums:56fffafa-3954-4033-82dd-9c7b316da19e'
   module:
     - field_sample_value
 third_party_settings:
@@ -20,7 +22,9 @@ label: Forums
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 56fffafa-3954-4033-82dd-9c7b316da19e
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

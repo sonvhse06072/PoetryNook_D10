@@ -13,6 +13,7 @@ module:
   amazon_pa_filter: 0
   amazon_sync_d10: 0
   announcements_feed: 0
+  antibot: 0
   asin: 0
   audiofield: 0
   automated_cron: 0
@@ -133,6 +134,7 @@ module:
   simpleads: 0
   sophron: 0
   spamicide: 0
+  spamspan: 0
   statistics: 0
   statistics_counter: 0
   subpathauto: 0

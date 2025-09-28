@@ -6,8 +6,10 @@ dependencies:
     - filter.format.full_html
     - node.type.forum
     - node.type.member_poem
+    - workflows.workflow.editorial
   module:
     - comment
+    - content_moderation
     - filter
     - fivestar
     - node
@@ -34,5 +36,6 @@ permissions:
   - 'rate content'
   - 'search content'
   - 'skip comment approval'
+  - 'use editorial transition update'
   - 'use text format full_html'
   - 'view own unpublished content'

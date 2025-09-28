@@ -1,0 +1,12 @@
+diff --git a/src/Plugin/Field/FieldWidget/WorkflowButtonsWidget.php b/src/Plugin/Field/FieldWidget/WorkflowButtonsWidget.php
+index ee7f2ba..e219ca5 100644
+--- a/src/Plugin/Field/FieldWidget/WorkflowButtonsWidget.php
++++ b/src/Plugin/Field/FieldWidget/WorkflowButtonsWidget.php
+@@ -270,6 +270,7 @@ class WorkflowButtonsWidget extends OptionsSelectWidget implements ContainerFact
+       $button = [
+         '#moderation_state' => $id,
+         '#weight' => $weight + 10,
++        '#gin_action_item' => TRUE,
+       ];
+ 
+       if (isset($transition_data[$id])) {

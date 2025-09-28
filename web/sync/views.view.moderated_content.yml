@@ -2,7 +2,11 @@ uuid: 03e83b12-6662-4ae7-96cc-dac39e649565
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.member_poem
+    - node.type.member_story
   module:
+    - content_moderation
     - node
     - user
   enforced:
@@ -546,6 +550,49 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        type_1:
+          id: type_1
+          table: node_field_data
+          field: type
+          relationship: nid
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            member_story: member_story
+            member_poem: member_poem
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         type:
           id: type
           table: node_field_data
@@ -557,7 +604,9 @@ display:
           entity_field: type
           plugin_id: bundle
           operator: in
-          value: {  }
+          value:
+            member_story: member_story
+            member_poem: member_poem
           group: 1
           exposed: true
           expose:
@@ -575,8 +624,14 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              content_editor: '0'
+              member: '0'
               administrator: '0'
-            reduce: false
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -600,8 +655,7 @@ display:
           plugin_id: moderation_state_filter
           operator: in
           value:
-            editorial-draft: editorial-draft
-            editorial-archived: editorial-archived
+            all: all
           group: 1
           exposed: true
           expose:
@@ -619,8 +673,14 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              content_editor: '0'
+              member: '0'
               administrator: '0'
-            reduce: true
+              designer: '0'
+              content_administrator: '0'
+              site_administrator: '0'
+              judge: '0'
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -663,47 +723,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        moderation_state_1:
-          id: moderation_state_1
-          table: node_field_revision
-          field: moderation_state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: moderation_state_filter
-          operator: 'not in'
-          value:
-            editorial-published: editorial-published
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
             reduce: false
           is_grouped: false
           group_info:
@@ -821,7 +840,8 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:workflow_list'
   moderated_content:
     id: moderated_content
     display_title: 'Moderated content'
@@ -840,4 +860,5 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:workflow_list'

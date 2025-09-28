@@ -3,18 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
+    - node.type.ebook_classic
+    - node.type.ebook_member
+    - node.type.forum
+    - node.type.member_poem
+    - node.type.member_story
+    - node.type.micropoetry
+    - node.type.poem
+    - node.type.poetry_art
+    - node.type.review
     - rest.resource.simpleads_click
     - rest.resource.simpleads_group
     - rest.resource.simpleads_impression
     - rest.resource.simpleads_reference
     - rest.resource.simpleads_views
+    - workflows.workflow.editorial
   module:
     - comment
     - contact
+    - content_moderation
     - field_permissions
+    - filter
+    - fivestar
     - follow
     - media
     - node
+    - pdfmaker_d10
+    - privatemsg
     - rest
     - search
     - simpleads
@@ -34,10 +50,42 @@ permissions:
   - 'change own username'
   - 'count simpleads clicks'
   - 'count simpleads impressions'
+  - 'create classic pdf'
+  - 'create ebook_classic content'
+  - 'create ebook_member content'
   - 'create field_contestants'
+  - 'create member_poem content'
+  - 'create member_story content'
+  - 'create micropoetry content'
+  - 'create own pdf'
+  - 'create poetry_art content'
+  - 'create review content'
+  - 'delete own ebook_classic content'
+  - 'delete own ebook_member content'
+  - 'delete own forum content'
+  - 'delete own member_poem content'
+  - 'delete own member_story content'
+  - 'delete own micropoetry content'
+  - 'delete own pdf'
+  - 'delete own poem content'
+  - 'delete own poetry_art content'
+  - 'delete own review content'
   - 'edit own comments'
+  - 'edit own ebook_classic content'
+  - 'edit own ebook_member content'
   - 'edit own field_contestants'
+  - 'edit own follow links'
+  - 'edit own forum content'
+  - 'edit own member_poem content'
+  - 'edit own member_story content'
+  - 'edit own micropoetry content'
+  - 'edit own poem content'
+  - 'edit own poetry_art content'
+  - 'edit own review content'
   - 'post comments'
+  - 'privatemsg use messages actions'
+  - 'privatemsg write messages'
+  - 'rate content'
   - 'restful get simpleads_group'
   - 'restful get simpleads_reference'
   - 'restful get simpleads_views'
@@ -46,6 +94,8 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use advanced search'
+  - 'use editorial transition update'
+  - 'use text format full_html'
   - 'view field_contestants'
   - 'view follow links'
   - 'view media'

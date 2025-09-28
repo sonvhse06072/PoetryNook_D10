@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.filtered_html_text_only
     - rest.resource.simpleads_click
     - rest.resource.simpleads_group
     - rest.resource.simpleads_impression
@@ -11,6 +12,7 @@ dependencies:
   module:
     - comment
     - field_permissions
+    - filter
     - follow
     - media
     - rest
@@ -35,6 +37,7 @@ permissions:
   - 'restful post simpleads_click'
   - 'restful post simpleads_impression'
   - 'search content'
+  - 'use text format filtered_html_text_only'
   - 'view field_contestants'
   - 'view follow links'
   - 'view media'

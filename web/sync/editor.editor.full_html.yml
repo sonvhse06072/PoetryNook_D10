@@ -21,6 +21,7 @@ settings:
       - superscript
       - subscript
       - removeFormat
+      - link
       - '|'
       - alignment
       - bulletedList
@@ -159,6 +160,8 @@ settings:
       options: {  }
       use_default_markers: true
       attach_styles: false
+    ckeditor5_plugin_pack_link_attributes__link_attributes:
+      attributes: {  }
     ckeditor5_plugin_pack_text_transformation__text_transformation:
       enabled: true
       extra_transformations: ''

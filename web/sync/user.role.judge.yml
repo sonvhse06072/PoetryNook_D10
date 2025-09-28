@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
     - node.type.member_poem
     - node.type.poem
     - taxonomy.vocabulary.contest_types
   module:
     - field_permissions
+    - filter
     - node
     - taxonomy
 id: judge
@@ -35,6 +37,7 @@ permissions:
   - 'edit own member_poem content'
   - 'edit own poem content'
   - 'edit terms in contest_types'
+  - 'use text format full_html'
   - 'view field_contestants'
   - 'view field_honorable_mention'
   - 'view field_winner'

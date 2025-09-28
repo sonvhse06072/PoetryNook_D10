@@ -68,17 +68,22 @@ type_settings:
       label: Publish
       from:
         - draft
-        - published
       to: published
       weight: 1
     publish_blocked_content:
-      label: 'Publish blocked content'
+      label: 'Publish this content'
       from:
         - blocked
       to: published
       weight: 7
+    update:
+      label: Update
+      from:
+        - published
+      to: published
+      weight: 8
   entity_types:
     node:
       - member_poem
       - member_story
-  default_moderation_state: draft
+  default_moderation_state: published

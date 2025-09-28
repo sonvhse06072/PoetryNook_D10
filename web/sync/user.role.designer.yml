@@ -2,10 +2,13 @@ uuid: bb9d4367-6c0e-4fca-a499-ccf7ce5f2e02
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.full_html
   module:
     - block
     - comment
     - contact
+    - filter
     - fivestar
     - forum
     - image
@@ -33,4 +36,5 @@ permissions:
   - 'rate content'
   - 'search content'
   - 'skip comment approval'
+  - 'use text format full_html'
   - 'view own unpublished content'

@@ -1,9 +1,0 @@
-content_approval_d10.field_settings:
-  type: mapping
-  label: 'Content Approval field settings'
-  mapping: {}
-
-content_approval_d10.field_instance_settings:
-  type: mapping
-  label: 'Content Approval field instance settings'
-  mapping: {}

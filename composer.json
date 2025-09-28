@@ -25,6 +25,7 @@
         "drupal/advagg": "^6.0@alpha",
         "drupal/aggregator": "^2.2",
         "drupal/amazon_pa": "^2.1@beta",
+        "drupal/antibot": "^2.0",
         "drupal/audiofield": "^1.13",
         "drupal/auto_entitylabel": "^3.4",
         "drupal/backup_migrate": "^5.0",
@@ -89,6 +90,7 @@
         "drupal/simpleads": "^2.0",
         "drupal/simplenews_scheduler": "^4.0@beta",
         "drupal/spamicide": "^1.0",
+        "drupal/spamspan": "^3.2",
         "drupal/statistics": "^1.0",
         "drupal/statistics_counter": "^1.0",
         "drupal/subpathauto": "^1.4",
@@ -125,6 +127,9 @@
         "patches": {
             "drupal/core": {
                 "change search button": "patches/core/change_search_button.patch"
+            },
+            "drupal/workflow_buttons": {
+                "Fix buttons issue": "patches/workflow_buttons/fix_buttons_issue.patch"
             }
         },
         "drupal-scaffold": {

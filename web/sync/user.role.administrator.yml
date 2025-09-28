@@ -11,8 +11,8 @@ label: administrator
 weight: 3
 is_admin: true
 permissions:
-  - 'create field_contestants'
-  - 'edit field_contestants'
-  - 'edit own field_contestants'
-  - 'view field_contestants'
-  - 'view own field_contestants'
+  - 'create field_forums'
+  - 'edit field_forums'
+  - 'edit own field_forums'
+  - 'view field_forums'
+  - 'view own field_forums'
