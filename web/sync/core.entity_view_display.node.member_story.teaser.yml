@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.member_story.body
     - field.field.node.member_story.comment_forum
-    - field.field.node.member_story.field_content_approval
     - field.field.node.member_story.field_forums
     - field.field.node.member_story.field_member_image
     - field.field.node.member_story.field_member_tags
@@ -96,7 +95,6 @@ content:
     region: content
 hidden:
   comment_forum: true
-  field_content_approval: true
   field_forums: true
   field_member_image: true
   field_member_tags: true

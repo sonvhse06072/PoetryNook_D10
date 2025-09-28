@@ -11,6 +11,7 @@ dependencies:
   module:
     - comment
     - contact
+    - field_permissions
     - follow
     - media
     - node
@@ -33,7 +34,9 @@ permissions:
   - 'change own username'
   - 'count simpleads clicks'
   - 'count simpleads impressions'
+  - 'create field_contestants'
   - 'edit own comments'
+  - 'edit own field_contestants'
   - 'post comments'
   - 'restful get simpleads_group'
   - 'restful get simpleads_reference'
@@ -43,6 +46,7 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use advanced search'
+  - 'view field_contestants'
   - 'view follow links'
   - 'view media'
   - 'view own unpublished content'

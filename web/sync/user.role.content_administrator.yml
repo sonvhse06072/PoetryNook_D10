@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - workflows.workflow.editorial
   module:
     - comment
+    - content_moderation
+    - field_permissions
     - filter
     - node
     - system
@@ -19,8 +22,14 @@ permissions:
   - 'access user profiles'
   - 'administer comments'
   - 'bypass node access'
+  - 'create field_honorable_mention'
+  - 'edit field_honorable_mention'
   - 'edit own comments'
+  - 'edit own field_honorable_mention'
   - 'post comments'
   - 'skip comment approval'
+  - 'use editorial transition publish'
   - 'use text format full_html'
+  - 'view field_honorable_mention'
+  - 'view own field_honorable_mention'
   - 'view own unpublished content'

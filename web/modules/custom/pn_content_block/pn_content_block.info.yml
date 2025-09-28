@@ -1,0 +1,5 @@
+name: 'PN Content Block'
+type: module
+description: 'Automatically blocks member_poem content containing links by setting moderation state to blocked.'
+core_version_requirement: '^10 || ^11'
+package: Custom

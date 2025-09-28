@@ -1,9 +1,43 @@
 uuid: 1f7d7fe9-ab73-4831-a63c-51a2d289a3ca
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.member_poem
+    - node.type.poem
+    - taxonomy.vocabulary.contest_types
+  module:
+    - field_permissions
+    - node
+    - taxonomy
 id: judge
 label: Judge
 weight: 7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create field_contestants'
+  - 'create field_honorable_mention'
+  - 'create field_winner'
+  - 'create member_poem content'
+  - 'delete any member_poem content'
+  - 'delete member_poem revisions'
+  - 'delete own member_poem content'
+  - 'delete own poem content'
+  - 'delete terms in contest_types'
+  - 'edit any member_poem content'
+  - 'edit any poem content'
+  - 'edit field_contestants'
+  - 'edit field_honorable_mention'
+  - 'edit field_winner'
+  - 'edit own field_contestants'
+  - 'edit own field_honorable_mention'
+  - 'edit own field_winner'
+  - 'edit own member_poem content'
+  - 'edit own poem content'
+  - 'edit terms in contest_types'
+  - 'view field_contestants'
+  - 'view field_honorable_mention'
+  - 'view field_winner'
+  - 'view own field_contestants'
+  - 'view own field_honorable_mention'
+  - 'view own field_winner'

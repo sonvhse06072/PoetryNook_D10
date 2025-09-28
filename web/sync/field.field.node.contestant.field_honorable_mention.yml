@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_honorable_mention
     - node.type.contestant
+  module:
+    - field_sample_value
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
 id: node.contestant.field_honorable_mention
 field_name: field_honorable_mention
 entity_type: node
@@ -19,5 +25,5 @@ default_value:
 default_value_callback: ''
 settings:
   on_label: 'Honorable Mention'
-  off_label: ''
+  off_label: Non
 field_type: boolean

@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_display.comment.comment_forum.default
     - field.field.node.member_story.body
     - field.field.node.member_story.comment_forum
-    - field.field.node.member_story.field_content_approval
     - field.field.node.member_story.field_forums
     - field.field.node.member_story.field_member_image
     - field.field.node.member_story.field_member_tags
@@ -724,7 +723,6 @@ content:
     weight: 10
     region: content
 hidden:
-  field_content_approval: true
   field_rate_this_poem_stories: true
   langcode: true
   search_api_excerpt: true

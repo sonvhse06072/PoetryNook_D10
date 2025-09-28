@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_contestants
     - node.type.contest
     - node.type.contestant
+  module:
+    - field_sample_value
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
 id: node.contest.field_contestants
 field_name: field_contestants
 entity_type: node
@@ -24,7 +30,6 @@ settings:
     sort:
       field: _none
       direction: ASC
-    behaviors:
-      views-select-list:
-        status: 0
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

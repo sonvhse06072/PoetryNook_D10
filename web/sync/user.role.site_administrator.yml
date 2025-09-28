@@ -5,11 +5,14 @@ dependencies:
   config:
     - filter.format.full_html
     - node.type.page
+    - workflows.workflow.editorial
   module:
     - block
     - comment
     - contact
+    - content_moderation
     - contextual
+    - field_permissions
     - filter
     - image
     - node
@@ -53,18 +56,29 @@ permissions:
   - 'bypass node access'
   - 'cancel account'
   - 'change own username'
+  - 'create field_honorable_mention'
+  - 'create field_winner'
   - 'create page content'
   - 'create url aliases'
   - 'delete any page content'
   - 'delete own page content'
   - 'edit any page content'
+  - 'edit field_honorable_mention'
+  - 'edit field_winner'
   - 'edit own comments'
+  - 'edit own field_honorable_mention'
+  - 'edit own field_winner'
   - 'edit own page content'
   - 'post comments'
   - 'search content'
   - 'select account cancellation method'
   - 'skip comment approval'
   - 'use advanced search'
+  - 'use editorial transition publish'
   - 'use text format full_html'
+  - 'view field_honorable_mention'
+  - 'view field_winner'
+  - 'view own field_honorable_mention'
+  - 'view own field_winner'
   - 'view own unpublished content'
   - 'view the administration theme'

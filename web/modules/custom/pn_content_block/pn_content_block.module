@@ -1,0 +1,57 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * @file
+ * Automatically block member_poem nodes with links in the body.
+ */
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Sets member_poem nodes to the 'blocked' moderation state if their body
+ * contains a link. Relies on an Editorial workflow with a 'blocked' state.
+ */
+function pn_content_block_entity_presave(EntityInterface $entity): void {
+  // Only act on nodes.
+  if (!$entity instanceof NodeInterface) {
+    return;
+  }
+
+  // Only for the member_poem content type.
+  if ($entity->bundle() !== 'member_poem') {
+    return;
+  }
+
+  // Ensure required fields exist.
+  if (!$entity->hasField('body') || !$entity->hasField('moderation_state')) {
+    return;
+  }
+
+  // Combine body value and summary text.
+  $body_value = (string) ($entity->get('body')->value ?? '');
+  $body_summary = (string) ($entity->get('body')->summary ?? '');
+  $text = $body_value . ' ' . $body_summary;
+
+  // If empty, nothing to check.
+  if ($text === '' || trim($text) === '') {
+    return;
+  }
+
+  // Detect links (HTML anchors, URLs, and mailto: links).
+  $has_anchor = (bool) preg_match('/<a\s+[^>]*href\s*=\s*([\"\'])?[^\"\'>\s]+/i', $text);
+  $has_url = (bool) preg_match('/\b(?:https?:\/\/|www\.)\S+/i', $text);
+  $has_mailto = (bool) preg_match('/\bmailto:\S+/i', $text);
+
+  if (!($has_anchor || $has_url || $has_mailto)) {
+    return;
+  }
+
+  // Set the moderation state to 'blocked' if not already.
+  $current_state = (string) ($entity->get('moderation_state')->value ?? '');
+  if ($current_state !== 'blocked') {
+    $entity->set('moderation_state', 'blocked');
+  }
+}

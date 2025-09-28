@@ -6,6 +6,8 @@ dependencies:
     - block
     - comment
     - contact
+    - fivestar
+    - forum
     - image
     - node
     - search
@@ -23,10 +25,12 @@ permissions:
   - 'access user profiles'
   - 'administer blocks'
   - 'administer contact forms'
+  - 'administer forums'
   - 'administer image styles'
   - 'administer themes'
   - 'edit own comments'
   - 'post comments'
+  - 'rate content'
   - 'search content'
   - 'skip comment approval'
   - 'view own unpublished content'

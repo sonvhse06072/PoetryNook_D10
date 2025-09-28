@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - node.type.forum
+    - node.type.member_poem
   module:
     - comment
     - filter
+    - fivestar
     - node
+    - pdfmaker_d10
     - search
     - system
 id: member
@@ -18,8 +22,16 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access user profiles'
+  - 'create forum content'
+  - 'create member_poem content'
+  - 'create own pdf'
+  - 'delete own forum content'
+  - 'delete own member_poem content'
+  - 'delete own pdf'
   - 'edit own comments'
+  - 'edit own member_poem content'
   - 'post comments'
+  - 'rate content'
   - 'search content'
   - 'skip comment approval'
   - 'use text format full_html'

@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_winner
     - node.type.contestant
+  module:
+    - field_sample_value
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
 id: node.contestant.field_winner
 field_name: field_winner
 entity_type: node
@@ -19,5 +25,5 @@ default_value:
 default_value_callback: ''
 settings:
   on_label: Winner
-  off_label: ''
+  off_label: 'Not winner'
 field_type: boolean

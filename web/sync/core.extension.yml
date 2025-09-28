@@ -40,7 +40,7 @@ module:
   conditional_fields: 0
   config: 0
   contact: 0
-  content_approval_d10: 0
+  content_moderation: 0
   contextual: 0
   ctools: 0
   datetime: 0
@@ -100,7 +100,6 @@ module:
   migrate_tools: 0
   module_missing_message_fixer: 0
   mysql: 0
-  navigation: 0
   node: 0
   options: 0
   page_cache: 0
@@ -111,6 +110,7 @@ module:
   phpass: 0
   picture_of_the_day_d10: 0
   pn_comment_forum_update: 0
+  pn_content_block: 0
   pn_migrate_files: 0
   poem_of_the_day_d10: 0
   poetrynews_d10: 0
@@ -130,7 +130,6 @@ module:
   search_api_solr: 0
   serialization: 0
   sharethis: 0
-  shortcut: 0
   simpleads: 0
   sophron: 0
   spamicide: 0
@@ -148,6 +147,7 @@ module:
   typed_data: 0
   update: 0
   user: 0
+  vbo_workflow_transition: 0
   vem_migrate_oembed: 0
   video_embed_field: 0
   video_embed_media: 0
@@ -155,6 +155,7 @@ module:
   views_ui: 0
   votingapi: 0
   votingapi_widgets: 0
+  workflow_buttons: 0
   workflows: 0
   forum: 1
   pathauto: 1

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.member_story.body
     - field.field.node.member_story.comment_forum
-    - field.field.node.member_story.field_content_approval
     - field.field.node.member_story.field_forums
     - field.field.node.member_story.field_member_image
     - field.field.node.member_story.field_member_tags
@@ -17,9 +16,9 @@ dependencies:
     - node.type.member_story
   module:
     - comment
+    - content_moderation
     - datetime
     - field_layout
-    - fivestar
     - image
     - layout_discovery
     - paragraphs
@@ -38,7 +37,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 1
     region: content
     settings:
       rows: 9
@@ -48,25 +47,19 @@ content:
     third_party_settings: {  }
   comment_forum:
     type: comment_default
-    weight: 20
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_forums:
-    type: options_select
-    weight: 13
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_member_image:
     type: image_image
-    weight: 8
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
@@ -74,7 +67,7 @@ content:
     third_party_settings: {  }
   field_member_tags:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -84,22 +77,13 @@ content:
     third_party_settings: {  }
   field_member_year:
     type: datetime_default
-    weight: 7
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_rate_this_poem_stories:
-    type: fivestar_stars
-    weight: 9
-    region: content
-    settings:
-      text_format: none
-      display_format: average
-      fivestar_widget: basic
-    third_party_settings: {  }
   field_story_audience:
     type: entity_reference_paragraphs
-    weight: 12
+    weight: 9
     region: content
     settings:
       title: Paragraph
@@ -111,7 +95,7 @@ content:
     third_party_settings: {  }
   field_story_video:
     type: video_embed_field_textfield
-    weight: 11
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -122,36 +106,42 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -159,7 +149,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -168,11 +158,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_content_approval: true
+  field_forums: true
+  field_rate_this_poem_stories: true
   publish_on: true
   unpublish_on: true
