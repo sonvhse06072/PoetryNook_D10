@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -69,4 +70,200 @@ function poetry_d10_preprocess_forum_list(&$variables) {
     }
   }
   $variables['forums'] = $forums;
+
+  // Add forum.index specific variables for online and latest users.
+  try {
+    $interval = (int) \Drupal::config('user.settings')->get('user_block_seconds_online') ?: 900;
+    $cutoff = \Drupal::time()->getRequestTime() - $interval;
+
+    // Online users (authenticated) within the cutoff.
+    $user_storage = \Drupal::entityTypeManager()->getStorage('user');
+    $online_uids = $user_storage->getQuery()
+      ->condition('status', 1)
+      ->condition('access', $cutoff, '>')
+      ->sort('access', 'DESC')
+      ->accessCheck(FALSE)
+      ->execute();
+    $online_users = $online_uids ? $user_storage->loadMultiple($online_uids) : [];
+    $online_user_list = [];
+    foreach ($online_users as $user) {
+      $online_user_list[] = [
+        '#theme' => 'username',
+        '#account' => $user,
+      ];
+    }
+
+    // Count online guests (anonymous) by distinct hostname in sessions table.
+    try {
+      $connection = \Drupal::database();
+      $query = $connection->select('sessions', 's');
+      $query->condition('s.uid', 0);
+      $query->condition('s.timestamp', $cutoff, '>');
+      $query->addExpression('COUNT(DISTINCT s.hostname)', 'guest_count');
+      $current_guests = (int) $query->execute()->fetchField();
+    }
+    catch (\Exception $e) {
+      $current_guests = 0;
+    }
+
+    // Latest active users (by created date).
+    $latest_uids = $user_storage->getQuery()
+      ->condition('status', 1)
+      ->sort('created', 'DESC')
+      ->range(0, 5)
+      ->accessCheck(FALSE)
+      ->execute();
+    $latest_users = $latest_uids ? $user_storage->loadMultiple($latest_uids) : [];
+
+    // Count published forum topics (nodes of bundle 'forum').
+    try {
+      $connection = \Drupal::database();
+      $query = $connection->select('forum', 'f');
+      $query->addExpression('COUNT(DISTINCT f.nid)');
+      $topics = (int) $query->execute()->fetchField();
+    }
+    catch (\Exception $e) {
+      $topics = 0;
+    }
+
+    // Count published comments on forum topics (field_name 'comment_forum').
+    try {
+      $connection = \Drupal::database();
+      $query = $connection->select('forum_index', 'f');
+      $query->addExpression('COUNT(DISTINCT f.comment_count)');
+      $posts = (int) $query->execute()->fetchField();
+    }
+    catch (\Exception $e) {
+      $posts = 0;
+    }
+
+    // Count active users.
+    try {
+      $users_total = (int) \Drupal::entityQuery('user')
+        ->condition('status', 1)
+        ->count()
+        ->accessCheck(FALSE)
+        ->execute();
+    }
+    catch (\Exception $e) {
+      $users_total = 0;
+    }
+    $user_list = [];
+    foreach ($latest_users as $user) {
+      $user_list[] = [
+        '#theme' => 'username',
+        '#account' => $user,
+      ];
+    }
+
+    // Expose variables to templates.
+    $variables['online_users'] = $online_user_list;
+    $variables['current_users'] = is_array($online_users) ? count($online_users) : 0;
+    $variables['current_guests'] = $current_guests;
+    $variables['current_total'] = (int) $variables['current_users'] + (int) $current_guests;
+    $variables['latest_users'] = $user_list;
+
+    // Expose forum statistics.
+    $variables['topics'] = $topics;
+    $variables['posts'] = $topics + $posts;
+    $variables['users'] = $users_total;
+  }
+  catch (\Exception $e) {
+    // Fail silently; do not break the forum page if something goes wrong.
+  }
+}
+
+function poetry_d10_preprocess_page(&$variables) {
+  $alter_route_list = [
+    'forum.index',
+    'view.forum_topic_list.page_1',
+    'view.forum_topic_list.page_2',
+    'view.forum_topic_list.page_3',
+    'view.forum_topic_list.page_4',
+  ];
+  $current_route = \Drupal::routeMatch()->getRouteName();
+  if (in_array($current_route, $alter_route_list)) {
+    $tid = Drupal::routeMatch()->getParameter('taxonomy_term');
+    if (!$tid) {
+      $tid = \Drupal::request()->query->get('forum');
+    }
+    $options = $tid ? ['query' => ['forum' => $tid]] : [];
+    $form_nav = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['d-flex', 'align-items-center','gap-2', 'btn-tabs-container'],
+      ],
+    ];
+    $form_nav['view'] = [
+      '#type' => 'link',
+      '#title' => t('View forum'),
+      '#url' => Url::fromRoute('forum.index'),
+      '#attributes' => [
+        'class' => ['btn', 'btn-tab', $current_route == 'forum.index' ? 'active' : ''],
+      ],
+    ];
+    $form_nav['active_topics'] = [
+      '#type' => 'link',
+      '#title' => t('Active topics'),
+      '#url' => Url::fromRoute('view.forum_topic_list.page_2', [], $options),
+      '#attributes' => [
+        'class' => ['btn', 'btn-tab', $current_route == 'view.forum_topic_list.page_2' ? 'active' : ''],
+      ],
+    ];
+    $form_nav['unanswered_topics'] = [
+      '#type' => 'link',
+      '#title' => t('Unanswered topics'),
+      '#url' => Url::fromRoute('view.forum_topic_list.page_3', [], $options),
+      '#attributes' => [
+        'class' => ['btn', 'btn-tab', $current_route == 'view.forum_topic_list.page_3' ? 'active' : ''],
+      ],
+    ];
+    $form_nav['new_topics'] = [
+      '#type' => 'link',
+      '#title' => t('New & updated topics'),
+      '#url' => Url::fromRoute('view.forum_topic_list.page_4', [], $options),
+      '#attributes' => [
+        'class' => ['btn', 'btn-tab', $current_route == 'view.forum_topic_list.page_4' ? 'active' : ''],
+      ],
+    ];
+    $variables['page']['forum_actions'] = $form_nav;
+  }
+}
+
+function poetry_d10_preprocess_views_view(&$variables) {
+  if ($variables['id'] = 'forum_topic_list') {
+    $tid = Drupal::routeMatch()->getParameter('taxonomy_term');
+    $action_container = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['d-flex', 'align-items-center','gap-2'],
+      ],
+    ];
+    $options = $tid ? ['query' => ['forum_id' => $tid]] : [];
+    $action_container['add_topic'] = [
+      '#type' => 'link',
+      '#title' => t('New topic'),
+      '#url' => Url::fromRoute('node.add', ['node_type' => 'forum'], $options),
+      '#attributes' => [
+        'class' => ['btn', 'btn-primary'],
+      ],
+    ];
+    $action_container['add_poem'] = [
+      '#type' => 'link',
+      '#title' => t('New member poem'),
+      '#url' => Url::fromRoute('node.add', ['node_type' => 'member_poem'], $options),
+      '#attributes' => [
+        'class' => ['btn', 'btn-primary'],
+      ],
+    ];
+    $action_container['add_review'] = [
+      '#type' => 'link',
+      '#title' => t('New review'),
+      '#url' => Url::fromRoute('node.add', ['node_type' => 'review'], $options),
+      '#attributes' => [
+        'class' => ['btn', 'btn-primary'],
+      ],
+    ];
+    $variables['forum_actions'] = $action_container;
+  }
 }

@@ -73,7 +73,7 @@ sans-serif;
 $font-family-sans-serif:      sans-serif;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-size-root:              null;
-$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-base:              0.8125rem; // Assumes the browser default, typically `16px`
 $font-size-xs:                $font-size-base * .75;
 $font-size-sm:                $font-size-base * .875;
 $font-size-lg:                $font-size-base * 1.25;
