@@ -7,6 +7,11 @@ dependencies:
     - node.type.member_poem
   module:
     - datetime
+    - field_sample_value
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
 id: node.member_poem.field_year
 field_name: field_year
 entity_type: node
@@ -15,7 +20,10 @@ label: Year
 description: 'The year poem was written.'
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    default_date_type: now
+    default_date: now
 default_value_callback: ''
 settings: {  }
 field_type: datetime

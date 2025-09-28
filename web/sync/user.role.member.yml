@@ -2,8 +2,11 @@ uuid: 866eedd7-b1fa-477c-a292-a3cf9dd76ea2
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.full_html
   module:
     - comment
+    - filter
     - node
     - search
     - system
@@ -19,4 +22,5 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'use text format full_html'
   - 'view own unpublished content'

@@ -25,6 +25,17 @@ module:
   breakpoint: 0
   cer: 0
   ckeditor5: 0
+  ckeditor5_plugin_pack: 0
+  ckeditor5_plugin_pack_auto_image: 0
+  ckeditor5_plugin_pack_emoji: 0
+  ckeditor5_plugin_pack_find_and_replace: 0
+  ckeditor5_plugin_pack_font: 0
+  ckeditor5_plugin_pack_highlight: 0
+  ckeditor5_plugin_pack_link_attributes: 0
+  ckeditor5_plugin_pack_page_break: 0
+  ckeditor5_plugin_pack_select_all: 0
+  ckeditor5_plugin_pack_text_transformation: 0
+  ckeditor5_plugin_pack_word_count: 0
   comment: 0
   conditional_fields: 0
   config: 0

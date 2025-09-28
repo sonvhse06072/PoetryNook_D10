@@ -17,25 +17,45 @@ settings:
       - underline
       - italic
       - strikethrough
+      - '|'
       - superscript
       - subscript
       - removeFormat
       - '|'
-      - link
-      - '|'
+      - alignment
       - bulletedList
       - numberedList
+      - outdent
+      - indent
       - '|'
       - blockQuote
       - drupalInsertImage
       - insertTable
+      - '|'
+      - fontSize
+      - fontColor
+      - fontFamily
+      - fontBackgroundColor
+      - '|'
+      - highlight
       - horizontalLine
       - '|'
+      - '-'
       - heading
+      - pageBreak
       - codeBlock
       - '|'
       - sourceEditing
+      - specialCharacters
+      - findAndReplace
+      - selectAll
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
     ckeditor5_codeBlock:
       languages:
         -
@@ -94,6 +114,118 @@ settings:
         reversed: true
         startIndex: true
       multiBlock: true
+    ckeditor5_plugin_pack_auto_image__auto_image:
+      enabled: true
+    ckeditor5_plugin_pack_find_and_replace__find_and_replace:
+      ui_type: dialog
+    ckeditor5_plugin_pack_font__font_color:
+      colors: {  }
+      use_default_colors: true
+      use_colorpicker: true
+      font_color_columns: 5
+      font_color_document_colors: 10
+      bg_color_columns: 5
+      bg_color_document_colors: 10
+    ckeditor5_plugin_pack_font__font_family:
+      options: ''
+    ckeditor5_plugin_pack_font__font_size:
+      options: |-
+        8
+        9
+        10
+        11
+        12
+        13
+        14
+        15
+        16
+        17
+        18
+        19
+        20
+        21
+        22
+        23
+        24
+        25
+        26
+        27
+        28
+        29
+        30
+        31
+        32
+    ckeditor5_plugin_pack_highlight__highlight:
+      options: {  }
+      use_default_markers: true
+      attach_styles: false
+    ckeditor5_plugin_pack_text_transformation__text_transformation:
+      enabled: true
+      extra_transformations: ''
+      extra_regex_transformations: {  }
+      groups:
+        typography:
+          transformations:
+            ellipsis:
+              enabled: 1
+            enDash:
+              enabled: 1
+            emDash:
+              enabled: 1
+          enabled: 1
+        quotes:
+          transformations:
+            quotesPrimary:
+              enabled: 1
+            quotesSecondary:
+              enabled: 1
+          enabled: 1
+        symbols:
+          transformations:
+            trademark:
+              enabled: 1
+            registeredTrademark:
+              enabled: 1
+            copyright:
+              enabled: 1
+          enabled: 1
+        mathematical:
+          transformations:
+            oneHalf:
+              enabled: 1
+            oneThird:
+              enabled: 1
+            twoThirds:
+              enabled: 1
+            oneFourth:
+              enabled: 1
+            threeQuarters:
+              enabled: 1
+            lessThanOrEqual:
+              enabled: 1
+            greaterThanOrEqual:
+              enabled: 1
+            notEqual:
+              enabled: 1
+            arrowLeft:
+              enabled: 1
+            arrowRight:
+              enabled: 1
+          enabled: 1
+        misc:
+          transformations:
+            quotesPrimaryEnGb:
+              enabled: 0
+            quotesSecondaryEnGb:
+              enabled: 0
+            quotesPrimaryPl:
+              enabled: 0
+            quotesSecondaryPl:
+              enabled: 0
+          enabled: 0
+    ckeditor5_plugin_pack_word_count__word_count:
+      word_count_enabled: true
+      word_count_mode: words_chars
     ckeditor5_sourceEditing:
       allowed_tags: {  }
 image_upload:

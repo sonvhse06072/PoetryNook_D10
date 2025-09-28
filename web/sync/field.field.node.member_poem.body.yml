@@ -7,7 +7,12 @@ dependencies:
     - filter.format.full_html
     - node.type.member_poem
   module:
+    - field_sample_value
     - text
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
 id: node.member_poem.body
 field_name: body
 entity_type: node
@@ -21,5 +26,6 @@ default_value_callback: ''
 settings:
   display_summary: true
   required_summary: false
-  allowed_formats: {  }
+  allowed_formats:
+    - full_html
 field_type: text_with_summary

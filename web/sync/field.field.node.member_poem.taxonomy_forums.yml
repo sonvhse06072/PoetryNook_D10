@@ -6,6 +6,14 @@ dependencies:
     - field.storage.node.taxonomy_forums
     - node.type.member_poem
     - taxonomy.vocabulary.forums
+  content:
+    - 'taxonomy_term:forums:6334272a-ef68-4c90-82e4-ce363fe690af'
+  module:
+    - field_sample_value
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
 id: node.member_poem.taxonomy_forums
 field_name: taxonomy_forums
 entity_type: node
@@ -16,7 +24,7 @@ required: false
 translatable: false
 default_value:
   -
-    tid: '11'
+    target_uuid: 6334272a-ef68-4c90-82e4-ce363fe690af
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
@@ -25,4 +33,7 @@ settings:
       forums: forums
     sort:
       field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
