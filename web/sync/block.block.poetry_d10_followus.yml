@@ -1,0 +1,25 @@
+uuid: 20d8ba16-ac03-4d05-84b1-cef67bd3e495
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a4f43633-f433-40d6-84a6-d1cd5e574116'
+  module:
+    - block_content
+  theme:
+    - poetry_d10
+id: poetry_d10_followus
+theme: poetry_d10
+region: footer_first
+weight: -8
+provider: null
+plugin: 'block_content:a4f43633-f433-40d6-84a6-d1cd5e574116'
+settings:
+  id: 'block_content:a4f43633-f433-40d6-84a6-d1cd5e574116'
+  label: 'Follow us'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -20,8 +20,14 @@ function pn_content_block_entity_presave(EntityInterface $entity): void {
     return;
   }
 
-  // Only for the member_poem content type.
-  if ($entity->bundle() !== 'member_poem') {
+  $node_type_to_check = [
+    'member_poem',
+    'member_story',
+    'review',
+    'forum',
+  ];
+
+  if (!in_array($entity->bundle(), $node_type_to_check)) {
     return;
   }
 

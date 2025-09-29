@@ -27,6 +27,7 @@ dependencies:
     - paragraphs
     - path
     - text
+    - workflow_buttons
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -130,16 +131,22 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_poetname:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 1
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_website:
     type: link_default
@@ -155,6 +162,13 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: workflow_buttons
+    weight: 5
+    region: content
+    settings:
+      show_current_state: false
     third_party_settings: {  }
   path:
     type: path

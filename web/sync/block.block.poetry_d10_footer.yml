@@ -11,7 +11,7 @@ dependencies:
 id: poetry_d10_footer
 theme: poetry_d10
 region: footer_first
-weight: 0
+weight: -7
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
