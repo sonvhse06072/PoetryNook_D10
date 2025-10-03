@@ -97,7 +97,7 @@
     <div class="d-flex">
       {{ content.field_image }}
       <div>
-        {{ content|without("comment_node_poet", "links", "body", "field_image") }}
+        {{ content|without("comment_forum", "links", "body", "field_image") }}
       </div>
     </div>
     <div class="mb-3">
@@ -111,7 +111,9 @@
       </div>
     </div>
     {{ content.body }}
-    {{ content.comment_node_poet }}
+    <div class="mt-3">
+      {{ content.comment_forum }}
+    </div>
     {{ content.links }}
   </div>
 </article>

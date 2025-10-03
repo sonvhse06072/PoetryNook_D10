@@ -11,8 +11,8 @@ label: administrator
 weight: 3
 is_admin: true
 permissions:
-  - 'create field_forums'
-  - 'edit field_forums'
-  - 'edit own field_forums'
-  - 'view field_forums'
-  - 'view own field_forums'
+  - 'create taxonomy_forums'
+  - 'edit own taxonomy_forums'
+  - 'edit taxonomy_forums'
+  - 'view own taxonomy_forums'
+  - 'view taxonomy_forums'

@@ -132,6 +132,9 @@
             },
             "drupal/workflow_buttons": {
                 "Fix buttons issue": "patches/workflow_buttons/fix_buttons_issue.patch"
+            },
+            "drupal/spamicide": {
+                "Fix spamicide issue": "patches/spamicide/fix_spamicide_style.patch"
             }
         },
         "drupal-scaffold": {

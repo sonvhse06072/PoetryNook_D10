@@ -1,0 +1,6 @@
+pn_content_block.settings:
+  title: 'PN Content Block'
+  description: 'Configure sensitive keywords that automatically block content.'
+  route_name: pn_content_block.settings
+  parent: system.admin_config_content
+  weight: 100

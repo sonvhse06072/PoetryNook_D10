@@ -1,0 +1,9 @@
+pn_content_block.settings:
+  path: '/admin/config/content/pn-content-block'
+  defaults:
+    _form: '\Drupal\pn_content_block\Form\PnContentBlockSettingsForm'
+    _title: 'PN Content Block settings'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

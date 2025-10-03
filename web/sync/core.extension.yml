@@ -138,7 +138,6 @@ module:
   spamspan: 0
   statistics: 0
   statistics_counter: 0
-  subpathauto: 0
   system: 0
   tagclouds: 0
   taxonomy: 0

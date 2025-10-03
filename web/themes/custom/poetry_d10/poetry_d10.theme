@@ -256,14 +256,6 @@ function poetry_d10_preprocess_views_view(&$variables) {
         'class' => ['btn', 'btn-primary'],
       ],
     ];
-    $action_container['add_review'] = [
-      '#type' => 'link',
-      '#title' => t('New review'),
-      '#url' => Url::fromRoute('node.add', ['node_type' => 'review'], $options),
-      '#attributes' => [
-        'class' => ['btn', 'btn-primary'],
-      ],
-    ];
     $variables['forum_actions'] = $action_container;
   }
 }

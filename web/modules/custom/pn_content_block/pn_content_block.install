@@ -1,0 +1,284 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Update existing content: block nodes containing sensitive keywords or links.
+ */
+function pn_content_block_update_10004(&$sandbox = NULL) {
+
+  // Initialize sandbox for batch processing.
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['processed'] = 0;
+    $sandbox['blocked'] = 0;
+
+    $bundles = ['forum', 'member_poem', 'member_story', 'review'];
+
+    $connection = \Drupal::database();
+    $query = $connection->select('node_field_data', 'n')
+      ->fields('n', ['nid'])
+      ->condition('n.type', $bundles, 'IN');
+
+    // Join to moderation table to find nodes without any moderation record.
+    $query->leftJoin('content_moderation_state_field_data', 'cms', 'cms.content_entity_id = n.nid AND cms.content_entity_type_id = :entity_type', [
+      ':entity_type' => 'node',
+    ]);
+    $query->condition('cms.moderation_state', 'blocked', '<>');
+
+    $nids = $query->execute()->fetchCol();
+
+    $sandbox['nids'] = array_values($nids);
+    $sandbox['total'] = count($sandbox['nids']);
+  }
+
+  // Nothing to process.
+  if (empty($sandbox['nids'])) {
+    return t('No nodes to update.');
+  }
+
+  // Load config and normalize keywords once per batch run.
+  if (!isset($sandbox['keywords'])) {
+    $config = \Drupal::config('pn_content_block.settings');
+    $keywords = $config->get('sensitive_keywords') ?? [];
+    if (is_string($keywords)) {
+      $keywords = array_filter(array_map('trim', preg_split('/\r?\n|,\s*/', $keywords)));
+    }
+    $sandbox['keywords'] = array_values($keywords);
+  }
+
+  // Process in chunks to avoid memory/time issues.
+  $batch_size = 50;
+  $chunk = array_splice($sandbox['nids'], 0, $batch_size);
+
+  if (!empty($chunk)) {
+    $nodes = Node::loadMultiple($chunk);
+
+    foreach ($nodes as $node) {
+      // Ensure required fields exist and contain text.
+      if (!$node->hasField('body') || !$node->hasField('moderation_state')) {
+        $sandbox['processed']++;
+        continue;
+      }
+
+      $title = $node->label();
+      $body_value = (string) ($node->get('body')->value ?? '');
+      $body_summary = (string) ($node->get('body')->summary ?? '');
+      $text_raw = trim($title . ' ' . $body_value . ' ' . $body_summary);
+      if ($text_raw === '') {
+        $sandbox['processed']++;
+        continue;
+      }
+
+      $text_stripped = strip_tags($text_raw);
+      $should_block = FALSE;
+
+      // 1) Keyword-based blocking: applies to ALL node types.
+      if (!empty($sandbox['keywords'])) {
+        $haystack = mb_strtolower($text_stripped);
+        foreach ($sandbox['keywords'] as $kw) {
+          $kw = trim((string) $kw);
+          if ($kw === '') {
+            continue;
+          }
+          if (str_contains($haystack, mb_strtolower($kw))) {
+            $should_block = TRUE;
+            break;
+          }
+        }
+      }
+
+      // 2) Link-based blocking: only for specific bundles, if not already flagged.
+      if (!$should_block) {
+        $node_type_to_check = [
+          'member_poem',
+          'member_story',
+          'review',
+          'forum',
+        ];
+        if (in_array($node->bundle(), $node_type_to_check, TRUE)) {
+          $has_anchor = (bool) preg_match('/<a\s+[^>]*href\s*=\s*([\"\'])?[^\"\'>\s]+/i', $text_raw);
+          $has_url = (bool) preg_match('/\b(?:https?:\/\/|www\.)\S+/i', $text_raw);
+          $has_mailto = (bool) preg_match('/\bmailto:\S+/i', $text_raw);
+          if ($has_anchor || $has_url || $has_mailto) {
+            $should_block = TRUE;
+          }
+        }
+      }
+
+      if ($should_block) {
+        $current_state = (string) ($node->get('moderation_state')->value ?? '');
+        if ($current_state !== 'blocked') {
+          $node->set('moderation_state', 'blocked');
+          $node->setNewRevision(TRUE);
+          $node->isDefaultRevision(TRUE);
+          $node->setUnpublished();
+          $node->save();
+          $sandbox['blocked']++;
+        }
+      }
+
+      $sandbox['processed']++;
+    }
+  }
+
+  // Calculate progress for the batch API.
+  if ($sandbox['total'] > 0) {
+    $sandbox['#finished'] = $sandbox['processed'] / $sandbox['total'];
+  }
+
+  if (empty($sandbox['nids'])) {
+    return t('Processed @processed nodes. Blocked @blocked nodes containing sensitive keywords or links.', [
+      '@processed' => $sandbox['processed'],
+      '@blocked' => $sandbox['blocked'],
+    ]);
+  }
+}
+
+/**
+ * Set 'published' for select bundles when no moderation record exists.
+ *
+ * Only targets bundles: forum, member_poem, member_story, review.
+ * Uses a LEFT JOIN to content_moderation_state_field_data and updates nodes
+ * where no row exists for the node (content_entity_type_id='node').
+ */
+function pn_content_block_update_10002(&$sandbox = NULL) {
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['processed'] = 0;
+    $sandbox['updated'] = 0;
+
+    $bundles = ['forum', 'member_poem', 'member_story', 'review'];
+
+    $connection = \Drupal::database();
+    $query = $connection->select('node_field_data', 'n')
+      ->fields('n', ['nid'])
+      ->condition('n.type', $bundles, 'IN');
+
+    // Join to moderation table to find nodes without any moderation record.
+    $query->leftJoin('content_moderation_state_field_data', 'cms', 'cms.content_entity_id = n.nid AND cms.content_entity_type_id = :entity_type', [
+      ':entity_type' => 'node',
+    ]);
+    $query->isNull('cms.content_entity_id');
+
+    $nids = $query->execute()->fetchCol();
+
+    $sandbox['nids'] = array_values($nids);
+    $sandbox['total'] = count($sandbox['nids']);
+  }
+
+  if (empty($sandbox['nids'])) {
+    return t('No nodes to update.');
+  }
+
+  $batch_size = 100;
+  $chunk = array_splice($sandbox['nids'], 0, $batch_size);
+
+  if (!empty($chunk)) {
+    $nodes = Node::loadMultiple($chunk);
+    foreach ($nodes as $node) {
+      // Safety: only act on the specified bundles and if the field exists.
+      if (!in_array($node->bundle(), ['forum', 'member_poem', 'member_story', 'review'], TRUE) || !$node->hasField('moderation_state')) {
+        $sandbox['processed']++;
+        continue;
+      }
+
+      // Set state to 'published' which will create a moderation record.
+      $node->set('moderation_state', 'published');
+      $node->save();
+      $sandbox['updated']++;
+      $sandbox['processed']++;
+    }
+  }
+
+  if ($sandbox['total'] > 0) {
+    $sandbox['#finished'] = $sandbox['processed'] / $sandbox['total'];
+  }
+
+  if (empty($sandbox['nids'])) {
+    return t('Processed @processed nodes. Set moderation state to published on @updated nodes (forum/member_poem/member_story/review) without moderation records.', [
+      '@processed' => $sandbox['processed'],
+      '@updated' => $sandbox['updated'],
+    ]);
+  }
+}
+
+/**
+ * Update existing content: block nodes containing sensitive keywords or links.
+ */
+function pn_content_block_update_10006(&$sandbox = NULL) {
+
+  // Initialize sandbox for batch processing.
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['processed'] = 0;
+    $sandbox['blocked'] = 0;
+
+    $bundles = ['forum', 'member_poem', 'member_story', 'review'];
+
+    $connection = \Drupal::database();
+    $query = $connection->select('node_field_data', 'n')
+      ->fields('n', ['nid'])
+      ->condition('n.status', 1)
+      ->condition('n.type', $bundles, 'IN');
+
+    // Join to moderation table to find nodes without any moderation record.
+    $query->innerJoin('content_moderation_state_field_data', 'cms', 'cms.content_entity_id = n.nid AND cms.content_entity_type_id = :entity_type', [
+      ':entity_type' => 'node',
+    ]);
+    $query->condition('cms.moderation_state', 'blocked');
+    $nids = $query->execute()->fetchCol();
+
+    $sandbox['nids'] = array_values($nids);
+    $sandbox['total'] = count($sandbox['nids']);
+  }
+
+  // Nothing to process.
+  if (empty($sandbox['nids'])) {
+    return t('No nodes to update.');
+  }
+
+  // Load config and normalize keywords once per batch run.
+  if (!isset($sandbox['keywords'])) {
+    $config = \Drupal::config('pn_content_block.settings');
+    $keywords = $config->get('sensitive_keywords') ?? [];
+    if (is_string($keywords)) {
+      $keywords = array_filter(array_map('trim', preg_split('/\r?\n|,\s*/', $keywords)));
+    }
+    $sandbox['keywords'] = array_values($keywords);
+  }
+
+  // Process in chunks to avoid memory/time issues.
+  $batch_size = 50;
+  $chunk = array_splice($sandbox['nids'], 0, $batch_size);
+
+  if (!empty($chunk)) {
+    $nodes = Node::loadMultiple($chunk);
+
+    foreach ($nodes as $node) {
+      // Ensure required fields exist and contain text.
+      if (!$node->hasField('body') || !$node->hasField('moderation_state')) {
+        $sandbox['processed']++;
+        continue;
+      }
+
+      $node->setUnpublished();
+      $node->save();
+      $sandbox['blocked']++;
+
+      $sandbox['processed']++;
+    }
+  }
+
+  // Calculate progress for the batch API.
+  if ($sandbox['total'] > 0) {
+    $sandbox['#finished'] = $sandbox['processed'] / $sandbox['total'];
+  }
+
+  if (empty($sandbox['nids'])) {
+    return t('Processed @processed nodes. Blocked @blocked nodes containing sensitive keywords or links.', [
+      '@processed' => $sandbox['processed'],
+      '@blocked' => $sandbox['blocked'],
+    ]);
+  }
+}

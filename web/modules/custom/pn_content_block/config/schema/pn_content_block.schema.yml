@@ -1,0 +1,10 @@
+pn_content_block.settings:
+  type: config_object
+  label: 'PN Content Block settings'
+  mapping:
+    sensitive_keywords:
+      type: sequence
+      label: 'Sensitive keywords'
+      sequence:
+        type: string
+        label: 'Keyword'

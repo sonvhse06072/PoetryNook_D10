@@ -94,7 +94,7 @@
     {% endif %}
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content|without("comment_node_stories", "links", "field_rate_this_poem_stories") }}
+    {{ content|without("comment_forum", "links", "field_rate_this_poem_stories") }}
     <div class="mt-3">
       {{ content.field_rate_this_poem_stories }}
     </div>
@@ -108,7 +108,9 @@
       <h5>Reviews</h5>
       {{ drupal_view('associated_reviews', 'block_1', node.nid.value) }}
     </div>
-    {{ content.comment_node_stories }}
+    <div class="mt-3">
+      {{ content.comment_forum }}
+    </div>
     {{ content.links }}
   </div>
 </article>

@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.forum
     - node.type.member_poem
     - node.type.member_story
+    - node.type.review
   module:
     - content_moderation
 _core:
@@ -84,6 +86,8 @@ type_settings:
       weight: 8
   entity_types:
     node:
+      - forum
       - member_poem
       - member_story
+      - review
   default_moderation_state: published

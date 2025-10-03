@@ -1,0 +1,10 @@
+diff --git a/css/feed_me.css b/css/feed_me.css
+index 3052b3d..192959d 100644
+--- a/css/feed_me.css
++++ b/css/feed_me.css
+@@ -1,4 +1,4 @@
+-.form-item.form-item-feed-me {
++.form-item-feed-me {
+   visibility: hidden;
+   height: 0;
+   margin: 0;
