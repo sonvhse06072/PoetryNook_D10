@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87a9e9aacf3f272d98fbbb9b7cbc24d4",
+    "content-hash": "123900b8ceee5d6ea436a597fb3ea3e4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2859,6 +2859,60 @@
                 "source": "https://www.drupal.org/project/coder"
             },
             "time": "2025-05-25T09:52:20+00:00"
+        },
+        {
+            "name": "drupal/comment_fragment",
+            "version": "1.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/comment_fragment.git",
+                "reference": "1.0.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/comment_fragment-1.0.0-rc2.zip",
+                "reference": "1.0.0-rc2",
+                "shasum": "97ab19f7be8d6bea52d542309137993690df5234"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-rc2",
+                    "datestamp": "1718869751",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Fran Garcia (fjgarlin)",
+                    "homepage": "https://www.drupal.org/user/690640",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "drumm",
+                    "homepage": "https://www.drupal.org/user/3064"
+                },
+                {
+                    "name": "fjgarlin",
+                    "homepage": "https://www.drupal.org/user/2495842"
+                }
+            ],
+            "description": "Rewrite the comment permalink to use fragment for SEO purposes",
+            "homepage": "https://www.drupal.org/project/comment_fragment",
+            "support": {
+                "source": "http://cgit.drupalcode.org/comment_fragment",
+                "issues": "https://www.drupal.org/project/issues/comment_fragment"
+            }
         },
         {
             "name": "drupal/conditional_fields",
@@ -5863,6 +5917,50 @@
             }
         },
         {
+            "name": "drupal/migrate_conditions",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_conditions.git",
+                "reference": "2.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_conditions-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "b969de27f3fa9075d03802d64d87f1bf0599a6be"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.0",
+                    "datestamp": "1719236630",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "danflanagan8",
+                    "homepage": "https://www.drupal.org/user/3615359"
+                }
+            ],
+            "description": "Provides framework of conditions plugins and process plugins that use them",
+            "homepage": "https://www.drupal.org/project/migrate_conditions",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_conditions"
+            }
+        },
+        {
             "name": "drupal/migrate_plus",
             "version": "6.0.5",
             "source": {
@@ -7687,6 +7785,66 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/sharethis",
                 "issues": "https://www.drupal.org/project/issues/sharethis"
+            }
+        },
+        {
+            "name": "drupal/signature",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/signature.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/signature-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "15100ab273835f2feceaf734dac15ea3c2d0edbb"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1722884020",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "andypost",
+                    "homepage": "https://www.drupal.org/user/118908"
+                },
+                {
+                    "name": "jibran",
+                    "homepage": "https://www.drupal.org/user/1198144"
+                },
+                {
+                    "name": "jonaswouters",
+                    "homepage": "https://www.drupal.org/user/17"
+                },
+                {
+                    "name": "ultraBoy",
+                    "homepage": "https://www.drupal.org/user/12313"
+                },
+                {
+                    "name": "webchick",
+                    "homepage": "https://www.drupal.org/user/24967"
+                }
+            ],
+            "description": "Enables user signature.",
+            "homepage": "https://www.drupal.org/project/signature",
+            "support": {
+                "source": "https://git.drupalcode.org/project/signature"
             }
         },
         {
@@ -14924,6 +15082,7 @@
         "drupal/advagg": 15,
         "drupal/amazon_pa": 10,
         "drupal/cer": 10,
+        "drupal/comment_fragment": 5,
         "drupal/conditional_fields": 15,
         "drupal/fivestar": 15,
         "drupal/page_manager": 5,

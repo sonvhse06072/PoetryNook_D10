@@ -1,0 +1,331 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the PN Migrate Recent module.
+ */
+
+use Drupal\Core\Database\Connection;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+
+/**
+ * Deletes node revisions with vid greater than 729692.
+ */
+//function pn_migrate_recent_update_10001(&$sandbox) {
+//  // Initialize sandbox.
+//  if (!isset($sandbox['initialized'])) {
+//    $sandbox['initialized'] = TRUE;
+//    $sandbox['processed'] = 0;
+//    $sandbox['total'] = 0;
+//    $sandbox['limit'] = 200; // Process in batches to avoid timeouts.
+//
+//    $connection = \Drupal::database();
+//    $sandbox['total'] = (int) $connection->select('node_revision', 'nr')
+//      ->condition('vid', 729692, '>')
+//      ->countQuery()
+//      ->execute()
+//      ->fetchField();
+//  }
+//
+//  if ($sandbox['total'] === 0) {
+//    $sandbox['#finished'] = 1;
+//    return t('No node revisions found with vid greater than 729692.');
+//  }
+//
+//  $connection = \Drupal::database();
+//
+//  // Fetch the next batch of vids to delete.
+//  $query = $connection->select('node_revision', 'nr')
+//    ->fields('nr', ['vid'])
+//    ->condition('vid', 729692, '>')
+//    ->orderBy('vid', 'ASC')
+//    ->range($sandbox['processed'], $sandbox['limit']);
+//
+//  $vids = $query->execute()->fetchCol();
+//
+//  $storage = \Drupal::entityTypeManager()->getStorage('node');
+//  // Cache table existence check to avoid repeated information_schema queries during long loops.
+//  $has_node_base_table = $connection->schema()->tableExists('node');
+//
+//  foreach ($vids as $vid) {
+//    try {
+//      // Before deleting, if this revision is the default revision for its node,
+//      // switch the default to another existing revision (preferably <= threshold).
+//      $nid = (int) $connection->select('node_revision', 'nr2')
+//        ->fields('nr2', ['nid'])
+//        ->condition('vid', $vid)
+//        ->execute()
+//        ->fetchField();
+//
+//      if ($nid) {
+//        $current_default_vid = (int) $connection->select('node_field_data', 'nfd')
+//          ->fields('nfd', ['vid'])
+//          ->condition('nid', $nid)
+//          ->range(0, 1)
+//          ->execute()
+//          ->fetchField();
+//
+//        if ($current_default_vid === (int) $vid) {
+//          // Find a replacement default revision: the largest vid for this nid
+//          // that is <= the threshold.
+//          $replacement_vid = (int) $connection->select('node_revision', 'nr3')
+//            ->fields('nr3', ['vid'])
+//            ->condition('nid', $nid)
+//            ->condition('vid', 729692, '<=')
+//            ->orderBy('vid', 'DESC')
+//            ->range(0, 1)
+//            ->execute()
+//            ->fetchField();
+//
+//          if ($replacement_vid) {
+//            // Attempt to switch default revision to the replacement using the Entity API.
+//            $switched = FALSE;
+//            try {
+//              // Preferred: switch using the node entity loaded at that revision.
+//              $replacement = $storage->loadRevision($replacement_vid);
+//              if ($replacement) {
+//                // Ensure we don't create a new revision; just mark this as default.
+//                $replacement->setNewRevision(FALSE);
+//                $replacement->isDefaultRevision(TRUE);
+//                $storage->save($replacement);
+//                // Verify the switch actually took effect.
+//                $check_default_vid = (int) $connection->select('node_field_data', 'nfd2')
+//                  ->fields('nfd2', ['vid'])
+//                  ->condition('nid', $nid)
+//                  ->range(0, 1)
+//                  ->execute()
+//                  ->fetchField();
+//                if ($check_default_vid === $replacement_vid) {
+//                  $switched = TRUE;
+//                }
+//              }
+//            }
+//            catch (\Exception $e) {
+//              // Fall through to DB-level switch.
+//              \Drupal::logger('pn_migrate_recent')->warning('Entity API switch failed for node @nid to revision @rvid: @msg', ['@nid' => $nid, '@rvid' => $replacement_vid, '@msg' => $e->getMessage()]);
+//            }
+//            if (!$switched) {
+//              // Fallback: force default revision via direct DB updates.
+//              try {
+//                if ($has_node_base_table) {
+//                  $connection->update('node')->fields(['vid' => $replacement_vid])->condition('nid', $nid)->execute();
+//                }
+//                $connection->update('node_field_data')->fields(['vid' => $replacement_vid])->condition('nid', $nid)->execute();
+//                // Verify again.
+//                $check_default_vid = (int) $connection->select('node_field_data', 'nfd3')
+//                  ->fields('nfd3', ['vid'])
+//                  ->condition('nid', $nid)
+//                  ->range(0, 1)
+//                  ->execute()
+//                  ->fetchField();
+//                if ($check_default_vid !== $replacement_vid) {
+//                  \Drupal::logger('pn_migrate_recent')->warning('Failed to force default revision to @rvid for node @nid; skipping deletion of @vid.', ['@rvid' => $replacement_vid, '@nid' => $nid, '@vid' => $vid]);
+//                  $sandbox['processed']++;
+//                  continue;
+//                }
+//              } catch (\Exception $e) {
+//                \Drupal::logger('pn_migrate_recent')->warning('DB switch failed for node @nid to revision @rvid: @msg. Skipping deletion.', ['@nid' => $nid, '@rvid' => $replacement_vid, '@msg' => $e->getMessage()]);
+//                $sandbox['processed']++;
+//                continue;
+//              }
+//            }
+//            else {
+//              \Drupal::logger('pn_migrate_recent')->warning('Could not load replacement revision @rvid for node @nid while switching default before deleting @vid.', [
+//                '@rvid' => $replacement_vid,
+//                '@nid' => $nid,
+//                '@vid' => $vid,
+//              ]);
+//              // Skip deletion in this case to avoid leaving node without default.
+//              $sandbox['processed']++;
+//              continue;
+//            }
+//          }
+//          else {
+//            // No safe replacement found. Skip deleting this vid to avoid breaking the node.
+//            \Drupal::logger('pn_migrate_recent')->notice('Skipping deletion of default revision @vid for node @nid because no replacement revision <= threshold was found.', [
+//              '@vid' => $vid,
+//              '@nid' => $nid,
+//            ]);
+//            $sandbox['processed']++;
+//            continue;
+//          }
+//        }
+//      }
+//
+//      // Final guard to avoid attempting to delete a default revision.
+//      if (!empty($nid)) {
+//        $current_default_vid_final = (int) $connection->select('node_field_data', 'nfd_final')
+//          ->fields('nfd_final', ['vid'])
+//          ->condition('nid', $nid)
+//          ->range(0, 1)
+//          ->execute()
+//          ->fetchField();
+//        if ($current_default_vid_final === (int) $vid) {
+//          \Drupal::logger('pn_migrate_recent')->notice('Skipping deletion of revision @vid for node @nid because it is still the default revision.', [
+//            '@vid' => $vid,
+//            '@nid' => $nid,
+//          ]);
+//          $sandbox['processed']++;
+//          continue;
+//        }
+//      }
+//
+//      // Use the entity API to delete a specific revision so that related tables
+//      // (e.g., node_field_revision) are cleaned up properly.
+//      $storage->deleteRevision((int) $vid);
+//    }
+//    catch (\Exception $e) {
+//      // Log and continue with the next revision.
+//      \Drupal::logger('pn_migrate_recent')->error('Failed to delete node revision @vid: @message', [
+//        '@vid' => $vid,
+//        '@message' => $e->getMessage(),
+//      ]);
+//    }
+//
+//    $sandbox['processed']++;
+//  }
+//
+//  // Report progress to the update system.
+//  if ($sandbox['processed'] < $sandbox['total']) {
+//    $sandbox['#finished'] = $sandbox['total'] ? ($sandbox['processed'] / $sandbox['total']) : 1;
+//  }
+//  else {
+//    $sandbox['#finished'] = 1;
+//  }
+//
+//  if ($sandbox['#finished'] == 1) {
+//    return t('Deleted @count node revisions with vid greater than 729692.', [
+//      '@count' => $sandbox['total'],
+//    ]);
+//  }
+//}
+
+
+/**
+ * Purges all node revision rows (including field tables) with id > 729692.
+ *
+ * This directly removes rows from:
+ * - node_revision (column: vid)
+ * - node_field_revision (column: revision_id)
+ * - all tables matching node_revision__* (column: revision_id)
+ *
+ * Use with caution. Prefer 10001 for API-based deletion; this ensures any
+ * lingering rows in per-field revision tables are also cleaned up.
+ */
+function pn_migrate_recent_update_10002(&$sandbox) {
+  $threshold = 729692;
+  $connection = \Drupal::database();
+  $schema = $connection->schema();
+
+  // Initialize sandbox.
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['limit'] = 500; // Batch size of distinct revision ids per table.
+    $sandbox['tables'] = [];
+    $sandbox['columns'] = [];
+    $sandbox['table_index'] = 0;
+    $sandbox['processed_rows'] = 0; // Actual deleted rows count.
+    $sandbox['total_rows'] = 0;     // Rows to delete across all tables.
+
+    // Gather target tables.
+    $tables = [];
+
+    // node_revision base table (vid).
+    if ($schema->tableExists('node_revision')) {
+      $tables[] = 'node_revision';
+      $sandbox['columns']['node_revision'] = $schema->fieldExists('node_revision', 'vid') ? 'vid' : NULL;
+    }
+
+    // node_field_revision (revision_id).
+    if ($schema->tableExists('node_field_revision')) {
+      $tables[] = 'node_field_revision';
+      $sandbox['columns']['node_field_revision'] = $schema->fieldExists('node_field_revision', 'revision_id') ? 'revision_id' : NULL;
+    }
+
+    // Any node_revision__* per-field revision tables (revision_id).
+    $found = $schema->findTables('node_revision__%');
+    if (!empty($found)) {
+      foreach (array_keys($found) as $table) {
+        $tables[] = $table;
+        $sandbox['columns'][$table] = $schema->fieldExists($table, 'revision_id') ? 'revision_id' : ($schema->fieldExists($table, 'vid') ? 'vid' : NULL);
+      }
+    }
+
+    // Filter out tables where we didn't find an appropriate column.
+    $sandbox['tables'] = array_values(array_filter($tables, function ($t) use ($sandbox) {
+      return !empty($sandbox['columns'][$t]);
+    }));
+
+    // Compute total rows to delete for progress reporting.
+    foreach ($sandbox['tables'] as $table) {
+      $col = $sandbox['columns'][$table];
+      $count = (int) $connection->select($table, 't')
+        ->condition($col, $threshold, '>')
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+      $sandbox['total_rows'] += $count;
+    }
+
+    // If nothing to delete, finish early.
+    if (empty($sandbox['total_rows'])) {
+      $sandbox['#finished'] = 1;
+      return t('No revision rows found above the threshold in any node revision tables.');
+    }
+  }
+
+  // Nothing to do if there are no tables.
+  if (empty($sandbox['tables'])) {
+    $sandbox['#finished'] = 1;
+    return t('No node revision tables were found to process.');
+  }
+
+  $limit = (int) $sandbox['limit'];
+
+  // Process tables sequentially.
+  while ($sandbox['table_index'] < count($sandbox['tables'])) {
+    $table = $sandbox['tables'][$sandbox['table_index']];
+    $col = $sandbox['columns'][$table];
+
+    // Fetch a batch of distinct revision ids to delete.
+    $select = $connection->select($table, 't')->distinct();
+    $select->addField('t', $col, 'rid');
+    $select->condition($col, $threshold, '>');
+    $select->orderBy($col, 'ASC');
+    $select->range(0, $limit);
+
+    $rids = $select->execute()->fetchCol();
+
+    if (empty($rids)) {
+      // Move to the next table.
+      $sandbox['table_index']++;
+      continue;
+    }
+
+    // Delete rows for these revision ids.
+    $deleted = $connection->delete($table)
+      ->condition($col, $rids, 'IN')
+      ->execute();
+
+    $sandbox['processed_rows'] += (int) $deleted;
+
+    // If we've done some work this pass, break to allow progress display.
+    break;
+  }
+
+  // Update progress.
+  if ($sandbox['processed_rows'] < $sandbox['total_rows']) {
+    $sandbox['#finished'] = $sandbox['total_rows'] ? ($sandbox['processed_rows'] / $sandbox['total_rows']) : 1;
+  }
+  else {
+    $sandbox['#finished'] = 1;
+  }
+
+  if ($sandbox['#finished'] == 1) {
+    return t('Purged @rows rows from node revision tables where revision id > @threshold.', [
+      '@rows' => $sandbox['processed_rows'],
+      '@threshold' => $threshold,
+    ]);
+  }
+}

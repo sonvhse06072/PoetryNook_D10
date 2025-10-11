@@ -1,0 +1,17 @@
+uuid: 54551589-4c66-44ef-aa5b-e79e29ba2fb5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: PQzyKUo--lv9aesQxkURJ03G9dlitIQGQI_FZVl2CMk
+id: pn_d7_recent
+label: 'Drupal 7 recent content'
+description: 'Migrations to import recent D7 users, files, nodes, and comments.'
+source_type: 'Drupal 7 database'
+module: null
+shared_configuration:
+  source:
+    plugin: d7
+    key: migrate
+  constants:
+    cutoff_unix: 1758800500

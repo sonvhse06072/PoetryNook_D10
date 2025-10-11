@@ -1,0 +1,34 @@
+uuid: 59c52518-cb9a-4f82-8a10-81fa63b251f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.signature
+    - filter.format.plain_text
+  module:
+    - field_sample_value
+    - text
+    - user
+  enforced:
+    module:
+      - signature
+third_party_settings:
+  field_sample_value:
+    id: null
+    configuration: {  }
+_core:
+  default_config_hash: Uf1cNwCHqMkAU9s27MkBxeN9_iK9vznKQ1n-5Tmknqc
+id: user.user.signature
+field_name: signature
+entity_type: user
+bundle: user
+label: 'User signature'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

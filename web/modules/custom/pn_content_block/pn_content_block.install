@@ -282,3 +282,275 @@ function pn_content_block_update_10006(&$sandbox = NULL) {
     ]);
   }
 }
+
+/**
+ * Update existing content: block nodes containing sensitive keywords or links.
+ */
+function pn_content_block_update_10007(&$sandbox = NULL) {
+
+  // Initialize sandbox for batch processing.
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['processed'] = 0;
+    $sandbox['blocked'] = 0;
+
+    $bundles = ['forum', 'member_poem', 'member_story', 'review'];
+
+    $connection = \Drupal::database();
+    $query = $connection->select('node_field_data', 'n')
+      ->fields('n', ['nid'])
+      ->condition('n.type', $bundles, 'IN');
+
+    $nids = $query->execute()->fetchCol();
+
+    $sandbox['nids'] = array_values($nids);
+    $sandbox['total'] = count($sandbox['nids']);
+  }
+
+  // Nothing to process.
+  if (empty($sandbox['nids'])) {
+    return t('No nodes to update.');
+  }
+
+  // Load config and normalize keywords once per batch run.
+  if (!isset($sandbox['keywords'])) {
+    $config = \Drupal::config('pn_content_block.settings');
+    $keywords = $config->get('sensitive_keywords') ?? [];
+    if (is_string($keywords)) {
+      $keywords = array_filter(array_map('trim', preg_split('/\r?\n|,\s*/', $keywords)));
+    }
+    $sandbox['keywords'] = array_values($keywords);
+  }
+
+  // Process in chunks to avoid memory/time issues.
+  $batch_size = 50;
+  $chunk = array_splice($sandbox['nids'], 0, $batch_size);
+
+  if (!empty($chunk)) {
+    $nodes = Node::loadMultiple($chunk);
+
+    foreach ($nodes as $node) {
+      // Ensure required fields exist and contain text.
+      if (!$node->hasField('body') || !$node->hasField('moderation_state')) {
+        $sandbox['processed']++;
+        continue;
+      }
+
+      $title = $node->label();
+      $body_value = (string) ($node->get('body')->value ?? '');
+      $body_summary = (string) ($node->get('body')->summary ?? '');
+      $text_raw = trim($title . ' ' . $body_value . ' ' . $body_summary);
+      if ($text_raw === '') {
+        $sandbox['processed']++;
+        continue;
+      }
+
+      $text_stripped = strip_tags($text_raw);
+      $should_block = FALSE;
+
+      // 1) Keyword-based blocking: applies to ALL node types.
+      if (!empty($sandbox['keywords'])) {
+        $haystack = mb_strtolower($text_stripped);
+        foreach ($sandbox['keywords'] as $kw) {
+          $kw = trim((string) $kw);
+          if ($kw === '') {
+            continue;
+          }
+          if (str_contains($haystack, mb_strtolower($kw))) {
+            $should_block = TRUE;
+            break;
+          }
+        }
+      }
+
+      if ($should_block) {
+        $node->delete();
+      }
+
+      $sandbox['processed']++;
+    }
+  }
+
+  // Calculate progress for the batch API.
+  if ($sandbox['total'] > 0) {
+    $sandbox['#finished'] = $sandbox['processed'] / $sandbox['total'];
+  }
+
+  if (empty($sandbox['nids'])) {
+    return t('Processed @processed nodes. Blocked @blocked nodes containing sensitive keywords or links.', [
+      '@processed' => $sandbox['processed'],
+      '@blocked' => $sandbox['blocked'],
+    ]);
+  }
+}
+
+
+/**
+ * Update unpublished nodes: publish nodes that were not unpublished in Drupal 7.
+ *
+ * Compares unpublished nodes in the current Drupal (node_field_data.status = 0)
+ * with unpublished nodes in the legacy Drupal 7 database (node.status = 0).
+ * If a current unpublished node was NOT unpublished in Drupal 7, set its
+ * status to 1 (published).
+ */
+function pn_content_block_update_10011(&$sandbox = NULL) {
+  $connection = \Drupal::database();
+
+  // Initialize sandbox for batch processing.
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['processed'] = 0;
+    // Cache schema checks to avoid repeated information_schema queries.
+    $sandbox['has_node_field_revision'] = $connection->schema()->tableExists('node_field_revision');
+
+    // 1) Build a set of unpublished node IDs from the Drupal 7 database.
+    $sandbox['d7_unpublished_set'] = [];
+    try {
+      $d7 = \Drupal\Core\Database\Database::getConnection('default', 'migrate');
+      $d7_nids = $d7->select('node', 'n')
+        ->fields('n', ['nid'])
+        ->condition('status', 0)
+        ->execute()
+        ->fetchCol();
+      $sandbox['d7_unpublished_set'] = $d7_nids;
+      $sandbox['total'] = count($sandbox['d7_unpublished_set']);
+    }
+    catch (\Exception $e) {
+      // If the legacy connection is not configured, proceed without updates
+      // (we'll effectively publish none), and note the error for the summary.
+      $sandbox['d7_unpublished_set'] = [];
+      $sandbox['legacy_db_error'] = $e->getMessage();
+    }
+  }
+
+  // Nothing to process.
+  if (empty($sandbox['d7_unpublished_set'])) {
+    if (!empty($sandbox['legacy_db_error'])) {
+      return t('No nodes to process. Note: could not connect to Drupal 7 database: @msg', ['@msg' => $sandbox['legacy_db_error']]);
+    }
+    return t('No nodes to process.');
+  }
+
+  // Process in chunks to avoid memory/time issues.
+  $batch_size = 200;
+  $chunk = array_splice($sandbox['d7_unpublished_set'], 0, $batch_size);
+
+  if (!empty($chunk)) {
+
+    foreach ($chunk as $nid) {
+      $nid = (int) $nid;
+
+      $connection->update('node_field_data')
+        ->fields(['status' => 0])
+        ->condition('nid', $nid)
+        ->execute();
+
+      if (!empty($sandbox['has_node_field_revision'])) {
+        $connection->update('node_field_revision')
+          ->fields(['status' => 0])
+          ->condition('nid', $nid)
+          ->execute();
+      }
+
+      $sandbox['processed']++;
+    }
+  }
+
+  // Calculate progress for the batch API.
+  if (!empty($sandbox['total'])) {
+    $sandbox['#finished'] = $sandbox['processed'] / $sandbox['total'];
+  }
+}
+
+/**
+ * Re-save all nodes to refresh taxonomy_index entries.
+ */
+function pn_content_block_update_10015(&$sandbox = NULL) {
+  $connection = \Drupal::database();
+
+  // Initialize sandbox for batch processing.
+  if (!isset($sandbox['initialized'])) {
+    $sandbox['initialized'] = TRUE;
+    $sandbox['processed'] = 0;
+    $sandbox['failed'] = 0;
+    $sandbox['last_nid'] = 0; // Cursor for resumable processing.
+
+    // Calculate total distinct node count once for progress reporting.
+    // Using DISTINCT to avoid counting translations multiple times.
+    $count_query = $connection->select('node_field_data', 'n');
+    $count_query->addExpression('COUNT(DISTINCT n.nid)', 'cnt');
+    $count_query->condition('n.reloaded', 0);
+    $sandbox['total'] = (int) $count_query->execute()->fetchField();
+  }
+
+  // If there are no nodes at all, finish quickly.
+  if (empty($sandbox['total'])) {
+    return t('No nodes to re-save.');
+  }
+
+  // Process in chunks to avoid memory/time issues.
+  $batch_size = 50;
+
+  // Keep the DB connection alive for long runs.
+  try {
+    $connection->query('SELECT 1');
+  }
+  catch (\Exception $e) {
+    // Ignore; next operations will fail if the connection is truly gone.
+  }
+
+  // Fetch the next chunk of NIDs after the last processed NID.
+  $query = $connection->select('node_field_data', 'n')
+    ->distinct()
+    ->fields('n', ['nid'])
+    ->condition('n.nid', (int) $sandbox['last_nid'], '>')
+    ->condition('n.reloaded', 0)
+    ->orderBy('n.nid', 'ASC')
+    ->range(0, $batch_size);
+  $chunk = $query->execute()->fetchCol();
+
+  if (!empty($chunk)) {
+    // Load and save nodes to trigger taxonomy indexing.
+    $nodes = \Drupal\node\Entity\Node::loadMultiple(array_map('intval', $chunk));
+    foreach ($nodes as $node) {
+      try {
+        $node->save();
+      }
+      catch (\Exception $e) {
+        // Log and continue processing other nodes even if one fails.
+        \Drupal::logger('pn_content_block')->error('Failed to save node @nid during update_10012: @msg', [
+          '@nid' => $node->id(),
+          '@msg' => $e->getMessage(),
+        ]);
+        $sandbox['failed']++;
+      }
+      $sandbox['processed']++;
+      // Update the cursor to the most recently attempted nid.
+      $sandbox['last_nid'] = max($sandbox['last_nid'], (int) $node->id());
+    }
+
+    // Free memory between chunks.
+    \Drupal::entityTypeManager()->getStorage('node')->resetCache(array_map('intval', $chunk));
+
+    // If some NIDs from the chunk failed to load (deleted in between),
+    // still move the cursor forward to the highest requested nid to avoid
+    // being stuck.
+    $max_requested = max($chunk);
+    if ($max_requested > $sandbox['last_nid']) {
+      $sandbox['last_nid'] = (int) $max_requested;
+    }
+  }
+
+  // Calculate progress for the batch API.
+  if (!empty($sandbox['total'])) {
+    $sandbox['#finished'] = min(1, $sandbox['processed'] / max(1, $sandbox['total']));
+  }
+
+  // When there are no more NIDs after the cursor, we're done.
+  if (empty($chunk)) {
+    return t('Re-saved @processed nodes to refresh taxonomy_index. Failed: @failed.', [
+      '@processed' => $sandbox['processed'],
+      '@failed' => $sandbox['failed'],
+    ]);
+  }
+}

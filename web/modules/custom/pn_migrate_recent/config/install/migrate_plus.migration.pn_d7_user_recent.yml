@@ -1,0 +1,54 @@
+id: pn_d7_user_recent
+label: 'D7 users (recent)'
+migration_group: pn_d7_recent
+migration_tags:
+  - Drupal 7
+  - recent
+source:
+  plugin: d7_user
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the uid field to allow incremental migrations.
+  uid: uid
+  name: name
+  pass: pass
+  mail: mail
+  created:
+    plugin: skip_on_condition
+    source: created
+    condition:
+      plugin: less_than
+      value: 1758800487
+    method: row
+  access: access
+  login: login
+  status: status
+  timezone: timezone
+  langcode:
+    plugin: user_langcode
+    source: entity_language
+    fallback_to_site_default: false
+  preferred_langcode:
+    plugin: user_langcode
+    source: language
+    fallback_to_site_default: true
+  preferred_admin_langcode:
+    plugin: user_langcode
+    source: language
+    fallback_to_site_default: true
+  init: init
+  roles:
+    plugin: migration_lookup
+    migration: d7_user_role
+    source: roles
+  user_picture:
+    -
+      plugin: default_value
+      source: picture
+      default_value: null
+    -
+      plugin: migration_lookup
+      migration: d7_file
+destination:
+  plugin: 'entity:user'
+depends: {  }

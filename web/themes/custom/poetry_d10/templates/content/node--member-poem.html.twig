@@ -95,10 +95,6 @@
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content|without("comment_forum") }}
-    <div class="mb-3">
-      <h5>Reviews</h5>
-      {{ drupal_view('associated_reviews', 'block_1', node.nid.value) }}
-    </div>
     <div class="mt-3">
       {{ content.comment_forum }}
     </div>

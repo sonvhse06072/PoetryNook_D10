@@ -1,0 +1,45 @@
+id: pn_d7_file_recent
+label: 'D7 files (recent)'
+migration_group: pn_d7_recent
+migration_tags:
+  - Drupal 7
+  - recent
+source:
+  plugin: d7_file
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the fid field to allow incremental migrations.
+  fid: fid
+  filename: filename
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/source_base_path
+        - filepath
+    -
+      plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - uri
+  filemime: filemime
+  # No need to migrate filesize, it is computed when file entities are saved.
+  # filesize: filesize
+  status: status
+  # Drupal 7 didn't keep track of the file's creation or update time -- all it
+  # had was the vague "timestamp" column. So we'll use it for both.
+  created:
+    plugin: skip_on_condition
+    source: timestamp
+    condition:
+      plugin: less_than
+      value: 1758800487  # 2025-09-09 00:00:00
+    method: row
+  changed: timestamp
+  uid: uid
+destination:
+  plugin: 'entity:file'
+depends: {  }

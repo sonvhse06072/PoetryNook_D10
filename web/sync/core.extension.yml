@@ -39,6 +39,7 @@ module:
   ckeditor5_plugin_pack_text_transformation: 0
   ckeditor5_plugin_pack_word_count: 0
   comment: 0
+  comment_fragment: 0
   conditional_fields: 0
   config: 0
   contact: 0
@@ -96,6 +97,7 @@ module:
   metatag: 0
   metatag_twitter_cards: 0
   migrate: 0
+  migrate_conditions: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_plus: 0
@@ -114,6 +116,7 @@ module:
   pn_comment_forum_update: 0
   pn_content_block: 0
   pn_migrate_files: 0
+  pn_migrate_recent: 0
   poem_of_the_day_d10: 0
   poetrynews_d10: 0
   privatemsg: 0
@@ -132,6 +135,7 @@ module:
   search_api_solr: 0
   serialization: 0
   sharethis: 0
+  signature: 0
   simpleads: 0
   sophron: 0
   spamicide: 0

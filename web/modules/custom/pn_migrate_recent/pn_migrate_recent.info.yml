@@ -1,0 +1,11 @@
+name: 'PN Migrate Recent D7'
+type: module
+description: 'Migrations from Drupal 7 to 10 for users, files, nodes, and comments limited to a recent date range.'
+core_version_requirement: ^10
+package: 'PoetryNook'
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_drupal
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - drupal:migrate_conditions

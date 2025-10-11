@@ -4,11 +4,15 @@ quote_modes_quote_sel: true
 quote_modes_quote_all: true
 quote_modes_quote_reply_all: true
 quote_modes_quote_reply_sel: false
-quote_allow_types: {  }
 quote_allow_comments: true
 quote_selector: '#comment-form textarea'
 quote_limit: 400
 quote_selector_comment_quote_all: .field--name-comment-body
 quote_selector_node_quote_all: .field--name-body
+quote_allow_types:
+  forum: forum
+  member_poem: member_poem
+  member_story: member_story
+  poem: poem
 quote_ckeditor_support: false
 quote_html_tags_support: false

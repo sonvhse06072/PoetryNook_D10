@@ -73,40 +73,38 @@
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <header>
-    {{ title_prefix }}
-    {% if label and not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% if display_submitted %}
-      <div class="node__meta">
-        {{ author_picture }}
-        {% block submitted %}
-          <em{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          </em>
-        {% endblock %}
-        {{ metadata }}
+  <div class="forum-container">
+    <div class="forum-posted-on">
+      {{ date }}
+    </div>
+    <div class="row g-0 border-bottom">
+      <header class="col-md-2 col-3 border-end text-center">
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h2{{ title_attributes.addClass('node__title') }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+          </h2>
+        {% endif %}
+        {{ title_suffix }}
+        {% if display_submitted %}
+          <div class="node__meta">
+            {{ author_picture }}
+            {{ author_name }}
+            {{ metadata }}
+          </div>
+        {% endif %}
+      </header>
+      <div{{ content_attributes.addClass('node__content', 'clearfix', 'col-md-10', 'col-9') }}>
+        <div class="label">
+          {{ label }}
+        </div>
+        <div class="content">
+          {{ content|without("comment_forum") }}
+        </div>
       </div>
-    {% endif %}
-  </header>
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content|without("comment_forum", "links", "field_rate_this_poem_stories") }}
-    <div class="mt-3">
-      {{ content.field_rate_this_poem_stories }}
     </div>
-    <form class="my-3" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="RZFY2MVXW2F22">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
-      <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-    <div class="mt-3">
-      {{ content.comment_forum }}
-    </div>
-    {{ content.links }}
+  </div>
+  <div class="comment-form mt-3">
+    {{ content.comment_forum }}
   </div>
 </article>

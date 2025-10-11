@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.signature
     - field.field.user.user.user_picture
   module:
     - field_layout
@@ -144,3 +145,4 @@ hidden:
   langcode: true
   member_profiles: true
   search_api_excerpt: true
+  signature: true

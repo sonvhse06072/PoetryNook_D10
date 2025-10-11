@@ -1,0 +1,62 @@
+uuid: 185a122e-a821-42e2-bd2c-dea9b1ae68c1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: stYfTm28eNwYMet2GLhs5050VmGSq4qTSHI9M900z64
+id: pn_d7_user_recent
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - recent
+migration_group: pn_d7_recent
+label: 'D7 users (recent)'
+source:
+  plugin: d7_user
+process:
+  uid: uid
+  name: name
+  pass: pass
+  mail: mail
+  created:
+    plugin: skip_on_condition
+    source: created
+    condition:
+      plugin: less_than
+      value: 1758800487
+    method: row
+  access: access
+  login: login
+  status: status
+  timezone: timezone
+  langcode:
+    plugin: user_langcode
+    source: entity_language
+    fallback_to_site_default: false
+  preferred_langcode:
+    plugin: user_langcode
+    source: language
+    fallback_to_site_default: true
+  preferred_admin_langcode:
+    plugin: user_langcode
+    source: language
+    fallback_to_site_default: true
+  init: init
+  roles:
+    plugin: migration_lookup
+    migration: d7_user_role
+    source: roles
+  user_picture:
+    -
+      plugin: default_value
+      source: picture
+      default_value: null
+    -
+      plugin: migration_lookup
+      migration: d7_file
+destination:
+  plugin: 'entity:user'
+migration_dependencies: null
+include: null

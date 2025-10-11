@@ -1,0 +1,12 @@
+id: pn_d7_recent
+label: 'Drupal 7 recent content'
+description: 'Migrations to import recent D7 users, files, nodes, and comments.'
+source_type: 'Drupal 7 database'
+shared_configuration:
+  source:
+    plugin: d7
+    key: migrate
+    # Set this if your D7 database tables have a prefix.
+    # prefix: ''
+  constants:
+    cutoff_unix: 1758800500  # 2025-09-09 00:00:00 local time

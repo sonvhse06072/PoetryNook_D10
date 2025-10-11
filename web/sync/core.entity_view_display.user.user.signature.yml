@@ -1,0 +1,44 @@
+uuid: 14aaf950-9c5c-405c-8e7e-067af0d2f1fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.signature
+    - field.field.user.user.signature
+    - field.field.user.user.user_picture
+  module:
+    - text
+    - user
+  enforced:
+    module:
+      - signature
+_core:
+  default_config_hash: PbhKu_pC1AUTC1r7WF0PtwGWVC4-AQb5CDeINjYaPCk
+id: user.user.signature
+targetEntityType: user
+bundle: user
+mode: signature
+content:
+  follow:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  masquerade:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  signature:
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+    region: content
+hidden:
+  langcode: true
+  member_for: true
+  member_profiles: true
+  search_api_excerpt: true
+  user_picture: true

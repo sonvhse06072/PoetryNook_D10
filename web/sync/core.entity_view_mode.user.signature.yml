@@ -1,0 +1,16 @@
+uuid: d1f78d29-f202-4eff-997c-6d5b6ca0dde6
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  enforced:
+    module:
+      - signature
+_core:
+  default_config_hash: 1S4wP8-siAvHO2ODiPIwKTavR48d3pJh2GFWIKN1l50
+id: user.signature
+label: 'User signature'
+description: ''
+targetEntityType: user
+cache: true

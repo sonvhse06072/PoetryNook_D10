@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.signature
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -113,3 +114,4 @@ hidden:
   member_for: true
   member_profiles: true
   search_api_excerpt: true
+  signature: true

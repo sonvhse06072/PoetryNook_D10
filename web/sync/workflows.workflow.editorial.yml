@@ -6,7 +6,6 @@ dependencies:
     - node.type.forum
     - node.type.member_poem
     - node.type.member_story
-    - node.type.review
   module:
     - content_moderation
 _core:
@@ -89,5 +88,4 @@ type_settings:
       - forum
       - member_poem
       - member_story
-      - review
   default_moderation_state: published

@@ -1,0 +1,22 @@
+id: pn_d7_comment_recent
+label: 'D7 comments (recent)'
+migration_group: pn_d7_recent
+migration_tags:
+  - Drupal 7
+  - recent
+source:
+  plugin: d7_comment
+process:
+  created:
+    plugin: skip_on_condition
+    source: created
+    condition:
+      plugin: less_than
+      value: 1758800487  # 2025-09-09 00:00:00
+    method: row
+destination:
+  plugin: 'entity:comment'
+depends:
+  required:
+    - pn_d7_user_recent
+    - pn_d7_node_recent

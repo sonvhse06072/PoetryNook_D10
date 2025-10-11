@@ -259,3 +259,44 @@ function poetry_d10_preprocess_views_view(&$variables) {
     $variables['forum_actions'] = $action_container;
   }
 }
+
+function poetry_d10_preprocess_comment(array &$variables) {
+  // Per-request storage: per-node counters and per-node CID→number maps.
+  static $counters = [];
+  static $cid_index = [];
+
+  /** @var \Drupal\Core\Entity\EntityInterface|null $entity */
+  $entity = $variables['commented_entity'] ?? NULL;
+  /** @var \Drupal\comment\CommentInterface|null $comment */
+  $comment = $variables['comment'] ?? NULL;
+
+  if (!$entity || !$comment) {
+    return;
+  }
+
+  $nid = $entity->id();
+  if (!isset($counters[$nid])) {
+    $counters[$nid] = 0; // Start at 0, then pre-increment so first comment is #1.
+  }
+  $number = ++$counters[$nid];
+
+  // Expose the number and remember it for this comment ID.
+  $variables['comment_number'] = $number;
+  $cid = $comment->id();
+  $cid_index[$nid][$cid] = $number;
+
+  // Build the compact permalink label "#N" pointing to the comment anchor.
+  $url = $entity->toUrl('canonical', [
+    'fragment' => 'comment-' . $cid,
+  ]);
+  $variables['permalink'] = Link::fromTextAndUrl('#' . $number, $url)->toString();
+
+  // If this comment is a reply, set parent_title to "(Reply to #N)".
+  if ($variables['parent_comment']) {
+    $parent_id = $variables['parent_comment']->id();
+    if ($parent_id && !empty($cid_index[$nid][$parent_id])) {
+      $parent_number = $cid_index[$nid][$parent_id];
+      $variables['parent_title'] = Link::fromTextAndUrl(t('(Reply to @num)', ['@num' => '#' . $parent_number]), $url)->toString();
+    }
+  }
+}
