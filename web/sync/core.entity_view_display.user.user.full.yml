@@ -1,8 +1,9 @@
-uuid: 50c4ac04-e268-4922-ae81-cb3f4f2c74af
+uuid: 28a06a9a-28a7-49d8-a6e1-efd529539247
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.user.full
     - field.field.user.user.signature
     - field.field.user.user.user_picture
   module:
@@ -10,6 +11,7 @@ dependencies:
     - image
     - layout_builder
     - layout_discovery
+    - quicktabs
     - user
 third_party_settings:
   field_layout:
@@ -21,10 +23,10 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
-id: user.user.default
+id: user.user.full
 targetEntityType: user
 bundle: user
-mode: default
+mode: full
 content:
   follow:
     settings: {  }

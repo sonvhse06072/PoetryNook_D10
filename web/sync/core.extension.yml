@@ -39,7 +39,6 @@ module:
   ckeditor5_plugin_pack_text_transformation: 0
   ckeditor5_plugin_pack_word_count: 0
   comment: 0
-  comment_fragment: 0
   conditional_fields: 0
   config: 0
   contact: 0

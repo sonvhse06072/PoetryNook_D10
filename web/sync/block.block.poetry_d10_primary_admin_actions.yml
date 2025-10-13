@@ -9,7 +9,7 @@ _core:
 id: poetry_d10_primary_admin_actions
 theme: poetry_d10
 region: content
-weight: -6
+weight: -9
 provider: null
 plugin: local_actions_block
 settings:

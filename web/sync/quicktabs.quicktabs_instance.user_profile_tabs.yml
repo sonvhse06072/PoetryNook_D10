@@ -1,0 +1,176 @@
+uuid: 69368b84-a93f-4ac5-8842-328e9e969118
+langcode: en
+status: true
+dependencies: {  }
+id: user_profile_tabs
+label: 'User Profile Tabs'
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 0
+options:
+  quick_tabs:
+    ajax: true
+    class: ''
+    style: on-the-gray
+configuration_data:
+  -
+    title: 'My Profile'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: user_details
+          display: block_1
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'My Poems'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: user_content
+          display: page_1
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'My Stories'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: user_content
+          display: block_1
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'My Art'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: user_content
+          display: page_2
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'My eBooks'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: user_content
+          display: page_4
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'My Posts'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: user_content
+          display: page_5
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'My Comments'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: adsense_cse_ad_block
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      view_content:
+        options:
+          vid: recent_comments
+          display: page_1
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: ''

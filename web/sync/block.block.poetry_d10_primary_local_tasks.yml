@@ -9,7 +9,7 @@ _core:
 id: poetry_d10_primary_local_tasks
 theme: poetry_d10
 region: content
-weight: -5
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:

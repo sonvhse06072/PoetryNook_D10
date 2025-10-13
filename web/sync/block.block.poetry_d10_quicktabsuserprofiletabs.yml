@@ -1,0 +1,25 @@
+uuid: fa4eeb71-fcca-43fc-b065-6914719318e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - poetry_d10
+id: poetry_d10_quicktabsuserprofiletabs
+theme: poetry_d10
+region: content
+weight: 0
+provider: null
+plugin: 'quicktabs_block:user_profile_tabs'
+settings:
+  id: 'quicktabs_block:user_profile_tabs'
+  label: 'QuickTabs - User Profile Tabs'
+  label_display: '0'
+  provider: quicktabs
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
