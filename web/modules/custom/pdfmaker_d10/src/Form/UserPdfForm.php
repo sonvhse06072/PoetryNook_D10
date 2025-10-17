@@ -159,6 +159,7 @@ class UserPdfForm extends FormBase {
       $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
         ->condition('uid', $member_id)
         ->condition('type', 'member_poem')
+        ->accessCheck(FALSE)
         ->sort('title');
       $nids = $query->execute();
       if ($nids) {
