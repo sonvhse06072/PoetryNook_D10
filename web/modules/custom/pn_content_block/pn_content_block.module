@@ -105,45 +105,6 @@ function pn_content_block_entity_presave(EntityInterface $entity): void {
 }
 
 /**
- * Implements hook_views_query_alter().
- *
- * Force the 'user_content' and 'user_details' views to filter by the user
- * from the current route (e.g., /user/{name} or its alias), overriding any
- * contextual filter input.
- */
-function pn_content_block_views_query_alter(ViewExecutable $view, QueryPluginSql $query): void {
-  $target_views = ['user_content', 'user_details'];
-  if (!in_array($view->id(), $target_views, TRUE)) {
-    return;
-  }
-
-  // Only alter on routes that provide a user parameter.
-  $route_user = \Drupal::routeMatch()->getParameter('user');
-  if (!$route_user instanceof UserInterface) {
-    return;
-  }
-  $uid = (int) $route_user->id();
-
-  // Apply filtering by uid based on the view's base table.
-  if ($view->id() === 'user_content') {
-    // Content authored by the user.
-    $node_alias = $query->ensureTable('node_field_data');
-    // Add exact match on author uid.
-    $query->addWhere(0, "$node_alias.uid", $uid, '=');
-  }
-  elseif ($view->id() === 'user_details') {
-    // User details for the user.
-    $user_alias = $query->ensureTable('users_field_data');
-    $query->addWhere(0, "$user_alias.uid", $uid, '=');
-  }
-
-  // Clear any contextual arguments so they don't interfere.
-  // This doesn't change the SQL directly but prevents other handlers from
-  // re-applying argument processing later in the pipeline.
-  $view->args = [];
-}
-
-/**
  * Implements hook_views_pre_render().
  *
  * Add cacheability metadata for Views modified by pn_content_block so that

@@ -78,7 +78,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -185,7 +186,7 @@ display:
         options:
           perm: 'access comments'
       cache:
-        type: tag
+        type: none
         options: {  }
       empty: {  }
       sorts:
@@ -199,7 +200,7 @@ display:
           entity_type: comment
           entity_field: created
           plugin_id: date
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -223,8 +224,9 @@ display:
             title: All
           title_enable: false
           title: ''
-          default_argument_type: profile_owner
-          default_argument_options: {  }
+          default_argument_type: user
+          default_argument_options:
+            user: false
           summary_options:
             base_path: ''
             count: true
@@ -309,7 +311,18 @@ display:
           entity_type: comment_field_data
           plugin_id: standard
           required: true
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<span class="visually-hidden">{{ raw_arguments.uid }}</span>'
+          tokenize: true
       footer: {  }
       display_extenders: {  }
     cache_metadata:
