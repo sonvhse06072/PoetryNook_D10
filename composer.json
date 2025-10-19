@@ -86,6 +86,7 @@
         "drupal/rdf": "^2.1",
         "drupal/recaptcha": "^3.4",
         "drupal/redirect": "^1.12",
+        "drupal/redis": "^1.10",
         "drupal/rules": "^4.0",
         "drupal/scheduler": "^2.2",
         "drupal/schema_metatag": "^3.0",
