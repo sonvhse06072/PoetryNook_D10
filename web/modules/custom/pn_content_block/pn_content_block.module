@@ -143,3 +143,28 @@ function pn_content_block_views_query_alter(ViewExecutable $view, QueryPluginSql
   $view->args = [];
 }
 
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Add cacheability metadata for Views modified by pn_content_block so that
+ * Dynamic Page Cache and render cache correctly vary by the current route's
+ * user parameter.
+ */
+function pn_content_block_views_pre_render(ViewExecutable $view): void {
+  $target_views = ['user_content', 'user_details'];
+  if (!in_array($view->id(), $target_views, TRUE)) {
+    return;
+  }
+  $route_user = \Drupal::routeMatch()->getParameter('user');
+  if (!$route_user instanceof UserInterface) {
+    return;
+  }
+  $uid = (int) $route_user->id();
+
+  // Ensure the view's render array varies by route (includes route params)
+  // and is invalidated when the related user changes. This prevents serving
+  // cached results for a different user when our query is tied to the route.
+  $view->element['#cache']['contexts'][] = 'route';
+  $view->element['#cache']['tags'][] = "user:$uid";
+}
+
