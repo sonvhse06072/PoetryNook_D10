@@ -3,6 +3,9 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
+use Drupal\user\UserInterface;
+use Drupal\views\Plugin\views\query\Sql as QueryPluginSql;
+use Drupal\views\ViewExecutable;
 
 /**
  * @file
@@ -17,86 +20,126 @@ use Drupal\node\NodeInterface;
  *
  * Relies on an Editorial workflow with a 'blocked' state.
  */
-//function pn_content_block_entity_presave(EntityInterface $entity): void {
-//  // Only act on nodes.
-//  if (!$entity instanceof NodeInterface) {
-//    return;
-//  }
-//
-//  // If node doesn't have required fields, bail early.
-//  if (!$entity->hasField('body') || !$entity->hasField('moderation_state')) {
-//    return;
-//  }
-//  $current_user_role = \Drupal::currentUser()->getRoles();
-//  if (in_array('administrator', $current_user_role, TRUE)) {
-//    return;
-//  }
-//
-//  $title = $entity->label();
-//  // Combine body value and summary text.
-//  $body_value = (string) ($entity->get('body')->value ?? '');
-//  $body_summary = (string) ($entity->get('body')->summary ?? '');
-//  $text_raw = trim($title . ' ' . $body_value . ' ' . $body_summary);
-//
-//  if ($text_raw === '') {
-//    return;
-//  }
-//
-//  // We'll need both raw and stripped variants for different checks.
-//  $text_stripped = strip_tags($text_raw);
-//
-//  $should_block = FALSE;
-//
-//  // 1) Keyword-based blocking: applies to ALL node types.
-//  $config = \Drupal::config('pn_content_block.settings');
-//  $keywords = $config->get('sensitive_keywords') ?? [];
-//  if (is_string($keywords)) {
-//    $keywords = array_filter(array_map('trim', preg_split('/\r?\n|,\s*/', $keywords)));
-//  }
-//  if (!empty($keywords)) {
-//    $haystack = mb_strtolower($text_stripped);
-//    foreach ($keywords as $kw) {
-//      $kw = trim((string) $kw);
-//      if ($kw === '') {
-//        continue;
-//      }
-//      if (str_contains($haystack, mb_strtolower($kw))) {
-//        $should_block = TRUE;
-//        break;
-//      }
-//    }
-//  }
-//
-//  // 2) Link-based blocking: keep previous behavior for specific bundles.
-//  if (!$should_block) {
-//    $node_type_to_check = [
-//      'member_poem',
-//      'member_story',
-//      'review',
-//      'forum',
-//    ];
-//
-//    if (in_array($entity->bundle(), $node_type_to_check, TRUE)) {
-//      // Detect links (HTML anchors, URLs, and mailto: links).
-//      $has_anchor = (bool) preg_match('/<a\s+[^>]*href\s*=\s*([\"\'])?[^\"\'>\s]+/i', $text_raw);
-//      $has_url = (bool) preg_match('/\b(?:https?:\/\/|www\.)\S+/i', $text_raw);
-//      $has_mailto = (bool) preg_match('/\bmailto:\S+/i', $text_raw);
-//      if ($has_anchor || $has_url || $has_mailto) {
-//        $should_block = TRUE;
-//      }
-//    }
-//  }
-//
-//  if (!$should_block) {
-//    return;
-//  }
-//
-//  // Set the moderation state to 'blocked' if not already.
-//  $current_state = (string) ($entity->get('moderation_state')->value ?? '');
-//  if ($current_state !== 'blocked') {
-//    $entity->set('moderation_state', 'blocked');
-//    $entity->setNewRevision(TRUE);
-//    $entity->isDefaultRevision(TRUE);
-//    $entity->setUnpublished();
-//  }
-//}
+function pn_content_block_entity_presave(EntityInterface $entity): void {
+  // Only act on nodes.
+  if (!$entity instanceof NodeInterface) {
+    return;
+  }
+
+  // If node doesn't have required fields, bail early.
+  if (!$entity->hasField('body') || !$entity->hasField('moderation_state')) {
+    return;
+  }
+  $current_user_role = \Drupal::currentUser()->getRoles();
+  if (in_array('administrator', $current_user_role, TRUE)) {
+    return;
+  }
+
+  $title = $entity->label();
+  // Combine body value and summary text.
+  $body_value = (string) ($entity->get('body')->value ?? '');
+  $body_summary = (string) ($entity->get('body')->summary ?? '');
+  $text_raw = trim($title . ' ' . $body_value . ' ' . $body_summary);
+
+  if ($text_raw === '') {
+    return;
+  }
+
+  // We'll need both raw and stripped variants for different checks.
+  $text_stripped = strip_tags($text_raw);
+
+  $should_block = FALSE;
+
+  // 1) Keyword-based blocking: applies to ALL node types.
+  $config = \Drupal::config('pn_content_block.settings');
+  $keywords = $config->get('sensitive_keywords') ?? [];
+  if (is_string($keywords)) {
+    $keywords = array_filter(array_map('trim', preg_split('/\r?\n|,\s*/', $keywords)));
+  }
+  if (!empty($keywords)) {
+    $haystack = mb_strtolower($text_stripped);
+    foreach ($keywords as $kw) {
+      $kw = trim((string) $kw);
+      if ($kw === '') {
+        continue;
+      }
+      if (str_contains($haystack, mb_strtolower($kw))) {
+        $should_block = TRUE;
+        break;
+      }
+    }
+  }
+
+  // 2) Link-based blocking: keep previous behavior for specific bundles.
+  if (!$should_block) {
+    $node_type_to_check = [
+      'member_poem',
+      'member_story',
+      'review',
+      'forum',
+    ];
+
+    if (in_array($entity->bundle(), $node_type_to_check, TRUE)) {
+      // Detect links (HTML anchors, URLs, and mailto: links).
+      $has_anchor = (bool) preg_match('/<a\s+[^>]*href\s*=\s*([\"\'])?[^\"\'>\s]+/i', $text_raw);
+      $has_url = (bool) preg_match('/\b(?:https?:\/\/|www\.)\S+/i', $text_raw);
+      $has_mailto = (bool) preg_match('/\bmailto:\S+/i', $text_raw);
+      if ($has_anchor || $has_url || $has_mailto) {
+        $should_block = TRUE;
+      }
+    }
+  }
+
+  if (!$should_block) {
+    return;
+  }
+
+  // Set the moderation state to 'blocked' if not already.
+  $current_state = (string) ($entity->get('moderation_state')->value ?? '');
+  if ($current_state !== 'blocked') {
+    $entity->set('moderation_state', 'blocked');
+    $entity->setNewRevision(TRUE);
+    $entity->isDefaultRevision(TRUE);
+    $entity->setUnpublished();
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ *
+ * Force the 'user_content' and 'user_details' views to filter by the user
+ * from the current route (e.g., /user/{name} or its alias), overriding any
+ * contextual filter input.
+ */
+function pn_content_block_views_query_alter(ViewExecutable $view, QueryPluginSql $query): void {
+  $target_views = ['user_content', 'user_details'];
+  if (!in_array($view->id(), $target_views, TRUE)) {
+    return;
+  }
+
+  // Only alter on routes that provide a user parameter.
+  $route_user = \Drupal::routeMatch()->getParameter('user');
+  if (!$route_user instanceof UserInterface) {
+    return;
+  }
+  $uid = (int) $route_user->id();
+
+  // Apply filtering by uid based on the view's base table.
+  if ($view->id() === 'user_content') {
+    // Content authored by the user.
+    $node_alias = $query->ensureTable('node_field_data');
+    // Add exact match on author uid.
+    $query->addWhere(0, "$node_alias.uid", $uid, '=');
+  }
+  elseif ($view->id() === 'user_details') {
+    // User details for the user.
+    $user_alias = $query->ensureTable('users_field_data');
+    $query->addWhere(0, "$user_alias.uid", $uid, '=');
+  }
+
+  // Clear any contextual arguments so they don't interfere.
+  // This doesn't change the SQL directly but prevents other handlers from
+  // re-applying argument processing later in the pipeline.
+  $view->args = [];
+}
+
