@@ -11,7 +11,6 @@ dependencies:
     - field_layout
     - image
     - layout_builder
-    - layout_discovery
     - user
 third_party_settings:
   field_layout:
@@ -19,63 +18,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          07a08d40-0835-4177-bac2-117723b7476d:
-            uuid: 07a08d40-0835-4177-bac2-117723b7476d
-            region: content
-            configuration:
-              id: 'field_block:user:user:user_picture'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: content
-                  image_style: thumbnail
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          29fb0a50-acf7-4b44-81bc-ab7250a42656:
-            uuid: 29fb0a50-acf7-4b44-81bc-ab7250a42656
-            region: content
-            configuration:
-              id: 'extra_field_block:user:user:follow'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
-          0cb1b9aa-7a44-44c8-9cb8-42fa7175c778:
-            uuid: 0cb1b9aa-7a44-44c8-9cb8-42fa7175c778
-            region: content
-            configuration:
-              id: 'extra_field_block:user:user:masquerade'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 2
-            additional: {  }
-          008cb890-a9c0-4f0a-8fc3-10a68ed50cea:
-            uuid: 008cb890-a9c0-4f0a-8fc3-10a68ed50cea
-            region: content
-            configuration:
-              id: 'extra_field_block:user:user:privatemsg'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 3
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
 id: user.user.compact
@@ -86,17 +30,7 @@ content:
   follow:
     settings: {  }
     third_party_settings: {  }
-    weight: 50
-    region: content
-  masquerade:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 50
-    region: content
-  privatemsg:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
+    weight: 1
     region: content
   user_picture:
     type: image
@@ -111,7 +45,9 @@ content:
     region: content
 hidden:
   langcode: true
+  masquerade: true
   member_for: true
   member_profiles: true
+  privatemsg: true
   search_api_excerpt: true
   signature: true
